@@ -1,0 +1,753 @@
+{"id": "q_mi_001", "kind": "mi_soru", "text": "Akşam yemeğe annemler de geliyor mu?", "pair_id": "p001", "peak_word": 4}
+{"id": "q_duz_001", "kind": "duz_eslesik", "text": "Akşam yemeğe annemler de geliyor.", "pair_id": "p001", "peak_word": 4}
+{"id": "q_mi_002", "kind": "mi_soru", "text": "Çamaşır makinesini sen mi çalıştırdın?", "pair_id": "p002", "peak_word": 2}
+{"id": "q_duz_002", "kind": "duz_eslesik", "text": "Çamaşır makinesini sen çalıştırdın.", "pair_id": "p002", "peak_word": 2}
+{"id": "q_mi_003", "kind": "mi_soru", "text": "Kombiyi kapattın mı?", "pair_id": "p003", "peak_word": 1}
+{"id": "q_duz_003", "kind": "duz_eslesik", "text": "Kombiyi kapattın.", "pair_id": "p003", "peak_word": 1}
+{"id": "q_mi_004", "kind": "mi_soru", "text": "Bu akşam bulaşıkları sen mi yıkayacaksın?", "pair_id": "p004", "peak_word": 3}
+{"id": "q_duz_004", "kind": "duz_eslesik", "text": "Bu akşam bulaşıkları sen yıkayacaksın.", "pair_id": "p004", "peak_word": 3}
+{"id": "q_mi_005", "kind": "mi_soru", "text": "Çocuklar uyudu mu?", "pair_id": "p005", "peak_word": 1}
+{"id": "q_duz_005", "kind": "duz_eslesik", "text": "Çocuklar uyudu.", "pair_id": "p005", "peak_word": 1}
+{"id": "q_mi_006", "kind": "mi_soru", "text": "Babaannen hafta sonu bize mi kalacak?", "pair_id": "p006", "peak_word": 3}
+{"id": "q_duz_006", "kind": "duz_eslesik", "text": "Babaannen hafta sonu bize kalacak.", "pair_id": "p006", "peak_word": 3}
+{"id": "q_mi_007", "kind": "mi_soru", "text": "Evde ekmek kaldı mı?", "pair_id": "p007", "peak_word": 2}
+{"id": "q_duz_007", "kind": "duz_eslesik", "text": "Evde ekmek kaldı.", "pair_id": "p007", "peak_word": 2}
+{"id": "q_mi_008", "kind": "mi_soru", "text": "Kapıyı kilitledin mi?", "pair_id": "p008", "peak_word": 1}
+{"id": "q_duz_008", "kind": "duz_eslesik", "text": "Kapıyı kilitledin.", "pair_id": "p008", "peak_word": 1}
+{"id": "q_mi_009", "kind": "mi_soru", "text": "Kiracı bu ay da kirayı geç mi yatırdı?", "pair_id": "p009", "peak_word": 5}
+{"id": "q_duz_009", "kind": "duz_eslesik", "text": "Kiracı bu ay da kirayı geç yatırdı.", "pair_id": "p009", "peak_word": 5}
+{"id": "q_mi_010", "kind": "mi_soru", "text": "Ev sahibi kirayı 2.000 TL mi artırmış?", "pair_id": "p010", "peak_word": 5}
+{"id": "q_duz_010", "kind": "duz_eslesik", "text": "Ev sahibi kirayı 2.000 TL artırmış.", "pair_id": "p010", "peak_word": 5}
+{"id": "q_mi_011", "kind": "mi_soru", "text": "Teyzemler 3 Kasım'da mı taşınıyor?", "pair_id": "p011", "peak_word": 2}
+{"id": "q_duz_011", "kind": "duz_eslesik", "text": "Teyzemler 3 Kasım'da taşınıyor.", "pair_id": "p011", "peak_word": 2}
+{"id": "q_mi_012", "kind": "mi_soru", "text": "Bu odayı boyamamız 2 gün mü sürer?", "pair_id": "p012", "peak_word": 4}
+{"id": "q_duz_012", "kind": "duz_eslesik", "text": "Bu odayı boyamamız 2 gün sürer.", "pair_id": "p012", "peak_word": 4}
+{"id": "q_mi_013", "kind": "mi_soru", "text": "Buzdolabının kapısı yine açık mı kalmış?", "pair_id": "p013", "peak_word": 3}
+{"id": "q_duz_013", "kind": "duz_eslesik", "text": "Buzdolabının kapısı yine açık kalmış.", "pair_id": "p013", "peak_word": 3}
+{"id": "q_mi_014", "kind": "mi_soru", "text": "Kardeşin bu yıl üniversiteyi bitiriyor mu?", "pair_id": "p014", "peak_word": 4}
+{"id": "q_duz_014", "kind": "duz_eslesik", "text": "Kardeşin bu yıl üniversiteyi bitiriyor.", "pair_id": "p014", "peak_word": 4}
+{"id": "q_mi_015", "kind": "mi_soru", "text": "Musluk hâlâ damlatıyor mu?", "pair_id": "p015", "peak_word": 2}
+{"id": "q_duz_015", "kind": "duz_eslesik", "text": "Musluk hâlâ damlatıyor.", "pair_id": "p015", "peak_word": 2}
+{"id": "q_mi_016", "kind": "mi_soru", "text": "Elektrikçi yarın saat 10'da mı gelecek?", "pair_id": "p016", "peak_word": 3}
+{"id": "q_duz_016", "kind": "duz_eslesik", "text": "Elektrikçi yarın saat 10'da gelecek.", "pair_id": "p016", "peak_word": 3}
+{"id": "q_mi_017", "kind": "mi_soru", "text": "Oğlun bu akşam arkadaşında mı kalıyor?", "pair_id": "p017", "peak_word": 3}
+{"id": "q_duz_017", "kind": "duz_eslesik", "text": "Oğlun bu akşam arkadaşında kalıyor.", "pair_id": "p017", "peak_word": 3}
+{"id": "q_mi_018", "kind": "mi_soru", "text": "Doğum günü pastasını sen mi yaptın?", "pair_id": "p018", "peak_word": 3}
+{"id": "q_duz_018", "kind": "duz_eslesik", "text": "Doğum günü pastasını sen yaptın.", "pair_id": "p018", "peak_word": 3}
+{"id": "q_mi_019", "kind": "mi_soru", "text": "Dedemin ilaçlarını eczaneden aldınız mı?", "pair_id": "p019", "peak_word": 3}
+{"id": "q_duz_019", "kind": "duz_eslesik", "text": "Dedemin ilaçlarını eczaneden aldınız.", "pair_id": "p019", "peak_word": 3}
+{"id": "q_mi_020", "kind": "mi_soru", "text": "Misafirler cumartesi akşamı mı geliyor?", "pair_id": "p020", "peak_word": 2}
+{"id": "q_duz_020", "kind": "duz_eslesik", "text": "Misafirler cumartesi akşamı geliyor.", "pair_id": "p020", "peak_word": 2}
+{"id": "q_mi_021", "kind": "mi_soru", "text": "Apartman aidatı bu ay 750 lira mı olmuş?", "pair_id": "p021", "peak_word": 7}
+{"id": "q_duz_021", "kind": "duz_eslesik", "text": "Apartman aidatı bu ay 750 lira olmuş.", "pair_id": "p021", "peak_word": 7}
+{"id": "q_mi_022", "kind": "mi_soru", "text": "Bu hafta sonu evde misiniz?", "pair_id": "p022", "peak_word": 3}
+{"id": "q_duz_022", "kind": "duz_eslesik", "text": "Bu hafta sonu evdesiniz.", "pair_id": "p022", "peak_word": 3}
+{"id": "q_mi_023", "kind": "mi_soru", "text": "Annen hâlâ hasta mı?", "pair_id": "p023", "peak_word": 2}
+{"id": "q_duz_023", "kind": "duz_eslesik", "text": "Annen hâlâ hasta.", "pair_id": "p023", "peak_word": 2}
+{"id": "q_mi_024", "kind": "mi_soru", "text": "Dairenin aidatı ayda 1.350 TL mi?", "pair_id": "p024", "peak_word": 7}
+{"id": "q_duz_024", "kind": "duz_eslesik", "text": "Dairenin aidatı ayda 1.350 TL.", "pair_id": "p024", "peak_word": 7}
+{"id": "q_mi_025", "kind": "mi_soru", "text": "Ev telefonunuz hâlâ 0 (222) 222 22 22 mi?", "pair_id": "p025", "peak_word": 15}
+{"id": "q_duz_025", "kind": "duz_eslesik", "text": "Ev telefonunuz hâlâ 0 (222) 222 22 22.", "pair_id": "p025", "peak_word": 15}
+{"id": "q_mi_026", "kind": "mi_soru", "text": "Bebek 3 aylık mı?", "pair_id": "p026", "peak_word": 2}
+{"id": "q_duz_026", "kind": "duz_eslesik", "text": "Bebek 3 aylık.", "pair_id": "p026", "peak_word": 2}
+{"id": "q_mi_027", "kind": "mi_soru", "text": "Bu ceketin büyük bedeni var mı?", "pair_id": "p027", "peak_word": 4}
+{"id": "q_duz_027", "kind": "duz_eslesik", "text": "Bu ceketin büyük bedeni var.", "pair_id": "p027", "peak_word": 4}
+{"id": "q_mi_028", "kind": "mi_soru", "text": "Bu ayakkabılar indirimde mi?", "pair_id": "p028", "peak_word": 2}
+{"id": "q_duz_028", "kind": "duz_eslesik", "text": "Bu ayakkabılar indirimde.", "pair_id": "p028", "peak_word": 2}
+{"id": "q_mi_029", "kind": "mi_soru", "text": "Kasada kredi kartı geçiyor mu?", "pair_id": "p029", "peak_word": 3}
+{"id": "q_duz_029", "kind": "duz_eslesik", "text": "Kasada kredi kartı geçiyor.", "pair_id": "p029", "peak_word": 3}
+{"id": "q_mi_030", "kind": "mi_soru", "text": "Domatesin kilosu 45 lira mı?", "pair_id": "p030", "peak_word": 4}
+{"id": "q_duz_030", "kind": "duz_eslesik", "text": "Domatesin kilosu 45 lira.", "pair_id": "p030", "peak_word": 4}
+{"id": "q_mi_031", "kind": "mi_soru", "text": "Bu ürünü iade edebilir miyim?", "pair_id": "p031", "peak_word": 3}
+{"id": "q_duz_031", "kind": "duz_eslesik", "text": "Bu ürünü iade edebilirim.", "pair_id": "p031", "peak_word": 3}
+{"id": "q_mi_032", "kind": "mi_soru", "text": "Market pazar günleri de açık mı?", "pair_id": "p032", "peak_word": 4}
+{"id": "q_duz_032", "kind": "duz_eslesik", "text": "Market pazar günleri de açık.", "pair_id": "p032", "peak_word": 4}
+{"id": "q_mi_033", "kind": "mi_soru", "text": "Telefonun fiyatı 32.999 TL mi?", "pair_id": "p033", "peak_word": 9}
+{"id": "q_duz_033", "kind": "duz_eslesik", "text": "Telefonun fiyatı 32.999 TL.", "pair_id": "p033", "peak_word": 9}
+{"id": "q_mi_034", "kind": "mi_soru", "text": "Bu kazağı 3 taksitle alabilir miyim?", "pair_id": "p034", "peak_word": 4}
+{"id": "q_duz_034", "kind": "duz_eslesik", "text": "Bu kazağı 3 taksitle alabilirim.", "pair_id": "p034", "peak_word": 4}
+{"id": "q_mi_035", "kind": "mi_soru", "text": "Bu kampanya ayın sonuna kadar mı geçerli?", "pair_id": "p035", "peak_word": 4}
+{"id": "q_duz_035", "kind": "duz_eslesik", "text": "Bu kampanya ayın sonuna kadar geçerli.", "pair_id": "p035", "peak_word": 4}
+{"id": "q_mi_036", "kind": "mi_soru", "text": "Mağaza saat 22.00'de mi kapanıyor?", "pair_id": "p036", "peak_word": 3}
+{"id": "q_duz_036", "kind": "duz_eslesik", "text": "Mağaza saat 22.00'de kapanıyor.", "pair_id": "p036", "peak_word": 3}
+{"id": "q_mi_037", "kind": "mi_soru", "text": "Bu peynir köy peyniri mi?", "pair_id": "p037", "peak_word": 3}
+{"id": "q_duz_037", "kind": "duz_eslesik", "text": "Bu peynir köy peyniri.", "pair_id": "p037", "peak_word": 3}
+{"id": "q_mi_038", "kind": "mi_soru", "text": "İkinci ürün %50 indirimli mi?", "pair_id": "p038", "peak_word": 4}
+{"id": "q_duz_038", "kind": "duz_eslesik", "text": "İkinci ürün %50 indirimli.", "pair_id": "p038", "peak_word": 4}
+{"id": "q_mi_039", "kind": "mi_soru", "text": "Hediye paketi yapabiliyor musunuz?", "pair_id": "p039", "peak_word": 2}
+{"id": "q_duz_039", "kind": "duz_eslesik", "text": "Hediye paketi yapabiliyorsunuz.", "pair_id": "p039", "peak_word": 2}
+{"id": "q_mi_040", "kind": "mi_soru", "text": "Kırmızı olanı mı beğendin?", "pair_id": "p040", "peak_word": 1}
+{"id": "q_duz_040", "kind": "duz_eslesik", "text": "Kırmızı olanı beğendin.", "pair_id": "p040", "peak_word": 1}
+{"id": "q_mi_041", "kind": "mi_soru", "text": "Siparişi kapıda nakit mi ödeyeceksin?", "pair_id": "p041", "peak_word": 2}
+{"id": "q_duz_041", "kind": "duz_eslesik", "text": "Siparişi kapıda nakit ödeyeceksin.", "pair_id": "p041", "peak_word": 2}
+{"id": "q_mi_042", "kind": "mi_soru", "text": "Bu fiyata kargo dahil mi?", "pair_id": "p042", "peak_word": 3}
+{"id": "q_duz_042", "kind": "duz_eslesik", "text": "Bu fiyata kargo dahil.", "pair_id": "p042", "peak_word": 3}
+{"id": "q_mi_043", "kind": "mi_soru", "text": "Manavda çilek çıkmış mı?", "pair_id": "p043", "peak_word": 2}
+{"id": "q_duz_043", "kind": "duz_eslesik", "text": "Manavda çilek çıkmış.", "pair_id": "p043", "peak_word": 2}
+{"id": "q_mi_044", "kind": "mi_soru", "text": "Sabah aldığın süt bozuk mu çıktı?", "pair_id": "p044", "peak_word": 3}
+{"id": "q_duz_044", "kind": "duz_eslesik", "text": "Sabah aldığın süt bozuk çıktı.", "pair_id": "p044", "peak_word": 3}
+{"id": "q_mi_045", "kind": "mi_soru", "text": "Kasiyer para üstünü eksik mi verdi?", "pair_id": "p045", "peak_word": 3}
+{"id": "q_duz_045", "kind": "duz_eslesik", "text": "Kasiyer para üstünü eksik verdi.", "pair_id": "p045", "peak_word": 3}
+{"id": "q_mi_046", "kind": "mi_soru", "text": "Ayakkabının 38 numarası kalmamış mı?", "pair_id": "p046", "peak_word": 4}
+{"id": "q_duz_046", "kind": "duz_eslesik", "text": "Ayakkabının 38 numarası kalmamış.", "pair_id": "p046", "peak_word": 4}
+{"id": "q_mi_047", "kind": "mi_soru", "text": "Bu ay elektrik faturası 1.180 TL mi gelmiş?", "pair_id": "p047", "peak_word": 7}
+{"id": "q_duz_047", "kind": "duz_eslesik", "text": "Bu ay elektrik faturası 1.180 TL gelmiş.", "pair_id": "p047", "peak_word": 7}
+{"id": "q_mi_048", "kind": "mi_soru", "text": "İlk alışverişte indirim var mı?", "pair_id": "p048", "peak_word": 3}
+{"id": "q_duz_048", "kind": "duz_eslesik", "text": "İlk alışverişte indirim var.", "pair_id": "p048", "peak_word": 3}
+{"id": "q_mi_049", "kind": "mi_soru", "text": "Kasaptan yarım kilo kıyma mı alayım?", "pair_id": "p049", "peak_word": 3}
+{"id": "q_duz_049", "kind": "duz_eslesik", "text": "Kasaptan yarım kilo kıyma alayım.", "pair_id": "p049", "peak_word": 3}
+{"id": "q_mi_050", "kind": "mi_soru", "text": "Su faturası 312,40 TL mi?", "pair_id": "p050", "peak_word": 8}
+{"id": "q_duz_050", "kind": "duz_eslesik", "text": "Su faturası 312,40 TL.", "pair_id": "p050", "peak_word": 8}
+{"id": "q_mi_051", "kind": "mi_soru", "text": "Abonelik ücreti ayda 89,90 TL mi?", "pair_id": "p051", "peak_word": 7}
+{"id": "q_duz_051", "kind": "duz_eslesik", "text": "Abonelik ücreti ayda 89,90 TL.", "pair_id": "p051", "peak_word": 7}
+{"id": "q_mi_052", "kind": "mi_soru", "text": "Maaşlar bu ay 15'inde mi yatacak?", "pair_id": "p052", "peak_word": 4}
+{"id": "q_duz_052", "kind": "duz_eslesik", "text": "Maaşlar bu ay 15'inde yatacak.", "pair_id": "p052", "peak_word": 4}
+{"id": "q_mi_053", "kind": "mi_soru", "text": "Kredi kartı ekstrem geldi mi?", "pair_id": "p053", "peak_word": 3}
+{"id": "q_duz_053", "kind": "duz_eslesik", "text": "Kredi kartı ekstrem geldi.", "pair_id": "p053", "peak_word": 3}
+{"id": "q_mi_054", "kind": "mi_soru", "text": "Havale yaparken açıklama yazmam gerekiyor mu?", "pair_id": "p054", "peak_word": 4}
+{"id": "q_duz_054", "kind": "duz_eslesik", "text": "Havale yaparken açıklama yazmam gerekiyor.", "pair_id": "p054", "peak_word": 4}
+{"id": "q_mi_055", "kind": "mi_soru", "text": "EFT saat 17:00'den sonra ertesi güne mi kalıyor?", "pair_id": "p055", "peak_word": 8}
+{"id": "q_duz_055", "kind": "duz_eslesik", "text": "EFT saat 17:00'den sonra ertesi güne kalıyor.", "pair_id": "p055", "peak_word": 8}
+{"id": "q_mi_056", "kind": "mi_soru", "text": "Hesabımdan otomatik ödeme talimatıyla 3.250 TL mi çekildi?", "pair_id": "p056", "peak_word": 9}
+{"id": "q_duz_056", "kind": "duz_eslesik", "text": "Hesabımdan otomatik ödeme talimatıyla 3.250 TL çekildi.", "pair_id": "p056", "peak_word": 9}
+{"id": "q_mi_057", "kind": "mi_soru", "text": "Kartımın limiti 40.000 liraya mı yükseldi?", "pair_id": "p057", "peak_word": 4}
+{"id": "q_duz_057", "kind": "duz_eslesik", "text": "Kartımın limiti 40.000 liraya yükseldi.", "pair_id": "p057", "peak_word": 4}
+{"id": "q_mi_058", "kind": "mi_soru", "text": "ATM kartımı yuttu mu?", "pair_id": "p058", "peak_word": 4}
+{"id": "q_duz_058", "kind": "duz_eslesik", "text": "ATM kartımı yuttu.", "pair_id": "p058", "peak_word": 4}
+{"id": "q_mi_059", "kind": "mi_soru", "text": "Banka bu işlem için ücret alıyor mu?", "pair_id": "p059", "peak_word": 5}
+{"id": "q_duz_059", "kind": "duz_eslesik", "text": "Banka bu işlem için ücret alıyor.", "pair_id": "p059", "peak_word": 5}
+{"id": "q_mi_060", "kind": "mi_soru", "text": "İhtiyaç kredisinin aylık faizi %3,29 mu?", "pair_id": "p060", "peak_word": 8}
+{"id": "q_duz_060", "kind": "duz_eslesik", "text": "İhtiyaç kredisinin aylık faizi %3,29.", "pair_id": "p060", "peak_word": 8}
+{"id": "q_mi_061", "kind": "mi_soru", "text": "Mobil uygulamadan IBAN'a para gönderebiliyor muyum?", "pair_id": "p061", "peak_word": 4}
+{"id": "q_duz_061", "kind": "duz_eslesik", "text": "Mobil uygulamadan IBAN'a para gönderebiliyorum.", "pair_id": "p061", "peak_word": 4}
+{"id": "q_mi_062", "kind": "mi_soru", "text": "Hesap özetim e-posta ile mi geliyor?", "pair_id": "p062", "peak_word": 3}
+{"id": "q_duz_062", "kind": "duz_eslesik", "text": "Hesap özetim e-posta ile geliyor.", "pair_id": "p062", "peak_word": 3}
+{"id": "q_mi_063", "kind": "mi_soru", "text": "Şubeye gitmeden kart şifresi alabilir miyiz?", "pair_id": "p063", "peak_word": 4}
+{"id": "q_duz_063", "kind": "duz_eslesik", "text": "Şubeye gitmeden kart şifresi alabiliriz.", "pair_id": "p063", "peak_word": 4}
+{"id": "q_mi_064", "kind": "mi_soru", "text": "Döviz hesabımda 1.200 dolar mı var?", "pair_id": "p064", "peak_word": 5}
+{"id": "q_duz_064", "kind": "duz_eslesik", "text": "Döviz hesabımda 1.200 dolar var.", "pair_id": "p064", "peak_word": 5}
+{"id": "q_mi_065", "kind": "mi_soru", "text": "Kira ödemesi her ayın 5'inde mi çıkıyor?", "pair_id": "p065", "peak_word": 4}
+{"id": "q_duz_065", "kind": "duz_eslesik", "text": "Kira ödemesi her ayın 5'inde çıkıyor.", "pair_id": "p065", "peak_word": 4}
+{"id": "q_mi_066", "kind": "mi_soru", "text": "Kredinin son taksidi bu ay mı ödenecek?", "pair_id": "p066", "peak_word": 4}
+{"id": "q_duz_066", "kind": "duz_eslesik", "text": "Kredinin son taksidi bu ay ödenecek.", "pair_id": "p066", "peak_word": 4}
+{"id": "q_mi_067", "kind": "mi_soru", "text": "İnternet bankacılığı şifreniz bloke mi oldu?", "pair_id": "p067", "peak_word": 3}
+{"id": "q_duz_067", "kind": "duz_eslesik", "text": "İnternet bankacılığı şifreniz bloke oldu.", "pair_id": "p067", "peak_word": 3}
+{"id": "q_mi_068", "kind": "mi_soru", "text": "Kartla yaptığım ödeme iki kez mi çekilmiş?", "pair_id": "p068", "peak_word": 4}
+{"id": "q_duz_068", "kind": "duz_eslesik", "text": "Kartla yaptığım ödeme iki kez çekilmiş.", "pair_id": "p068", "peak_word": 4}
+{"id": "q_mi_069", "kind": "mi_soru", "text": "Emekli maaşı promosyonu 12.000 lira mı?", "pair_id": "p069", "peak_word": 6}
+{"id": "q_duz_069", "kind": "duz_eslesik", "text": "Emekli maaşı promosyonu 12.000 lira.", "pair_id": "p069", "peak_word": 6}
+{"id": "q_mi_070", "kind": "mi_soru", "text": "SGK prim borcunuz 4.870 TL mi?", "pair_id": "p070", "peak_word": 10}
+{"id": "q_duz_070", "kind": "duz_eslesik", "text": "SGK prim borcunuz 4.870 TL.", "pair_id": "p070", "peak_word": 10}
+{"id": "q_mi_071", "kind": "mi_soru", "text": "Telefon numaranız 0555 555 55 55 mi?", "pair_id": "p071", "peak_word": 14}
+{"id": "q_duz_071", "kind": "duz_eslesik", "text": "Telefon numaranız 0555 555 55 55.", "pair_id": "p071", "peak_word": 14}
+{"id": "q_mi_072", "kind": "mi_soru", "text": "E-posta adresiniz ali.kaya@posta.com mu?", "pair_id": "p072", "peak_word": 8}
+{"id": "q_duz_072", "kind": "duz_eslesik", "text": "E-posta adresiniz ali.kaya@posta.com.", "pair_id": "p072", "peak_word": 8}
+{"id": "q_mi_073", "kind": "mi_soru", "text": "Doğum tarihiniz 14.02.1968 mi?", "pair_id": "p073", "peak_word": 9}
+{"id": "q_duz_073", "kind": "duz_eslesik", "text": "Doğum tarihiniz 14.02.1968.", "pair_id": "p073", "peak_word": 9}
+{"id": "q_mi_074", "kind": "mi_soru", "text": "Randevunuz Dr. Selin Arslan'dan mı?", "pair_id": "p074", "peak_word": 3}
+{"id": "q_duz_074", "kind": "duz_eslesik", "text": "Randevunuz Dr. Selin Arslan'dan.", "pair_id": "p074", "peak_word": 3}
+{"id": "q_mi_075", "kind": "mi_soru", "text": "Kan tahlili için aç mı gelmem gerekiyor?", "pair_id": "p075", "peak_word": 3}
+{"id": "q_duz_075", "kind": "duz_eslesik", "text": "Kan tahlili için aç gelmem gerekiyor.", "pair_id": "p075", "peak_word": 3}
+{"id": "q_mi_076", "kind": "mi_soru", "text": "Bu ilacı yemekten önce mi içeceğim?", "pair_id": "p076", "peak_word": 3}
+{"id": "q_duz_076", "kind": "duz_eslesik", "text": "Bu ilacı yemekten önce içeceğim.", "pair_id": "p076", "peak_word": 3}
+{"id": "q_mi_077", "kind": "mi_soru", "text": "Kontrol randevum 18 Aralık Perşembe mi?", "pair_id": "p077", "peak_word": 5}
+{"id": "q_duz_077", "kind": "duz_eslesik", "text": "Kontrol randevum 18 Aralık Perşembe.", "pair_id": "p077", "peak_word": 5}
+{"id": "q_mi_078", "kind": "mi_soru", "text": "MR sonuçlarım çıktı mı?", "pair_id": "p078", "peak_word": 3}
+{"id": "q_duz_078", "kind": "duz_eslesik", "text": "MR sonuçlarım çıktı.", "pair_id": "p078", "peak_word": 3}
+{"id": "q_mi_079", "kind": "mi_soru", "text": "Diş hekimi dolguyu bugün mü yapacak?", "pair_id": "p079", "peak_word": 3}
+{"id": "q_duz_079", "kind": "duz_eslesik", "text": "Diş hekimi dolguyu bugün yapacak.", "pair_id": "p079", "peak_word": 3}
+{"id": "q_mi_080", "kind": "mi_soru", "text": "Ateşi hâlâ 38,5 derece mi?", "pair_id": "p080", "peak_word": 5}
+{"id": "q_duz_080", "kind": "duz_eslesik", "text": "Ateşi hâlâ 38,5 derece.", "pair_id": "p080", "peak_word": 5}
+{"id": "q_mi_081", "kind": "mi_soru", "text": "Raporunuz 3 günlük mü?", "pair_id": "p081", "peak_word": 2}
+{"id": "q_duz_081", "kind": "duz_eslesik", "text": "Raporunuz 3 günlük.", "pair_id": "p081", "peak_word": 2}
+{"id": "q_mi_082", "kind": "mi_soru", "text": "Tansiyonunuz düzenli mi?", "pair_id": "p082", "peak_word": 1}
+{"id": "q_duz_082", "kind": "duz_eslesik", "text": "Tansiyonunuz düzenli.", "pair_id": "p082", "peak_word": 1}
+{"id": "q_mi_083", "kind": "mi_soru", "text": "Fizik tedavi seanslarına her gün mü gideceksiniz?", "pair_id": "p083", "peak_word": 4}
+{"id": "q_duz_083", "kind": "duz_eslesik", "text": "Fizik tedavi seanslarına her gün gideceksiniz.", "pair_id": "p083", "peak_word": 4}
+{"id": "q_mi_084", "kind": "mi_soru", "text": "Reçeteniz e-Nabız'a düştü mü?", "pair_id": "p084", "peak_word": 2}
+{"id": "q_duz_084", "kind": "duz_eslesik", "text": "Reçeteniz e-Nabız'a düştü.", "pair_id": "p084", "peak_word": 2}
+{"id": "q_mi_085", "kind": "mi_soru", "text": "Ameliyattan sonra 2 gece hastanede mi kalacak?", "pair_id": "p085", "peak_word": 4}
+{"id": "q_duz_085", "kind": "duz_eslesik", "text": "Ameliyattan sonra 2 gece hastanede kalacak.", "pair_id": "p085", "peak_word": 4}
+{"id": "q_mi_086", "kind": "mi_soru", "text": "Annemin şekeri yine mi yükselmiş?", "pair_id": "p086", "peak_word": 2}
+{"id": "q_duz_086", "kind": "duz_eslesik", "text": "Annemin şekeri yine yükselmiş.", "pair_id": "p086", "peak_word": 2}
+{"id": "q_mi_087", "kind": "mi_soru", "text": "Doktor Bey bugün ameliyatta mı?", "pair_id": "p087", "peak_word": 3}
+{"id": "q_duz_087", "kind": "duz_eslesik", "text": "Doktor Bey bugün ameliyatta.", "pair_id": "p087", "peak_word": 3}
+{"id": "q_mi_088", "kind": "mi_soru", "text": "Bu şurubu çocuğa günde 3 kez mi vereceğim?", "pair_id": "p088", "peak_word": 5}
+{"id": "q_duz_088", "kind": "duz_eslesik", "text": "Bu şurubu çocuğa günde 3 kez vereceğim.", "pair_id": "p088", "peak_word": 5}
+{"id": "q_mi_089", "kind": "mi_soru", "text": "Sigortam bu tedaviyi karşılıyor mu?", "pair_id": "p089", "peak_word": 3}
+{"id": "q_duz_089", "kind": "duz_eslesik", "text": "Sigortam bu tedaviyi karşılıyor.", "pair_id": "p089", "peak_word": 3}
+{"id": "q_mi_090", "kind": "mi_soru", "text": "Aile hekimine randevusuz gidebilir miyim?", "pair_id": "p090", "peak_word": 3}
+{"id": "q_duz_090", "kind": "duz_eslesik", "text": "Aile hekimine randevusuz gidebilirim.", "pair_id": "p090", "peak_word": 3}
+{"id": "q_mi_091", "kind": "mi_soru", "text": "Babamın tahlil sonuçları temiz mi çıktı?", "pair_id": "p091", "peak_word": 3}
+{"id": "q_duz_091", "kind": "duz_eslesik", "text": "Babamın tahlil sonuçları temiz çıktı.", "pair_id": "p091", "peak_word": 3}
+{"id": "q_mi_092", "kind": "mi_soru", "text": "Bel ağrınız geçti mi?", "pair_id": "p092", "peak_word": 2}
+{"id": "q_duz_092", "kind": "duz_eslesik", "text": "Bel ağrınız geçti.", "pair_id": "p092", "peak_word": 2}
+{"id": "q_mi_093", "kind": "mi_soru", "text": "Muayene ücreti 1.750 TL mi?", "pair_id": "p093", "peak_word": 6}
+{"id": "q_duz_093", "kind": "duz_eslesik", "text": "Muayene ücreti 1.750 TL.", "pair_id": "p093", "peak_word": 6}
+{"id": "q_mi_094", "kind": "mi_soru", "text": "Grip aşısını bu yıl yaptırdınız mı?", "pair_id": "p094", "peak_word": 4}
+{"id": "q_duz_094", "kind": "duz_eslesik", "text": "Grip aşısını bu yıl yaptırdınız.", "pair_id": "p094", "peak_word": 4}
+{"id": "q_mi_095", "kind": "mi_soru", "text": "Hastaneye yatış saat 07:30'da mı?", "pair_id": "p095", "peak_word": 4}
+{"id": "q_duz_095", "kind": "duz_eslesik", "text": "Hastaneye yatış saat 07:30'da.", "pair_id": "p095", "peak_word": 4}
+{"id": "q_mi_096", "kind": "mi_soru", "text": "Bu ilacın dozu 500 mg mı?", "pair_id": "p096", "peak_word": 5}
+{"id": "q_duz_096", "kind": "duz_eslesik", "text": "Bu ilacın dozu 500 mg.", "pair_id": "p096", "peak_word": 5}
+{"id": "q_mi_097", "kind": "mi_soru", "text": "Kargo bugün dağıtıma çıktı mı?", "pair_id": "p097", "peak_word": 3}
+{"id": "q_duz_097", "kind": "duz_eslesik", "text": "Kargo bugün dağıtıma çıktı.", "pair_id": "p097", "peak_word": 3}
+{"id": "q_mi_098", "kind": "mi_soru", "text": "Kurye paketi kapıcıya mı bırakmış?", "pair_id": "p098", "peak_word": 2}
+{"id": "q_duz_098", "kind": "duz_eslesik", "text": "Kurye paketi kapıcıya bırakmış.", "pair_id": "p098", "peak_word": 2}
+{"id": "q_mi_099", "kind": "mi_soru", "text": "Gönderiniz Ankara transfer merkezinde mi bekliyor?", "pair_id": "p099", "peak_word": 3}
+{"id": "q_duz_099", "kind": "duz_eslesik", "text": "Gönderiniz Ankara transfer merkezinde bekliyor.", "pair_id": "p099", "peak_word": 3}
+{"id": "q_mi_100", "kind": "mi_soru", "text": "İade kodu SMS ile mi gelecek?", "pair_id": "p100", "peak_word": 3}
+{"id": "q_duz_100", "kind": "duz_eslesik", "text": "İade kodu SMS ile gelecek.", "pair_id": "p100", "peak_word": 3}
+{"id": "q_mi_101", "kind": "mi_soru", "text": "Koli 12 kilodan ağır mı?", "pair_id": "p101", "peak_word": 4}
+{"id": "q_duz_101", "kind": "duz_eslesik", "text": "Koli 12 kilodan ağır.", "pair_id": "p101", "peak_word": 4}
+{"id": "q_mi_102", "kind": "mi_soru", "text": "Kargo ücretini alıcı mı ödeyecek?", "pair_id": "p102", "peak_word": 2}
+{"id": "q_duz_102", "kind": "duz_eslesik", "text": "Kargo ücretini alıcı ödeyecek.", "pair_id": "p102", "peak_word": 2}
+{"id": "q_mi_103", "kind": "mi_soru", "text": "Siparişim 2 gündür aynı şubede mi duruyor?", "pair_id": "p103", "peak_word": 4}
+{"id": "q_duz_103", "kind": "duz_eslesik", "text": "Siparişim 2 gündür aynı şubede duruyor.", "pair_id": "p103", "peak_word": 4}
+{"id": "q_mi_104", "kind": "mi_soru", "text": "Teslimat saat 13:00 ile 17:00 arasında mı olacak?", "pair_id": "p104", "peak_word": 7}
+{"id": "q_duz_104", "kind": "duz_eslesik", "text": "Teslimat saat 13:00 ile 17:00 arasında olacak.", "pair_id": "p104", "peak_word": 7}
+{"id": "q_mi_105", "kind": "mi_soru", "text": "Paketi komşunuz mu teslim aldı?", "pair_id": "p105", "peak_word": 1}
+{"id": "q_duz_105", "kind": "duz_eslesik", "text": "Paketi komşunuz teslim aldı.", "pair_id": "p105", "peak_word": 1}
+{"id": "q_mi_106", "kind": "mi_soru", "text": "Takip numarası 7 ile mi başlıyor?", "pair_id": "p106", "peak_word": 3}
+{"id": "q_duz_106", "kind": "duz_eslesik", "text": "Takip numarası 7 ile başlıyor.", "pair_id": "p106", "peak_word": 3}
+{"id": "q_mi_107", "kind": "mi_soru", "text": "Yurt dışından gelen paket gümrükte mi kaldı?", "pair_id": "p107", "peak_word": 4}
+{"id": "q_duz_107", "kind": "duz_eslesik", "text": "Yurt dışından gelen paket gümrükte kaldı.", "pair_id": "p107", "peak_word": 4}
+{"id": "q_mi_108", "kind": "mi_soru", "text": "Kapıda ödeme için 25 TL ek ücret var mı?", "pair_id": "p108", "peak_word": 8}
+{"id": "q_duz_108", "kind": "duz_eslesik", "text": "Kapıda ödeme için 25 TL ek ücret var.", "pair_id": "p108", "peak_word": 8}
+{"id": "q_mi_109", "kind": "mi_soru", "text": "Teslimat adresi Cumhuriyet Mah. 23. Sok. No: 7 mi?", "pair_id": "p109", "peak_word": 8}
+{"id": "q_duz_109", "kind": "duz_eslesik", "text": "Teslimat adresi Cumhuriyet Mah. 23. Sok. No: 7.", "pair_id": "p109", "peak_word": 8}
+{"id": "q_mi_110", "kind": "mi_soru", "text": "Sizi kargo firması 0216 555 50 50 numarasından mı aradı?", "pair_id": "p110", "peak_word": 14}
+{"id": "q_duz_110", "kind": "duz_eslesik", "text": "Sizi kargo firması 0216 555 50 50 numarasından aradı.", "pair_id": "p110", "peak_word": 14}
+{"id": "q_mi_111", "kind": "mi_soru", "text": "Sipariş numaranız 7834512 mi?", "pair_id": "p111", "peak_word": 8}
+{"id": "q_duz_111", "kind": "duz_eslesik", "text": "Sipariş numaranız 7834512.", "pair_id": "p111", "peak_word": 8}
+{"id": "q_mi_112", "kind": "mi_soru", "text": "Paketin ağırlığı 2,3 kg mı?", "pair_id": "p112", "peak_word": 5}
+{"id": "q_duz_112", "kind": "duz_eslesik", "text": "Paketin ağırlığı 2,3 kg.", "pair_id": "p112", "peak_word": 5}
+{"id": "q_mi_113", "kind": "mi_soru", "text": "İzmir uçağı 40 dakika rötarlı mı?", "pair_id": "p113", "peak_word": 4}
+{"id": "q_duz_113", "kind": "duz_eslesik", "text": "İzmir uçağı 40 dakika rötarlı.", "pair_id": "p113", "peak_word": 4}
+{"id": "q_mi_114", "kind": "mi_soru", "text": "Otelde kahvaltı fiyata dahil mi?", "pair_id": "p114", "peak_word": 3}
+{"id": "q_duz_114", "kind": "duz_eslesik", "text": "Otelde kahvaltı fiyata dahil.", "pair_id": "p114", "peak_word": 3}
+{"id": "q_mi_115", "kind": "mi_soru", "text": "Biletler gidiş dönüş mü?", "pair_id": "p115", "peak_word": 2}
+{"id": "q_duz_115", "kind": "duz_eslesik", "text": "Biletler gidiş dönüş.", "pair_id": "p115", "peak_word": 2}
+{"id": "q_mi_116", "kind": "mi_soru", "text": "Pasaportunu çantana koydun mu?", "pair_id": "p116", "peak_word": 2}
+{"id": "q_duz_116", "kind": "duz_eslesik", "text": "Pasaportunu çantana koydun.", "pair_id": "p116", "peak_word": 2}
+{"id": "q_mi_117", "kind": "mi_soru", "text": "Antalya'ya arabayla mı gideceksiniz?", "pair_id": "p117", "peak_word": 1}
+{"id": "q_duz_117", "kind": "duz_eslesik", "text": "Antalya'ya arabayla gideceksiniz.", "pair_id": "p117", "peak_word": 1}
+{"id": "q_mi_118", "kind": "mi_soru", "text": "Feribot saat 18.15'te mi kalkıyor?", "pair_id": "p118", "peak_word": 5}
+{"id": "q_duz_118", "kind": "duz_eslesik", "text": "Feribot saat 18.15'te kalkıyor.", "pair_id": "p118", "peak_word": 5}
+{"id": "q_mi_119", "kind": "mi_soru", "text": "Bavulunuz 23 kilonun üstünde mi?", "pair_id": "p119", "peak_word": 4}
+{"id": "q_duz_119", "kind": "duz_eslesik", "text": "Bavulunuz 23 kilonun üstünde.", "pair_id": "p119", "peak_word": 4}
+{"id": "q_mi_120", "kind": "mi_soru", "text": "Kapadokya'da 2 gece mi kalacağız?", "pair_id": "p120", "peak_word": 2}
+{"id": "q_duz_120", "kind": "duz_eslesik", "text": "Kapadokya'da 2 gece kalacağız.", "pair_id": "p120", "peak_word": 2}
+{"id": "q_mi_121", "kind": "mi_soru", "text": "Hızlı tren Eskişehir'de duruyor mu?", "pair_id": "p121", "peak_word": 3}
+{"id": "q_duz_121", "kind": "duz_eslesik", "text": "Hızlı tren Eskişehir'de duruyor.", "pair_id": "p121", "peak_word": 3}
+{"id": "q_mi_122", "kind": "mi_soru", "text": "Rezervasyonu Ayşe Hanım adına mı yaptınız?", "pair_id": "p122", "peak_word": 3}
+{"id": "q_duz_122", "kind": "duz_eslesik", "text": "Rezervasyonu Ayşe Hanım adına yaptınız.", "pair_id": "p122", "peak_word": 3}
+{"id": "q_mi_123", "kind": "mi_soru", "text": "Havalimanına metroyla mı gideceksin?", "pair_id": "p123", "peak_word": 1}
+{"id": "q_duz_123", "kind": "duz_eslesik", "text": "Havalimanına metroyla gideceksin.", "pair_id": "p123", "peak_word": 1}
+{"id": "q_mi_124", "kind": "mi_soru", "text": "Odamız deniz manzaralı mı?", "pair_id": "p124", "peak_word": 2}
+{"id": "q_duz_124", "kind": "duz_eslesik", "text": "Odamız deniz manzaralı.", "pair_id": "p124", "peak_word": 2}
+{"id": "q_mi_125", "kind": "mi_soru", "text": "Otobüs Bolu'da yarım saat mola veriyor mu?", "pair_id": "p125", "peak_word": 5}
+{"id": "q_duz_125", "kind": "duz_eslesik", "text": "Otobüs Bolu'da yarım saat mola veriyor.", "pair_id": "p125", "peak_word": 5}
+{"id": "q_mi_126", "kind": "mi_soru", "text": "Tatilde Bodrum'a uğrayacak mıyız?", "pair_id": "p126", "peak_word": 2}
+{"id": "q_duz_126", "kind": "duz_eslesik", "text": "Tatilde Bodrum'a uğrayacağız.", "pair_id": "p126", "peak_word": 2}
+{"id": "q_mi_127", "kind": "mi_soru", "text": "Otelden çıkış saati 12:00 mi?", "pair_id": "p127", "peak_word": 4}
+{"id": "q_duz_127", "kind": "duz_eslesik", "text": "Otelden çıkış saati 12:00.", "pair_id": "p127", "peak_word": 4}
+{"id": "q_mi_128", "kind": "mi_soru", "text": "Gece otobüsü sabah 6'da mı varıyor?", "pair_id": "p128", "peak_word": 3}
+{"id": "q_duz_128", "kind": "duz_eslesik", "text": "Gece otobüsü sabah 6'da varıyor.", "pair_id": "p128", "peak_word": 3}
+{"id": "q_mi_129", "kind": "mi_soru", "text": "Yolculuk 9 saat mi sürüyor?", "pair_id": "p129", "peak_word": 2}
+{"id": "q_duz_129", "kind": "duz_eslesik", "text": "Yolculuk 9 saat sürüyor.", "pair_id": "p129", "peak_word": 2}
+{"id": "q_mi_130", "kind": "mi_soru", "text": "Trabzon'da hava yağmurlu mu?", "pair_id": "p130", "peak_word": 2}
+{"id": "q_duz_130", "kind": "duz_eslesik", "text": "Trabzon'da hava yağmurlu.", "pair_id": "p130", "peak_word": 2}
+{"id": "q_mi_131", "kind": "mi_soru", "text": "Tur rehberi bizi otelden mi alacak?", "pair_id": "p131", "peak_word": 3}
+{"id": "q_duz_131", "kind": "duz_eslesik", "text": "Tur rehberi bizi otelden alacak.", "pair_id": "p131", "peak_word": 3}
+{"id": "q_mi_132", "kind": "mi_soru", "text": "Plakanız 34 ABC 123 mü?", "pair_id": "p132", "peak_word": 8}
+{"id": "q_duz_132", "kind": "duz_eslesik", "text": "Plakanız 34 ABC 123.", "pair_id": "p132", "peak_word": 8}
+{"id": "q_mi_133", "kind": "mi_soru", "text": "Veli toplantısı çarşamba saat 16.00'da mı?", "pair_id": "p133", "peak_word": 5}
+{"id": "q_duz_133", "kind": "duz_eslesik", "text": "Veli toplantısı çarşamba saat 16.00'da.", "pair_id": "p133", "peak_word": 5}
+{"id": "q_mi_134", "kind": "mi_soru", "text": "Oğlun ödevini bitirdi mi?", "pair_id": "p134", "peak_word": 2}
+{"id": "q_duz_134", "kind": "duz_eslesik", "text": "Oğlun ödevini bitirdi.", "pair_id": "p134", "peak_word": 2}
+{"id": "q_mi_135", "kind": "mi_soru", "text": "Servis çocukları 7.45'te mi alıyor?", "pair_id": "p135", "peak_word": 4}
+{"id": "q_duz_135", "kind": "duz_eslesik", "text": "Servis çocukları 7.45'te alıyor.", "pair_id": "p135", "peak_word": 4}
+{"id": "q_mi_136", "kind": "mi_soru", "text": "Matematik sınavı bu cuma mı?", "pair_id": "p136", "peak_word": 3}
+{"id": "q_duz_136", "kind": "duz_eslesik", "text": "Matematik sınavı bu cuma.", "pair_id": "p136", "peak_word": 3}
+{"id": "q_mi_137", "kind": "mi_soru", "text": "Karne notları sisteme girildi mi?", "pair_id": "p137", "peak_word": 3}
+{"id": "q_duz_137", "kind": "duz_eslesik", "text": "Karne notları sisteme girildi.", "pair_id": "p137", "peak_word": 3}
+{"id": "q_mi_138", "kind": "mi_soru", "text": "Kızın İngilizce sınavından 95 mi aldı?", "pair_id": "p138", "peak_word": 4}
+{"id": "q_duz_138", "kind": "duz_eslesik", "text": "Kızın İngilizce sınavından 95 aldı.", "pair_id": "p138", "peak_word": 4}
+{"id": "q_mi_139", "kind": "mi_soru", "text": "Okulda yarın tören var mı?", "pair_id": "p139", "peak_word": 3}
+{"id": "q_duz_139", "kind": "duz_eslesik", "text": "Okulda yarın tören var.", "pair_id": "p139", "peak_word": 3}
+{"id": "q_mi_140", "kind": "mi_soru", "text": "LGS'ye bu yıl mı girecek?", "pair_id": "p140", "peak_word": 4}
+{"id": "q_duz_140", "kind": "duz_eslesik", "text": "LGS'ye bu yıl girecek.", "pair_id": "p140", "peak_word": 4}
+{"id": "q_mi_141", "kind": "mi_soru", "text": "Kayıt için kimlik fotokopisi gerekiyor mu?", "pair_id": "p141", "peak_word": 4}
+{"id": "q_duz_141", "kind": "duz_eslesik", "text": "Kayıt için kimlik fotokopisi gerekiyor.", "pair_id": "p141", "peak_word": 4}
+{"id": "q_mi_142", "kind": "mi_soru", "text": "Üniversite tercihlerini annenle mi yaptın?", "pair_id": "p142", "peak_word": 2}
+{"id": "q_duz_142", "kind": "duz_eslesik", "text": "Üniversite tercihlerini annenle yaptın.", "pair_id": "p142", "peak_word": 2}
+{"id": "q_mi_143", "kind": "mi_soru", "text": "Yarıyıl tatili 2 hafta mı?", "pair_id": "p143", "peak_word": 3}
+{"id": "q_duz_143", "kind": "duz_eslesik", "text": "Yarıyıl tatili 2 hafta.", "pair_id": "p143", "peak_word": 3}
+{"id": "q_mi_144", "kind": "mi_soru", "text": "Bu dönem resim dersine yeni öğretmen mi geldi?", "pair_id": "p144", "peak_word": 5}
+{"id": "q_duz_144", "kind": "duz_eslesik", "text": "Bu dönem resim dersine yeni öğretmen geldi.", "pair_id": "p144", "peak_word": 5}
+{"id": "q_mi_145", "kind": "mi_soru", "text": "Tez teslim tarihi 30 Haziran mı?", "pair_id": "p145", "peak_word": 4}
+{"id": "q_duz_145", "kind": "duz_eslesik", "text": "Tez teslim tarihi 30 Haziran.", "pair_id": "p145", "peak_word": 4}
+{"id": "q_mi_146", "kind": "mi_soru", "text": "Kütüphane sınav haftasında 24 saat açık mı?", "pair_id": "p146", "peak_word": 6}
+{"id": "q_duz_146", "kind": "duz_eslesik", "text": "Kütüphane sınav haftasında 24 saat açık.", "pair_id": "p146", "peak_word": 6}
+{"id": "q_mi_147", "kind": "mi_soru", "text": "Çocuğunuz öğle yemeğini okulda mı yiyor?", "pair_id": "p147", "peak_word": 3}
+{"id": "q_duz_147", "kind": "duz_eslesik", "text": "Çocuğunuz öğle yemeğini okulda yiyor.", "pair_id": "p147", "peak_word": 3}
+{"id": "q_mi_148", "kind": "mi_soru", "text": "KPSS sonuçları 12 Temmuz'da mı açıklanacak?", "pair_id": "p148", "peak_word": 7}
+{"id": "q_duz_148", "kind": "duz_eslesik", "text": "KPSS sonuçları 12 Temmuz'da açıklanacak.", "pair_id": "p148", "peak_word": 7}
+{"id": "q_mi_149", "kind": "mi_soru", "text": "Sunumu bugün mü bitirmemiz gerekiyor?", "pair_id": "p149", "peak_word": 1}
+{"id": "q_duz_149", "kind": "duz_eslesik", "text": "Sunumu bugün bitirmemiz gerekiyor.", "pair_id": "p149", "peak_word": 1}
+{"id": "q_mi_150", "kind": "mi_soru", "text": "Yeni müdür pazartesi mi başlıyor?", "pair_id": "p150", "peak_word": 2}
+{"id": "q_duz_150", "kind": "duz_eslesik", "text": "Yeni müdür pazartesi başlıyor.", "pair_id": "p150", "peak_word": 2}
+{"id": "q_mi_151", "kind": "mi_soru", "text": "Proje bütçesi 250 bin lira mı?", "pair_id": "p151", "peak_word": 6}
+{"id": "q_duz_151", "kind": "duz_eslesik", "text": "Proje bütçesi 250 bin lira.", "pair_id": "p151", "peak_word": 6}
+{"id": "q_mi_152", "kind": "mi_soru", "text": "Toplantıyı çevrim içi mi yapacağız?", "pair_id": "p152", "peak_word": 2}
+{"id": "q_duz_152", "kind": "duz_eslesik", "text": "Toplantıyı çevrim içi yapacağız.", "pair_id": "p152", "peak_word": 2}
+{"id": "q_mi_153", "kind": "mi_soru", "text": "Raporu Kemal Bey'e gönderdin mi?", "pair_id": "p153", "peak_word": 3}
+{"id": "q_duz_153", "kind": "duz_eslesik", "text": "Raporu Kemal Bey'e gönderdin.", "pair_id": "p153", "peak_word": 3}
+{"id": "q_mi_154", "kind": "mi_soru", "text": "Yıllık iznini ağustosta mı kullanacaksın?", "pair_id": "p154", "peak_word": 2}
+{"id": "q_duz_154", "kind": "duz_eslesik", "text": "Yıllık iznini ağustosta kullanacaksın.", "pair_id": "p154", "peak_word": 2}
+{"id": "q_mi_155", "kind": "mi_soru", "text": "Müşteri sözleşmeyi imzaladı mı?", "pair_id": "p155", "peak_word": 2}
+{"id": "q_duz_155", "kind": "duz_eslesik", "text": "Müşteri sözleşmeyi imzaladı.", "pair_id": "p155", "peak_word": 2}
+{"id": "q_mi_156", "kind": "mi_soru", "text": "Ofiste klima yine mi bozuldu?", "pair_id": "p156", "peak_word": 2}
+{"id": "q_duz_156", "kind": "duz_eslesik", "text": "Ofiste klima yine bozuldu.", "pair_id": "p156", "peak_word": 2}
+{"id": "q_mi_157", "kind": "mi_soru", "text": "Cuma günleri evden mi çalışıyoruz?", "pair_id": "p157", "peak_word": 2}
+{"id": "q_duz_157", "kind": "duz_eslesik", "text": "Cuma günleri evden çalışıyoruz.", "pair_id": "p157", "peak_word": 2}
+{"id": "q_mi_158", "kind": "mi_soru", "text": "Maaş zammı %25 mi olacak?", "pair_id": "p158", "peak_word": 4}
+{"id": "q_duz_158", "kind": "duz_eslesik", "text": "Maaş zammı %25 olacak.", "pair_id": "p158", "peak_word": 4}
+{"id": "q_mi_159", "kind": "mi_soru", "text": "Stajyerler bu hafta mı geliyor?", "pair_id": "p159", "peak_word": 2}
+{"id": "q_duz_159", "kind": "duz_eslesik", "text": "Stajyerler bu hafta geliyor.", "pair_id": "p159", "peak_word": 2}
+{"id": "q_mi_160", "kind": "mi_soru", "text": "İş görüşmesi saat 11:00'de mi?", "pair_id": "p160", "peak_word": 4}
+{"id": "q_duz_160", "kind": "duz_eslesik", "text": "İş görüşmesi saat 11:00'de.", "pair_id": "p160", "peak_word": 4}
+{"id": "q_mi_161", "kind": "mi_soru", "text": "Teklifi müşteriye ilettiniz mi?", "pair_id": "p161", "peak_word": 2}
+{"id": "q_duz_161", "kind": "duz_eslesik", "text": "Teklifi müşteriye ilettiniz.", "pair_id": "p161", "peak_word": 2}
+{"id": "q_mi_162", "kind": "mi_soru", "text": "Şirket servisi sabah 8'de mi kalkıyor?", "pair_id": "p162", "peak_word": 3}
+{"id": "q_duz_162", "kind": "duz_eslesik", "text": "Şirket servisi sabah 8'de kalkıyor.", "pair_id": "p162", "peak_word": 3}
+{"id": "q_mi_163", "kind": "mi_soru", "text": "Bu dosyayı ben mi hazırlayacağım?", "pair_id": "p163", "peak_word": 2}
+{"id": "q_duz_163", "kind": "duz_eslesik", "text": "Bu dosyayı ben hazırlayacağım.", "pair_id": "p163", "peak_word": 2}
+{"id": "q_mi_164", "kind": "mi_soru", "text": "Tedarikçi faturayı kesti mi?", "pair_id": "p164", "peak_word": 2}
+{"id": "q_duz_164", "kind": "duz_eslesik", "text": "Tedarikçi faturayı kesti.", "pair_id": "p164", "peak_word": 2}
+{"id": "q_mi_165", "kind": "mi_soru", "text": "Bu hafta gece vardiyasında mısın?", "pair_id": "p165", "peak_word": 3}
+{"id": "q_duz_165", "kind": "duz_eslesik", "text": "Bu hafta gece vardiyasındasın.", "pair_id": "p165", "peak_word": 3}
+{"id": "q_mi_166", "kind": "mi_soru", "text": "Bordrolar e-Devlet'e yüklendi mi?", "pair_id": "p166", "peak_word": 2}
+{"id": "q_duz_166", "kind": "duz_eslesik", "text": "Bordrolar e-Devlet'e yüklendi.", "pair_id": "p166", "peak_word": 2}
+{"id": "q_mi_167", "kind": "mi_soru", "text": "Kargo firmasıyla yeni sözleşmeyi ocakta mı yapıyoruz?", "pair_id": "p167", "peak_word": 4}
+{"id": "q_duz_167", "kind": "duz_eslesik", "text": "Kargo firmasıyla yeni sözleşmeyi ocakta yapıyoruz.", "pair_id": "p167", "peak_word": 4}
+{"id": "q_mi_168", "kind": "mi_soru", "text": "Toplantı odası 14:00'e kadar dolu mu?", "pair_id": "p168", "peak_word": 5}
+{"id": "q_duz_168", "kind": "duz_eslesik", "text": "Toplantı odası 14:00'e kadar dolu.", "pair_id": "p168", "peak_word": 5}
+{"id": "q_mi_169", "kind": "mi_soru", "text": "Kemal Bey bugün izinli mi?", "pair_id": "p169", "peak_word": 3}
+{"id": "q_duz_169", "kind": "duz_eslesik", "text": "Kemal Bey bugün izinli.", "pair_id": "p169", "peak_word": 3}
+{"id": "q_mi_170", "kind": "mi_soru", "text": "Hafta sonu nöbetçi sen misin?", "pair_id": "p170", "peak_word": 3}
+{"id": "q_duz_170", "kind": "duz_eslesik", "text": "Hafta sonu nöbetçi sensin.", "pair_id": "p170", "peak_word": 3}
+{"id": "q_mi_171", "kind": "mi_soru", "text": "PTT şubesi 17:30'da mı kapanıyor?", "pair_id": "p171", "peak_word": 6}
+{"id": "q_duz_171", "kind": "duz_eslesik", "text": "PTT şubesi 17:30'da kapanıyor.", "pair_id": "p171", "peak_word": 6}
+{"id": "q_mi_172", "kind": "mi_soru", "text": "Saat 23:59'a kadar başvuru yapılabiliyor mu?", "pair_id": "p172", "peak_word": 7}
+{"id": "q_duz_172", "kind": "duz_eslesik", "text": "Saat 23:59'a kadar başvuru yapılabiliyor.", "pair_id": "p172", "peak_word": 7}
+{"id": "q_mi_173", "kind": "mi_soru", "text": "Fatura son ödeme tarihi 28.12.2026 mı?", "pair_id": "p173", "peak_word": 10}
+{"id": "q_duz_173", "kind": "duz_eslesik", "text": "Fatura son ödeme tarihi 28.12.2026.", "pair_id": "p173", "peak_word": 10}
+{"id": "q_mi_174", "kind": "mi_soru", "text": "Kira 1 Nisan'dan itibaren 18.500 TL mi olacak?", "pair_id": "p174", "peak_word": 9}
+{"id": "q_duz_174", "kind": "duz_eslesik", "text": "Kira 1 Nisan'dan itibaren 18.500 TL olacak.", "pair_id": "p174", "peak_word": 9}
+{"id": "q_mi_175", "kind": "mi_soru", "text": "Faturadaki KDV oranı %20 mi?", "pair_id": "p175", "peak_word": 6}
+{"id": "q_duz_175", "kind": "duz_eslesik", "text": "Faturadaki KDV oranı %20.", "pair_id": "p175", "peak_word": 6}
+{"id": "q_mi_176", "kind": "mi_soru", "text": "Toplantı 5 Mart 2027 Cuma mı?", "pair_id": "p176", "peak_word": 7}
+{"id": "q_duz_176", "kind": "duz_eslesik", "text": "Toplantı 5 Mart 2027 Cuma.", "pair_id": "p176", "peak_word": 7}
+{"id": "q_mi_177", "kind": "mi_soru", "text": "Çorbaya tuz attın mı?", "pair_id": "p177", "peak_word": 2}
+{"id": "q_duz_177", "kind": "duz_eslesik", "text": "Çorbaya tuz attın.", "pair_id": "p177", "peak_word": 2}
+{"id": "q_mi_178", "kind": "mi_soru", "text": "Bu akşam balık mı pişiriyorsun?", "pair_id": "p178", "peak_word": 2}
+{"id": "q_duz_178", "kind": "duz_eslesik", "text": "Bu akşam balık pişiriyorsun.", "pair_id": "p178", "peak_word": 2}
+{"id": "q_mi_179", "kind": "mi_soru", "text": "Kek fırında 40 dakika mı kalacak?", "pair_id": "p179", "peak_word": 3}
+{"id": "q_duz_179", "kind": "duz_eslesik", "text": "Kek fırında 40 dakika kalacak.", "pair_id": "p179", "peak_word": 3}
+{"id": "q_mi_180", "kind": "mi_soru", "text": "Restoranda 4 kişilik masa ayırttın mı?", "pair_id": "p180", "peak_word": 4}
+{"id": "q_duz_180", "kind": "duz_eslesik", "text": "Restoranda 4 kişilik masa ayırttın.", "pair_id": "p180", "peak_word": 4}
+{"id": "q_mi_181", "kind": "mi_soru", "text": "Mantıyı evde mi yaptınız?", "pair_id": "p181", "peak_word": 1}
+{"id": "q_duz_181", "kind": "duz_eslesik", "text": "Mantıyı evde yaptınız.", "pair_id": "p181", "peak_word": 1}
+{"id": "q_mi_182", "kind": "mi_soru", "text": "Pilav yine mi lapa oldu?", "pair_id": "p182", "peak_word": 1}
+{"id": "q_duz_182", "kind": "duz_eslesik", "text": "Pilav yine lapa oldu.", "pair_id": "p182", "peak_word": 1}
+{"id": "q_mi_183", "kind": "mi_soru", "text": "Kahveni şekerli mi içiyorsun?", "pair_id": "p183", "peak_word": 1}
+{"id": "q_duz_183", "kind": "duz_eslesik", "text": "Kahveni şekerli içiyorsun.", "pair_id": "p183", "peak_word": 1}
+{"id": "q_mi_184", "kind": "mi_soru", "text": "Börek için 2 paket yufka yeter mi?", "pair_id": "p184", "peak_word": 5}
+{"id": "q_duz_184", "kind": "duz_eslesik", "text": "Börek için 2 paket yufka yeter.", "pair_id": "p184", "peak_word": 5}
+{"id": "q_mi_185", "kind": "mi_soru", "text": "Yemeğin acısı çocuklara fazla mı geldi?", "pair_id": "p185", "peak_word": 3}
+{"id": "q_duz_185", "kind": "duz_eslesik", "text": "Yemeğin acısı çocuklara fazla geldi.", "pair_id": "p185", "peak_word": 3}
+{"id": "q_mi_186", "kind": "mi_soru", "text": "Çay demlendi mi?", "pair_id": "p186", "peak_word": 1}
+{"id": "q_duz_186", "kind": "duz_eslesik", "text": "Çay demlendi.", "pair_id": "p186", "peak_word": 1}
+{"id": "q_mi_187", "kind": "mi_soru", "text": "Misafirler vejetaryen mi?", "pair_id": "p187", "peak_word": 1}
+{"id": "q_duz_187", "kind": "duz_eslesik", "text": "Misafirler vejetaryen.", "pair_id": "p187", "peak_word": 1}
+{"id": "q_mi_188", "kind": "mi_soru", "text": "Lokantada hesap 1.380 lira mı tuttu?", "pair_id": "p188", "peak_word": 6}
+{"id": "q_duz_188", "kind": "duz_eslesik", "text": "Lokantada hesap 1.380 lira tuttu.", "pair_id": "p188", "peak_word": 6}
+{"id": "q_mi_189", "kind": "mi_soru", "text": "Bu çorbanın içinde kimyon mu var?", "pair_id": "p189", "peak_word": 3}
+{"id": "q_duz_189", "kind": "duz_eslesik", "text": "Bu çorbanın içinde kimyon var.", "pair_id": "p189", "peak_word": 3}
+{"id": "q_mi_190", "kind": "mi_soru", "text": "Yarın kar yağacak mı?", "pair_id": "p190", "peak_word": 2}
+{"id": "q_duz_190", "kind": "duz_eslesik", "text": "Yarın kar yağacak.", "pair_id": "p190", "peak_word": 2}
+{"id": "q_mi_191", "kind": "mi_soru", "text": "Hava bugün 35°C mi olacak?", "pair_id": "p191", "peak_word": 4}
+{"id": "q_duz_191", "kind": "duz_eslesik", "text": "Hava bugün 35°C olacak.", "pair_id": "p191", "peak_word": 4}
+{"id": "q_mi_192", "kind": "mi_soru", "text": "Dışarıda rüzgâr hâlâ esiyor mu?", "pair_id": "p192", "peak_word": 3}
+{"id": "q_duz_192", "kind": "duz_eslesik", "text": "Dışarıda rüzgâr hâlâ esiyor.", "pair_id": "p192", "peak_word": 3}
+{"id": "q_mi_193", "kind": "mi_soru", "text": "Hafta sonu yağmur mu bekleniyor?", "pair_id": "p193", "peak_word": 2}
+{"id": "q_duz_193", "kind": "duz_eslesik", "text": "Hafta sonu yağmur bekleniyor.", "pair_id": "p193", "peak_word": 2}
+{"id": "q_mi_194", "kind": "mi_soru", "text": "Sabah yollar buzlu muydu?", "pair_id": "p194", "peak_word": 2}
+{"id": "q_duz_194", "kind": "duz_eslesik", "text": "Sabah yollar buzluydu.", "pair_id": "p194", "peak_word": 2}
+{"id": "q_mi_195", "kind": "mi_soru", "text": "Gece sıcaklık sıfırın altına mı düşecek?", "pair_id": "p195", "peak_word": 3}
+{"id": "q_duz_195", "kind": "duz_eslesik", "text": "Gece sıcaklık sıfırın altına düşecek.", "pair_id": "p195", "peak_word": 3}
+{"id": "q_mi_196", "kind": "mi_soru", "text": "Şemsiyeni yanına aldın mı?", "pair_id": "p196", "peak_word": 2}
+{"id": "q_duz_196", "kind": "duz_eslesik", "text": "Şemsiyeni yanına aldın.", "pair_id": "p196", "peak_word": 2}
+{"id": "q_mi_197", "kind": "mi_soru", "text": "İstanbul'da sis yüzünden seferler mi iptal edildi?", "pair_id": "p197", "peak_word": 3}
+{"id": "q_duz_197", "kind": "duz_eslesik", "text": "İstanbul'da sis yüzünden seferler iptal edildi.", "pair_id": "p197", "peak_word": 3}
+{"id": "q_mi_198", "kind": "mi_soru", "text": "Maç bu akşam 20.00'de mi?", "pair_id": "p198", "peak_word": 3}
+{"id": "q_duz_198", "kind": "duz_eslesik", "text": "Maç bu akşam 20.00'de.", "pair_id": "p198", "peak_word": 3}
+{"id": "q_mi_199", "kind": "mi_soru", "text": "Takımımız deplasmanda mı kazandı?", "pair_id": "p199", "peak_word": 1}
+{"id": "q_duz_199", "kind": "duz_eslesik", "text": "Takımımız deplasmanda kazandı.", "pair_id": "p199", "peak_word": 1}
+{"id": "q_mi_200", "kind": "mi_soru", "text": "Spor salonuna her sabah mı gidiyorsun?", "pair_id": "p200", "peak_word": 3}
+{"id": "q_duz_200", "kind": "duz_eslesik", "text": "Spor salonuna her sabah gidiyorsun.", "pair_id": "p200", "peak_word": 3}
+{"id": "q_mi_201", "kind": "mi_soru", "text": "Yüzme kursu 12 ders mi sürüyor?", "pair_id": "p201", "peak_word": 4}
+{"id": "q_duz_201", "kind": "duz_eslesik", "text": "Yüzme kursu 12 ders sürüyor.", "pair_id": "p201", "peak_word": 4}
+{"id": "q_mi_202", "kind": "mi_soru", "text": "Maratonu 4 saatin altında mı bitirdin?", "pair_id": "p202", "peak_word": 3}
+{"id": "q_duz_202", "kind": "duz_eslesik", "text": "Maratonu 4 saatin altında bitirdin.", "pair_id": "p202", "peak_word": 3}
+{"id": "q_mi_203", "kind": "mi_soru", "text": "Hakem penaltı verdi mi?", "pair_id": "p203", "peak_word": 2}
+{"id": "q_duz_203", "kind": "duz_eslesik", "text": "Hakem penaltı verdi.", "pair_id": "p203", "peak_word": 2}
+{"id": "q_mi_204", "kind": "mi_soru", "text": "Yürüyüşe pazar sabahı mı çıkıyoruz?", "pair_id": "p204", "peak_word": 2}
+{"id": "q_duz_204", "kind": "duz_eslesik", "text": "Yürüyüşe pazar sabahı çıkıyoruz.", "pair_id": "p204", "peak_word": 2}
+{"id": "q_mi_205", "kind": "mi_soru", "text": "Bisikletin lastiği patlamış mı?", "pair_id": "p205", "peak_word": 2}
+{"id": "q_duz_205", "kind": "duz_eslesik", "text": "Bisikletin lastiği patlamış.", "pair_id": "p205", "peak_word": 2}
+{"id": "q_mi_206", "kind": "mi_soru", "text": "Zeynep'in düğünü eylülde mi?", "pair_id": "p206", "peak_word": 2}
+{"id": "q_duz_206", "kind": "duz_eslesik", "text": "Zeynep'in düğünü eylülde.", "pair_id": "p206", "peak_word": 2}
+{"id": "q_mi_207", "kind": "mi_soru", "text": "Mert yine mi geç kalmış?", "pair_id": "p207", "peak_word": 1}
+{"id": "q_duz_207", "kind": "duz_eslesik", "text": "Mert yine geç kalmış.", "pair_id": "p207", "peak_word": 1}
+{"id": "q_mi_208", "kind": "mi_soru", "text": "Sinemaya bizimle geliyor musun?", "pair_id": "p208", "peak_word": 2}
+{"id": "q_duz_208", "kind": "duz_eslesik", "text": "Sinemaya bizimle geliyorsun.", "pair_id": "p208", "peak_word": 2}
+{"id": "q_mi_209", "kind": "mi_soru", "text": "Elif'in doğum günü partisine davetli misin?", "pair_id": "p209", "peak_word": 4}
+{"id": "q_duz_209", "kind": "duz_eslesik", "text": "Elif'in doğum günü partisine davetlisin.", "pair_id": "p209", "peak_word": 4}
+{"id": "q_mi_210", "kind": "mi_soru", "text": "Selin'le barıştınız mı?", "pair_id": "p210", "peak_word": 1}
+{"id": "q_duz_210", "kind": "duz_eslesik", "text": "Selin'le barıştınız.", "pair_id": "p210", "peak_word": 1}
+{"id": "q_mi_211", "kind": "mi_soru", "text": "Bu akşam bize uğrayabilir misin?", "pair_id": "p211", "peak_word": 3}
+{"id": "q_duz_211", "kind": "duz_eslesik", "text": "Bu akşam bize uğrayabilirsin.", "pair_id": "p211", "peak_word": 3}
+{"id": "q_mi_212", "kind": "mi_soru", "text": "Hediyeyi beğendi mi?", "pair_id": "p212", "peak_word": 1}
+{"id": "q_duz_212", "kind": "duz_eslesik", "text": "Hediyeyi beğendi.", "pair_id": "p212", "peak_word": 1}
+{"id": "q_mi_213", "kind": "mi_soru", "text": "Okul arkadaşlarınla hâlâ görüşüyor musun?", "pair_id": "p213", "peak_word": 3}
+{"id": "q_duz_213", "kind": "duz_eslesik", "text": "Okul arkadaşlarınla hâlâ görüşüyorsun.", "pair_id": "p213", "peak_word": 3}
+{"id": "q_mi_214", "kind": "mi_soru", "text": "Eski mahalleden Ayten Teyze'yi hatırlıyor musun?", "pair_id": "p214", "peak_word": 4}
+{"id": "q_duz_214", "kind": "duz_eslesik", "text": "Eski mahalleden Ayten Teyze'yi hatırlıyorsun.", "pair_id": "p214", "peak_word": 4}
+{"id": "q_mi_215", "kind": "mi_soru", "text": "Kahve içmeye Moda'ya mı gidiyoruz?", "pair_id": "p215", "peak_word": 2}
+{"id": "q_duz_215", "kind": "duz_eslesik", "text": "Kahve içmeye Moda'ya gidiyoruz.", "pair_id": "p215", "peak_word": 2}
+{"id": "q_mi_216", "kind": "mi_soru", "text": "Burak'la aynı ofiste mi çalışıyorsunuz?", "pair_id": "p216", "peak_word": 2}
+{"id": "q_duz_216", "kind": "duz_eslesik", "text": "Burak'la aynı ofiste çalışıyorsunuz.", "pair_id": "p216", "peak_word": 2}
+{"id": "q_mi_217", "kind": "mi_soru", "text": "Mesajıma cevap vermedin mi?", "pair_id": "p217", "peak_word": 2}
+{"id": "q_duz_217", "kind": "duz_eslesik", "text": "Mesajıma cevap vermedin.", "pair_id": "p217", "peak_word": 2}
+{"id": "q_mi_218", "kind": "mi_soru", "text": "Gülşen'in bebeği doğdu mu?", "pair_id": "p218", "peak_word": 2}
+{"id": "q_duz_218", "kind": "duz_eslesik", "text": "Gülşen'in bebeği doğdu.", "pair_id": "p218", "peak_word": 2}
+{"id": "q_mi_219", "kind": "mi_soru", "text": "Yarınki piknik ertelendi mi?", "pair_id": "p219", "peak_word": 2}
+{"id": "q_duz_219", "kind": "duz_eslesik", "text": "Yarınki piknik ertelendi.", "pair_id": "p219", "peak_word": 2}
+{"id": "q_mi_220", "kind": "mi_soru", "text": "Hafta sonu kampa biz de mi gidiyoruz?", "pair_id": "p220", "peak_word": null}
+{"id": "q_duz_220", "kind": "duz_eslesik", "text": "Hafta sonu kampa biz de gidiyoruz.", "pair_id": "p220", "peak_word": null}
+{"id": "q_mi_221", "kind": "mi_soru", "text": "Toplantıya ben de katılacak mıyım?", "pair_id": "p221", "peak_word": 3}
+{"id": "q_duz_221", "kind": "duz_eslesik", "text": "Toplantıya ben de katılacağım.", "pair_id": "p221", "peak_word": 3}
+{"id": "q_mi_222", "kind": "mi_soru", "text": "Biz de sıraya girecek miyiz?", "pair_id": "p222", "peak_word": 3}
+{"id": "q_duz_222", "kind": "duz_eslesik", "text": "Biz de sıraya gireceğiz.", "pair_id": "p222", "peak_word": 3}
+{"id": "q_mi_223", "kind": "mi_soru", "text": "Komşular gürültüden şikâyet ediyorlar mı?", "pair_id": "p223", "peak_word": 3}
+{"id": "q_duz_223", "kind": "duz_eslesik", "text": "Komşular gürültüden şikâyet ediyorlar.", "pair_id": "p223", "peak_word": 3}
+{"id": "q_mi_224", "kind": "mi_soru", "text": "Çocuklar parkta oynuyorlar mı?", "pair_id": "p224", "peak_word": 2}
+{"id": "q_duz_224", "kind": "duz_eslesik", "text": "Çocuklar parkta oynuyorlar.", "pair_id": "p224", "peak_word": 2}
+{"id": "q_mi_225", "kind": "mi_soru", "text": "Doğru adreste miyim?", "pair_id": "p225", "peak_word": 1}
+{"id": "q_duz_225", "kind": "duz_eslesik", "text": "Doğru adresteyim.", "pair_id": "p225", "peak_word": 1}
+{"id": "q_mi_226", "kind": "mi_soru", "text": "Fazla mı konuşuyorum?", "pair_id": "p226", "peak_word": 0}
+{"id": "q_duz_226", "kind": "duz_eslesik", "text": "Fazla konuşuyorum.", "pair_id": "p226", "peak_word": 0}
+{"id": "q_mi_227", "kind": "mi_soru", "text": "Geç mi kaldık?", "pair_id": "p227", "peak_word": 0}
+{"id": "q_duz_227", "kind": "duz_eslesik", "text": "Geç kaldık.", "pair_id": "p227", "peak_word": 0}
+{"id": "q_mi_228", "kind": "mi_soru", "text": "Size zahmet mi veriyoruz?", "pair_id": "p228", "peak_word": 1}
+{"id": "q_duz_228", "kind": "duz_eslesik", "text": "Size zahmet veriyoruz.", "pair_id": "p228", "peak_word": 1}
+{"id": "q_mi_229", "kind": "mi_soru", "text": "Kapıyı açayım mı?", "pair_id": "p229", "peak_word": 1}
+{"id": "q_duz_229", "kind": "duz_eslesik", "text": "Kapıyı açayım.", "pair_id": "p229", "peak_word": 1}
+{"id": "q_mi_230", "kind": "mi_soru", "text": "Pencereyi kapatalım mı?", "pair_id": "p230", "peak_word": 1}
+{"id": "q_duz_230", "kind": "duz_eslesik", "text": "Pencereyi kapatalım.", "pair_id": "p230", "peak_word": 1}
+{"id": "q_mi_231", "kind": "mi_soru", "text": "Çayı demleyeyim mi?", "pair_id": "p231", "peak_word": 1}
+{"id": "q_duz_231", "kind": "duz_eslesik", "text": "Çayı demleyeyim.", "pair_id": "p231", "peak_word": 1}
+{"id": "q_mi_232", "kind": "mi_soru", "text": "Arabayı ben mi süreyim?", "pair_id": "p232", "peak_word": 1}
+{"id": "q_duz_232", "kind": "duz_eslesik", "text": "Arabayı ben süreyim.", "pair_id": "p232", "peak_word": 1}
+{"id": "q_mi_233", "kind": "mi_soru", "text": "Formu tekrar mı doldurmalıyım?", "pair_id": "p233", "peak_word": 1}
+{"id": "q_duz_233", "kind": "duz_eslesik", "text": "Formu tekrar doldurmalıyım.", "pair_id": "p233", "peak_word": 1}
+{"id": "q_mi_234", "kind": "mi_soru", "text": "Gerçekten bu kadar yorgun muydun?", "pair_id": "p234", "peak_word": 3}
+{"id": "q_duz_234", "kind": "duz_eslesik", "text": "Gerçekten bu kadar yorgundun.", "pair_id": "p234", "peak_word": 3}
+{"id": "q_mi_235", "kind": "mi_soru", "text": "Toplantı salı mıydı?", "pair_id": "p235", "peak_word": 1}
+{"id": "q_duz_235", "kind": "duz_eslesik", "text": "Toplantı salıydı.", "pair_id": "p235", "peak_word": 1}
+{"id": "q_mi_236", "kind": "mi_soru", "text": "Dün akşam evde miydiniz?", "pair_id": "p236", "peak_word": 2}
+{"id": "q_duz_236", "kind": "duz_eslesik", "text": "Dün akşam evdeydiniz.", "pair_id": "p236", "peak_word": 2}
+{"id": "q_mi_237", "kind": "mi_soru", "text": "Anahtarlar sende miydi?", "pair_id": "p237", "peak_word": 1}
+{"id": "q_duz_237", "kind": "duz_eslesik", "text": "Anahtarlar sendeydi.", "pair_id": "p237", "peak_word": 1}
+{"id": "q_mi_238", "kind": "mi_soru", "text": "Hâlâ uyumuyor musun?", "pair_id": "p238", "peak_word": 1}
+{"id": "q_duz_238", "kind": "duz_eslesik", "text": "Hâlâ uyumuyorsun.", "pair_id": "p238", "peak_word": 1}
+{"id": "q_mi_239", "kind": "mi_soru", "text": "Kahvaltıda yumurta yemiyor musunuz?", "pair_id": "p239", "peak_word": 2}
+{"id": "q_duz_239", "kind": "duz_eslesik", "text": "Kahvaltıda yumurta yemiyorsunuz.", "pair_id": "p239", "peak_word": 2}
+{"id": "q_mi_240", "kind": "mi_soru", "text": "Bana inanmıyor musun?", "pair_id": "p240", "peak_word": 1}
+{"id": "q_duz_240", "kind": "duz_eslesik", "text": "Bana inanmıyorsun.", "pair_id": "p240", "peak_word": 1}
+{"id": "q_mi_241", "kind": "mi_soru", "text": "Alarm çalınca hemen kalkmadın mı?", "pair_id": "p241", "peak_word": 3}
+{"id": "q_duz_241", "kind": "duz_eslesik", "text": "Alarm çalınca hemen kalkmadın.", "pair_id": "p241", "peak_word": 3}
+{"id": "q_mi_242", "kind": "mi_soru", "text": "Bu sizin çantanız mı?", "pair_id": "p242", "peak_word": 2}
+{"id": "q_duz_242", "kind": "duz_eslesik", "text": "Bu sizin çantanız.", "pair_id": "p242", "peak_word": 2}
+{"id": "q_mi_243", "kind": "mi_soru", "text": "Yorgun musunuz?", "pair_id": "p243", "peak_word": 0}
+{"id": "q_duz_243", "kind": "duz_eslesik", "text": "Yorgunsunuz.", "pair_id": "p243", "peak_word": 0}
+{"id": "q_mi_244", "kind": "mi_soru", "text": "Bugün çok mu yoğundunuz?", "pair_id": "p244", "peak_word": 1}
+{"id": "q_duz_244", "kind": "duz_eslesik", "text": "Bugün çok yoğundunuz.", "pair_id": "p244", "peak_word": 1}
+{"id": "q_mi_245", "kind": "mi_soru", "text": "Ders çalışırken müzik dinliyor muydun?", "pair_id": "p245", "peak_word": 3}
+{"id": "q_duz_245", "kind": "duz_eslesik", "text": "Ders çalışırken müzik dinliyordun.", "pair_id": "p245", "peak_word": 3}
+{"id": "q_mi_246", "kind": "mi_soru", "text": "Kızınız da bizimle gelecek mi?", "pair_id": "p246", "peak_word": 3}
+{"id": "q_duz_246", "kind": "duz_eslesik", "text": "Kızınız da bizimle gelecek.", "pair_id": "p246", "peak_word": 3}
+{"id": "q_mi_247", "kind": "mi_soru", "text": "Annenler bayramda köye gidecekler mi?", "pair_id": "p247", "peak_word": 3}
+{"id": "q_duz_247", "kind": "duz_eslesik", "text": "Annenler bayramda köye gidecekler.", "pair_id": "p247", "peak_word": 3}
+{"id": "q_mi_248", "kind": "mi_soru", "text": "Bütün gün ayakta mı kaldınız?", "pair_id": "p248", "peak_word": 2}
+{"id": "q_duz_248", "kind": "duz_eslesik", "text": "Bütün gün ayakta kaldınız.", "pair_id": "p248", "peak_word": 2}
+{"id": "q_mi_249", "kind": "mi_soru", "text": "Ehliyetini geçen ay mı aldın?", "pair_id": "p249", "peak_word": 2}
+{"id": "q_duz_249", "kind": "duz_eslesik", "text": "Ehliyetini geçen ay aldın.", "pair_id": "p249", "peak_word": 2}
+{"id": "q_mi_250", "kind": "mi_soru", "text": "Haberi ilk sen mi duydun?", "pair_id": "p250", "peak_word": 2}
+{"id": "q_duz_250", "kind": "duz_eslesik", "text": "Haberi ilk sen duydun.", "pair_id": "p250", "peak_word": 2}
+{"id": "q_mi_251", "kind": "mi_soru", "text": "Bu yaz denize girebildiniz mi?", "pair_id": "p251", "peak_word": 3}
+{"id": "q_duz_251", "kind": "duz_eslesik", "text": "Bu yaz denize girebildiniz.", "pair_id": "p251", "peak_word": 3}
+{"id": "q_ne_001", "kind": "ne_soru", "text": "Bu akşam yemekte ne var?", "pair_id": null, "peak_word": 3}
+{"id": "q_ne_002", "kind": "ne_soru", "text": "Doktor tahlil sonuçları için ne dedi?", "pair_id": null, "peak_word": 4}
+{"id": "q_ne_003", "kind": "ne_soru", "text": "Kargo ne zaman dağıtıma çıkacak?", "pair_id": null, "peak_word": 1}
+{"id": "q_ne_004", "kind": "ne_soru", "text": "Bu montun fiyatı ne kadar?", "pair_id": null, "peak_word": 3}
+{"id": "q_ne_005", "kind": "ne_soru", "text": "Taksi havalimanına ne kadar tutar?", "pair_id": null, "peak_word": 2}
+{"id": "q_ne_006", "kind": "ne_soru", "text": "Kızın doğum gününe ne almayı düşünüyorsun?", "pair_id": null, "peak_word": 3}
+{"id": "q_ne_007", "kind": "ne_soru", "text": "Tatilde neler yaptınız?", "pair_id": null, "peak_word": 1}
+{"id": "q_ne_008", "kind": "ne_soru", "text": "Bu formda neyi eksik doldurdum?", "pair_id": null, "peak_word": 2}
+{"id": "q_ne_009", "kind": "ne_soru", "text": "Hafta sonu ne yapıyorsunuz?", "pair_id": null, "peak_word": 2}
+{"id": "q_ne_010", "kind": "ne_soru", "text": "Elektrikler ne zaman gelecek?", "pair_id": null, "peak_word": 1}
+{"id": "q_ne_011", "kind": "ne_soru", "text": "Yeni işinde maaşın ne kadar?", "pair_id": null, "peak_word": 3}
+{"id": "q_ne_012", "kind": "ne_soru", "text": "Kursun kayıtları ne zaman başlıyor?", "pair_id": null, "peak_word": 2}
+{"id": "q_ne_013", "kind": "ne_soru", "text": "Toplantıda neler konuşuldu?", "pair_id": null, "peak_word": 1}
+{"id": "q_ne_014", "kind": "ne_soru", "text": "Bu ilacın yan etkileri neler?", "pair_id": null, "peak_word": 4}
+{"id": "q_ne_015", "kind": "ne_soru", "text": "Pasta için ne kadar un lazım?", "pair_id": null, "peak_word": 2}
+{"id": "q_ne_016", "kind": "ne_soru", "text": "Ankara'dan İstanbul'a hızlı trenle ne kadar sürüyor?", "pair_id": null, "peak_word": 4}
+{"id": "q_ne_017", "kind": "ne_soru", "text": "Bu ay faturaya ne oldu böyle?", "pair_id": null, "peak_word": 3}
+{"id": "q_ne_018", "kind": "ne_soru", "text": "Kargom neden hâlâ yola çıkmadı?", "pair_id": null, "peak_word": 1}
+{"id": "q_ne_019", "kind": "ne_soru", "text": "Bu ay elektrik faturası neden bu kadar yüksek?", "pair_id": null, "peak_word": 4}
+{"id": "q_ne_020", "kind": "ne_soru", "text": "Kartım neden reddedildi?", "pair_id": null, "peak_word": 1}
+{"id": "q_ne_021", "kind": "ne_soru", "text": "Niye bu kadar sessizsin bugün?", "pair_id": null, "peak_word": 0}
+{"id": "q_ne_022", "kind": "ne_soru", "text": "Otobüs neden durağa uğramadan geçti?", "pair_id": null, "peak_word": 1}
+{"id": "q_ne_023", "kind": "ne_soru", "text": "Toplantı niçin ertelendi?", "pair_id": null, "peak_word": 1}
+{"id": "q_ne_024", "kind": "ne_soru", "text": "Sınav sonuçları neden geç açıklanıyor?", "pair_id": null, "peak_word": 2}
+{"id": "q_ne_025", "kind": "ne_soru", "text": "Bebek niye ağlıyor acaba?", "pair_id": null, "peak_word": 1}
+{"id": "q_ne_026", "kind": "ne_soru", "text": "Neden bana daha önce söylemedin?", "pair_id": null, "peak_word": 0}
+{"id": "q_ne_027", "kind": "ne_soru", "text": "Uçuşumuz neden iptal edildi?", "pair_id": null, "peak_word": 1}
+{"id": "q_ne_028", "kind": "ne_soru", "text": "Kombi neden sürekli arıza veriyor?", "pair_id": null, "peak_word": 1}
+{"id": "q_ne_029", "kind": "ne_soru", "text": "Annen neden bu kadar üzgün?", "pair_id": null, "peak_word": 1}
+{"id": "q_ne_030", "kind": "ne_soru", "text": "Bu ay kira neden 2 gün geç yattı?", "pair_id": null, "peak_word": 3}
+{"id": "q_ne_031", "kind": "ne_soru", "text": "Market poşetleri niye ücretli oldu?", "pair_id": null, "peak_word": 2}
+{"id": "q_ne_032", "kind": "ne_soru", "text": "Niye telefonlarıma çıkmıyorsun?", "pair_id": null, "peak_word": 0}
+{"id": "q_ne_033", "kind": "ne_soru", "text": "Yeni evinize nasıl alıştınız?", "pair_id": null, "peak_word": 2}
+{"id": "q_ne_034", "kind": "ne_soru", "text": "Hastaneye buradan nasıl gidebilirim?", "pair_id": null, "peak_word": 2}
+{"id": "q_ne_035", "kind": "ne_soru", "text": "Bu yemeği nasıl bu kadar lezzetli yaptın?", "pair_id": null, "peak_word": 2}
+{"id": "q_ne_036", "kind": "ne_soru", "text": "Annenin ameliyatı nasıl geçti?", "pair_id": null, "peak_word": 2}
+{"id": "q_ne_037", "kind": "ne_soru", "text": "Şifremi unuttum, nasıl yenileyebilirim?", "pair_id": null, "peak_word": 2}
+{"id": "q_ne_038", "kind": "ne_soru", "text": "Kızın sınavı nasıl geçmiş?", "pair_id": null, "peak_word": 2}
+{"id": "q_ne_039", "kind": "ne_soru", "text": "Çocuklar yeni okullarına nasıl uyum sağladı?", "pair_id": null, "peak_word": 3}
+{"id": "q_ne_040", "kind": "ne_soru", "text": "Bu formu internetten nasıl doldurabilirim?", "pair_id": null, "peak_word": 3}
+{"id": "q_ne_041", "kind": "ne_soru", "text": "Tatiliniz nasıl geçti?", "pair_id": null, "peak_word": 1}
+{"id": "q_ne_042", "kind": "ne_soru", "text": "Bu kahve makinesi nasıl çalışıyor?", "pair_id": null, "peak_word": 3}
+{"id": "q_ne_043", "kind": "ne_soru", "text": "Babanın sağlığı nasıl?", "pair_id": null, "peak_word": 2}
+{"id": "q_ne_044", "kind": "ne_soru", "text": "İade işlemini nasıl başlatabilirim?", "pair_id": null, "peak_word": 2}
+{"id": "q_ne_045", "kind": "ne_soru", "text": "Yeni işin nasıl gidiyor?", "pair_id": null, "peak_word": 2}
+{"id": "q_ne_046", "kind": "ne_soru", "text": "Bu lekeyi nasıl çıkarabilirim?", "pair_id": null, "peak_word": 2}
+{"id": "q_ne_047", "kind": "ne_soru", "text": "Dün akşamki maç nasıldı?", "pair_id": null, "peak_word": 3}
+{"id": "q_ne_048", "kind": "ne_soru", "text": "Arabanın anahtarı nerede?", "pair_id": null, "peak_word": 2}
+{"id": "q_ne_049", "kind": "ne_soru", "text": "Bu hafta sonu nereye gidiyorsunuz?", "pair_id": null, "peak_word": 3}
+{"id": "q_ne_050", "kind": "ne_soru", "text": "Bu güzel elbiseyi nereden aldın?", "pair_id": null, "peak_word": 3}
+{"id": "q_ne_051", "kind": "ne_soru", "text": "Toplantı nerede yapılacak?", "pair_id": null, "peak_word": 1}
+{"id": "q_ne_052", "kind": "ne_soru", "text": "En yakın ATM nerede?", "pair_id": null, "peak_word": 5}
+{"id": "q_ne_053", "kind": "ne_soru", "text": "Kargo şubesi tam olarak nerede?", "pair_id": null, "peak_word": 4}
+{"id": "q_ne_054", "kind": "ne_soru", "text": "Gözlüğümü nereye koydum ben?", "pair_id": null, "peak_word": 1}
+{"id": "q_ne_055", "kind": "ne_soru", "text": "Tatilde nerede kaldınız?", "pair_id": null, "peak_word": 1}
+{"id": "q_ne_056", "kind": "ne_soru", "text": "Yeni komşular nereli?", "pair_id": null, "peak_word": 2}
+{"id": "q_ne_057", "kind": "ne_soru", "text": "Çocuklar şu an nerede?", "pair_id": null, "peak_word": 3}
+{"id": "q_ne_058", "kind": "ne_soru", "text": "Bu otobüs nereye gidiyor?", "pair_id": null, "peak_word": 2}
+{"id": "q_ne_059", "kind": "ne_soru", "text": "Kayıt için nereye başvurmam gerekiyor?", "pair_id": null, "peak_word": 2}
+{"id": "q_ne_060", "kind": "ne_soru", "text": "Paketiniz şu anda nerede bekliyor?", "pair_id": null, "peak_word": 3}
+{"id": "q_ne_061", "kind": "ne_soru", "text": "Bu peyniri nereden buldun?", "pair_id": null, "peak_word": 2}
+{"id": "q_ne_062", "kind": "ne_soru", "text": "Akşam yemeğine nereye gidelim?", "pair_id": null, "peak_word": 2}
+{"id": "q_ne_063", "kind": "ne_soru", "text": "Kapıyı kim çaldı?", "pair_id": null, "peak_word": 1}
+{"id": "q_ne_064", "kind": "ne_soru", "text": "Bu çantayı kim burada unuttu?", "pair_id": null, "peak_word": 2}
+{"id": "q_ne_065", "kind": "ne_soru", "text": "Raporu kime teslim etmeliyim?", "pair_id": null, "peak_word": 1}
+{"id": "q_ne_066", "kind": "ne_soru", "text": "Bu şemsiye kimin?", "pair_id": null, "peak_word": 2}
+{"id": "q_ne_067", "kind": "ne_soru", "text": "Tatile kimlerle gidiyorsunuz?", "pair_id": null, "peak_word": 1}
+{"id": "q_ne_068", "kind": "ne_soru", "text": "Toplantıya kim katılacak?", "pair_id": null, "peak_word": 1}
+{"id": "q_ne_069", "kind": "ne_soru", "text": "Bu hafta nöbeti kim tutuyor?", "pair_id": null, "peak_word": 3}
+{"id": "q_ne_070", "kind": "ne_soru", "text": "Yarın çocukları okuldan kim alacak?", "pair_id": null, "peak_word": 3}
+{"id": "q_ne_071", "kind": "ne_soru", "text": "Bu güzel çiçekleri kim gönderdi?", "pair_id": null, "peak_word": 3}
+{"id": "q_ne_072", "kind": "ne_soru", "text": "Sorumlu doktorunuz kim?", "pair_id": null, "peak_word": 2}
+{"id": "q_ne_073", "kind": "ne_soru", "text": "Mektubu kime yazıyorsun?", "pair_id": null, "peak_word": 1}
+{"id": "q_ne_074", "kind": "ne_soru", "text": "Telefonda kiminle konuşuyordun?", "pair_id": null, "peak_word": 1}
+{"id": "q_ne_075", "kind": "ne_soru", "text": "Bu yemeği kim pişirdi?", "pair_id": null, "peak_word": 2}
+{"id": "q_ne_076", "kind": "ne_soru", "text": "Kazayı kim gördü?", "pair_id": null, "peak_word": 1}
+{"id": "q_ne_077", "kind": "ne_soru", "text": "Kimin arabası kapının önüne park etmiş?", "pair_id": null, "peak_word": 0}
+{"id": "q_ne_078", "kind": "ne_soru", "text": "Saat kaçta yola çıkıyoruz?", "pair_id": null, "peak_word": 1}
+{"id": "q_ne_079", "kind": "ne_soru", "text": "Bu ay kaç gün izin kullandın?", "pair_id": null, "peak_word": 2}
+{"id": "q_ne_080", "kind": "ne_soru", "text": "Annen kaç yaşında?", "pair_id": null, "peak_word": 1}
+{"id": "q_ne_081", "kind": "ne_soru", "text": "Toplantı saat kaçta bitecek?", "pair_id": null, "peak_word": 2}
+{"id": "q_ne_082", "kind": "ne_soru", "text": "Eczane kaçta kapanıyor?", "pair_id": null, "peak_word": 1}
+{"id": "q_ne_083", "kind": "ne_soru", "text": "Kaç kişilik rezervasyon yapalım?", "pair_id": null, "peak_word": 0}
+{"id": "q_ne_084", "kind": "ne_soru", "text": "Bu kiloyu kaç ayda verdin?", "pair_id": null, "peak_word": 2}
+{"id": "q_ne_085", "kind": "ne_soru", "text": "Siparişin kaç parça olarak geldi?", "pair_id": null, "peak_word": 1}
+{"id": "q_ne_086", "kind": "ne_soru", "text": "Sınıfınızda kaç öğrenci var?", "pair_id": null, "peak_word": 1}
+{"id": "q_ne_087", "kind": "ne_soru", "text": "Kaçıncı kattasınız?", "pair_id": null, "peak_word": 0}
+{"id": "q_ne_088", "kind": "ne_soru", "text": "Merkeze kaç durak kaldı?", "pair_id": null, "peak_word": 1}
+{"id": "q_ne_089", "kind": "ne_soru", "text": "Bilet başına kaç lira ödedin?", "pair_id": null, "peak_word": 2}
+{"id": "q_ne_090", "kind": "ne_soru", "text": "Hafta sonu kaç saat çalıştın?", "pair_id": null, "peak_word": 2}
+{"id": "q_ne_091", "kind": "ne_soru", "text": "Kaç tane yumurta lazım?", "pair_id": null, "peak_word": 0}
+{"id": "q_ne_092", "kind": "ne_soru", "text": "Kredi kaç taksitle ödenecek?", "pair_id": null, "peak_word": 1}
+{"id": "q_ne_093", "kind": "ne_soru", "text": "Hangi otobüs Kızılay'a gidiyor?", "pair_id": null, "peak_word": 0}
+{"id": "q_ne_094", "kind": "ne_soru", "text": "Hangi gün müsaitsiniz?", "pair_id": null, "peak_word": 0}
+{"id": "q_ne_095", "kind": "ne_soru", "text": "Bu iki elbiseden hangisini beğendin?", "pair_id": null, "peak_word": 3}
+{"id": "q_ne_096", "kind": "ne_soru", "text": "Toplantı hangi salonda yapılacak?", "pair_id": null, "peak_word": 1}
+{"id": "q_ne_097", "kind": "ne_soru", "text": "Hangi doktora görünmek istiyorsunuz?", "pair_id": null, "peak_word": 0}
+{"id": "q_ne_098", "kind": "ne_soru", "text": "Hangi şubeden işlem yaptınız?", "pair_id": null, "peak_word": 0}
+{"id": "q_ne_099", "kind": "ne_soru", "text": "Kızın hangi üniversiteyi kazandı?", "pair_id": null, "peak_word": 1}
+{"id": "q_ne_100", "kind": "ne_soru", "text": "Konya treni hangi perondan kalkıyor?", "pair_id": null, "peak_word": 2}
+{"id": "q_ne_101", "kind": "ne_soru", "text": "Hangisi senin bavulun?", "pair_id": null, "peak_word": 0}
+{"id": "q_ne_102", "kind": "ne_soru", "text": "Hangi kartla ödeme yapmak istersiniz?", "pair_id": null, "peak_word": 0}
+{"id": "q_ne_103", "kind": "ne_soru", "text": "Hangi takımı tutuyorsun?", "pair_id": null, "peak_word": 0}
+{"id": "q_ne_104", "kind": "ne_soru", "text": "Hangi saatler sizin için uygun?", "pair_id": null, "peak_word": 0}
+{"id": "q_ne_105", "kind": "ne_soru", "text": "En çok hangi yemeği seviyorsun?", "pair_id": null, "peak_word": 2}
+{"id": "q_ne_106", "kind": "ne_soru", "text": "Hangi adrese teslim edelim?", "pair_id": null, "peak_word": 0}
+{"id": "q_ne_107", "kind": "ne_soru", "text": "Hangi dili öğrenmek istiyorsun?", "pair_id": null, "peak_word": 0}
+{"id": "q_ne_108", "kind": "ne_soru", "text": "Saat 14:30 seansı için kaç bilet kaldı?", "pair_id": null, "peak_word": 6}
+{"id": "q_ne_109", "kind": "ne_soru", "text": "Acaba 3 numaralı gişe nerede?", "pair_id": null, "peak_word": 4}
+{"id": "q_ne_110", "kind": "ne_soru", "text": "Bu ay kredi kartından ne kadar harcadık?", "pair_id": null, "peak_word": 4}
+{"id": "q_ne_111", "kind": "ne_soru", "text": "Bu ₺850'lik faturayı kim ödeyecek?", "pair_id": null, "peak_word": 6}
+{"id": "q_ne_112", "kind": "ne_soru", "text": "Kargonuz 2 gün önce çıktıysa neden hâlâ gelmedi?", "pair_id": null, "peak_word": 5}
+{"id": "q_ne_113", "kind": "ne_soru", "text": "Hafta içi saat 9'dan önce dükkânı kim açıyor?", "pair_id": null, "peak_word": 6}
+{"id": "q_ne_114", "kind": "ne_soru", "text": "Bizden 18 Mart'taki toplantıya kim gidecek?", "pair_id": null, "peak_word": 5}
+{"id": "q_ne_115", "kind": "ne_soru", "text": "SGK'ya hangi belgelerle başvuru yapılıyor?", "pair_id": null, "peak_word": 3}
+{"id": "q_ne_116", "kind": "ne_soru", "text": "PTT'nin en yakın şubesi nerede?", "pair_id": null, "peak_word": 6}
+{"id": "q_ne_117", "kind": "ne_soru", "text": "KDV hariç fiyat ne kadar?", "pair_id": null, "peak_word": 5}
+{"id": "q_ne_118", "kind": "ne_soru", "text": "Kendi IBAN numaramı nereden öğrenebilirim?", "pair_id": null, "peak_word": 3}
+{"id": "q_ne_119", "kind": "ne_soru", "text": "MHRS'den hangi gün için randevu aldın?", "pair_id": null, "peak_word": 4}
+{"id": "q_ne_120", "kind": "ne_soru", "text": "Cumartesi 10:00'daki derse çocuğu kim götürecek?", "pair_id": null, "peak_word": 4}
+{"id": "q_ne_121", "kind": "ne_soru", "text": "Bu ilacı günde kaç kez kullanmalıyım?", "pair_id": null, "peak_word": 3}
+{"id": "q_degil_001", "kind": "degil_mi", "text": "Kombiyi kapattın, değil mi?", "pair_id": "p003", "peak_word": 2}
+{"id": "q_degil_002", "kind": "degil_mi", "text": "Kapıyı kilitledin, değil mi?", "pair_id": "p008", "peak_word": 2}
+{"id": "q_degil_003", "kind": "degil_mi", "text": "Bu kampanya ayın sonuna kadar geçerli, değil mi?", "pair_id": "p035", "peak_word": 6}
+{"id": "q_degil_004", "kind": "degil_mi", "text": "Pasaportunu çantana koydun, değil mi?", "pair_id": "p116", "peak_word": 3}
+{"id": "q_degil_005", "kind": "degil_mi", "text": "Market pazar günleri de açık, değil mi?", "pair_id": "p032", "peak_word": 5}
+{"id": "q_degil_006", "kind": "degil_mi", "text": "Matematik sınavı bu cuma, değil mi?", "pair_id": "p136", "peak_word": 4}
+{"id": "q_degil_007", "kind": "degil_mi", "text": "Yeni müdür pazartesi başlıyor, değil mi?", "pair_id": "p150", "peak_word": 4}
+{"id": "q_degil_008", "kind": "degil_mi", "text": "Çay demlendi, değil mi?", "pair_id": "p186", "peak_word": 2}
+{"id": "q_degil_009", "kind": "degil_mi", "text": "Yarın kar yağacak, değil mi?", "pair_id": "p190", "peak_word": 3}
+{"id": "q_degil_010", "kind": "degil_mi", "text": "Muayene ücreti 1.750 TL, değil mi?", "pair_id": "p093", "peak_word": 7}
+{"id": "q_degil_011", "kind": "degil_mi", "text": "Otelden çıkış saati 12:00, değil mi?", "pair_id": "p127", "peak_word": 5}
+{"id": "q_degil_012", "kind": "degil_mi", "text": "Toplantı odası 14:00'e kadar dolu, değil mi?", "pair_id": "p168", "peak_word": 6}
+{"id": "q_degil_013", "kind": "degil_mi", "text": "Hafta sonu yağmur bekleniyor, değil mi?", "pair_id": "p193", "peak_word": 4}
+{"id": "q_degil_014", "kind": "degil_mi", "text": "Gülşen'in bebeği doğdu, değil mi?", "pair_id": "p218", "peak_word": 3}
+{"id": "q_degil_015", "kind": "degil_mi", "text": "Kardeşin bu yıl üniversiteyi bitiriyor, değil mi?", "pair_id": "p014", "peak_word": 5}
+{"id": "q_degil_016", "kind": "degil_mi", "text": "Feribot saat 18.15'te kalkıyor, değil mi?", "pair_id": "p118", "peak_word": 7}
+{"id": "q_degil_017", "kind": "degil_mi", "text": "Biletler gidiş dönüş, değil mi?", "pair_id": "p115", "peak_word": 3}
+{"id": "q_degil_018", "kind": "degil_mi", "text": "Kargo ücretini alıcı ödeyecek, değil mi?", "pair_id": "p102", "peak_word": 4}
+{"id": "q_degil_019", "kind": "degil_mi", "text": "Bu ürünü iade edebilirim, değil mi?", "pair_id": "p031", "peak_word": 4}
+{"id": "q_degil_020", "kind": "degil_mi", "text": "Dairenin aidatı ayda 1.350 TL, değil mi?", "pair_id": "p024", "peak_word": 8}
+{"id": "q_degil_021", "kind": "degil_mi", "text": "Sen de bizimle geliyorsun, değil mi?", "pair_id": null, "peak_word": 4}
+{"id": "q_degil_022", "kind": "degil_mi", "text": "Bu akşam yemeği dışarıda yiyoruz, değil mi?", "pair_id": null, "peak_word": 5}
+{"id": "q_degil_023", "kind": "degil_mi", "text": "Faturayı son ödeme tarihinden önce yatırdık, değil mi?", "pair_id": null, "peak_word": 6}
+{"id": "q_degil_024", "kind": "degil_mi", "text": "Doktor ilacı 10 gün kullanmamı söyledi, değil mi?", "pair_id": null, "peak_word": 6}
+{"id": "q_degil_025", "kind": "degil_mi", "text": "Siz Ayten Hanım'ın kızısınız, değil mi?", "pair_id": null, "peak_word": 4}
+{"id": "q_degil_026", "kind": "degil_mi", "text": "Toplantı notlarını bana da göndereceksin, değil mi?", "pair_id": null, "peak_word": 5}
+{"id": "q_degil_027", "kind": "degil_mi", "text": "Arabanın sigortası mart ayında bitiyor, değil mi?", "pair_id": null, "peak_word": 5}
+{"id": "q_degil_028", "kind": "degil_mi", "text": "Bunu daha önce konuşmuştuk, değil mi?", "pair_id": null, "peak_word": 4}
+{"id": "q_degil_029", "kind": "degil_mi", "text": "Çocuklar ödevlerini bitirdi, değil mi?", "pair_id": null, "peak_word": 3}
+{"id": "q_degil_030", "kind": "degil_mi", "text": "Kargo 3 iş günü içinde teslim ediliyor, değil mi?", "pair_id": null, "peak_word": 7}
+{"id": "q_degil_031", "kind": "degil_mi", "text": "Bu otobüs merkezden geçiyor, değil mi?", "pair_id": null, "peak_word": 4}
+{"id": "q_degil_032", "kind": "degil_mi", "text": "Anneannemin doğum günü 4 Mayıs'ta, değil mi?", "pair_id": null, "peak_word": 5}
+{"id": "q_degil_033", "kind": "degil_mi", "text": "Burası 5. kat, değil mi?", "pair_id": null, "peak_word": 3}
+{"id": "q_degil_034", "kind": "degil_mi", "text": "Bu ürünü 14 gün içinde değiştirebiliyorum, değil mi?", "pair_id": null, "peak_word": 7}
+{"id": "q_degil_035", "kind": "degil_mi", "text": "Sen kahveni sade içiyorsun, değil mi?", "pair_id": null, "peak_word": 4}
+{"id": "q_degil_036", "kind": "degil_mi", "text": "Yarın resmî tatil, değil mi?", "pair_id": null, "peak_word": 3}
+{"id": "q_degil_037", "kind": "degil_mi", "text": "Kredi kartı borcunu bu hafta ödeyeceksin, değil mi?", "pair_id": null, "peak_word": 6}
+{"id": "q_degil_038", "kind": "degil_mi", "text": "Toplantıya Kemal Bey de katılıyor, değil mi?", "pair_id": null, "peak_word": 5}
+{"id": "q_degil_039", "kind": "degil_mi", "text": "Kiraya bu yıl %30 zam gelecek, değil mi?", "pair_id": null, "peak_word": 7}
+{"id": "q_degil_040", "kind": "degil_mi", "text": "Telefon numaranız hâlâ 0555 555 55 55, değil mi?", "pair_id": null, "peak_word": 16}
+{"id": "q_yuk_001", "kind": "yukselen", "text": "Bu hafta gece vardiyasındasın?", "pair_id": "p165", "peak_word": 3}
+{"id": "q_yuk_002", "kind": "yukselen", "text": "Toplantıyı çevrim içi yapacağız?", "pair_id": "p152", "peak_word": 3}
+{"id": "q_yuk_003", "kind": "yukselen", "text": "Ev sahibi kirayı 2.000 TL artırmış?", "pair_id": "p010", "peak_word": 6}
+{"id": "q_yuk_004", "kind": "yukselen", "text": "Antalya'ya arabayla gideceksiniz?", "pair_id": "p117", "peak_word": 2}
+{"id": "q_yuk_005", "kind": "yukselen", "text": "Mert yine geç kalmış?", "pair_id": "p207", "peak_word": 3}
+{"id": "q_yuk_006", "kind": "yukselen", "text": "Hafta sonu nöbetçi sensin?", "pair_id": "p170", "peak_word": 3}
+{"id": "q_yuk_007", "kind": "yukselen", "text": "Kahveni şekerli içiyorsun?", "pair_id": "p183", "peak_word": 2}
+{"id": "q_yuk_008", "kind": "yukselen", "text": "Yolculuk 9 saat sürüyor?", "pair_id": "p129", "peak_word": 3}
+{"id": "q_yuk_009", "kind": "yukselen", "text": "Kapadokya'da 2 gece kalacağız?", "pair_id": "p120", "peak_word": 3}
+{"id": "q_yuk_010", "kind": "yukselen", "text": "Misafirler vejetaryen?", "pair_id": "p187", "peak_word": 1}
+{"id": "q_yuk_011", "kind": "yukselen", "text": "Kızın İngilizce sınavından 95 aldı?", "pair_id": "p138", "peak_word": 5}
+{"id": "q_yuk_012", "kind": "yukselen", "text": "Takımımız deplasmanda kazandı?", "pair_id": "p199", "peak_word": 2}
+{"id": "q_yuk_013", "kind": "yukselen", "text": "Yeni müdür pazartesi başlıyor?", "pair_id": "p150", "peak_word": 3}
+{"id": "q_yuk_014", "kind": "yukselen", "text": "Demek İzmir'e taşınıyorsunuz?", "pair_id": null, "peak_word": 2}
+{"id": "q_yuk_015", "kind": "yukselen", "text": "Yani yarın işe gelmiyorsun?", "pair_id": null, "peak_word": 3}
+{"id": "q_yuk_016", "kind": "yukselen", "text": "Sen de yürüyerek geldin?", "pair_id": null, "peak_word": 3}
+{"id": "q_yuk_017", "kind": "yukselen", "text": "Fatura 3 aydır ödenmemiş?", "pair_id": null, "peak_word": 3}
+{"id": "q_yuk_018", "kind": "yukselen", "text": "Bütün gün telefonuma bakmadın?", "pair_id": null, "peak_word": 3}
+{"id": "q_yuk_019", "kind": "yukselen", "text": "Bu kadar yolu tek başına yürüdün?", "pair_id": null, "peak_word": 5}
+{"id": "q_yuk_020", "kind": "yukselen", "text": "Kargo yine yanlış adrese gitmiş?", "pair_id": null, "peak_word": 4}
+{"id": "q_yuk_021", "kind": "yukselen", "text": "Şimdi de toplantı yarına kaldı?", "pair_id": null, "peak_word": 4}
+{"id": "q_yuk_022", "kind": "yukselen", "text": "Yani bu ay hiç zam yok?", "pair_id": null, "peak_word": 5}
+{"id": "q_yuk_023", "kind": "yukselen", "text": "Kızın tek başına Paris'e gidiyor?", "pair_id": null, "peak_word": 4}
+{"id": "q_yuk_024", "kind": "yukselen", "text": "Tamir 5.000 lira tutacak?", "pair_id": null, "peak_word": 4}
+{"id": "q_yuk_025", "kind": "yukselen", "text": "Sınav saat 8'de başlıyor?", "pair_id": null, "peak_word": 3}
+{"id": "q_yuk_026", "kind": "yukselen", "text": "Çocuklar bütün kurabiyeleri bitirmiş?", "pair_id": null, "peak_word": 3}
+{"id": "q_yuk_027", "kind": "yukselen", "text": "Demek emekli oluyorsun?", "pair_id": null, "peak_word": 2}
+{"id": "q_yuk_028", "kind": "yukselen", "text": "Yani anahtarlar yine evde kaldı?", "pair_id": null, "peak_word": 4}
+{"id": "q_yuk_029", "kind": "yukselen", "text": "Doktor sadece dinlenmeni söyledi?", "pair_id": null, "peak_word": 3}
+{"id": "q_yuk_030", "kind": "yukselen", "text": "Otobüs yine 20 dakika gecikmiş?", "pair_id": null, "peak_word": 4}
+{"id": "q_hiz_001", "kind": "hizmet", "text": "Size nasıl yardımcı olabilirim?", "pair_id": null, "peak_word": 1}
+{"id": "q_hiz_002", "kind": "hizmet", "text": "Adınızı ve soyadınızı alabilir miyim?", "pair_id": null, "peak_word": 3}
+{"id": "q_hiz_003", "kind": "hizmet", "text": "Doğum tarihinizi öğrenebilir miyim?", "pair_id": null, "peak_word": 2}
+{"id": "q_hiz_004", "kind": "hizmet", "text": "Telefon numaranızı teyit edebilir misiniz?", "pair_id": null, "peak_word": 3}
+{"id": "q_hiz_005", "kind": "hizmet", "text": "Sizi birkaç dakika bekletebilir miyim?", "pair_id": null, "peak_word": 3}
+{"id": "q_hiz_006", "kind": "hizmet", "text": "Aklınıza takılan başka bir soru var mı?", "pair_id": null, "peak_word": 5}
+{"id": "q_hiz_007", "kind": "hizmet", "text": "Randevunuzu hangi gün için oluşturalım?", "pair_id": null, "peak_word": 1}
+{"id": "q_hiz_008", "kind": "hizmet", "text": "Sipariş numaranızı paylaşabilir misiniz?", "pair_id": null, "peak_word": 2}
+{"id": "q_hiz_009", "kind": "hizmet", "text": "Ödemeyi tek çekim mi yapmak istersiniz?", "pair_id": null, "peak_word": 2}
+{"id": "q_hiz_010", "kind": "hizmet", "text": "Faturanızı e-posta adresinize göndermemi ister misiniz?", "pair_id": null, "peak_word": 4}
+{"id": "q_hiz_011", "kind": "hizmet", "text": "Kayıtlı adresiniz hâlâ geçerli mi?", "pair_id": null, "peak_word": 3}
+{"id": "q_hiz_012", "kind": "hizmet", "text": "Sizi ilgili birime aktarmamı ister misiniz?", "pair_id": null, "peak_word": 4}
+{"id": "q_hiz_013", "kind": "hizmet", "text": "Hangi saat aralığı sizin için daha uygun?", "pair_id": null, "peak_word": 0}
+{"id": "q_hiz_014", "kind": "hizmet", "text": "Görüşmemizi kalite amacıyla kaydetmemize izin verir misiniz?", "pair_id": null, "peak_word": 5}
+{"id": "q_hiz_015", "kind": "hizmet", "text": "Kimlik numaranızın son 3 hanesini söyler misiniz?", "pair_id": null, "peak_word": 5}
+{"id": "q_hiz_016", "kind": "hizmet", "text": "Bu işlemi şimdi onaylıyor musunuz?", "pair_id": null, "peak_word": 3}
+{"id": "q_hiz_017", "kind": "hizmet", "text": "Talebinizi kısaca anlatabilir misiniz?", "pair_id": null, "peak_word": 2}
+{"id": "q_hiz_018", "kind": "hizmet", "text": "Size hangi numaradan ulaşabiliriz?", "pair_id": null, "peak_word": 1}
+{"id": "q_hiz_019", "kind": "hizmet", "text": "Kargonuzu adresinize mi yoksa şubeye mi yönlendirelim?", "pair_id": null, "peak_word": null}
+{"id": "q_hiz_020", "kind": "hizmet", "text": "Randevunuzu iptal etmek mi istiyorsunuz, ertelemek mi?", "pair_id": null, "peak_word": null}
+{"id": "q_hiz_021", "kind": "hizmet", "text": "Masanız için cam kenarını mı tercih edersiniz?", "pair_id": null, "peak_word": 3}
+{"id": "q_hiz_022", "kind": "hizmet", "text": "Odanız için ekstra yastık ister misiniz?", "pair_id": null, "peak_word": 4}
+{"id": "q_hiz_023", "kind": "hizmet", "text": "Çantanızı vestiyere bırakmak ister misiniz?", "pair_id": null, "peak_word": 3}
+{"id": "q_hiz_024", "kind": "hizmet", "text": "İçecek olarak ne alırsınız?", "pair_id": null, "peak_word": 2}
+{"id": "q_hiz_025", "kind": "hizmet", "text": "Siparişinizi paket servis olarak mı alacaksınız?", "pair_id": null, "peak_word": 3}
+{"id": "q_hiz_026", "kind": "hizmet", "text": "Hesabınızla ilgili başka bir sorun görüyor musunuz?", "pair_id": null, "peak_word": 5}
+{"id": "q_hiz_027", "kind": "hizmet", "text": "Bilgilerinizi kontrol etmem için biraz bekler misiniz?", "pair_id": null, "peak_word": 5}
+{"id": "q_hiz_028", "kind": "hizmet", "text": "Yarın saat 10:30 sizin için uygun mu?", "pair_id": null, "peak_word": 6}
+{"id": "q_hiz_029", "kind": "hizmet", "text": "Ürünü değiştirmek mi, iade etmek mi istiyorsunuz?", "pair_id": null, "peak_word": null}
+{"id": "q_hiz_030", "kind": "hizmet", "text": "Size bilgilendirme mesajı göndermemizde sakınca var mı?", "pair_id": null, "peak_word": 5}
+{"id": "q_hiz_031", "kind": "hizmet", "text": "Kampanyalarımızdan haberdar olmak ister misiniz?", "pair_id": null, "peak_word": 3}
+{"id": "q_hiz_032", "kind": "hizmet", "text": "Şikâyetinizi yazılı olarak da iletmek ister misiniz?", "pair_id": null, "peak_word": 5}
+{"id": "q_hiz_033", "kind": "hizmet", "text": "Sizi geri aramamızı ister misiniz?", "pair_id": null, "peak_word": 3}
+{"id": "q_hiz_034", "kind": "hizmet", "text": "Hangi ödeme yöntemini tercih edersiniz?", "pair_id": null, "peak_word": 0}
+{"id": "q_hiz_035", "kind": "hizmet", "text": "Paketinizi teslim alacak başka biri var mı?", "pair_id": null, "peak_word": 5}
+{"id": "q_hiz_036", "kind": "hizmet", "text": "Bu konuda size başka nasıl destek olabiliriz?", "pair_id": null, "peak_word": 4}
+{"id": "q_hiz_037", "kind": "hizmet", "text": "Kapı zilinde isminiz yazılı mı?", "pair_id": null, "peak_word": 3}
+{"id": "q_hiz_038", "kind": "hizmet", "text": "Formu doldurmanıza yardımcı olmamı ister misiniz?", "pair_id": null, "peak_word": 4}
+{"id": "q_hiz_039", "kind": "hizmet", "text": "Reçetenizi sistemden kontrol etmeme izin verir misiniz?", "pair_id": null, "peak_word": 5}
+{"id": "q_hiz_040", "kind": "hizmet", "text": "Sigortanızı yenilemek ister misiniz?", "pair_id": null, "peak_word": 2}
+{"id": "q_hiz_041", "kind": "hizmet", "text": "Ödenecek tutar 2.340 TL, onaylıyor musunuz?", "pair_id": null, "peak_word": 8}
+{"id": "q_hiz_042", "kind": "hizmet", "text": "Kartınızın kaybolduğunu kaç gün önce fark ettiniz?", "pair_id": null, "peak_word": 2}
+{"id": "q_hiz_043", "kind": "hizmet", "text": "Taksitli ödeme seçeneklerini duymak ister misiniz?", "pair_id": null, "peak_word": 4}
+{"id": "q_hiz_044", "kind": "hizmet", "text": "Kimlik kartınızı görebilir miyim?", "pair_id": null, "peak_word": 2}
+{"id": "q_hiz_045", "kind": "hizmet", "text": "Ceketinizi alabilir miyim?", "pair_id": null, "peak_word": 1}
+{"id": "q_hiz_046", "kind": "hizmet", "text": "Size bir bardak su getireyim mi?", "pair_id": null, "peak_word": 4}
+{"id": "q_hiz_047", "kind": "hizmet", "text": "Daha önce kliniğimize geldiniz mi?", "pair_id": null, "peak_word": 3}
+{"id": "q_hiz_048", "kind": "hizmet", "text": "Şikâyetiniz ne zamandan beri devam ediyor?", "pair_id": null, "peak_word": 1}
+{"id": "q_hiz_049", "kind": "hizmet", "text": "Alerjiniz var mı?", "pair_id": null, "peak_word": 1}
+{"id": "q_hiz_050", "kind": "hizmet", "text": "Düzenli kullandığınız bir ilaç var mı?", "pair_id": null, "peak_word": 4}
+{"id": "q_hiz_051", "kind": "hizmet", "text": "Başvurunuzla ilgili güncel bilgi almak ister misiniz?", "pair_id": null, "peak_word": 5}
+{"id": "q_hiz_052", "kind": "hizmet", "text": "Arıza kaydınızı 0850 numaralı hattan mı oluşturdunuz?", "pair_id": null, "peak_word": 7}
+{"id": "q_hiz_053", "kind": "hizmet", "text": "Kurulum için teknisyenimiz salı günü gelebilir mi?", "pair_id": null, "peak_word": 5}
+{"id": "q_hiz_054", "kind": "hizmet", "text": "Abonelik bilgilerinizi güncellemek ister misiniz?", "pair_id": null, "peak_word": 3}
+{"id": "q_hiz_055", "kind": "hizmet", "text": "Yardımcı olabileceğim başka bir şey var mı?", "pair_id": null, "peak_word": 5}
+{"id": "q_hiz_056", "kind": "hizmet", "text": "Görüşmemizden memnun kaldınız mı?", "pair_id": null, "peak_word": 2}
+{"id": "q_hiz_057", "kind": "hizmet", "text": "Hizmetimizi 1 ile 5 arasında nasıl puanlarsınız?", "pair_id": null, "peak_word": 5}
+{"id": "q_hiz_058", "kind": "hizmet", "text": "Sizi hangi isimle kaydedelim?", "pair_id": null, "peak_word": 1}
+{"id": "q_hiz_059", "kind": "hizmet", "text": "Bekleme için özür dilerim, sesimi duyabiliyor musunuz?", "pair_id": null, "peak_word": 5}
+{"id": "q_hiz_060", "kind": "hizmet", "text": "İyi günler, Ayşe Hanım'la mı görüşüyorum?", "pair_id": null, "peak_word": 3}

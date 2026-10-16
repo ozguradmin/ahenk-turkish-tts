@@ -1,0 +1,28 @@
+# Top-level pins for the STT training environment (installed by setup_env.sh).
+# torch / torchaudio / k2 are NOT listed here: setup_env.sh installs them first
+# from the PyTorch index and the k2 wheel URL that match --cpu / --cuda X.Y.
+# Transitive dependencies are frozen in constraints-stt.txt.
+
+# data pipeline
+lhotse==1.33.0
+lilcom==1.8.1
+soundfile==0.13.1
+soxr==1.0.0
+pyarrow==22.0.0
+huggingface_hub==1.31.0
+numpy==2.2.6
+tqdm==4.67.1
+# lhotse 1.33.0 imports urllib3 (lhotse.ais) without declaring it
+urllib3==2.5.0
+
+# icefall runtime deps (subset of icefall/requirements.txt that zipformer needs)
+sentencepiece==0.2.1
+kaldialign==0.9.3
+pypinyin==0.50.0
+tensorboard==2.20.0
+packaging==25.0
+
+# export / inference
+onnx==1.19.1
+onnxruntime==1.23.2
+sherpa-onnx==1.13.8

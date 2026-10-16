@@ -1,0 +1,19 @@
+{
+ "entries": [
+  {"name": "masha", "kind": "ref", "ref": "masha/neutral.wav", "gender": "female", "ref_prep": true,
+   "notes": "onset check: voxcpm-refs/masha/neutral.wav (sources.json there), refprep.prep_ref"},
+  {"name": "dima", "kind": "ref", "ref": "dima/neutral.wav", "gender": "male", "ref_prep": true,
+   "notes": "onset check: voxcpm-refs/dima/neutral.wav (sources.json there; quiet: -32 dBFS), refprep.prep_ref"},
+  {"name": "designed-f037-s1", "kind": "designed", "ref": "/data/contest/r1/screen/cand/wav/f037-s1.wav",
+   "gender": "female", "ref_prep": true, "notes": "onset check: r1's designed voice f037-s1, refprep.prep_ref"},
+  {"name": "masha-raw", "kind": "ref", "ref": "masha/neutral.wav", "gender": "female", "ref_prep": false,
+   "notes": "onset check: as masha, the clip as it is (Nano-vLLM pads it on the left)"},
+  {"name": "dima-raw", "kind": "ref", "ref": "dima/neutral.wav", "gender": "male", "ref_prep": false,
+   "notes": "onset check: as dima, the clip as it is (Nano-vLLM pads it on the left)"},
+  {"name": "designed-f037-s1-raw", "kind": "designed", "ref": "/data/contest/r1/screen/cand/wav/f037-s1.wav",
+   "gender": "female", "ref_prep": false,
+   "notes": "onset check: as designed-f037-s1, the clip as it is (Nano-vLLM pads it on the left)"}
+ ],
+ "refs": false,
+ "screen": []
+}

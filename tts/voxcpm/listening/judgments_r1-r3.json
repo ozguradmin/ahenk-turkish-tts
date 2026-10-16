@@ -1,0 +1,25 @@
+{
+ "note": "The user's blind listening verdicts of rounds 1-3 (2026-10-11/12), copied verbatim from the session where he pasted them (timestamps UTC). Same format as judgments_2026-10-13.json; audio is local (gitignored).",
+ "rounds": {
+  "r1": {
+   "page": "voxcpm-contest/r1/ab/index.html",
+   "key": "voxcpm-contest/r1/dinleme_anahtar.json",
+   "question": "Hangisi daha insan gibi? (7 voices: designed voices, Masha, Dima, base Antalia)",
+   "pasted": "2026-10-11T14:09:06.726Z",
+   "raw": "SEÇİLENLER: S576=3 S899=2 S986=2 S562=1 S563=1 S673=1 S977=1\nS899  [S563,S977,S673,S576,S986,S562,S899]  yorum: daha iyi sesler vardı normalde ama hemen hemen hepsinin başında metinde olmaması gereken \"a\" \"ay\" ile başladığı için 7 seçtim.\nS576  [S977,S673,S562,S563,S986,S899,S576]  yorum: yine daha iyi sesler vardı normalde ama hemen hemen hepsinin başında metinde olmaması gereken \"a\" \"ay\" ile başladığı için 7 seçtim.\nS899  [S977,S562,S673,S576,S899,S563,S986]\nS576  [S562,S563,S673,S986,S899,S576,S977]  yorum: 6 en iyisi gibi ama en başta yine \"e\" falan eklemiş.\nS562  [S986,S673,S977,S576,S563,S899,S562]  yorum: 3 ve 7 en iyileri ama 7 daha iyi gibi.\nS576  [S576,S673,S562,S977,S563,S899,S986]  yorum: 1 en iyisi ama yine başta eğ gibi biş diyo?\nS563  [S563,S977,S673,S576,S562,S986,S899]  yorum: hiçbiri yii değil hepsi vay yerine vey kanına falan diyor.\nS986  [S899,S986,S673,S562,S576,S563,S977]\nS673  [S562,S576,S986,S673,S563,S899,S977]\nS977  [S986,S977,S576,S562,S563,S673,S899]\nS986  [S986,S899,S576,S562,S673,S563,S977]"
+  },
+  "r2": {
+   "page": "voxcpm-contest/r2/dinleme/index.html",
+   "key": "voxcpm-contest/r2/dinleme_anahtar.json",
+   "note_user": "last sentence (THY) picked by accident before listening fully: \"sonuncuda yanlıslıkla bastım en iyiyye tam dinliyemedim\"",
+   "pasted": "2026-10-11T18:22:01.888Z",
+   "raw": "TUR 2 SEÇİLENLER: S898=3 S185=3 S706=3 S949=2 S396=1\nS898  [S898,S396,S706,S117,S185,S949]  yorum: çok karar veremedim 1 2 3 de iyi ama 1 daha iyi gibi.\nS898  [S185,S898,S117,S949,S706,S396]  yorum: 1 çok saçma gülmüş gibi? 2 güzel soru sorabilmiş gibi. 3 kötü baya. 4 iyi gayet ama başlangıçta \"yağrın\" diyo gibi.. 5 de iyi. 6yı beğenmedim robotik başlangıcı.\nS898  [S706,S949,S898,S185,S117,S396]  yorum: 1 2 3 6 iyiler 4 ve 5 kötü\nS396  [S949,S396,S706,S117,S185,S898]\nS185  [S706,S185,S117,S396,S898,S949]  yorum: 2de ton çok iyi kızıyor resmen fakat başlangıçta yeter yerine \"yeğter\" diyo gibi. 1 eh işte. 3 4 5 kötü beğenmedim hiç. 6 da iyi onda da kızıyo gibi ama 2'ye yaklaşamaz.\nS949  [S898,S185,S949,S117,S396,S706]  yorum: 2'de yine duyu iyi ama okuması pek insansı değil gibi kulağa bi farklı geliyo. 1de insansı ruh yok düz söylüyo. 3 dengeli gibi 2'deki kadar duygu yok ama en iyisi okuması vs. 4 berbat hiç beğenmedim. 5de fena degil ama 3 daha iyi. 6 begenmedim ruh yok robot yani.\nS185  [S898,S396,S185,S706,S949,S117]  yorum: 1 çok robotik. 2 gayet iyi ama pek huzunlu degil gibi. 3 hüzünlü gibi ama değişik böyle anlayamadım pek uwu kızı gibi kendini geriyo uzulmek icin gibi. 4 uzgun fln degil hecanlı gibi. 5 duygusal olmaya calisan robot gibi. 6 cok kotu kendini geriyo.\nS706  [S949,S396,S706,S185,S898,S117]  yorum: 1,2,4,6'da vey kenına diyo. 5'de veyy canına diyo. 3'de vay canına diyo diğerlerindendaha iyi yani.\nS949  [S706,S949,S898,S396,S185,S117]  yorum: 1 fena degil. 2 pek hüzünlü değil ama konuşması baya iyi insan gibi. 3 robotik gibi biraz. 4 iyi sayılır. 5 ve 6'de heyecanlı mutlu gibi?\nS706  [S185,S898,S706,S396,S949,S117]  yorum: 1de neden oyle heyecanlı anlatıyo sacma. 2 cok robotik. 3 iyi. 4 begenmedim pek. 5 fena degil. 6 cok hızlı.\nS706  [S949,S396,S117,S185,S706,S898]  yorum: 5 digerlerini geciyo baya iyi şekilde.\nS185  [S185,S396,S898,S706,S949,S117]  yorum: \"THY\"'yi nasıl okumaları gerekiyo bilmiyom"
+  },
+  "r3": {
+   "page": "voxcpm-contest/r3/dinleme/index.html",
+   "key": "voxcpm-contest/r3/dinleme_anahtar.json",
+   "pasted": "2026-10-12T16:56:50.377Z",
+   "raw": "TUR 3 SEÇİLENLER: S882=8 S215=5 S580=1\nS882  [S580,S215,S112,S882]\nS882  [S882,S215,S112,S580]\nS882  [S882,S215,S112,S580]\nS580  [S580,S215,S882,S112]\nS215  [S112,S580,S215,S882]\nS215  [S882,S112,S215,S580]  yorum: 3,4 de sinirleniyo gibi ama konuşması robotik gibi biraz. 1 iyi okuyo ama kızmıyo\nS215  [S215,S580,S882,S112]  yorum: 1,2 aynı ses gibi ayrıca ses tiz gibi anlamadım bi rahatsız etti ama heyecanlı gibi\nS215  [S580,S882,S112,S215]\nS882  [S112,S882,S580,S215]  yorum: 1,3,4 \"vey kenına\" diyo.\nS215  [S882,S215,S112,S580]\nS882  [S580,S112,S215,S882]\nS882  [S215,S580,S882,S112]\nS882  [S882,S215,S112,S580]\nS882  [S580,S215,S112,S882]"
+  }
+ }
+}

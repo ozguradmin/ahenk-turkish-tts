@@ -1,0 +1,4 @@
+== trnorm: n=10000 exact=0.781 exact_nospace=0.893 mean_cer_nospace=0.0101 outputs_with_digits=0.000
+== normalizer_tr: n=10000 exact=0.368 exact_nospace=0.443 mean_cer_nospace=0.0934 outputs_with_digits=0.287
+== normalizer_tr_fallback: n=10000 exact=0.420 exact_nospace=0.544 mean_cer_nospace=0.0750 outputs_with_digits=0.000
+== itn (part-00003, 10k spoken sentences): round_trip_safe=0.9637 got_digits=0.8856

@@ -1,0 +1,23 @@
+system             front-end                 number recall   symbols read aloud
+ema-lightning      native                    90.7% (127/140)          18/155 rows
+ema-lightning      normalizer_tr             45.0% (63/140)           0/155 rows
+ema-lightning      normalizer_tr_fallback    90.7% (127/140)          18/155 rows
+ema-lightning      raw                        0.0% (0/140)           0/155 rows
+ema-lightning      trnorm                    93.6% (131/140)           0/155 rows
+mms-tts-tur        normalizer_tr             41.4% (58/140)           0/155 rows
+mms-tts-tur        normalizer_tr_fallback    85.0% (119/140)          17/155 rows
+mms-tts-tur        raw                        1.4% (2/140)           1/155 rows
+mms-tts-tur        trnorm                    85.0% (119/140)           0/155 rows
+piper-tr-dfki      normalizer_tr             91.4% (128/140)           0/155 rows
+piper-tr-dfki      normalizer_tr_fallback    92.9% (130/140)          17/155 rows
+piper-tr-dfki      raw                       92.1% (129/140)           0/155 rows
+piper-tr-dfki      trnorm                    92.9% (130/140)           0/155 rows
+pocket-tts-turkish native                    89.3% (125/140)           0/155 rows
+pocket-tts-turkish normalizer_tr             43.6% (61/140)           0/155 rows
+pocket-tts-turkish normalizer_tr_fallback    90.0% (126/140)          18/155 rows
+pocket-tts-turkish raw                        0.0% (0/140)           0/155 rows
+pocket-tts-turkish trnorm                    92.1% (129/140)           0/155 rows
+qwen3-tts-tiny-tr  normalizer_tr             38.3% (23/60)            0/63 rows
+qwen3-tts-tiny-tr  normalizer_tr_fallback    88.3% (53/60)            7/63 rows
+qwen3-tts-tiny-tr  raw                         0.0% (0/60)            0/63 rows
+qwen3-tts-tiny-tr  trnorm                    93.3% (56/60)            0/63 rows

@@ -1,0 +1,30 @@
+{
+  "system": "whisper-large-v3-turbo",
+  "set": "fleurs_tr_test",
+  "model": {
+    "repo": "dropbox-dash/faster-whisper-large-v3-turbo",
+    "revision": "0a363e9161cbc7ed1431c9597a8ceaf0c4f78fcf",
+    "kind": "faster-whisper"
+  },
+  "decode_config": {
+    "compute_type": "int8",
+    "language": "tr",
+    "beam_size": 5,
+    "condition_on_previous_text": false,
+    "vad_filter": false
+  },
+  "threads": 2,
+  "omp_num_threads": "2",
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz",
+  "n_cpus": 4,
+  "versions": {
+    "python": "3.12.3",
+    "faster_whisper": "1.2.1",
+    "ctranslate2": "4.8.2"
+  },
+  "started": "2026-10-07T03:22:25",
+  "finished": "2026-10-07T06:06:23",
+  "n_decoded_this_run": 295,
+  "rtf_this_run": 2.7364,
+  "model_load_seconds": 123.7
+}

@@ -1,0 +1,12 @@
+{
+ "entries": [
+  {"name": "f022s3-1500", "kind": "lora", "lora": "/data/exp/voxcpm2-f022-s3/ckpt/step_0001500",
+   "sim_ref": "/data/contest/r1/screen/cand/wav/f022-s0.wav",
+   "notes": "f022 model on f022corpus + f022corpus2 (long, number-heavy, c-words), step 1500, no reference"},
+  {"name": "f022s3-2000", "kind": "lora", "lora": "/data/exp/voxcpm2-f022-s3/ckpt/step_0002000",
+   "sim_ref": "/data/contest/r1/screen/cand/wav/f022-s0.wav",
+   "notes": "f022 model on f022corpus + f022corpus2 (long, number-heavy, c-words), step 2000, no reference"}
+ ],
+ "refs": false,
+ "screen": []
+}

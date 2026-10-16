@@ -1,0 +1,900 @@
+{
+ "set": "freya_sample40",
+ "n_rows": 40,
+ "has_alts": false,
+ "categories": [
+  "freya-everyday",
+  "freya-short-native"
+ ],
+ "generated": "2026-10-07T06:25:10+00:00",
+ "eval_normalizer": {
+  "trnorm": {
+   "version": "0.1.0",
+   "src_sha256": "0dfc83a182f9"
+  },
+  "function": "trnorm.normalize_for_eval"
+ },
+ "judge": {
+  "judge": "faster-whisper:large-v3-turbo:int8:beam5:tr",
+  "model": "large-v3-turbo",
+  "model_repo": "mobiuslabsgmbh/faster-whisper-large-v3-turbo",
+  "revision": "0a363e9161cbc7ed1431c9597a8ceaf0c4f78fcf",
+  "compute_type": "int8",
+  "device": "cpu",
+  "cpu_threads": 2,
+  "options": {
+   "language": "tr",
+   "beam_size": 5
+  },
+  "resample": "soundfile + soxr VHQ to 16 kHz",
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz",
+  "versions": {
+   "faster-whisper": "1.2.1",
+   "ctranslate2": "4.8.2"
+  },
+  "written": "2026-10-07T06:08:07+00:00"
+ },
+ "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz",
+ "versions": {
+  "torch": "2.11.0+cpu",
+  "numpy": "2.5.3",
+  "transformers": "4.57.3",
+  "ema-lightning": "1.0.1",
+  "pocket-tts": "3.3.0",
+  "pocket-tts-turkish": "0.1.0",
+  "piper-tts": "1.8.0",
+  "onnxruntime": "1.30.0",
+  "qwen-tts": "0.1.1",
+  "normalizer-tr": "0.4.0",
+  "trnorm": "0.1.0",
+  "faster-whisper": "1.2.1",
+  "ctranslate2": "4.8.2"
+ },
+ "results": {
+  "ema-lightning": {
+   "raw": {
+    "n": 40,
+    "wer": 0.64,
+    "cer": 0.14,
+    "wer_strict": 0.64,
+    "row_ok": 95.0,
+    "word_edits": 2,
+    "ref_words": 312,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "freya-everyday": {
+      "n": 33,
+      "wer": 0.36,
+      "cer": 0.05,
+      "wer_strict": 0.36,
+      "row_ok": 96.97,
+      "word_edits": 1,
+      "ref_words": 281
+     },
+     "freya-short-native": {
+      "n": 7,
+      "wer": 3.23,
+      "cer": 0.9,
+      "wer_strict": 3.23,
+      "row_ok": 85.71,
+      "word_edits": 1,
+      "ref_words": 31
+     }
+    }
+   },
+   "native": {
+    "n": 40,
+    "wer": 0.64,
+    "cer": 0.14,
+    "wer_strict": 0.64,
+    "row_ok": 95.0,
+    "word_edits": 2,
+    "ref_words": 312,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "freya-everyday": {
+      "n": 33,
+      "wer": 0.36,
+      "cer": 0.05,
+      "wer_strict": 0.36,
+      "row_ok": 96.97,
+      "word_edits": 1,
+      "ref_words": 281
+     },
+     "freya-short-native": {
+      "n": 7,
+      "wer": 3.23,
+      "cer": 0.9,
+      "wer_strict": 3.23,
+      "row_ok": 85.71,
+      "word_edits": 1,
+      "ref_words": 31
+     }
+    }
+   },
+   "normalizer_tr": {
+    "n": 40,
+    "wer": 0.64,
+    "cer": 0.14,
+    "wer_strict": 0.64,
+    "row_ok": 95.0,
+    "word_edits": 2,
+    "ref_words": 312,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "freya-everyday": {
+      "n": 33,
+      "wer": 0.36,
+      "cer": 0.05,
+      "wer_strict": 0.36,
+      "row_ok": 96.97,
+      "word_edits": 1,
+      "ref_words": 281
+     },
+     "freya-short-native": {
+      "n": 7,
+      "wer": 3.23,
+      "cer": 0.9,
+      "wer_strict": 3.23,
+      "row_ok": 85.71,
+      "word_edits": 1,
+      "ref_words": 31
+     }
+    }
+   },
+   "normalizer_tr_fallback": {
+    "n": 40,
+    "wer": 0.64,
+    "cer": 0.14,
+    "wer_strict": 0.64,
+    "row_ok": 95.0,
+    "word_edits": 2,
+    "ref_words": 312,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "freya-everyday": {
+      "n": 33,
+      "wer": 0.36,
+      "cer": 0.05,
+      "wer_strict": 0.36,
+      "row_ok": 96.97,
+      "word_edits": 1,
+      "ref_words": 281
+     },
+     "freya-short-native": {
+      "n": 7,
+      "wer": 3.23,
+      "cer": 0.9,
+      "wer_strict": 3.23,
+      "row_ok": 85.71,
+      "word_edits": 1,
+      "ref_words": 31
+     }
+    }
+   },
+   "trnorm": {
+    "n": 40,
+    "wer": 0.64,
+    "cer": 0.14,
+    "wer_strict": 0.64,
+    "row_ok": 95.0,
+    "word_edits": 2,
+    "ref_words": 312,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "freya-everyday": {
+      "n": 33,
+      "wer": 0.36,
+      "cer": 0.05,
+      "wer_strict": 0.36,
+      "row_ok": 96.97,
+      "word_edits": 1,
+      "ref_words": 281
+     },
+     "freya-short-native": {
+      "n": 7,
+      "wer": 3.23,
+      "cer": 0.9,
+      "wer_strict": 3.23,
+      "row_ok": 85.71,
+      "word_edits": 1,
+      "ref_words": 31
+     }
+    }
+   }
+  },
+  "pocket-tts-turkish": {
+   "raw": {
+    "n": 40,
+    "wer": 1.92,
+    "cer": 0.61,
+    "wer_strict": 1.92,
+    "row_ok": 90.0,
+    "word_edits": 6,
+    "ref_words": 312,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "freya-everyday": {
+      "n": 33,
+      "wer": 1.07,
+      "cer": 0.47,
+      "wer_strict": 1.07,
+      "row_ok": 93.94,
+      "word_edits": 3,
+      "ref_words": 281
+     },
+     "freya-short-native": {
+      "n": 7,
+      "wer": 9.68,
+      "cer": 1.81,
+      "wer_strict": 9.68,
+      "row_ok": 71.43,
+      "word_edits": 3,
+      "ref_words": 31
+     }
+    }
+   },
+   "native": {
+    "n": 40,
+    "wer": 1.92,
+    "cer": 0.61,
+    "wer_strict": 1.92,
+    "row_ok": 90.0,
+    "word_edits": 6,
+    "ref_words": 312,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "freya-everyday": {
+      "n": 33,
+      "wer": 1.07,
+      "cer": 0.47,
+      "wer_strict": 1.07,
+      "row_ok": 93.94,
+      "word_edits": 3,
+      "ref_words": 281
+     },
+     "freya-short-native": {
+      "n": 7,
+      "wer": 9.68,
+      "cer": 1.81,
+      "wer_strict": 9.68,
+      "row_ok": 71.43,
+      "word_edits": 3,
+      "ref_words": 31
+     }
+    }
+   },
+   "normalizer_tr": {
+    "n": 40,
+    "wer": 1.92,
+    "cer": 0.61,
+    "wer_strict": 1.92,
+    "row_ok": 90.0,
+    "word_edits": 6,
+    "ref_words": 312,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "freya-everyday": {
+      "n": 33,
+      "wer": 1.07,
+      "cer": 0.47,
+      "wer_strict": 1.07,
+      "row_ok": 93.94,
+      "word_edits": 3,
+      "ref_words": 281
+     },
+     "freya-short-native": {
+      "n": 7,
+      "wer": 9.68,
+      "cer": 1.81,
+      "wer_strict": 9.68,
+      "row_ok": 71.43,
+      "word_edits": 3,
+      "ref_words": 31
+     }
+    }
+   },
+   "normalizer_tr_fallback": {
+    "n": 40,
+    "wer": 1.92,
+    "cer": 0.61,
+    "wer_strict": 1.92,
+    "row_ok": 90.0,
+    "word_edits": 6,
+    "ref_words": 312,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "freya-everyday": {
+      "n": 33,
+      "wer": 1.07,
+      "cer": 0.47,
+      "wer_strict": 1.07,
+      "row_ok": 93.94,
+      "word_edits": 3,
+      "ref_words": 281
+     },
+     "freya-short-native": {
+      "n": 7,
+      "wer": 9.68,
+      "cer": 1.81,
+      "wer_strict": 9.68,
+      "row_ok": 71.43,
+      "word_edits": 3,
+      "ref_words": 31
+     }
+    }
+   },
+   "trnorm": {
+    "n": 40,
+    "wer": 1.92,
+    "cer": 0.61,
+    "wer_strict": 1.92,
+    "row_ok": 90.0,
+    "word_edits": 6,
+    "ref_words": 312,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "freya-everyday": {
+      "n": 33,
+      "wer": 1.07,
+      "cer": 0.47,
+      "wer_strict": 1.07,
+      "row_ok": 93.94,
+      "word_edits": 3,
+      "ref_words": 281
+     },
+     "freya-short-native": {
+      "n": 7,
+      "wer": 9.68,
+      "cer": 1.81,
+      "wer_strict": 9.68,
+      "row_ok": 71.43,
+      "word_edits": 3,
+      "ref_words": 31
+     }
+    }
+   }
+  },
+  "piper-tr-dfki": {
+   "raw": {
+    "n": 40,
+    "wer": 3.21,
+    "cer": 0.52,
+    "wer_strict": 3.21,
+    "row_ok": 82.5,
+    "word_edits": 10,
+    "ref_words": 312,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "freya-everyday": {
+      "n": 33,
+      "wer": 2.85,
+      "cer": 0.37,
+      "wer_strict": 2.85,
+      "row_ok": 84.85,
+      "word_edits": 8,
+      "ref_words": 281
+     },
+     "freya-short-native": {
+      "n": 7,
+      "wer": 6.45,
+      "cer": 1.81,
+      "wer_strict": 6.45,
+      "row_ok": 71.43,
+      "word_edits": 2,
+      "ref_words": 31
+     }
+    }
+   },
+   "normalizer_tr": {
+    "n": 40,
+    "wer": 3.21,
+    "cer": 0.52,
+    "wer_strict": 3.21,
+    "row_ok": 82.5,
+    "word_edits": 10,
+    "ref_words": 312,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "freya-everyday": {
+      "n": 33,
+      "wer": 2.85,
+      "cer": 0.37,
+      "wer_strict": 2.85,
+      "row_ok": 84.85,
+      "word_edits": 8,
+      "ref_words": 281
+     },
+     "freya-short-native": {
+      "n": 7,
+      "wer": 6.45,
+      "cer": 1.81,
+      "wer_strict": 6.45,
+      "row_ok": 71.43,
+      "word_edits": 2,
+      "ref_words": 31
+     }
+    }
+   },
+   "normalizer_tr_fallback": {
+    "n": 40,
+    "wer": 3.21,
+    "cer": 0.52,
+    "wer_strict": 3.21,
+    "row_ok": 82.5,
+    "word_edits": 10,
+    "ref_words": 312,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "freya-everyday": {
+      "n": 33,
+      "wer": 2.85,
+      "cer": 0.37,
+      "wer_strict": 2.85,
+      "row_ok": 84.85,
+      "word_edits": 8,
+      "ref_words": 281
+     },
+     "freya-short-native": {
+      "n": 7,
+      "wer": 6.45,
+      "cer": 1.81,
+      "wer_strict": 6.45,
+      "row_ok": 71.43,
+      "word_edits": 2,
+      "ref_words": 31
+     }
+    }
+   },
+   "trnorm": {
+    "n": 40,
+    "wer": 3.21,
+    "cer": 0.52,
+    "wer_strict": 3.21,
+    "row_ok": 82.5,
+    "word_edits": 10,
+    "ref_words": 312,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "freya-everyday": {
+      "n": 33,
+      "wer": 2.85,
+      "cer": 0.37,
+      "wer_strict": 2.85,
+      "row_ok": 84.85,
+      "word_edits": 8,
+      "ref_words": 281
+     },
+     "freya-short-native": {
+      "n": 7,
+      "wer": 6.45,
+      "cer": 1.81,
+      "wer_strict": 6.45,
+      "row_ok": 71.43,
+      "word_edits": 2,
+      "ref_words": 31
+     }
+    }
+   }
+  },
+  "mms-tts-tur": {
+   "raw": {
+    "n": 40,
+    "wer": 8.01,
+    "cer": 1.61,
+    "wer_strict": 8.01,
+    "row_ok": 57.5,
+    "word_edits": 25,
+    "ref_words": 312,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "freya-everyday": {
+      "n": 33,
+      "wer": 7.47,
+      "cer": 1.42,
+      "wer_strict": 7.47,
+      "row_ok": 57.58,
+      "word_edits": 21,
+      "ref_words": 281
+     },
+     "freya-short-native": {
+      "n": 7,
+      "wer": 12.9,
+      "cer": 3.17,
+      "wer_strict": 12.9,
+      "row_ok": 57.14,
+      "word_edits": 4,
+      "ref_words": 31
+     }
+    }
+   },
+   "normalizer_tr": {
+    "n": 40,
+    "wer": 8.01,
+    "cer": 1.61,
+    "wer_strict": 8.01,
+    "row_ok": 57.5,
+    "word_edits": 25,
+    "ref_words": 312,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "freya-everyday": {
+      "n": 33,
+      "wer": 7.47,
+      "cer": 1.42,
+      "wer_strict": 7.47,
+      "row_ok": 57.58,
+      "word_edits": 21,
+      "ref_words": 281
+     },
+     "freya-short-native": {
+      "n": 7,
+      "wer": 12.9,
+      "cer": 3.17,
+      "wer_strict": 12.9,
+      "row_ok": 57.14,
+      "word_edits": 4,
+      "ref_words": 31
+     }
+    }
+   },
+   "normalizer_tr_fallback": {
+    "n": 40,
+    "wer": 8.01,
+    "cer": 1.61,
+    "wer_strict": 8.01,
+    "row_ok": 57.5,
+    "word_edits": 25,
+    "ref_words": 312,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "freya-everyday": {
+      "n": 33,
+      "wer": 7.47,
+      "cer": 1.42,
+      "wer_strict": 7.47,
+      "row_ok": 57.58,
+      "word_edits": 21,
+      "ref_words": 281
+     },
+     "freya-short-native": {
+      "n": 7,
+      "wer": 12.9,
+      "cer": 3.17,
+      "wer_strict": 12.9,
+      "row_ok": 57.14,
+      "word_edits": 4,
+      "ref_words": 31
+     }
+    }
+   },
+   "trnorm": {
+    "n": 40,
+    "wer": 8.01,
+    "cer": 1.61,
+    "wer_strict": 8.01,
+    "row_ok": 57.5,
+    "word_edits": 25,
+    "ref_words": 312,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "freya-everyday": {
+      "n": 33,
+      "wer": 7.47,
+      "cer": 1.42,
+      "wer_strict": 7.47,
+      "row_ok": 57.58,
+      "word_edits": 21,
+      "ref_words": 281
+     },
+     "freya-short-native": {
+      "n": 7,
+      "wer": 12.9,
+      "cer": 3.17,
+      "wer_strict": 12.9,
+      "row_ok": 57.14,
+      "word_edits": 4,
+      "ref_words": 31
+     }
+    }
+   }
+  },
+  "qwen3-tts-tiny-tr": {
+   "raw": {
+    "n": 40,
+    "wer": 2.24,
+    "cer": 0.38,
+    "wer_strict": 2.24,
+    "row_ok": 92.5,
+    "word_edits": 7,
+    "ref_words": 312,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "freya-everyday": {
+      "n": 33,
+      "wer": 2.14,
+      "cer": 0.32,
+      "wer_strict": 2.14,
+      "row_ok": 93.94,
+      "word_edits": 6,
+      "ref_words": 281
+     },
+     "freya-short-native": {
+      "n": 7,
+      "wer": 3.23,
+      "cer": 0.9,
+      "wer_strict": 3.23,
+      "row_ok": 85.71,
+      "word_edits": 1,
+      "ref_words": 31
+     }
+    }
+   },
+   "normalizer_tr": {
+    "n": 40,
+    "wer": 2.24,
+    "cer": 0.38,
+    "wer_strict": 2.24,
+    "row_ok": 92.5,
+    "word_edits": 7,
+    "ref_words": 312,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "freya-everyday": {
+      "n": 33,
+      "wer": 2.14,
+      "cer": 0.32,
+      "wer_strict": 2.14,
+      "row_ok": 93.94,
+      "word_edits": 6,
+      "ref_words": 281
+     },
+     "freya-short-native": {
+      "n": 7,
+      "wer": 3.23,
+      "cer": 0.9,
+      "wer_strict": 3.23,
+      "row_ok": 85.71,
+      "word_edits": 1,
+      "ref_words": 31
+     }
+    }
+   },
+   "normalizer_tr_fallback": {
+    "n": 40,
+    "wer": 2.24,
+    "cer": 0.38,
+    "wer_strict": 2.24,
+    "row_ok": 92.5,
+    "word_edits": 7,
+    "ref_words": 312,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "freya-everyday": {
+      "n": 33,
+      "wer": 2.14,
+      "cer": 0.32,
+      "wer_strict": 2.14,
+      "row_ok": 93.94,
+      "word_edits": 6,
+      "ref_words": 281
+     },
+     "freya-short-native": {
+      "n": 7,
+      "wer": 3.23,
+      "cer": 0.9,
+      "wer_strict": 3.23,
+      "row_ok": 85.71,
+      "word_edits": 1,
+      "ref_words": 31
+     }
+    }
+   },
+   "trnorm": {
+    "n": 40,
+    "wer": 2.24,
+    "cer": 0.38,
+    "wer_strict": 2.24,
+    "row_ok": 92.5,
+    "word_edits": 7,
+    "ref_words": 312,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "freya-everyday": {
+      "n": 33,
+      "wer": 2.14,
+      "cer": 0.32,
+      "wer_strict": 2.14,
+      "row_ok": 93.94,
+      "word_edits": 6,
+      "ref_words": 281
+     },
+     "freya-short-native": {
+      "n": 7,
+      "wer": 3.23,
+      "cer": 0.9,
+      "wer_strict": 3.23,
+      "row_ok": 85.71,
+      "word_edits": 1,
+      "ref_words": 31
+     }
+    }
+   }
+  }
+ },
+ "subsets": {},
+ "speed": {
+  "ema-lightning": {
+   "threads": "2",
+   "rtf": 0.1571,
+   "cpu_rtf": 0.176,
+   "n_timed": 40,
+   "mean_audio_seconds": 2.95
+  },
+  "pocket-tts-turkish": {
+   "threads": "1",
+   "rtf": 0.5729,
+   "cpu_rtf": 0.8098,
+   "n_timed": 41,
+   "mean_audio_seconds": 3.39
+  },
+  "piper-tr-dfki": {
+   "threads": "2",
+   "rtf": 0.0736,
+   "cpu_rtf": 0.1157,
+   "n_timed": 40,
+   "mean_audio_seconds": 3.45
+  },
+  "mms-tts-tur": {
+   "threads": "2",
+   "rtf": 0.3702,
+   "cpu_rtf": 0.5718,
+   "n_timed": 40,
+   "mean_audio_seconds": 4.24
+  },
+  "qwen3-tts-tiny-tr": {
+   "threads": "2",
+   "rtf": 3.2745,
+   "cpu_rtf": 4.3858,
+   "n_timed": 40,
+   "mean_audio_seconds": 3.73
+  }
+ },
+ "systems": {
+  "ema-lightning": {
+   "model": "canberkkkkkk/ema-lightning",
+   "params": "8.6M (5.6M DiT + 3M decoder)",
+   "license": "Apache-2.0 (code and weights)",
+   "native_mode": "separable",
+   "native_note": "EMA always runs normalizer-tr (policy 'fallback') in EMA.say(); raw replaces Frontend.spoken with the identity",
+   "sample_rate": 48000
+  },
+  "pocket-tts-turkish": {
+   "model": "wite-tech/pocket-tts-turkish",
+   "params": "~110M (incl. codec)",
+   "license": "CC-BY-4.0 (weights); pocket-tts-turkish package Apache-2.0",
+   "native_mode": "separable",
+   "native_note": "package TextFrontend = normalizer.py + alphabet fit (+ stray digits spelled one by one)",
+   "sample_rate": 24000
+  },
+  "piper-tr-dfki": {
+   "model": "rhasspy/piper-voices tr/tr_TR/dfki/medium",
+   "params": "~15M (VITS medium)",
+   "license": "voice data CC-BY-NC-SA-4.0 (dfki-ot-data); piper-tts code GPL-3.0-or-later (bundles espeak-ng, GPL-3.0)",
+   "native_mode": "always_on",
+   "native_note": "espeak-ng's Turkish rules read digits, '%', thousands/decimal separators internally; cannot be bypassed",
+   "sample_rate": 22050
+  },
+  "mms-tts-tur": {
+   "model": "facebook/mms-tts-tur",
+   "params": "36M (VITS)",
+   "license": "CC-BY-NC-4.0",
+   "native_mode": "none",
+   "native_note": "no normalizer; VitsTokenizer lowercases and drops out-of-vocabulary characters",
+   "sample_rate": 16000
+  },
+  "qwen3-tts-tiny-tr": {
+   "model": "erkamk/qwen3-tts-tiny-tr",
+   "params": "199M talker + 171M speech tokenizer",
+   "license": "Apache-2.0 (weights, inherited from Qwen3-TTS); qwen-tts code Apache-2.0",
+   "native_mode": "none",
+   "native_note": "no normalizer; model card: write numbers as words and I/İ as ı/i",
+   "sample_rate": 24000
+  }
+ },
+ "frontends": {
+  "raw": "text as written, system's bundled normalizer bypassed",
+  "native": "text as written, system's bundled normalizer on",
+  "normalizer_tr": "normalizer-tr, default policy (preserve)",
+  "normalizer_tr_fallback": "normalizer-tr, ambiguity_policy='fallback'",
+  "trnorm": "trnorm.normalize"
+ }
+}

@@ -1,0 +1,155 @@
+{"id": "sayi_01", "category": "sayi", "text": "Toplantıya 45 kişi katıldı.", "spoken": "Toplantıya kırk beş kişi katıldı.", "alts": []}
+{"id": "sayi_02", "category": "sayi", "text": "Bu kitabı 3 kez okudum.", "spoken": "Bu kitabı üç kez okudum.", "alts": []}
+{"id": "sayi_03", "category": "sayi", "text": "Stadyumda 52.000 seyirci vardı.", "spoken": "Stadyumda elli iki bin seyirci vardı.", "alts": []}
+{"id": "sayi_04", "category": "sayi", "text": "1453'te İstanbul fethedildi.", "spoken": "Bin dört yüz elli üçte İstanbul fethedildi.", "alts": []}
+{"id": "sayi_05", "category": "sayi", "text": "Şirket 2019'dan beri zarar ediyor.", "spoken": "Şirket iki bin on dokuzdan beri zarar ediyor.", "alts": []}
+{"id": "sayi_06", "category": "sayi", "text": "Bu yolun 7'si de kapalıymış.", "spoken": "Bu yolun yedisi de kapalıymış.", "alts": []}
+{"id": "sayi_07", "category": "sayi", "text": "Nüfus 85 milyonu geçti.", "spoken": "Nüfus seksen beş milyonu geçti.", "alts": []}
+{"id": "sayi_08", "category": "sayi", "text": "Otobüs 6'da kalkıyor.", "spoken": "Otobüs altıda kalkıyor.", "alts": []}
+{"id": "sayi_09", "category": "sayi", "text": "Siparişler 10'ar 10'ar gönderiliyor.", "spoken": "Siparişler onar onar gönderiliyor.", "alts": []}
+{"id": "sayi_10", "category": "sayi", "text": "1990'lı yıllarda bu mahalle çok sakindi.", "spoken": "Bin dokuz yüz doksanlı yıllarda bu mahalle çok sakindi.", "alts": ["Doksanlı yıllarda bu mahalle çok sakindi."]}
+{"id": "sayi_11", "category": "sayi", "text": "Sınavda 100 üzerinden 87 aldım.", "spoken": "Sınavda yüz üzerinden seksen yedi aldım.", "alts": []}
+{"id": "sayi_12", "category": "sayi", "text": "Takımda 11 oyuncu sahada kaldı.", "spoken": "Takımda on bir oyuncu sahada kaldı.", "alts": []}
+{"id": "sayi_13", "category": "sayi", "text": "Kütüphanede 1.250.000 kitap bulunuyor.", "spoken": "Kütüphanede bir milyon iki yüz elli bin kitap bulunuyor.", "alts": []}
+{"id": "sayi_14", "category": "sayi", "text": "Bu sorunun 2'den fazla çözümü var.", "spoken": "Bu sorunun ikiden fazla çözümü var.", "alts": []}
+{"id": "sayi_15", "category": "sayi", "text": "Saatte 3 bardak çay içiyor.", "spoken": "Saatte üç bardak çay içiyor.", "alts": []}
+{"id": "sira_01", "category": "sira", "text": "Yarışmada 3. oldu.", "spoken": "Yarışmada üçüncü oldu.", "alts": []}
+{"id": "sira_02", "category": "sira", "text": "Ofisimiz 5. katta.", "spoken": "Ofisimiz beşinci katta.", "alts": []}
+{"id": "sira_03", "category": "sira", "text": "XIX. yüzyılda sanayi devrimi hızlandı.", "spoken": "On dokuzuncu yüzyılda sanayi devrimi hızlandı.", "alts": []}
+{"id": "sira_04", "category": "sira", "text": "IV. Murat, Bağdat'ı geri aldı.", "spoken": "Dördüncü Murat, Bağdat'ı geri aldı.", "alts": []}
+{"id": "sira_05", "category": "sira", "text": "Bu, şirketin 25'inci yıl dönümü.", "spoken": "Bu, şirketin yirmi beşinci yıl dönümü.", "alts": []}
+{"id": "sira_06", "category": "sira", "text": "Takım ligi 2'nci sırada bitirdi.", "spoken": "Takım ligi ikinci sırada bitirdi.", "alts": []}
+{"id": "sira_07", "category": "sira", "text": "Kızım 4. sınıfa geçti.", "spoken": "Kızım dördüncü sınıfa geçti.", "alts": []}
+{"id": "sira_08", "category": "sira", "text": "II. Dünya Savaşı 1945'te sona erdi.", "spoken": "İkinci Dünya Savaşı bin dokuz yüz kırk beşte sona erdi.", "alts": []}
+{"id": "sira_09", "category": "sira", "text": "Maratonu 120. sırada tamamladım.", "spoken": "Maratonu yüz yirminci sırada tamamladım.", "alts": []}
+{"id": "sira_10", "category": "sira", "text": "Sözleşmenin 7. maddesini okuyun.", "spoken": "Sözleşmenin yedinci maddesini okuyun.", "alts": []}
+{"id": "sira_11", "category": "sira", "text": "Festival bu yıl 30'uncu kez düzenleniyor.", "spoken": "Festival bu yıl otuzuncu kez düzenleniyor.", "alts": []}
+{"id": "sira_12", "category": "sira", "text": "Mahallenin 1. caddesinde oturuyoruz.", "spoken": "Mahallenin birinci caddesinde oturuyoruz.", "alts": []}
+{"id": "tarih_01", "category": "tarih", "text": "Toplantı 15.03.2026 tarihinde yapılacak.", "spoken": "Toplantı on beş Mart iki bin yirmi altı tarihinde yapılacak.", "alts": []}
+{"id": "tarih_02", "category": "tarih", "text": "Son başvuru tarihi 01/09/2026.", "spoken": "Son başvuru tarihi bir Eylül iki bin yirmi altı.", "alts": []}
+{"id": "tarih_03", "category": "tarih", "text": "Fatura 30.11.2026'da kesildi.", "spoken": "Fatura otuz Kasım iki bin yirmi altıda kesildi.", "alts": []}
+{"id": "tarih_04", "category": "tarih", "text": "29 Ekim 1923'te Cumhuriyet ilan edildi.", "spoken": "Yirmi dokuz Ekim bin dokuz yüz yirmi üçte Cumhuriyet ilan edildi.", "alts": []}
+{"id": "tarih_05", "category": "tarih", "text": "Kargonuz 7 Ağustos'ta teslim edilecek.", "spoken": "Kargonuz yedi Ağustos'ta teslim edilecek.", "alts": []}
+{"id": "tarih_06", "category": "tarih", "text": "Doğum tarihim 23.04.1998.", "spoken": "Doğum tarihim yirmi üç Nisan bin dokuz yüz doksan sekiz.", "alts": []}
+{"id": "tarih_07", "category": "tarih", "text": "Kayıtlar 2026-02-10 tarihinde başladı.", "spoken": "Kayıtlar on Şubat iki bin yirmi altı tarihinde başladı.", "alts": []}
+{"id": "tarih_08", "category": "tarih", "text": "Kampanya 31 Aralık'a kadar sürecek.", "spoken": "Kampanya otuz bir Aralık'a kadar sürecek.", "alts": []}
+{"id": "tarih_09", "category": "tarih", "text": "Proje 2027 yılının ilk yarısında bitecek.", "spoken": "Proje iki bin yirmi yedi yılının ilk yarısında bitecek.", "alts": []}
+{"id": "tarih_10", "category": "tarih", "text": "Kira sözleşmesi 05.06.2025'ten itibaren geçerli.", "spoken": "Kira sözleşmesi beş Haziran iki bin yirmi beşten itibaren geçerli.", "alts": []}
+{"id": "tarih_11", "category": "tarih", "text": "Bayram 20-23 Mart arasında.", "spoken": "Bayram yirmi ila yirmi üç Mart arasında.", "alts": ["Bayram yirmi yirmi üç Mart arasında.", "Bayram yirmi ile yirmi üç Mart arasında."]}
+{"id": "tarih_12", "category": "tarih", "text": "1914-1918 yılları arasında savaş sürdü.", "spoken": "Bin dokuz yüz on dört ila bin dokuz yüz on sekiz yılları arasında savaş sürdü.", "alts": ["Bin dokuz yüz on dört ile bin dokuz yüz on sekiz yılları arasında savaş sürdü.", "Bin dokuz yüz on dört bin dokuz yüz on sekiz yılları arasında savaş sürdü."]}
+{"id": "saat_01", "category": "saat", "text": "Toplantı saat 14:30'da başlayacak.", "spoken": "Toplantı saat on dört otuzda başlayacak.", "alts": ["Toplantı saat iki buçukta başlayacak."]}
+{"id": "saat_02", "category": "saat", "text": "Mağaza 09.00'da açılıyor.", "spoken": "Mağaza dokuzda açılıyor.", "alts": []}
+{"id": "saat_03", "category": "saat", "text": "Son tren 23:45'te kalkıyor.", "spoken": "Son tren yirmi üç kırk beşte kalkıyor.", "alts": []}
+{"id": "saat_04", "category": "saat", "text": "Randevunuz yarın 10:15'te.", "spoken": "Randevunuz yarın on on beşte.", "alts": ["Randevunuz yarın onu çeyrek geçe."]}
+{"id": "saat_05", "category": "saat", "text": "Mesai 08:30-17:30 arası.", "spoken": "Mesai sekiz otuz ila on yedi otuz arası.", "alts": ["Mesai sekiz buçuk ile beş buçuk arası.", "Mesai sekiz otuz on yedi otuz arası."]}
+{"id": "saat_06", "category": "saat", "text": "Saat 7'de uyandım.", "spoken": "Saat yedide uyandım.", "alts": []}
+{"id": "saat_07", "category": "saat", "text": "Uçağımız 06:05'te iniş yapacak.", "spoken": "Uçağımız altı sıfır beşte iniş yapacak.", "alts": ["Uçağımız altıyı beş geçe iniş yapacak."]}
+{"id": "saat_08", "category": "saat", "text": "Maç 21.45'te başlıyor.", "spoken": "Maç yirmi bir kırk beşte başlıyor.", "alts": []}
+{"id": "saat_09", "category": "saat", "text": "Kargo 12:00'ye kadar teslim edilir.", "spoken": "Kargo on ikiye kadar teslim edilir.", "alts": []}
+{"id": "saat_10", "category": "saat", "text": "Etkinlik 19.00'dan sonra başlar.", "spoken": "Etkinlik on dokuzdan sonra başlar.", "alts": []}
+{"id": "saat_11", "category": "saat", "text": "Alarmı 05:50'ye kurdum.", "spoken": "Alarmı beş elliye kurdum.", "alts": []}
+{"id": "saat_12", "category": "saat", "text": "Yayın 00:30'da bitiyor.", "spoken": "Yayın sıfır otuzda bitiyor.", "alts": ["Yayın gece yarımı otuz geçe bitiyor."]}
+{"id": "para_01", "category": "para", "text": "Hesabınıza 1.250 TL yatırıldı.", "spoken": "Hesabınıza bin iki yüz elli lira yatırıldı.", "alts": ["Hesabınıza bin iki yüz elli Türk lirası yatırıldı."]}
+{"id": "para_02", "category": "para", "text": "Ürünün fiyatı 49,90 TL.", "spoken": "Ürünün fiyatı kırk dokuz lira doksan kuruş.", "alts": ["Ürünün fiyatı kırk dokuz virgül doksan lira."]}
+{"id": "para_03", "category": "para", "text": "Kahve 3,50 dolar.", "spoken": "Kahve üç dolar elli sent.", "alts": ["Kahve üç buçuk dolar.", "Kahve üç virgül elli dolar."]}
+{"id": "para_04", "category": "para", "text": "Bilet ücreti ₺350.", "spoken": "Bilet ücreti üç yüz elli lira.", "alts": []}
+{"id": "para_05", "category": "para", "text": "Kira 15.000 TL'ye yükseldi.", "spoken": "Kira on beş bin liraya yükseldi.", "alts": []}
+{"id": "para_06", "category": "para", "text": "Bütçe 2,5 milyar TL olarak açıklandı.", "spoken": "Bütçe iki buçuk milyar lira olarak açıklandı.", "alts": ["Bütçe iki virgül beş milyar lira olarak açıklandı."]}
+{"id": "para_07", "category": "para", "text": "Bu ayakkabı €120.", "spoken": "Bu ayakkabı yüz yirmi avro.", "alts": ["Bu ayakkabı yüz yirmi euro."]}
+{"id": "para_08", "category": "para", "text": "Aylık aidat 750 TL'dir.", "spoken": "Aylık aidat yedi yüz elli liradır.", "alts": []}
+{"id": "para_09", "category": "para", "text": "İndirimle 99,99 TL'ye düştü.", "spoken": "İndirimle doksan dokuz lira doksan dokuz kuruşa düştü.", "alts": []}
+{"id": "para_10", "category": "para", "text": "Borcunuz 3.475,20 TL.", "spoken": "Borcunuz üç bin dört yüz yetmiş beş lira yirmi kuruş.", "alts": []}
+{"id": "para_11", "category": "para", "text": "Altının gramı 4.100 lira oldu.", "spoken": "Altının gramı dört bin yüz lira oldu.", "alts": []}
+{"id": "para_12", "category": "para", "text": "Bahşiş olarak 20 TL bıraktım.", "spoken": "Bahşiş olarak yirmi lira bıraktım.", "alts": []}
+{"id": "yuzde_01", "category": "yuzde", "text": "Enflasyon %47,5 olarak açıklandı.", "spoken": "Enflasyon yüzde kırk yedi buçuk olarak açıklandı.", "alts": ["Enflasyon yüzde kırk yedi virgül beş olarak açıklandı."]}
+{"id": "yuzde_02", "category": "yuzde", "text": "Ürünlerde %30'a varan indirim var.", "spoken": "Ürünlerde yüzde otuza varan indirim var.", "alts": []}
+{"id": "yuzde_03", "category": "yuzde", "text": "Katılımcıların %80'i memnun kaldı.", "spoken": "Katılımcıların yüzde sekseni memnun kaldı.", "alts": []}
+{"id": "yuzde_04", "category": "yuzde", "text": "Faiz oranı %3,25'e düştü.", "spoken": "Faiz oranı yüzde üç virgül yirmi beşe düştü.", "alts": []}
+{"id": "yuzde_05", "category": "yuzde", "text": "Pil %15'in altına inince uyarı verir.", "spoken": "Pil yüzde on beşin altına inince uyarı verir.", "alts": []}
+{"id": "yuzde_06", "category": "yuzde", "text": "Nem oranı yüzde 65.", "spoken": "Nem oranı yüzde altmış beş.", "alts": []}
+{"id": "yuzde_07", "category": "yuzde", "text": "Bu ürün %100 pamuktur.", "spoken": "Bu ürün yüzde yüz pamuktur.", "alts": []}
+{"id": "yuzde_08", "category": "yuzde", "text": "Oylarda %12'lik bir artış oldu.", "spoken": "Oylarda yüzde on ikilik bir artış oldu.", "alts": []}
+{"id": "birim_01", "category": "birim", "text": "Her gün 5 km yürüyorum.", "spoken": "Her gün beş kilometre yürüyorum.", "alts": []}
+{"id": "birim_02", "category": "birim", "text": "Bebek 3,2 kg doğdu.", "spoken": "Bebek üç virgül iki kilogram doğdu.", "alts": ["Bebek üç virgül iki kilo doğdu.", "Bebek üç kilo iki yüz gram doğdu."]}
+{"id": "birim_03", "category": "birim", "text": "Günde 2 lt su için.", "spoken": "Günde iki litre su için.", "alts": []}
+{"id": "birim_04", "category": "birim", "text": "Hava sıcaklığı 38°C'ye ulaştı.", "spoken": "Hava sıcaklığı otuz sekiz dereceye ulaştı.", "alts": []}
+{"id": "birim_05", "category": "birim", "text": "Araç 140 km/sa hızla gidiyordu.", "spoken": "Araç saatte yüz kırk kilometre hızla gidiyordu.", "alts": ["Araç yüz kırk kilometre hızla gidiyordu."]}
+{"id": "birim_06", "category": "birim", "text": "Daire 120 m² büyüklüğünde.", "spoken": "Daire yüz yirmi metrekare büyüklüğünde.", "alts": []}
+{"id": "birim_07", "category": "birim", "text": "Günde 500 mg C vitamini alıyorum.", "spoken": "Günde beş yüz miligram ce vitamini alıyorum.", "alts": []}
+{"id": "birim_08", "category": "birim", "text": "Telefonun 128 GB hafızası var.", "spoken": "Telefonun yüz yirmi sekiz gigabayt hafızası var.", "alts": ["Telefonun yüz yirmi sekiz ge be hafızası var."]}
+{"id": "birim_09", "category": "birim", "text": "Kabloyu 15 cm kısalttım.", "spoken": "Kabloyu on beş santimetre kısalttım.", "alts": ["Kabloyu on beş santim kısalttım."]}
+{"id": "birim_10", "category": "birim", "text": "Şişede 330 ml meyve suyu var.", "spoken": "Şişede üç yüz otuz mililitre meyve suyu var.", "alts": []}
+{"id": "birim_11", "category": "birim", "text": "Gece sıcaklık -4 dereceye düştü.", "spoken": "Gece sıcaklık eksi dört dereceye düştü.", "alts": []}
+{"id": "birim_12", "category": "birim", "text": "Batarya 5000 mAh kapasiteli.", "spoken": "Batarya beş bin miliamper saat kapasiteli.", "alts": []}
+{"id": "numara_01", "category": "numara", "text": "Bizi 0212 444 55 66'dan arayabilirsiniz.", "spoken": "Bizi sıfır iki yüz on iki, dört yüz kırk dört, elli beş, altmış altıdan arayabilirsiniz.", "alts": []}
+{"id": "numara_02", "category": "numara", "text": "Cep numaram 0532 111 22 33.", "spoken": "Cep numaram sıfır beş yüz otuz iki, yüz on bir, yirmi iki, otuz üç.", "alts": []}
+{"id": "numara_03", "category": "numara", "text": "Sipariş numaranız 584213.", "spoken": "Sipariş numaranız beş sekiz dört iki bir üç.", "alts": ["Sipariş numaranız beş yüz seksen dört, iki yüz on üç."]}
+{"id": "numara_04", "category": "numara", "text": "Doğrulama kodunuz 4821.", "spoken": "Doğrulama kodunuz dört sekiz iki bir.", "alts": ["Doğrulama kodunuz kırk sekiz yirmi bir.", "Doğrulama kodunuz dört bin sekiz yüz yirmi bir."]}
+{"id": "numara_05", "category": "numara", "text": "34 TBC 512 plakalı araç park etti.", "spoken": "Otuz dört te be ce beş yüz on iki plakalı araç park etti.", "alts": []}
+{"id": "numara_06", "category": "numara", "text": "TC kimlik numaram 10000000146.", "spoken": "Te ce kimlik numaram yüz, sıfır sıfır sıfır, sıfır sıfır bir, kırk altı.", "alts": ["Te ce kimlik numaram bir sıfır sıfır sıfır sıfır sıfır sıfır sıfır bir dört altı."]}
+{"id": "numara_07", "category": "numara", "text": "Müşteri hizmetleri: 444 0 444", "spoken": "Müşteri hizmetleri: dört yüz kırk dört, sıfır, dört yüz kırk dört", "alts": []}
+{"id": "numara_08", "category": "numara", "text": "Uçuş numaranız TK1985.", "spoken": "Uçuş numaranız te ka bin dokuz yüz seksen beş.", "alts": ["Uçuş numaranız te ka on dokuz seksen beş."]}
+{"id": "numara_09", "category": "numara", "text": "Dahili hat 2045.", "spoken": "Dahili hat iki bin kırk beş.", "alts": ["Dahili hat yirmi kırk beş.", "Dahili hat iki sıfır dört beş."]}
+{"id": "numara_10", "category": "numara", "text": "Posta kodu 34710.", "spoken": "Posta kodu üç dört yedi bir sıfır.", "alts": ["Posta kodu otuz dört bin yedi yüz on."]}
+{"id": "numara_11", "category": "numara", "text": "Abone numarası 600123987.", "spoken": "Abone numarası altı yüz, yüz yirmi üç, dokuz yüz seksen yedi.", "alts": ["Abone numarası altı sıfır sıfır bir iki üç dokuz sekiz yedi."]}
+{"id": "numara_12", "category": "numara", "text": "Acil durumda 112'yi arayın.", "spoken": "Acil durumda yüz on ikiyi arayın.", "alts": ["Acil durumda bir bir ikiyi arayın."]}
+{"id": "kisaltma_01", "category": "kisaltma", "text": "Prof. Dr. Ayşe Yılmaz bugün konuşacak.", "spoken": "Profesör doktor Ayşe Yılmaz bugün konuşacak.", "alts": []}
+{"id": "kisaltma_02", "category": "kisaltma", "text": "Doç. Dr. Mehmet Kaya ameliyatı yaptı.", "spoken": "Doçent doktor Mehmet Kaya ameliyatı yaptı.", "alts": []}
+{"id": "kisaltma_03", "category": "kisaltma", "text": "Meyve, sebze vb. ürünler indirimde.", "spoken": "Meyve, sebze ve benzeri ürünler indirimde.", "alts": []}
+{"id": "kisaltma_04", "category": "kisaltma", "text": "Kalem, defter, silgi vs. aldım.", "spoken": "Kalem, defter, silgi vesaire aldım.", "alts": []}
+{"id": "kisaltma_05", "category": "kisaltma", "text": "Adresimiz Bağdat Cad. No: 214.", "spoken": "Adresimiz Bağdat caddesi numara iki yüz on dört.", "alts": ["Adresimiz Bağdat caddesi numara iki yüz on dört."]}
+{"id": "kisaltma_06", "category": "kisaltma", "text": "Sn. Müdürüm, toplantı ertelendi.", "spoken": "Sayın müdürüm, toplantı ertelendi.", "alts": []}
+{"id": "kisaltma_07", "category": "kisaltma", "text": "Ayrıntılar için bkz. ek 3.", "spoken": "Ayrıntılar için bakınız ek üç.", "alts": []}
+{"id": "kisaltma_08", "category": "kisaltma", "text": "Örn. bir dilekçe yazabilirsiniz.", "spoken": "Örneğin bir dilekçe yazabilirsiniz.", "alts": []}
+{"id": "kisaltma_09", "category": "kisaltma", "text": "Av. Zeynep Demir davayı kazandı.", "spoken": "Avukat Zeynep Demir davayı kazandı.", "alts": []}
+{"id": "kisaltma_10", "category": "kisaltma", "text": "Firma adı ABC Gıda San. ve Tic. A.Ş.", "spoken": "Firma adı a be ce Gıda sanayi ve ticaret anonim şirketi.", "alts": []}
+{"id": "kisaltma_11", "category": "kisaltma", "text": "Hz. Mevlana Konya'da yaşadı.", "spoken": "Hazreti Mevlana Konya'da yaşadı.", "alts": []}
+{"id": "kisaltma_12", "category": "kisaltma", "text": "Atatürk Mah. Gül Sok. No: 5", "spoken": "Atatürk mahallesi Gül sokak numara beş", "alts": []}
+{"id": "akronim_01", "category": "akronim", "text": "TBMM'de yeni yasa kabul edildi.", "spoken": "Te be me mede yeni yasa kabul edildi.", "alts": []}
+{"id": "akronim_02", "category": "akronim", "text": "THY'nin uçuşları iptal edildi.", "spoken": "Te ha yenin uçuşları iptal edildi.", "alts": ["Te he yenin uçuşları iptal edildi."]}
+{"id": "akronim_03", "category": "akronim", "text": "ABD'den gelen heyet Ankara'da.", "spoken": "A be deden gelen heyet Ankara'da.", "alts": []}
+{"id": "akronim_04", "category": "akronim", "text": "SGK'ya başvurunuzu yaptınız mı?", "spoken": "Se ge kaya başvurunuzu yaptınız mı?", "alts": ["Se ge keye başvurunuzu yaptınız mı?"]}
+{"id": "akronim_05", "category": "akronim", "text": "KDV dahil fiyat 118 TL.", "spoken": "Ka de ve dahil fiyat yüz on sekiz lira.", "alts": []}
+{"id": "akronim_06", "category": "akronim", "text": "NATO zirvesi Brüksel'de yapıldı.", "spoken": "Nato zirvesi Brüksel'de yapıldı.", "alts": []}
+{"id": "akronim_07", "category": "akronim", "text": "TÜBİTAK'ın yeni projesi açıklandı.", "spoken": "Tübitak'ın yeni projesi açıklandı.", "alts": []}
+{"id": "akronim_08", "category": "akronim", "text": "AVM'de çok kalabalık vardı.", "spoken": "A ve mede çok kalabalık vardı.", "alts": []}
+{"id": "akronim_09", "category": "akronim", "text": "PTT şubesinden kargo gönderdim.", "spoken": "Pe te te şubesinden kargo gönderdim.", "alts": []}
+{"id": "akronim_10", "category": "akronim", "text": "MEB yeni müfredatı açıkladı.", "spoken": "Meb yeni müfredatı açıkladı.", "alts": ["Me e be yeni müfredatı açıkladı."]}
+{"id": "akronim_11", "category": "akronim", "text": "Hastane MR sonucumu gönderdi.", "spoken": "Hastane me re sonucumu gönderdi.", "alts": ["Hastane emar sonucumu gönderdi."]}
+{"id": "akronim_12", "category": "akronim", "text": "ÖSYM sonuçları yarın açıklayacak.", "spoken": "Ö se ye me sonuçları yarın açıklayacak.", "alts": []}
+{"id": "akronim_13", "category": "akronim", "text": "YKS'ye 3 milyon aday başvurdu.", "spoken": "Ye ka seye üç milyon aday başvurdu.", "alts": []}
+{"id": "akronim_14", "category": "akronim", "text": "Bankadan IBAN numaramı aldım.", "spoken": "Bankadan iban numaramı aldım.", "alts": []}
+{"id": "akronim_15", "category": "akronim", "text": "AB üyelik süreci yeniden gündemde.", "spoken": "A be üyelik süreci yeniden gündemde.", "alts": []}
+{"id": "kisa_01", "category": "kisa", "text": "Evet.", "spoken": "Evet.", "alts": []}
+{"id": "kisa_02", "category": "kisa", "text": "Hayır, teşekkürler.", "spoken": "Hayır, teşekkürler.", "alts": []}
+{"id": "kisa_03", "category": "kisa", "text": "Tamam.", "spoken": "Tamam.", "alts": []}
+{"id": "kisa_04", "category": "kisa", "text": "Günaydın!", "spoken": "Günaydın!", "alts": []}
+{"id": "kisa_05", "category": "kisa", "text": "Bir dakika lütfen.", "spoken": "Bir dakika lütfen.", "alts": []}
+{"id": "kisa_06", "category": "kisa", "text": "Ne?", "spoken": "Ne?", "alts": []}
+{"id": "kisa_07", "category": "kisa", "text": "Anladım.", "spoken": "Anladım.", "alts": []}
+{"id": "kisa_08", "category": "kisa", "text": "Hoş geldiniz.", "spoken": "Hoş geldiniz.", "alts": []}
+{"id": "kisa_09", "category": "kisa", "text": "Kolay gelsin.", "spoken": "Kolay gelsin.", "alts": []}
+{"id": "kisa_10", "category": "kisa", "text": "Geçmiş olsun.", "spoken": "Geçmiş olsun.", "alts": []}
+{"id": "kisa_11", "category": "kisa", "text": "Afiyet olsun.", "spoken": "Afiyet olsun.", "alts": []}
+{"id": "kisa_12", "category": "kisa", "text": "Neden?", "spoken": "Neden?", "alts": []}
+{"id": "kisa_13", "category": "kisa", "text": "Peki.", "spoken": "Peki.", "alts": []}
+{"id": "kisa_14", "category": "kisa", "text": "Çok sağ ol.", "spoken": "Çok sağ ol.", "alts": []}
+{"id": "kisa_15", "category": "kisa", "text": "İyi akşamlar.", "spoken": "İyi akşamlar.", "alts": []}
+{"id": "soru_01", "category": "soru", "text": "Yarın gelecek misin?", "spoken": "Yarın gelecek misin?", "alts": []}
+{"id": "soru_02", "category": "soru", "text": "Bu otobüs Kadıköy'e gider mi?", "spoken": "Bu otobüs Kadıköy'e gider mi?", "alts": []}
+{"id": "soru_03", "category": "soru", "text": "Saat kaçta buluşalım?", "spoken": "Saat kaçta buluşalım?", "alts": []}
+{"id": "soru_04", "category": "soru", "text": "Siparişim ne zaman gelir?", "spoken": "Siparişim ne zaman gelir?", "alts": []}
+{"id": "soru_05", "category": "soru", "text": "Hesabı ayrı ayrı ödeyebilir miyiz?", "spoken": "Hesabı ayrı ayrı ödeyebilir miyiz?", "alts": []}
+{"id": "soru_06", "category": "soru", "text": "Kartla ödeme yapabilir miyim?", "spoken": "Kartla ödeme yapabilir miyim?", "alts": []}
+{"id": "soru_07", "category": "soru", "text": "Bu ürünün garantisi var mı?", "spoken": "Bu ürünün garantisi var mı?", "alts": []}
+{"id": "soru_08", "category": "soru", "text": "Toplantı iptal mi oldu?", "spoken": "Toplantı iptal mi oldu?", "alts": []}
+{"id": "ozel_01", "category": "ozel", "text": "Kâğıt fiyatları yine arttı.", "spoken": "Kâğıt fiyatları yine arttı.", "alts": []}
+{"id": "ozel_02", "category": "ozel", "text": "Hâlâ cevap bekliyorum.", "spoken": "Hâlâ cevap bekliyorum.", "alts": []}
+{"id": "ozel_03", "category": "ozel", "text": "Bu yatırımdan kâr elde ettik.", "spoken": "Bu yatırımdan kâr elde ettik.", "alts": []}
+{"id": "ozel_04", "category": "ozel", "text": "Eskişehir'den İzmir'e otobüsle gittik.", "spoken": "Eskişehir'den İzmir'e otobüsle gittik.", "alts": []}
+{"id": "ozel_05", "category": "ozel", "text": "Gaziantep'in baklavası meşhurdur.", "spoken": "Gaziantep'in baklavası meşhurdur.", "alts": []}
+{"id": "ozel_06", "category": "ozel", "text": "Çiğdem ile Ilgaz yarın Ağrı'ya gidiyor.", "spoken": "Çiğdem ile Ilgaz yarın Ağrı'ya gidiyor.", "alts": []}
+{"id": "ozel_07", "category": "ozel", "text": "Rıza Bey, Iğdır'dan döndü.", "spoken": "Rıza Bey, Iğdır'dan döndü.", "alts": []}
+{"id": "ozel_08", "category": "ozel", "text": "Şoförümüz Ömer Usta çok dikkatli.", "spoken": "Şoförümüz Ömer Usta çok dikkatli.", "alts": []}
+{"id": "ozel_09", "category": "ozel", "text": "Ölüdeniz'de yamaç paraşütü yaptık.", "spoken": "Ölüdeniz'de yamaç paraşütü yaptık.", "alts": []}
+{"id": "ozel_10", "category": "ozel", "text": "Ağaçlar, güzün sarı-kırmızı renklere bürünür.", "spoken": "Ağaçlar, güzün sarı kırmızı renklere bürünür.", "alts": []}

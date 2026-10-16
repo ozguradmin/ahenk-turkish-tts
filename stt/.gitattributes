@@ -1,0 +1,5 @@
+# Keep LF endings even if the repo is cloned on Windows (WSL2 runs these files).
+*.sh text eol=lf
+*.py text eol=lf
+*.md text eol=lf
+*.txt text eol=lf

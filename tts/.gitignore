@@ -1,0 +1,10 @@
+# piper1-gpl is cloned here by setup_env.sh at a pinned commit (also ignored in the root .gitignore)
+piper1-gpl/
+# machine-local settings written by setup_env.sh
+.env.local
+# experiment outputs if someone points --exp-dir / --out inside tts/
+exp/
+*.ckpt
+*.onnx
+*.onnx.json
+*.wav

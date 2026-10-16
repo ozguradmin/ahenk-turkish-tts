@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "Bu yazılımı veya benchmark'ları kullanırsanız lütfen şöyle atıf yapın. / If you use this software or benchmarks, please cite it as below."
+title: "ahenk-turkish-tts: Open Turkish speech tools — trnorm text normalizer, Ahenk (VoxCPM2 LoRA) recipe, TR-Zor TTS benchmark, Turkish ASR benchmark and small streaming STT recipe"
+authors:
+  - family-names: "Güler"
+    given-names: "Özgür"
+    email: "destek@ozgurguler.tech"
+repository-code: "https://github.com/ozguradmin/ahenk-turkish-tts"
+license: Apache-2.0
+version: 0.1.0
+date-released: 2026-10-07
+keywords:
+  - turkish
+  - text-to-speech
+  - speech-recognition
+  - text-normalization
+  - benchmark

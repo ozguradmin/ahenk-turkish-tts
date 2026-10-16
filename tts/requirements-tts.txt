@@ -1,0 +1,28 @@
+# Direct dependencies of the Turkish Piper recipe (tts/), installed by setup_env.sh.
+# torch/torchaudio are pinned in setup_env.sh (CPU or CUDA build); piper-tts[train] is
+# installed editable from the pinned piper1-gpl commit; trnorm editable from this repo.
+# Every transitive version is frozen in constraints-tts.txt.
+
+# Piper training stack (versions the smoke test ran with)
+lightning==2.6.6
+jsonargparse[signatures]==4.52.0
+tensorboard==2.21.0
+tensorboardX==2.6.5
+onnx==1.23.2
+onnxruntime==1.30.0
+librosa==0.11.0
+pysilero-vad==2.1.1
+
+# build tools for piper's espeak-ng bridge (CMake ExternalProject) and monotonic_align (Cython)
+scikit-build==0.19.1
+cmake==3.31.10
+ninja==1.13.2
+cython==3.3.0
+setuptools==84.0.0
+wheel==0.48.0
+
+# data preparation
+soundfile==0.14.0
+soxr==1.1.0
+huggingface_hub==2.1.1
+numpy==2.5.3

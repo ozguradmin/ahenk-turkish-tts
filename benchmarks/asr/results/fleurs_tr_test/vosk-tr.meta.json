@@ -1,0 +1,27 @@
+{
+  "system": "vosk-tr",
+  "set": "fleurs_tr_test",
+  "model": {
+    "url": "https://alphacephei.com/vosk/models/vosk-model-small-tr-0.3.zip",
+    "model_dir": "<repo>/data/models/vosk-model-small-tr-0.3",
+    "kind": "vosk"
+  },
+  "decode_config": {
+    "model": "vosk-model-small-tr-0.3",
+    "chunk_samples": 4000,
+    "note": "single-threaded"
+  },
+  "threads": 2,
+  "omp_num_threads": "2",
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz",
+  "n_cpus": 4,
+  "versions": {
+    "python": "3.12.3",
+    "vosk": "?"
+  },
+  "started": "2026-10-07T01:32:49",
+  "finished": "2026-10-07T01:50:10",
+  "n_decoded_this_run": 738,
+  "rtf_this_run": 0.1115,
+  "model_load_seconds": 4.4
+}

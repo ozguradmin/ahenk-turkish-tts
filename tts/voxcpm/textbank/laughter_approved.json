@@ -1,0 +1,66 @@
+{
+ "note": "Human review of the f022 laughter trial (voxcpm-corpus/f022/laughter.html, all 156 candidates of 52 lines heard; source: voxcpm-corpus/f022/laughter_labels_user.txt). Keys <line>-<rank> = true: really laughs, goes into the training corpus (render_corpus.py --add-reviewed). The instruction \"Laughing heartily while speaking.\" was clearly the best overall.",
+ "best": {
+  "l_001": [
+   1
+  ],
+  "l_003": [
+   1
+  ],
+  "l_024": [
+   1
+  ],
+  "l_030": [
+   2,
+   3
+  ]
+ },
+ "l_001-1": true,
+ "l_001-2": true,
+ "l_003-1": true,
+ "l_003-2": true,
+ "l_003-3": true,
+ "l_004-3": true,
+ "l_006-3": true,
+ "l_007-3": true,
+ "l_008-3": true,
+ "l_010-3": true,
+ "l_011-2": true,
+ "l_013-2": true,
+ "l_013-3": true,
+ "l_015-1": true,
+ "l_015-2": true,
+ "l_017-2": true,
+ "l_019-3": true,
+ "l_022-1": true,
+ "l_022-3": true,
+ "l_023-1": true,
+ "l_023-3": true,
+ "l_024-1": true,
+ "l_028-3": true,
+ "l_029-2": true,
+ "l_029-3": true,
+ "l_030-2": true,
+ "l_030-3": true,
+ "l_033-1": true,
+ "l_033-3": true,
+ "l_036-2": true,
+ "l_037-2": true,
+ "l_037-3": true,
+ "l_038-1": true,
+ "l_039-1": true,
+ "l_039-3": true,
+ "l_040-1": true,
+ "l_040-2": true,
+ "l_041-3": true,
+ "l_042-2": true,
+ "l_046-1": true,
+ "l_046-2": true,
+ "l_046-3": true,
+ "l_047-3": true,
+ "l_048-1": true,
+ "l_051-2": true,
+ "l_051-3": true,
+ "l_052-1": true,
+ "l_052-2": true
+}

@@ -1,0 +1,30 @@
+{
+  "system": "whisper-base",
+  "set": "mediaspeech_tr",
+  "model": {
+    "repo": "Systran/faster-whisper-base",
+    "revision": "ebe41f70d5b6dfa9166e2c581c45c9c0cfc57b66",
+    "kind": "faster-whisper"
+  },
+  "decode_config": {
+    "compute_type": "int8",
+    "language": "tr",
+    "beam_size": 5,
+    "condition_on_previous_text": false,
+    "vad_filter": false
+  },
+  "threads": 2,
+  "omp_num_threads": "2",
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz",
+  "n_cpus": 4,
+  "versions": {
+    "python": "3.12.3",
+    "faster_whisper": "1.2.1",
+    "ctranslate2": "4.8.2"
+  },
+  "started": "2026-10-07T02:12:50",
+  "finished": "2026-10-07T02:18:44",
+  "n_decoded_this_run": 285,
+  "rtf_this_run": 0.0869,
+  "model_load_seconds": 0.7
+}

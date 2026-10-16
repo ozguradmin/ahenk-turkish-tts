@@ -1,0 +1,37 @@
+{
+  "system": "duxx-zipformer",
+  "set": "fleurs_tr_test",
+  "model": {
+    "repo": "duxx/turkish-stt-zipformer",
+    "revision": "cebec199e0a9a1bdcd195b9124922b4a33e98bc8",
+    "tokens": "tokens.txt",
+    "encoder": "encoder-epoch-1-avg-1-chunk-32-left-128.int8.onnx",
+    "decoder": "decoder-epoch-1-avg-1-chunk-32-left-128.int8.onnx",
+    "joiner": "joiner-epoch-1-avg-1-chunk-32-left-128.int8.onnx",
+    "decoding_method": "modified_beam_search",
+    "max_active_paths": 12,
+    "tail_padding_s": 1.0,
+    "kind": "sherpa-online-transducer"
+  },
+  "decode_config": {
+    "decoding_method": "modified_beam_search",
+    "max_active_paths": 12,
+    "tail_padding_s": 1.0,
+    "encoder": "encoder-epoch-1-avg-1-chunk-32-left-128.int8.onnx",
+    "decoder": "decoder-epoch-1-avg-1-chunk-32-left-128.int8.onnx",
+    "joiner": "joiner-epoch-1-avg-1-chunk-32-left-128.int8.onnx"
+  },
+  "threads": 2,
+  "omp_num_threads": "2",
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz",
+  "n_cpus": 4,
+  "versions": {
+    "python": "3.12.3",
+    "sherpa_onnx": "1.13.8"
+  },
+  "started": "2026-10-07T00:32:59",
+  "finished": "2026-10-07T00:46:59",
+  "n_decoded_this_run": 737,
+  "rtf_this_run": 0.0734,
+  "model_load_seconds": 7.1
+}

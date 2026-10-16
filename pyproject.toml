@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "trnorm"
+version = "0.1.0"
+description = "Turkish text normalization for speech: written -> spoken form for TTS, and evaluation normalization for ASR (WER/CER)."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+authors = [{ name = "Özgür Güler" }]
+keywords = ["turkish", "text-normalization", "tts", "asr", "speech", "türkçe"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Natural Language :: Turkish",
+    "Topic :: Multimedia :: Sound/Audio :: Speech",
+    "Topic :: Text Processing :: Linguistic",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+# trtts: EMA Lightning speaks, trnorm normalizes
+tts = ["ema-lightning>=1.0.1,<2"]
+
+[project.urls]
+Homepage = "https://github.com/ozguradmin/ahenk-turkish-tts"
+Documentation = "https://github.com/ozguradmin/ahenk-turkish-tts/blob/main/docs/TRNORM.md"
+
+[project.scripts]
+trnorm = "trnorm.cli:main"
+trtts = "trtts.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

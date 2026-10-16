@@ -1,0 +1,3 @@
+{"entries": [{"name": "s3tr-500-ref", "kind": "lora", "lora": "/data/exp/voxcpm2-f022-s3tr/ckpt/step_0000500",
+  "ref": "/data/contest/r1/screen/cand/wav/f022-s0.wav", "notes": "s3tr-500 + the f022 designed-voice clip as reference"}],
+ "refs": false, "screen": []}

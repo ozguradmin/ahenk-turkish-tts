@@ -1,0 +1,10 @@
+{"id": "num_01", "category": "cardinal", "text": "1990'lı yıllarda bu stadyumda 45.300 seyirci vardı.", "spoken": "Bin dokuz yüz doksanlı yıllarda bu stadyumda kırk beş bin üç yüz seyirci vardı."}
+{"id": "num_02", "category": "date", "text": "Başvurular 01.11.2026 tarihine kadar sürecek.", "spoken": "Başvurular bir Kasım iki bin yirmi altı tarihine kadar sürecek."}
+{"id": "num_03", "category": "time", "text": "Tren 07:45'te kalkıyor ve 10:15'te Ankara'ya varıyor.", "spoken": "Tren yedi kırk beşte kalkıyor ve on on beşte Ankara'ya varıyor."}
+{"id": "num_04", "category": "money", "text": "Kira bedeli aylık 18.500 TL'ye yükseldi.", "spoken": "Kira bedeli aylık on sekiz bin beş yüz Türk lirasına yükseldi."}
+{"id": "num_05", "category": "percent", "text": "Faiz oranı %42,7 seviyesine çıktı.", "spoken": "Faiz oranı yüzde kırk iki virgül yedi seviyesine çıktı."}
+{"id": "num_06", "category": "ordinal", "text": "Maraton yarışında 3. oldu, takım arkadaşı ise 12. sırada bitirdi.", "spoken": "Maraton yarışında üçüncü oldu, takım arkadaşı ise on ikinci sırada bitirdi."}
+{"id": "num_07", "category": "phone", "text": "Randevu için 0532 418 27 63 numaralı telefonu arayın.", "spoken": "Randevu için sıfır beş yüz otuz iki dört yüz on sekiz yirmi yedi altmış üç numaralı telefonu arayın."}
+{"id": "num_08", "category": "abbreviation", "text": "Prof. Dr. Elif Şahin, Bağdat Cad. üzerindeki kliniğinde hasta kabul ediyor.", "spoken": "Profesör Doktor Elif Şahin, Bağdat Caddesi üzerindeki kliniğinde hasta kabul ediyor."}
+{"id": "num_09", "category": "unit", "text": "Paket 3,2 kg geliyor ve 350 km uzaklıktan gönderilecek.", "spoken": "Paket üç virgül iki kilogram geliyor ve üç yüz elli kilometre uzaklıktan gönderilecek."}
+{"id": "num_10", "category": "short", "text": "112'yi hemen ara!", "spoken": "Yüz on ikiyi hemen ara!"}

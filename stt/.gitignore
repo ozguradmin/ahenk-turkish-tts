@@ -1,0 +1,8 @@
+# icefall is cloned here by setup_env.sh at a pinned commit — never vendored
+icefall/
+# machine-local settings written by setup_env.sh
+.env.local
+# experiment outputs if someone points --exp-dir inside stt/
+exp/
+*.pt
+*.onnx

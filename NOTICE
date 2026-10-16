@@ -1,0 +1,66 @@
+ahenk-turkish-tts
+Copyright 2026 Özgür Güler
+
+This product's own code, documentation, test sets (TR-Zor, TR-Soru, dev_numbers10, contest) and
+text bank (tts/voxcpm/textbank) are licensed under the Apache License, Version 2.0 (see LICENSE).
+
+-------------------------------------------------------------------------------
+Third-party material included in this repository
+-------------------------------------------------------------------------------
+
+The files below contain text from third-party datasets (reference transcripts used to score
+models). They are redistributed under their own licences, not under Apache-2.0:
+
+- benchmarks/asr/results/fleurs_tr_test/*.jsonl ("ref" fields)
+  FLEURS, Google, https://huggingface.co/datasets/google/fleurs, CC BY 4.0.
+  Changes: Turkish test split only; model transcripts added next to the references.
+
+- benchmarks/asr/results/mediaspeech_tr/*.jsonl ("ref" fields)
+  MediaSpeech (Turkish), NTR Lab, https://huggingface.co/datasets/ymoslem/MediaSpeech, CC BY 4.0.
+  Changes: a seeded 500-row sample of the Turkish subset; model transcripts added next to the references.
+
+- benchmarks/tts/sets/freya_sample40.jsonl and benchmarks/tts/results/freya_sample40/
+  Freya-TR-Eval, Freya Voice, https://huggingface.co/datasets/freyavoice/freya-tr-eval, CC BY 4.0.
+  Changes: a seeded sample of 40 rows (benchmarks/tts/make_dev_sets.py); scores added.
+
+-------------------------------------------------------------------------------
+Datasets and models used (not included in this repository)
+-------------------------------------------------------------------------------
+
+Released model "Ahenk" (https://huggingface.co/ozgurguler/ahenk-tts-tr), a LoRA adapter
+trained with the recipe in tts/voxcpm. Its weights are CC BY 4.0 and its model card carries the
+full attribution. It was trained with:
+
+- Alania Turkish Synthetic Speech by PatientDesk AI
+  (https://huggingface.co/datasets/cloud0day3/alania-synthetic-speech-tr), licensed under CC BY 4.0.
+  Only the "cc-by" configuration is used (never "cc-by-sa"). Includes Turkish web text from
+  FineWeb-2 (https://huggingface.co/datasets/HuggingFaceFW/fineweb-2), used under ODC-By 1.0 and
+  subject to Common Crawl's terms of use.
+- Alania Turkish Domain Text by PatientDesk AI
+  (https://huggingface.co/datasets/cloud0day3/alania-domain-text-tr), licensed under CC BY 4.0.
+- VoxCPM2, OpenBMB (https://huggingface.co/openbmb/VoxCPM2), Apache-2.0: base model, voice design
+  and the synthetic training audio.
+
+Earlier experiments and evaluation:
+
+- Antalia (Patientdesk.ai), Antalia Turkish single-speaker scripted speech,
+  https://huggingface.co/datasets/cloud0day3/antalia-voice-corpus, CC BY 4.0. Used for the
+  stopped Piper experiment (tts/) and the first VoxCPM2 LoRA; its 20 held-out sentences are an
+  evaluation set. Not in the training data of the released Ahenk version. The speaker is a
+  real, consenting voice actor: do not use anything trained on it to impersonate her or any real
+  person, and do not present its output as a genuine recording.
+- EMA Lightning (https://huggingface.co/canberkkkkkk/ema-lightning), Apache-2.0: the voice of
+  `trtts` (downloaded at run time, not included) and the starting point of the on-device student
+  experiments in tts/small.
+- Antalia-2 Mini (https://huggingface.co/cloud0day3/antalia-mini), Apache-2.0: benchmarked only.
+- Other models compared in benchmarks/ (Whisper, Vosk, Piper, MMS-TTS, pocket-tts-turkish,
+  qwen3-tts-tiny-tr, normalizer-tr, Trendyol-TTS and others) are used under their own licences and
+  are not redistributed here.
+
+-------------------------------------------------------------------------------
+Synthetic speech
+-------------------------------------------------------------------------------
+
+Speech produced with the models and recipes in this repository is synthetic. Disclose that it is
+AI-generated wherever a listener could be misled (EU AI Act, Article 50), and do not use it to
+impersonate any real person.

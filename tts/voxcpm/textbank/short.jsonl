@@ -1,0 +1,255 @@
+{"id": "s_001", "kind": "onay", "text": "Evet, doğru."}
+{"id": "s_002", "kind": "onay", "text": "Evet efendim."}
+{"id": "s_003", "kind": "onay", "text": "Evet, aynen öyle."}
+{"id": "s_004", "kind": "onay", "text": "Evet, tabii ki!"}
+{"id": "s_005", "kind": "onay", "text": "Evet, hemen geliyorum."}
+{"id": "s_006", "kind": "onay", "text": "Evet, kesinlikle."}
+{"id": "s_007", "kind": "onay", "text": "Evet... sanırım öyle."}
+{"id": "s_008", "kind": "onay", "text": "Tamam, anladım."}
+{"id": "s_009", "kind": "onay", "text": "Tamam, olur."}
+{"id": "s_010", "kind": "onay", "text": "Tamam o zaman, görüşürüz."}
+{"id": "s_011", "kind": "onay", "text": "Tamam, not aldım."}
+{"id": "s_012", "kind": "onay", "text": "Tamamdır."}
+{"id": "s_013", "kind": "onay", "text": "Olur."}
+{"id": "s_014", "kind": "onay", "text": "Elbette."}
+{"id": "s_015", "kind": "onay", "text": "Elbette, buyurun."}
+{"id": "s_016", "kind": "onay", "text": "Kesinlikle."}
+{"id": "s_017", "kind": "onay", "text": "Kesinlikle katılıyorum!"}
+{"id": "s_018", "kind": "onay", "text": "Aynen öyle!"}
+{"id": "s_019", "kind": "onay", "text": "Doğru söylüyorsunuz."}
+{"id": "s_020", "kind": "onay", "text": "Haklısınız."}
+{"id": "s_021", "kind": "onay", "text": "Anlaşıldı."}
+{"id": "s_022", "kind": "onay", "text": "Anlaştık!"}
+{"id": "s_023", "kind": "onay", "text": "Tabii ki."}
+{"id": "s_024", "kind": "onay", "text": "Tabii, memnuniyetle."}
+{"id": "s_025", "kind": "onay", "text": "Memnuniyetle!"}
+{"id": "s_026", "kind": "onay", "text": "Hemen bakıyorum."}
+{"id": "s_027", "kind": "onay", "text": "Hemen hallediyorum."}
+{"id": "s_028", "kind": "onay", "text": "Şimdi kontrol ediyorum."}
+{"id": "s_029", "kind": "onay", "text": "Oldu bil!"}
+{"id": "s_030", "kind": "onay", "text": "Peki efendim."}
+{"id": "s_031", "kind": "onay", "text": "Peki, öyle olsun."}
+{"id": "s_032", "kind": "onay", "text": "Peki o zaman."}
+{"id": "s_033", "kind": "onay", "text": "Mutlaka."}
+{"id": "s_034", "kind": "onay", "text": "Mutlaka gelirim!"}
+{"id": "s_035", "kind": "onay", "text": "Söz veriyorum."}
+{"id": "s_036", "kind": "onay", "text": "Anladım, teşekkürler."}
+{"id": "s_037", "kind": "onay", "text": "Bana uyar."}
+{"id": "s_038", "kind": "onay", "text": "Benim için hiç sorun değil."}
+{"id": "s_039", "kind": "onay", "text": "Sorun yok."}
+{"id": "s_040", "kind": "onay", "text": "Hiç sorun değil!"}
+{"id": "s_041", "kind": "onay", "text": "Ben de öyle düşünüyorum."}
+{"id": "s_042", "kind": "onay", "text": "Kabul."}
+{"id": "s_043", "kind": "ret", "text": "Hayır."}
+{"id": "s_044", "kind": "ret", "text": "Hayır, teşekkür ederim."}
+{"id": "s_045", "kind": "ret", "text": "Hayır, istemiyorum."}
+{"id": "s_046", "kind": "ret", "text": "Hayır, o değil."}
+{"id": "s_047", "kind": "ret", "text": "Hayır efendim, bir yanlış anlaşılma olmuş."}
+{"id": "s_048", "kind": "ret", "text": "Hayır, hiç sanmıyorum."}
+{"id": "s_049", "kind": "ret", "text": "Hiç sanmıyorum."}
+{"id": "s_050", "kind": "ret", "text": "Yok, gerek yok."}
+{"id": "s_051", "kind": "ret", "text": "Yok, sağ ol."}
+{"id": "s_052", "kind": "ret", "text": "Yok canım!"}
+{"id": "s_053", "kind": "ret", "text": "Yok artık!"}
+{"id": "s_054", "kind": "ret", "text": "Olmaz."}
+{"id": "s_055", "kind": "ret", "text": "Olmaz, kusura bakma."}
+{"id": "s_056", "kind": "ret", "text": "Maalesef olmuyor."}
+{"id": "s_057", "kind": "ret", "text": "Maalesef hayır."}
+{"id": "s_058", "kind": "ret", "text": "Asla!"}
+{"id": "s_059", "kind": "ret", "text": "Kesinlikle hayır."}
+{"id": "s_060", "kind": "ret", "text": "Hiç gerek yok, teşekkürler."}
+{"id": "s_061", "kind": "ret", "text": "Şimdilik hayır."}
+{"id": "s_062", "kind": "ret", "text": "Pek sanmam."}
+{"id": "s_063", "kind": "ret", "text": "Hayır, yanlış numara."}
+{"id": "s_064", "kind": "ret", "text": "Henüz değil."}
+{"id": "s_065", "kind": "ret", "text": "Yapamam, üzgünüm."}
+{"id": "s_066", "kind": "ret", "text": "Bugün olmaz."}
+{"id": "s_067", "kind": "tesekkur", "text": "Teşekkür ederim."}
+{"id": "s_068", "kind": "tesekkur", "text": "Teşekkürler!"}
+{"id": "s_069", "kind": "tesekkur", "text": "Çok teşekkür ederim."}
+{"id": "s_070", "kind": "tesekkur", "text": "Çok teşekkürler, sağ olun."}
+{"id": "s_071", "kind": "tesekkur", "text": "Sağ ol, canım."}
+{"id": "s_072", "kind": "tesekkur", "text": "Eksik olmayın."}
+{"id": "s_073", "kind": "tesekkur", "text": "Rica ederim!"}
+{"id": "s_074", "kind": "tesekkur", "text": "Rica ederim, ne demek."}
+{"id": "s_075", "kind": "tesekkur", "text": "Ne demek, her zaman."}
+{"id": "s_076", "kind": "tesekkur", "text": "Bir şey değil."}
+{"id": "s_077", "kind": "tesekkur", "text": "Asıl ben teşekkür ederim."}
+{"id": "s_078", "kind": "tesekkur", "text": "Zahmet oldu, teşekkürler."}
+{"id": "s_079", "kind": "tesekkur", "text": "Elinize sağlık."}
+{"id": "s_080", "kind": "tesekkur", "text": "Ellerine sağlık!"}
+{"id": "s_081", "kind": "tesekkur", "text": "Çok naziksiniz."}
+{"id": "s_082", "kind": "tesekkur", "text": "Çok incesiniz, teşekkür ederim."}
+{"id": "s_083", "kind": "tesekkur", "text": "Allah razı olsun."}
+{"id": "s_084", "kind": "tesekkur", "text": "Ne zahmet ettiniz."}
+{"id": "s_085", "kind": "tesekkur", "text": "Estağfurullah."}
+{"id": "s_086", "kind": "tesekkur", "text": "Lafı mı olur?"}
+{"id": "s_087", "kind": "tesekkur", "text": "Önemli değil."}
+{"id": "s_088", "kind": "bekleme", "text": "Bir saniye, lütfen bekleyin."}
+{"id": "s_089", "kind": "bekleme", "text": "Bir saniye..."}
+{"id": "s_090", "kind": "bekleme", "text": "Bir dakika, geliyorum!"}
+{"id": "s_091", "kind": "bekleme", "text": "Hemen geliyorum."}
+{"id": "s_092", "kind": "bekleme", "text": "Az bekler misiniz?"}
+{"id": "s_093", "kind": "bekleme", "text": "Lütfen hatta kalın."}
+{"id": "s_094", "kind": "bekleme", "text": "Biraz bekleyin lütfen."}
+{"id": "s_095", "kind": "bekleme", "text": "Şimdi bakıyorum."}
+{"id": "s_096", "kind": "bekleme", "text": "Kontrol ediyorum..."}
+{"id": "s_097", "kind": "bekleme", "text": "Hemen dönüyorum."}
+{"id": "s_098", "kind": "bekleme", "text": "Bekliyorum."}
+{"id": "s_099", "kind": "bekleme", "text": "Yoldayım, geliyorum."}
+{"id": "s_100", "kind": "bekleme", "text": "Beş dakikaya oradayım."}
+{"id": "s_101", "kind": "bekleme", "text": "Az kaldı."}
+{"id": "s_102", "kind": "bekleme", "text": "Neredeyse bitti."}
+{"id": "s_103", "kind": "bekleme", "text": "Biraz sabır lütfen."}
+{"id": "s_104", "kind": "bekleme", "text": "Sakin ol, geliyorum."}
+{"id": "s_105", "kind": "bekleme", "text": "Hattan ayrılmayın lütfen."}
+{"id": "s_106", "kind": "bekleme", "text": "Bir dakikanızı alabilir miyim?"}
+{"id": "s_107", "kind": "bekleme", "text": "Hemen not alıyorum."}
+{"id": "s_108", "kind": "belirsiz", "text": "Belki yarın..."}
+{"id": "s_109", "kind": "belirsiz", "text": "Belki."}
+{"id": "s_110", "kind": "belirsiz", "text": "Belki de haklısın."}
+{"id": "s_111", "kind": "belirsiz", "text": "Bilmiyorum."}
+{"id": "s_112", "kind": "belirsiz", "text": "Bilmiyorum ki..."}
+{"id": "s_113", "kind": "belirsiz", "text": "Emin değilim."}
+{"id": "s_114", "kind": "belirsiz", "text": "Pek emin değilim."}
+{"id": "s_115", "kind": "belirsiz", "text": "Galiba."}
+{"id": "s_116", "kind": "belirsiz", "text": "Galiba evet."}
+{"id": "s_117", "kind": "belirsiz", "text": "Olabilir."}
+{"id": "s_118", "kind": "belirsiz", "text": "Olabilir, bakarız."}
+{"id": "s_119", "kind": "belirsiz", "text": "Göreceğiz."}
+{"id": "s_120", "kind": "belirsiz", "text": "Düşüneyim."}
+{"id": "s_121", "kind": "belirsiz", "text": "Biraz düşünmem lazım."}
+{"id": "s_122", "kind": "belirsiz", "text": "Bilemedim şimdi."}
+{"id": "s_123", "kind": "belirsiz", "text": "Duruma göre."}
+{"id": "s_124", "kind": "belirsiz", "text": "Kim bilir?"}
+{"id": "s_125", "kind": "belirsiz", "text": "Neden olmasın?"}
+{"id": "s_126", "kind": "belirsiz", "text": "Belki bir dahaki sefere."}
+{"id": "s_127", "kind": "belirsiz", "text": "Şimdilik bilmiyorum."}
+{"id": "s_128", "kind": "belirsiz", "text": "Hiç fikrim yok."}
+{"id": "s_129", "kind": "selam", "text": "Merhaba!"}
+{"id": "s_130", "kind": "selam", "text": "Merhaba, hoş bulduk."}
+{"id": "s_131", "kind": "selam", "text": "Hoş bulduk."}
+{"id": "s_132", "kind": "selam", "text": "İyi günler!"}
+{"id": "s_133", "kind": "selam", "text": "İyi günler dilerim."}
+{"id": "s_134", "kind": "selam", "text": "İyi akşamlar dilerim."}
+{"id": "s_135", "kind": "selam", "text": "İyi geceler."}
+{"id": "s_136", "kind": "selam", "text": "Günaydın, nasılsınız?"}
+{"id": "s_137", "kind": "selam", "text": "Görüşürüz!"}
+{"id": "s_138", "kind": "selam", "text": "Görüşmek üzere."}
+{"id": "s_139", "kind": "selam", "text": "Hoşça kal."}
+{"id": "s_140", "kind": "selam", "text": "Hoşça kalın!"}
+{"id": "s_141", "kind": "selam", "text": "Güle güle."}
+{"id": "s_142", "kind": "selam", "text": "Kendine iyi bak."}
+{"id": "s_143", "kind": "selam", "text": "Kendinize iyi bakın."}
+{"id": "s_144", "kind": "selam", "text": "Yolun açık olsun!"}
+{"id": "s_145", "kind": "selam", "text": "İyi yolculuklar!"}
+{"id": "s_146", "kind": "selam", "text": "İyi tatiller!"}
+{"id": "s_147", "kind": "selam", "text": "İyi hafta sonları."}
+{"id": "s_148", "kind": "selam", "text": "Selam, nasılsın?"}
+{"id": "s_149", "kind": "selam", "text": "Size de iyi günler."}
+{"id": "s_150", "kind": "selam", "text": "Yarın görüşürüz."}
+{"id": "s_151", "kind": "selam", "text": "Haftaya görüşmek üzere!"}
+{"id": "s_152", "kind": "selam", "text": "İyi çalışmalar."}
+{"id": "s_153", "kind": "selam", "text": "İyi uykular."}
+{"id": "s_154", "kind": "selam", "text": "Hoş geldin!"}
+{"id": "s_155", "kind": "selam", "text": "Hoş geldiniz efendim."}
+{"id": "s_156", "kind": "ozur", "text": "Özür dilerim."}
+{"id": "s_157", "kind": "ozur", "text": "Kusura bakmayın."}
+{"id": "s_158", "kind": "ozur", "text": "Kusura bakma, geciktim."}
+{"id": "s_159", "kind": "ozur", "text": "Pardon!"}
+{"id": "s_160", "kind": "ozur", "text": "Pardon, yanlış anladım."}
+{"id": "s_161", "kind": "ozur", "text": "Affedersiniz."}
+{"id": "s_162", "kind": "ozur", "text": "Affedersiniz, bir şey sorabilir miyim?"}
+{"id": "s_163", "kind": "ozur", "text": "Çok özür dilerim."}
+{"id": "s_164", "kind": "ozur", "text": "Üzgünüm."}
+{"id": "s_165", "kind": "ozur", "text": "Gerçekten üzgünüm."}
+{"id": "s_166", "kind": "ozur", "text": "Benim hatam."}
+{"id": "s_167", "kind": "ozur", "text": "Bir daha olmayacak."}
+{"id": "s_168", "kind": "ozur", "text": "Özür dilerim, duyamadım."}
+{"id": "s_169", "kind": "tepki", "text": "Harika!"}
+{"id": "s_170", "kind": "tepki", "text": "Çok güzel!"}
+{"id": "s_171", "kind": "tepki", "text": "Ne güzel!"}
+{"id": "s_172", "kind": "tepki", "text": "Muhteşem!"}
+{"id": "s_173", "kind": "tepki", "text": "Bravo!"}
+{"id": "s_174", "kind": "tepki", "text": "Aferin sana!"}
+{"id": "s_175", "kind": "tepki", "text": "Tebrikler!"}
+{"id": "s_176", "kind": "tepki", "text": "Tebrik ederim!"}
+{"id": "s_177", "kind": "tepki", "text": "Hayırlı olsun!"}
+{"id": "s_178", "kind": "tepki", "text": "Gözün aydın!"}
+{"id": "s_179", "kind": "tepki", "text": "Çok sevindim."}
+{"id": "s_180", "kind": "tepki", "text": "Buna çok sevindim!"}
+{"id": "s_181", "kind": "tepki", "text": "Olamaz!"}
+{"id": "s_182", "kind": "tepki", "text": "İnanmıyorum!"}
+{"id": "s_183", "kind": "tepki", "text": "Şaka mı bu?"}
+{"id": "s_184", "kind": "tepki", "text": "Yazık..."}
+{"id": "s_185", "kind": "tepki", "text": "Çok yazık."}
+{"id": "s_186", "kind": "tepki", "text": "Vah vah..."}
+{"id": "s_187", "kind": "tepki", "text": "Ne yazık ki."}
+{"id": "s_188", "kind": "tepki", "text": "Eyvallah."}
+{"id": "s_189", "kind": "tepki", "text": "Helal olsun!"}
+{"id": "s_190", "kind": "tepki", "text": "Bu harika bir haber!"}
+{"id": "s_191", "kind": "tepki", "text": "Ne tesadüf!"}
+{"id": "s_192", "kind": "tepki", "text": "Hiç fena değil."}
+{"id": "s_193", "kind": "tepki", "text": "Fena değil."}
+{"id": "s_194", "kind": "tepki", "text": "İyi fikir!"}
+{"id": "s_195", "kind": "tepki", "text": "Şahane!"}
+{"id": "s_196", "kind": "tepki", "text": "Bu çok komik!"}
+{"id": "s_197", "kind": "soru", "text": "Emin misiniz?"}
+{"id": "s_198", "kind": "soru", "text": "Gerçekten mi?"}
+{"id": "s_199", "kind": "soru", "text": "Öyle mi?"}
+{"id": "s_200", "kind": "soru", "text": "Sahi mi?"}
+{"id": "s_201", "kind": "soru", "text": "Ciddi misin?"}
+{"id": "s_202", "kind": "soru", "text": "Nasılsınız?"}
+{"id": "s_203", "kind": "soru", "text": "Nasılsın?"}
+{"id": "s_204", "kind": "soru", "text": "İyi misin?"}
+{"id": "s_205", "kind": "soru", "text": "Ne dersin?"}
+{"id": "s_206", "kind": "soru", "text": "Ne oldu?"}
+{"id": "s_207", "kind": "soru", "text": "Kim o?"}
+{"id": "s_208", "kind": "soru", "text": "Hangisi?"}
+{"id": "s_209", "kind": "soru", "text": "Ne zaman?"}
+{"id": "s_210", "kind": "soru", "text": "Kaçta?"}
+{"id": "s_211", "kind": "soru", "text": "Kaç kişi?"}
+{"id": "s_212", "kind": "soru", "text": "Ne kadar?"}
+{"id": "s_213", "kind": "soru", "text": "Nereye?"}
+{"id": "s_214", "kind": "soru", "text": "Buyurun?"}
+{"id": "s_215", "kind": "soru", "text": "Efendim?"}
+{"id": "s_216", "kind": "soru", "text": "Pardon?"}
+{"id": "s_217", "kind": "soru", "text": "Anladınız mı?"}
+{"id": "s_218", "kind": "soru", "text": "Tamam mı?"}
+{"id": "s_219", "kind": "soru", "text": "Olur mu?"}
+{"id": "s_220", "kind": "soru", "text": "Duydun mu?"}
+{"id": "s_221", "kind": "soru", "text": "Hazır mısın?"}
+{"id": "s_222", "kind": "soru", "text": "Geliyor musun?"}
+{"id": "s_223", "kind": "soru", "text": "Var mı?"}
+{"id": "s_224", "kind": "soru", "text": "Yok mu?"}
+{"id": "s_225", "kind": "soru", "text": "Şimdi mi?"}
+{"id": "s_226", "kind": "soru", "text": "Yarın mı?"}
+{"id": "s_227", "kind": "soru", "text": "Bu mu?"}
+{"id": "s_228", "kind": "soru", "text": "Sen mi?"}
+{"id": "s_229", "kind": "soru", "text": "Ben mi?"}
+{"id": "s_230", "kind": "soru", "text": "Ne diyorsun?"}
+{"id": "s_231", "kind": "soru", "text": "Bir şey mi oldu?"}
+{"id": "s_232", "kind": "soru", "text": "Yardım lazım mı?"}
+{"id": "s_233", "kind": "soru", "text": "Kahve içer misin?"}
+{"id": "s_234", "kind": "soru", "text": "Her şey yolunda mı?"}
+{"id": "s_235", "kind": "soru", "text": "Doğru mu?"}
+{"id": "s_236", "kind": "soru", "text": "Peki ya sen?"}
+{"id": "s_237", "kind": "dilek", "text": "Afiyet olsun, yine bekleriz!"}
+{"id": "s_238", "kind": "dilek", "text": "Kolay gelsin, iyi çalışmalar."}
+{"id": "s_239", "kind": "dilek", "text": "Geçmiş olsun, çabuk iyileş!"}
+{"id": "s_240", "kind": "dilek", "text": "Başınız sağ olsun."}
+{"id": "s_241", "kind": "dilek", "text": "Allah rahmet eylesin."}
+{"id": "s_242", "kind": "dilek", "text": "Gözünüz aydın!"}
+{"id": "s_243", "kind": "dilek", "text": "Hayırlı uğurlu olsun!"}
+{"id": "s_244", "kind": "dilek", "text": "Bol şans!"}
+{"id": "s_245", "kind": "dilek", "text": "Başarılar!"}
+{"id": "s_246", "kind": "dilek", "text": "İyi ki doğdun!"}
+{"id": "s_247", "kind": "dilek", "text": "Mutlu yıllar!"}
+{"id": "s_248", "kind": "dilek", "text": "Nice yıllara!"}
+{"id": "s_249", "kind": "dilek", "text": "Bayramınız kutlu olsun!"}
+{"id": "s_250", "kind": "dilek", "text": "Sıhhatler olsun."}
+{"id": "s_251", "kind": "dilek", "text": "Güle güle kullan!"}
+{"id": "s_252", "kind": "dilek", "text": "Şifalı olsun."}
+{"id": "s_253", "kind": "dilek", "text": "Ellerinize sağlık, çok güzel olmuş."}
+{"id": "s_254", "kind": "dilek", "text": "Allah kavuştursun."}
+{"id": "s_255", "kind": "dilek", "text": "Sağlıcakla kalın."}

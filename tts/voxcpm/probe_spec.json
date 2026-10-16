@@ -1,0 +1,3 @@
+{"entries": [{"name": "f022-1500", "kind": "lora", "lora": "/data/exp/voxcpm2-f022-s2/ckpt/step_0001500",
+  "sim_ref": "/data/contest/r1/screen/cand/wav/f022-s0.wav", "notes": "new f022 model, step 1500"}],
+ "refs": false, "screen": []}

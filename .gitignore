@@ -1,0 +1,64 @@
+.venv/
+.venv-*/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+# large local artifacts
+data/
+downloads/
+exp/
+*.wav
+*.flac
+*.mp3
+*.onnx
+*.pt
+*.tar.gz
+benchmarks/**/audio/
+benchmarks/**/cache/
+!benchmarks/**/results/**/*.json
+# third-party checkouts (cloned by setup scripts)
+stt/icefall/
+stt/exp*/
+benchmarks/**/logs/
+# benchmark results are committed explicitly (git add -f) once runs finish
+benchmarks/asr/results/
+benchmarks/tts/results/
+build/
+dist/
+# third-party Piper checkout (cloned by tts/setup_env.sh)
+tts/piper1-gpl/
+tts/voxcpm-src/
+antalia-export/
+voxcpm-eval/
+# LoRA files fetched from Modal (--action fetch-ckpt) and the Hugging Face upload staging dir
+voxcpm-lora/
+hf-publish/
+# voice contest: reference clips (tts/voxcpm/fetch_refs.py) and results fetched from Modal (--action contest-fetch)
+voxcpm-refs/
+voxcpm-contest/
+voxcpm-corpus/
+# secrets and credentials: never commit
+.env
+.env.*
+*.pem
+*.key
+.modal.toml
+kaggle.json
+*service-account*.json
+*credentials*.json
+.huggingface/
+# more weights, audio and data formats
+*.safetensors
+*.ckpt
+*.bin
+*.pth
+*.npy
+*.npz
+*.parquet
+*.arrow
+*.ogg
+*.opus
+*.m4a
+*.zip
+scratchpad/

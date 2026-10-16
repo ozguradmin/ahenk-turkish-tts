@@ -1,0 +1,1 @@
+trnorm @ git+https://github.com/ozguradmin/ahenk-turkish-tts

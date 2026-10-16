@@ -1,0 +1,2492 @@
+{
+ "set": "dev_numbers10",
+ "n_rows": 10,
+ "has_alts": false,
+ "categories": [
+  "cardinal",
+  "date",
+  "time",
+  "money",
+  "percent",
+  "ordinal",
+  "phone",
+  "abbreviation",
+  "unit",
+  "short"
+ ],
+ "generated": "2026-10-07T06:25:10+00:00",
+ "eval_normalizer": {
+  "trnorm": {
+   "version": "0.1.0",
+   "src_sha256": "0dfc83a182f9"
+  },
+  "function": "trnorm.normalize_for_eval"
+ },
+ "judge": {
+  "judge": "faster-whisper:large-v3-turbo:int8:beam5:tr",
+  "model": "large-v3-turbo",
+  "model_repo": "mobiuslabsgmbh/faster-whisper-large-v3-turbo",
+  "revision": "0a363e9161cbc7ed1431c9597a8ceaf0c4f78fcf",
+  "compute_type": "int8",
+  "device": "cpu",
+  "cpu_threads": 2,
+  "options": {
+   "language": "tr",
+   "beam_size": 5
+  },
+  "resample": "soundfile + soxr VHQ to 16 kHz",
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz",
+  "versions": {
+   "faster-whisper": "1.2.1",
+   "ctranslate2": "4.8.2"
+  },
+  "written": "2026-10-07T05:25:03+00:00"
+ },
+ "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz",
+ "versions": {
+  "torch": "2.11.0+cpu",
+  "numpy": "2.5.3",
+  "transformers": "4.57.3",
+  "ema-lightning": "1.0.1",
+  "pocket-tts": "3.3.0",
+  "pocket-tts-turkish": "0.1.0",
+  "piper-tts": "1.8.0",
+  "onnxruntime": "1.30.0",
+  "qwen-tts": "0.1.1",
+  "normalizer-tr": "0.4.0",
+  "trnorm": "0.1.0",
+  "faster-whisper": "1.2.1",
+  "ctranslate2": "4.8.2"
+ },
+ "results": {
+  "ema-lightning": {
+   "raw": {
+    "n": 10,
+    "wer": 55.75,
+    "cer": 42.98,
+    "wer_strict": 55.75,
+    "row_ok": 0.0,
+    "word_edits": 63,
+    "ref_words": 113,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "cardinal": {
+      "n": 1,
+      "wer": 64.29,
+      "cer": 55.13,
+      "wer_strict": 64.29,
+      "row_ok": 0.0,
+      "word_edits": 9,
+      "ref_words": 14
+     },
+     "date": {
+      "n": 1,
+      "wer": 60.0,
+      "cer": 46.77,
+      "wer_strict": 60.0,
+      "row_ok": 0.0,
+      "word_edits": 6,
+      "ref_words": 10
+     },
+     "time": {
+      "n": 1,
+      "wer": 54.55,
+      "cer": 34.43,
+      "wer_strict": 54.55,
+      "row_ok": 0.0,
+      "word_edits": 6,
+      "ref_words": 11
+     },
+     "money": {
+      "n": 1,
+      "wer": 63.64,
+      "cer": 50.82,
+      "wer_strict": 63.64,
+      "row_ok": 0.0,
+      "word_edits": 7,
+      "ref_words": 11
+     },
+     "percent": {
+      "n": 1,
+      "wer": 55.56,
+      "cer": 46.3,
+      "wer_strict": 55.56,
+      "row_ok": 0.0,
+      "word_edits": 5,
+      "ref_words": 9
+     },
+     "ordinal": {
+      "n": 1,
+      "wer": 36.36,
+      "cer": 26.03,
+      "wer_strict": 36.36,
+      "row_ok": 0.0,
+      "word_edits": 4,
+      "ref_words": 11
+     },
+     "phone": {
+      "n": 1,
+      "wer": 72.22,
+      "cer": 62.63,
+      "wer_strict": 72.22,
+      "row_ok": 0.0,
+      "word_edits": 13,
+      "ref_words": 18
+     },
+     "abbreviation": {
+      "n": 1,
+      "wer": 18.18,
+      "cer": 13.41,
+      "wer_strict": 18.18,
+      "row_ok": 0.0,
+      "word_edits": 2,
+      "ref_words": 11
+     },
+     "unit": {
+      "n": 1,
+      "wer": 61.54,
+      "cer": 45.88,
+      "wer_strict": 61.54,
+      "row_ok": 0.0,
+      "word_edits": 8,
+      "ref_words": 13
+     },
+     "short": {
+      "n": 1,
+      "wer": 60.0,
+      "cer": 50.0,
+      "wer_strict": 60.0,
+      "row_ok": 0.0,
+      "word_edits": 3,
+      "ref_words": 5
+     }
+    }
+   },
+   "native": {
+    "n": 10,
+    "wer": 6.19,
+    "cer": 3.84,
+    "wer_strict": 6.19,
+    "row_ok": 60.0,
+    "word_edits": 7,
+    "ref_words": 113,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "cardinal": {
+      "n": 1,
+      "wer": 14.29,
+      "cer": 8.97,
+      "wer_strict": 14.29,
+      "row_ok": 0.0,
+      "word_edits": 2,
+      "ref_words": 14
+     },
+     "date": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 10
+     },
+     "time": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 11
+     },
+     "money": {
+      "n": 1,
+      "wer": 18.18,
+      "cer": 13.11,
+      "wer_strict": 18.18,
+      "row_ok": 0.0,
+      "word_edits": 2,
+      "ref_words": 11
+     },
+     "percent": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 9
+     },
+     "ordinal": {
+      "n": 1,
+      "wer": 18.18,
+      "cer": 9.59,
+      "wer_strict": 18.18,
+      "row_ok": 0.0,
+      "word_edits": 2,
+      "ref_words": 11
+     },
+     "phone": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 18
+     },
+     "abbreviation": {
+      "n": 1,
+      "wer": 9.09,
+      "cer": 4.88,
+      "wer_strict": 9.09,
+      "row_ok": 0.0,
+      "word_edits": 1,
+      "ref_words": 11
+     },
+     "unit": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 13
+     },
+     "short": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 5
+     }
+    }
+   },
+   "normalizer_tr": {
+    "n": 10,
+    "wer": 24.78,
+    "cer": 18.32,
+    "wer_strict": 24.78,
+    "row_ok": 40.0,
+    "word_edits": 28,
+    "ref_words": 113,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "cardinal": {
+      "n": 1,
+      "wer": 64.29,
+      "cer": 55.13,
+      "wer_strict": 64.29,
+      "row_ok": 0.0,
+      "word_edits": 9,
+      "ref_words": 14
+     },
+     "date": {
+      "n": 1,
+      "wer": 60.0,
+      "cer": 46.77,
+      "wer_strict": 60.0,
+      "row_ok": 0.0,
+      "word_edits": 6,
+      "ref_words": 10
+     },
+     "time": {
+      "n": 1,
+      "wer": 54.55,
+      "cer": 34.43,
+      "wer_strict": 54.55,
+      "row_ok": 0.0,
+      "word_edits": 6,
+      "ref_words": 11
+     },
+     "money": {
+      "n": 1,
+      "wer": 18.18,
+      "cer": 13.11,
+      "wer_strict": 18.18,
+      "row_ok": 0.0,
+      "word_edits": 2,
+      "ref_words": 11
+     },
+     "percent": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 9
+     },
+     "ordinal": {
+      "n": 1,
+      "wer": 36.36,
+      "cer": 26.03,
+      "wer_strict": 36.36,
+      "row_ok": 0.0,
+      "word_edits": 4,
+      "ref_words": 11
+     },
+     "phone": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 18
+     },
+     "abbreviation": {
+      "n": 1,
+      "wer": 9.09,
+      "cer": 4.88,
+      "wer_strict": 9.09,
+      "row_ok": 0.0,
+      "word_edits": 1,
+      "ref_words": 11
+     },
+     "unit": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 13
+     },
+     "short": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 5
+     }
+    }
+   },
+   "normalizer_tr_fallback": {
+    "n": 10,
+    "wer": 6.19,
+    "cer": 3.84,
+    "wer_strict": 6.19,
+    "row_ok": 60.0,
+    "word_edits": 7,
+    "ref_words": 113,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "cardinal": {
+      "n": 1,
+      "wer": 14.29,
+      "cer": 8.97,
+      "wer_strict": 14.29,
+      "row_ok": 0.0,
+      "word_edits": 2,
+      "ref_words": 14
+     },
+     "date": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 10
+     },
+     "time": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 11
+     },
+     "money": {
+      "n": 1,
+      "wer": 18.18,
+      "cer": 13.11,
+      "wer_strict": 18.18,
+      "row_ok": 0.0,
+      "word_edits": 2,
+      "ref_words": 11
+     },
+     "percent": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 9
+     },
+     "ordinal": {
+      "n": 1,
+      "wer": 18.18,
+      "cer": 9.59,
+      "wer_strict": 18.18,
+      "row_ok": 0.0,
+      "word_edits": 2,
+      "ref_words": 11
+     },
+     "phone": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 18
+     },
+     "abbreviation": {
+      "n": 1,
+      "wer": 9.09,
+      "cer": 4.88,
+      "wer_strict": 9.09,
+      "row_ok": 0.0,
+      "word_edits": 1,
+      "ref_words": 11
+     },
+     "unit": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 13
+     },
+     "short": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 5
+     }
+    }
+   },
+   "trnorm": {
+    "n": 10,
+    "wer": 1.77,
+    "cer": 1.18,
+    "wer_strict": 1.77,
+    "row_ok": 90.0,
+    "word_edits": 2,
+    "ref_words": 113,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "cardinal": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 14
+     },
+     "date": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 10
+     },
+     "time": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 11
+     },
+     "money": {
+      "n": 1,
+      "wer": 18.18,
+      "cer": 13.11,
+      "wer_strict": 18.18,
+      "row_ok": 0.0,
+      "word_edits": 2,
+      "ref_words": 11
+     },
+     "percent": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 9
+     },
+     "ordinal": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 11
+     },
+     "phone": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 18
+     },
+     "abbreviation": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 11
+     },
+     "unit": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 13
+     },
+     "short": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 5
+     }
+    }
+   }
+  },
+  "pocket-tts-turkish": {
+   "raw": {
+    "n": 10,
+    "wer": 55.75,
+    "cer": 43.13,
+    "wer_strict": 55.75,
+    "row_ok": 0.0,
+    "word_edits": 63,
+    "ref_words": 113,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "cardinal": {
+      "n": 1,
+      "wer": 64.29,
+      "cer": 55.13,
+      "wer_strict": 64.29,
+      "row_ok": 0.0,
+      "word_edits": 9,
+      "ref_words": 14
+     },
+     "date": {
+      "n": 1,
+      "wer": 60.0,
+      "cer": 46.77,
+      "wer_strict": 60.0,
+      "row_ok": 0.0,
+      "word_edits": 6,
+      "ref_words": 10
+     },
+     "time": {
+      "n": 1,
+      "wer": 54.55,
+      "cer": 37.7,
+      "wer_strict": 54.55,
+      "row_ok": 0.0,
+      "word_edits": 6,
+      "ref_words": 11
+     },
+     "money": {
+      "n": 1,
+      "wer": 63.64,
+      "cer": 49.18,
+      "wer_strict": 63.64,
+      "row_ok": 0.0,
+      "word_edits": 7,
+      "ref_words": 11
+     },
+     "percent": {
+      "n": 1,
+      "wer": 55.56,
+      "cer": 50.0,
+      "wer_strict": 55.56,
+      "row_ok": 0.0,
+      "word_edits": 5,
+      "ref_words": 9
+     },
+     "ordinal": {
+      "n": 1,
+      "wer": 27.27,
+      "cer": 23.29,
+      "wer_strict": 27.27,
+      "row_ok": 0.0,
+      "word_edits": 3,
+      "ref_words": 11
+     },
+     "phone": {
+      "n": 1,
+      "wer": 72.22,
+      "cer": 62.63,
+      "wer_strict": 72.22,
+      "row_ok": 0.0,
+      "word_edits": 13,
+      "ref_words": 18
+     },
+     "abbreviation": {
+      "n": 1,
+      "wer": 27.27,
+      "cer": 18.29,
+      "wer_strict": 27.27,
+      "row_ok": 0.0,
+      "word_edits": 3,
+      "ref_words": 11
+     },
+     "unit": {
+      "n": 1,
+      "wer": 61.54,
+      "cer": 43.53,
+      "wer_strict": 61.54,
+      "row_ok": 0.0,
+      "word_edits": 8,
+      "ref_words": 13
+     },
+     "short": {
+      "n": 1,
+      "wer": 60.0,
+      "cer": 40.91,
+      "wer_strict": 60.0,
+      "row_ok": 0.0,
+      "word_edits": 3,
+      "ref_words": 5
+     }
+    }
+   },
+   "native": {
+    "n": 10,
+    "wer": 3.54,
+    "cer": 2.22,
+    "wer_strict": 3.54,
+    "row_ok": 80.0,
+    "word_edits": 4,
+    "ref_words": 113,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "cardinal": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 14
+     },
+     "date": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 10
+     },
+     "time": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 11
+     },
+     "money": {
+      "n": 1,
+      "wer": 18.18,
+      "cer": 13.11,
+      "wer_strict": 18.18,
+      "row_ok": 0.0,
+      "word_edits": 2,
+      "ref_words": 11
+     },
+     "percent": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 9
+     },
+     "ordinal": {
+      "n": 1,
+      "wer": 18.18,
+      "cer": 9.59,
+      "wer_strict": 18.18,
+      "row_ok": 0.0,
+      "word_edits": 2,
+      "ref_words": 11
+     },
+     "phone": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 18
+     },
+     "abbreviation": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 11
+     },
+     "unit": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 13
+     },
+     "short": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 5
+     }
+    }
+   },
+   "normalizer_tr": {
+    "n": 10,
+    "wer": 27.43,
+    "cer": 20.38,
+    "wer_strict": 27.43,
+    "row_ok": 40.0,
+    "word_edits": 31,
+    "ref_words": 113,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "cardinal": {
+      "n": 1,
+      "wer": 64.29,
+      "cer": 55.13,
+      "wer_strict": 64.29,
+      "row_ok": 0.0,
+      "word_edits": 9,
+      "ref_words": 14
+     },
+     "date": {
+      "n": 1,
+      "wer": 60.0,
+      "cer": 46.77,
+      "wer_strict": 60.0,
+      "row_ok": 0.0,
+      "word_edits": 6,
+      "ref_words": 10
+     },
+     "time": {
+      "n": 1,
+      "wer": 54.55,
+      "cer": 37.7,
+      "wer_strict": 54.55,
+      "row_ok": 0.0,
+      "word_edits": 6,
+      "ref_words": 11
+     },
+     "money": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 11
+     },
+     "percent": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 9
+     },
+     "ordinal": {
+      "n": 1,
+      "wer": 27.27,
+      "cer": 23.29,
+      "wer_strict": 27.27,
+      "row_ok": 0.0,
+      "word_edits": 3,
+      "ref_words": 11
+     },
+     "phone": {
+      "n": 1,
+      "wer": 33.33,
+      "cer": 22.22,
+      "wer_strict": 33.33,
+      "row_ok": 0.0,
+      "word_edits": 6,
+      "ref_words": 18
+     },
+     "abbreviation": {
+      "n": 1,
+      "wer": 9.09,
+      "cer": 4.88,
+      "wer_strict": 9.09,
+      "row_ok": 0.0,
+      "word_edits": 1,
+      "ref_words": 11
+     },
+     "unit": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 13
+     },
+     "short": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 5
+     }
+    }
+   },
+   "normalizer_tr_fallback": {
+    "n": 10,
+    "wer": 9.73,
+    "cer": 5.91,
+    "wer_strict": 9.73,
+    "row_ok": 60.0,
+    "word_edits": 11,
+    "ref_words": 113,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "cardinal": {
+      "n": 1,
+      "wer": 14.29,
+      "cer": 8.97,
+      "wer_strict": 14.29,
+      "row_ok": 0.0,
+      "word_edits": 2,
+      "ref_words": 14
+     },
+     "date": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 10
+     },
+     "time": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 11
+     },
+     "money": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 11
+     },
+     "percent": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 9
+     },
+     "ordinal": {
+      "n": 1,
+      "wer": 18.18,
+      "cer": 9.59,
+      "wer_strict": 18.18,
+      "row_ok": 0.0,
+      "word_edits": 2,
+      "ref_words": 11
+     },
+     "phone": {
+      "n": 1,
+      "wer": 33.33,
+      "cer": 22.22,
+      "wer_strict": 33.33,
+      "row_ok": 0.0,
+      "word_edits": 6,
+      "ref_words": 18
+     },
+     "abbreviation": {
+      "n": 1,
+      "wer": 9.09,
+      "cer": 4.88,
+      "wer_strict": 9.09,
+      "row_ok": 0.0,
+      "word_edits": 1,
+      "ref_words": 11
+     },
+     "unit": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 13
+     },
+     "short": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 5
+     }
+    }
+   },
+   "trnorm": {
+    "n": 10,
+    "wer": 1.77,
+    "cer": 1.18,
+    "wer_strict": 1.77,
+    "row_ok": 90.0,
+    "word_edits": 2,
+    "ref_words": 113,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "cardinal": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 14
+     },
+     "date": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 10
+     },
+     "time": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 11
+     },
+     "money": {
+      "n": 1,
+      "wer": 18.18,
+      "cer": 13.11,
+      "wer_strict": 18.18,
+      "row_ok": 0.0,
+      "word_edits": 2,
+      "ref_words": 11
+     },
+     "percent": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 9
+     },
+     "ordinal": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 11
+     },
+     "phone": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 18
+     },
+     "abbreviation": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 11
+     },
+     "unit": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 13
+     },
+     "short": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 5
+     }
+    }
+   }
+  },
+  "piper-tr-dfki": {
+   "raw": {
+    "n": 10,
+    "wer": 6.19,
+    "cer": 4.58,
+    "wer_strict": 6.19,
+    "row_ok": 60.0,
+    "word_edits": 7,
+    "ref_words": 113,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "cardinal": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 14
+     },
+     "date": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 10
+     },
+     "time": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 11
+     },
+     "money": {
+      "n": 1,
+      "wer": 18.18,
+      "cer": 13.11,
+      "wer_strict": 18.18,
+      "row_ok": 0.0,
+      "word_edits": 2,
+      "ref_words": 11
+     },
+     "percent": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 9
+     },
+     "ordinal": {
+      "n": 1,
+      "wer": 18.18,
+      "cer": 9.59,
+      "wer_strict": 18.18,
+      "row_ok": 0.0,
+      "word_edits": 2,
+      "ref_words": 11
+     },
+     "phone": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 18
+     },
+     "abbreviation": {
+      "n": 1,
+      "wer": 18.18,
+      "cer": 10.98,
+      "wer_strict": 18.18,
+      "row_ok": 0.0,
+      "word_edits": 2,
+      "ref_words": 11
+     },
+     "unit": {
+      "n": 1,
+      "wer": 7.69,
+      "cer": 8.24,
+      "wer_strict": 7.69,
+      "row_ok": 0.0,
+      "word_edits": 1,
+      "ref_words": 13
+     },
+     "short": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 5
+     }
+    }
+   },
+   "normalizer_tr": {
+    "n": 10,
+    "wer": 4.42,
+    "cer": 2.81,
+    "wer_strict": 4.42,
+    "row_ok": 70.0,
+    "word_edits": 5,
+    "ref_words": 113,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "cardinal": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 14
+     },
+     "date": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 10
+     },
+     "time": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 11
+     },
+     "money": {
+      "n": 1,
+      "wer": 18.18,
+      "cer": 13.11,
+      "wer_strict": 18.18,
+      "row_ok": 0.0,
+      "word_edits": 2,
+      "ref_words": 11
+     },
+     "percent": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 9
+     },
+     "ordinal": {
+      "n": 1,
+      "wer": 18.18,
+      "cer": 9.59,
+      "wer_strict": 18.18,
+      "row_ok": 0.0,
+      "word_edits": 2,
+      "ref_words": 11
+     },
+     "phone": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 18
+     },
+     "abbreviation": {
+      "n": 1,
+      "wer": 9.09,
+      "cer": 4.88,
+      "wer_strict": 9.09,
+      "row_ok": 0.0,
+      "word_edits": 1,
+      "ref_words": 11
+     },
+     "unit": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 13
+     },
+     "short": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 5
+     }
+    }
+   },
+   "normalizer_tr_fallback": {
+    "n": 10,
+    "wer": 7.08,
+    "cer": 4.14,
+    "wer_strict": 7.08,
+    "row_ok": 60.0,
+    "word_edits": 8,
+    "ref_words": 113,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "cardinal": {
+      "n": 1,
+      "wer": 14.29,
+      "cer": 8.97,
+      "wer_strict": 14.29,
+      "row_ok": 0.0,
+      "word_edits": 2,
+      "ref_words": 14
+     },
+     "date": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 10
+     },
+     "time": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 11
+     },
+     "money": {
+      "n": 1,
+      "wer": 18.18,
+      "cer": 13.11,
+      "wer_strict": 18.18,
+      "row_ok": 0.0,
+      "word_edits": 2,
+      "ref_words": 11
+     },
+     "percent": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 9
+     },
+     "ordinal": {
+      "n": 1,
+      "wer": 27.27,
+      "cer": 12.33,
+      "wer_strict": 27.27,
+      "row_ok": 0.0,
+      "word_edits": 3,
+      "ref_words": 11
+     },
+     "phone": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 18
+     },
+     "abbreviation": {
+      "n": 1,
+      "wer": 9.09,
+      "cer": 4.88,
+      "wer_strict": 9.09,
+      "row_ok": 0.0,
+      "word_edits": 1,
+      "ref_words": 11
+     },
+     "unit": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 13
+     },
+     "short": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 5
+     }
+    }
+   },
+   "trnorm": {
+    "n": 10,
+    "wer": 1.77,
+    "cer": 1.18,
+    "wer_strict": 1.77,
+    "row_ok": 90.0,
+    "word_edits": 2,
+    "ref_words": 113,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "cardinal": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 14
+     },
+     "date": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 10
+     },
+     "time": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 11
+     },
+     "money": {
+      "n": 1,
+      "wer": 18.18,
+      "cer": 13.11,
+      "wer_strict": 18.18,
+      "row_ok": 0.0,
+      "word_edits": 2,
+      "ref_words": 11
+     },
+     "percent": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 9
+     },
+     "ordinal": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 11
+     },
+     "phone": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 18
+     },
+     "abbreviation": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 11
+     },
+     "unit": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 13
+     },
+     "short": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 5
+     }
+    }
+   }
+  },
+  "mms-tts-tur": {
+   "raw": {
+    "n": 10,
+    "wer": 62.83,
+    "cer": 39.88,
+    "wer_strict": 62.83,
+    "row_ok": 0.0,
+    "word_edits": 71,
+    "ref_words": 113,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "cardinal": {
+      "n": 1,
+      "wer": 64.29,
+      "cer": 46.15,
+      "wer_strict": 64.29,
+      "row_ok": 0.0,
+      "word_edits": 9,
+      "ref_words": 14
+     },
+     "date": {
+      "n": 1,
+      "wer": 70.0,
+      "cer": 35.48,
+      "wer_strict": 70.0,
+      "row_ok": 0.0,
+      "word_edits": 7,
+      "ref_words": 10
+     },
+     "time": {
+      "n": 1,
+      "wer": 72.73,
+      "cer": 39.34,
+      "wer_strict": 72.73,
+      "row_ok": 0.0,
+      "word_edits": 8,
+      "ref_words": 11
+     },
+     "money": {
+      "n": 1,
+      "wer": 72.73,
+      "cer": 52.46,
+      "wer_strict": 72.73,
+      "row_ok": 0.0,
+      "word_edits": 8,
+      "ref_words": 11
+     },
+     "percent": {
+      "n": 1,
+      "wer": 55.56,
+      "cer": 44.44,
+      "wer_strict": 55.56,
+      "row_ok": 0.0,
+      "word_edits": 5,
+      "ref_words": 9
+     },
+     "ordinal": {
+      "n": 1,
+      "wer": 27.27,
+      "cer": 19.18,
+      "wer_strict": 27.27,
+      "row_ok": 0.0,
+      "word_edits": 3,
+      "ref_words": 11
+     },
+     "phone": {
+      "n": 1,
+      "wer": 77.78,
+      "cer": 53.54,
+      "wer_strict": 77.78,
+      "row_ok": 0.0,
+      "word_edits": 14,
+      "ref_words": 18
+     },
+     "abbreviation": {
+      "n": 1,
+      "wer": 27.27,
+      "cer": 15.85,
+      "wer_strict": 27.27,
+      "row_ok": 0.0,
+      "word_edits": 3,
+      "ref_words": 11
+     },
+     "unit": {
+      "n": 1,
+      "wer": 69.23,
+      "cer": 45.88,
+      "wer_strict": 69.23,
+      "row_ok": 0.0,
+      "word_edits": 9,
+      "ref_words": 13
+     },
+     "short": {
+      "n": 1,
+      "wer": 100.0,
+      "cer": 59.09,
+      "wer_strict": 100.0,
+      "row_ok": 0.0,
+      "word_edits": 5,
+      "ref_words": 5
+     }
+    }
+   },
+   "normalizer_tr": {
+    "n": 10,
+    "wer": 31.86,
+    "cer": 18.61,
+    "wer_strict": 31.86,
+    "row_ok": 30.0,
+    "word_edits": 36,
+    "ref_words": 113,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "cardinal": {
+      "n": 1,
+      "wer": 64.29,
+      "cer": 46.15,
+      "wer_strict": 64.29,
+      "row_ok": 0.0,
+      "word_edits": 9,
+      "ref_words": 14
+     },
+     "date": {
+      "n": 1,
+      "wer": 70.0,
+      "cer": 35.48,
+      "wer_strict": 70.0,
+      "row_ok": 0.0,
+      "word_edits": 7,
+      "ref_words": 10
+     },
+     "time": {
+      "n": 1,
+      "wer": 72.73,
+      "cer": 39.34,
+      "wer_strict": 72.73,
+      "row_ok": 0.0,
+      "word_edits": 8,
+      "ref_words": 11
+     },
+     "money": {
+      "n": 1,
+      "wer": 9.09,
+      "cer": 1.64,
+      "wer_strict": 9.09,
+      "row_ok": 0.0,
+      "word_edits": 1,
+      "ref_words": 11
+     },
+     "percent": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 9
+     },
+     "ordinal": {
+      "n": 1,
+      "wer": 27.27,
+      "cer": 19.18,
+      "wer_strict": 27.27,
+      "row_ok": 0.0,
+      "word_edits": 3,
+      "ref_words": 11
+     },
+     "phone": {
+      "n": 1,
+      "wer": 38.89,
+      "cer": 25.25,
+      "wer_strict": 38.89,
+      "row_ok": 0.0,
+      "word_edits": 7,
+      "ref_words": 18
+     },
+     "abbreviation": {
+      "n": 1,
+      "wer": 9.09,
+      "cer": 4.88,
+      "wer_strict": 9.09,
+      "row_ok": 0.0,
+      "word_edits": 1,
+      "ref_words": 11
+     },
+     "unit": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 13
+     },
+     "short": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 5
+     }
+    }
+   },
+   "normalizer_tr_fallback": {
+    "n": 10,
+    "wer": 11.5,
+    "cer": 6.5,
+    "wer_strict": 11.5,
+    "row_ok": 50.0,
+    "word_edits": 13,
+    "ref_words": 113,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "cardinal": {
+      "n": 1,
+      "wer": 14.29,
+      "cer": 8.97,
+      "wer_strict": 14.29,
+      "row_ok": 0.0,
+      "word_edits": 2,
+      "ref_words": 14
+     },
+     "date": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 10
+     },
+     "time": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 11
+     },
+     "money": {
+      "n": 1,
+      "wer": 9.09,
+      "cer": 1.64,
+      "wer_strict": 9.09,
+      "row_ok": 0.0,
+      "word_edits": 1,
+      "ref_words": 11
+     },
+     "percent": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 9
+     },
+     "ordinal": {
+      "n": 1,
+      "wer": 18.18,
+      "cer": 9.59,
+      "wer_strict": 18.18,
+      "row_ok": 0.0,
+      "word_edits": 2,
+      "ref_words": 11
+     },
+     "phone": {
+      "n": 1,
+      "wer": 38.89,
+      "cer": 25.25,
+      "wer_strict": 38.89,
+      "row_ok": 0.0,
+      "word_edits": 7,
+      "ref_words": 18
+     },
+     "abbreviation": {
+      "n": 1,
+      "wer": 9.09,
+      "cer": 4.88,
+      "wer_strict": 9.09,
+      "row_ok": 0.0,
+      "word_edits": 1,
+      "ref_words": 11
+     },
+     "unit": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 13
+     },
+     "short": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 5
+     }
+    }
+   },
+   "trnorm": {
+    "n": 10,
+    "wer": 9.73,
+    "cer": 5.61,
+    "wer_strict": 9.73,
+    "row_ok": 70.0,
+    "word_edits": 11,
+    "ref_words": 113,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "cardinal": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 14
+     },
+     "date": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 10
+     },
+     "time": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 11
+     },
+     "money": {
+      "n": 1,
+      "wer": 18.18,
+      "cer": 13.11,
+      "wer_strict": 18.18,
+      "row_ok": 0.0,
+      "word_edits": 2,
+      "ref_words": 11
+     },
+     "percent": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 9
+     },
+     "ordinal": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 11
+     },
+     "phone": {
+      "n": 1,
+      "wer": 38.89,
+      "cer": 25.25,
+      "wer_strict": 38.89,
+      "row_ok": 0.0,
+      "word_edits": 7,
+      "ref_words": 18
+     },
+     "abbreviation": {
+      "n": 1,
+      "wer": 18.18,
+      "cer": 6.1,
+      "wer_strict": 18.18,
+      "row_ok": 0.0,
+      "word_edits": 2,
+      "ref_words": 11
+     },
+     "unit": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 13
+     },
+     "short": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 5
+     }
+    }
+   }
+  },
+  "qwen3-tts-tiny-tr": {
+   "raw": {
+    "n": 10,
+    "wer": 58.41,
+    "cer": 36.93,
+    "wer_strict": 58.41,
+    "row_ok": 0.0,
+    "word_edits": 66,
+    "ref_words": 113,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "cardinal": {
+      "n": 1,
+      "wer": 71.43,
+      "cer": 48.72,
+      "wer_strict": 71.43,
+      "row_ok": 0.0,
+      "word_edits": 10,
+      "ref_words": 14
+     },
+     "date": {
+      "n": 1,
+      "wer": 60.0,
+      "cer": 32.26,
+      "wer_strict": 60.0,
+      "row_ok": 0.0,
+      "word_edits": 6,
+      "ref_words": 10
+     },
+     "time": {
+      "n": 1,
+      "wer": 63.64,
+      "cer": 34.43,
+      "wer_strict": 63.64,
+      "row_ok": 0.0,
+      "word_edits": 7,
+      "ref_words": 11
+     },
+     "money": {
+      "n": 1,
+      "wer": 63.64,
+      "cer": 39.34,
+      "wer_strict": 63.64,
+      "row_ok": 0.0,
+      "word_edits": 7,
+      "ref_words": 11
+     },
+     "percent": {
+      "n": 1,
+      "wer": 55.56,
+      "cer": 46.3,
+      "wer_strict": 55.56,
+      "row_ok": 0.0,
+      "word_edits": 5,
+      "ref_words": 9
+     },
+     "ordinal": {
+      "n": 1,
+      "wer": 27.27,
+      "cer": 23.29,
+      "wer_strict": 27.27,
+      "row_ok": 0.0,
+      "word_edits": 3,
+      "ref_words": 11
+     },
+     "phone": {
+      "n": 1,
+      "wer": 72.22,
+      "cer": 46.46,
+      "wer_strict": 72.22,
+      "row_ok": 0.0,
+      "word_edits": 13,
+      "ref_words": 18
+     },
+     "abbreviation": {
+      "n": 1,
+      "wer": 18.18,
+      "cer": 10.98,
+      "wer_strict": 18.18,
+      "row_ok": 0.0,
+      "word_edits": 2,
+      "ref_words": 11
+     },
+     "unit": {
+      "n": 1,
+      "wer": 69.23,
+      "cer": 45.88,
+      "wer_strict": 69.23,
+      "row_ok": 0.0,
+      "word_edits": 9,
+      "ref_words": 13
+     },
+     "short": {
+      "n": 1,
+      "wer": 80.0,
+      "cer": 50.0,
+      "wer_strict": 80.0,
+      "row_ok": 0.0,
+      "word_edits": 4,
+      "ref_words": 5
+     }
+    }
+   },
+   "normalizer_tr": {
+    "n": 10,
+    "wer": 30.97,
+    "cer": 19.05,
+    "wer_strict": 30.97,
+    "row_ok": 40.0,
+    "word_edits": 35,
+    "ref_words": 113,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "cardinal": {
+      "n": 1,
+      "wer": 71.43,
+      "cer": 48.72,
+      "wer_strict": 71.43,
+      "row_ok": 0.0,
+      "word_edits": 10,
+      "ref_words": 14
+     },
+     "date": {
+      "n": 1,
+      "wer": 60.0,
+      "cer": 32.26,
+      "wer_strict": 60.0,
+      "row_ok": 0.0,
+      "word_edits": 6,
+      "ref_words": 10
+     },
+     "time": {
+      "n": 1,
+      "wer": 63.64,
+      "cer": 34.43,
+      "wer_strict": 63.64,
+      "row_ok": 0.0,
+      "word_edits": 7,
+      "ref_words": 11
+     },
+     "money": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 11
+     },
+     "percent": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 9
+     },
+     "ordinal": {
+      "n": 1,
+      "wer": 27.27,
+      "cer": 23.29,
+      "wer_strict": 27.27,
+      "row_ok": 0.0,
+      "word_edits": 3,
+      "ref_words": 11
+     },
+     "phone": {
+      "n": 1,
+      "wer": 44.44,
+      "cer": 29.29,
+      "wer_strict": 44.44,
+      "row_ok": 0.0,
+      "word_edits": 8,
+      "ref_words": 18
+     },
+     "abbreviation": {
+      "n": 1,
+      "wer": 9.09,
+      "cer": 4.88,
+      "wer_strict": 9.09,
+      "row_ok": 0.0,
+      "word_edits": 1,
+      "ref_words": 11
+     },
+     "unit": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 13
+     },
+     "short": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 5
+     }
+    }
+   },
+   "normalizer_tr_fallback": {
+    "n": 10,
+    "wer": 11.5,
+    "cer": 6.94,
+    "wer_strict": 11.5,
+    "row_ok": 60.0,
+    "word_edits": 13,
+    "ref_words": 113,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "cardinal": {
+      "n": 1,
+      "wer": 14.29,
+      "cer": 8.97,
+      "wer_strict": 14.29,
+      "row_ok": 0.0,
+      "word_edits": 2,
+      "ref_words": 14
+     },
+     "date": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 10
+     },
+     "time": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 11
+     },
+     "money": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 11
+     },
+     "percent": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 9
+     },
+     "ordinal": {
+      "n": 1,
+      "wer": 18.18,
+      "cer": 9.59,
+      "wer_strict": 18.18,
+      "row_ok": 0.0,
+      "word_edits": 2,
+      "ref_words": 11
+     },
+     "phone": {
+      "n": 1,
+      "wer": 44.44,
+      "cer": 29.29,
+      "wer_strict": 44.44,
+      "row_ok": 0.0,
+      "word_edits": 8,
+      "ref_words": 18
+     },
+     "abbreviation": {
+      "n": 1,
+      "wer": 9.09,
+      "cer": 4.88,
+      "wer_strict": 9.09,
+      "row_ok": 0.0,
+      "word_edits": 1,
+      "ref_words": 11
+     },
+     "unit": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 13
+     },
+     "short": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 5
+     }
+    }
+   },
+   "trnorm": {
+    "n": 10,
+    "wer": 1.77,
+    "cer": 1.18,
+    "wer_strict": 1.77,
+    "row_ok": 90.0,
+    "word_edits": 2,
+    "ref_words": 113,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "cardinal": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 14
+     },
+     "date": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 10
+     },
+     "time": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 11
+     },
+     "money": {
+      "n": 1,
+      "wer": 18.18,
+      "cer": 13.11,
+      "wer_strict": 18.18,
+      "row_ok": 0.0,
+      "word_edits": 2,
+      "ref_words": 11
+     },
+     "percent": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 9
+     },
+     "ordinal": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 11
+     },
+     "phone": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 18
+     },
+     "abbreviation": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 11
+     },
+     "unit": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 13
+     },
+     "short": {
+      "n": 1,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 5
+     }
+    }
+   }
+  }
+ },
+ "subsets": {},
+ "speed": {
+  "ema-lightning": {
+   "threads": "2",
+   "rtf": 0.1655,
+   "cpu_rtf": 0.1847,
+   "n_timed": 25,
+   "mean_audio_seconds": 3.65
+  },
+  "pocket-tts-turkish": {
+   "threads": "1",
+   "rtf": 0.5125,
+   "cpu_rtf": 0.7063,
+   "n_timed": 28,
+   "mean_audio_seconds": 4.38
+  },
+  "piper-tr-dfki": {
+   "threads": "2",
+   "rtf": 0.0659,
+   "cpu_rtf": 0.1095,
+   "n_timed": 25,
+   "mean_audio_seconds": 4.43
+  },
+  "mms-tts-tur": {
+   "threads": "2",
+   "rtf": 0.32,
+   "cpu_rtf": 0.5273,
+   "n_timed": 24,
+   "mean_audio_seconds": 5.11
+  },
+  "qwen3-tts-tiny-tr": {
+   "threads": "2",
+   "rtf": 2.7528,
+   "cpu_rtf": 3.7804,
+   "n_timed": 25,
+   "mean_audio_seconds": 6.09
+  }
+ },
+ "systems": {
+  "ema-lightning": {
+   "model": "canberkkkkkk/ema-lightning",
+   "params": "8.6M (5.6M DiT + 3M decoder)",
+   "license": "Apache-2.0 (code and weights)",
+   "native_mode": "separable",
+   "native_note": "EMA always runs normalizer-tr (policy 'fallback') in EMA.say(); raw replaces Frontend.spoken with the identity",
+   "sample_rate": 48000
+  },
+  "pocket-tts-turkish": {
+   "model": "wite-tech/pocket-tts-turkish",
+   "params": "~110M (incl. codec)",
+   "license": "CC-BY-4.0 (weights); pocket-tts-turkish package Apache-2.0",
+   "native_mode": "separable",
+   "native_note": "package TextFrontend = normalizer.py + alphabet fit (+ stray digits spelled one by one)",
+   "sample_rate": 24000
+  },
+  "piper-tr-dfki": {
+   "model": "rhasspy/piper-voices tr/tr_TR/dfki/medium",
+   "params": "~15M (VITS medium)",
+   "license": "voice data CC-BY-NC-SA-4.0 (dfki-ot-data); piper-tts code GPL-3.0-or-later (bundles espeak-ng, GPL-3.0)",
+   "native_mode": "always_on",
+   "native_note": "espeak-ng's Turkish rules read digits, '%', thousands/decimal separators internally; cannot be bypassed",
+   "sample_rate": 22050
+  },
+  "mms-tts-tur": {
+   "model": "facebook/mms-tts-tur",
+   "params": "36M (VITS)",
+   "license": "CC-BY-NC-4.0",
+   "native_mode": "none",
+   "native_note": "no normalizer; VitsTokenizer lowercases and drops out-of-vocabulary characters",
+   "sample_rate": 16000
+  },
+  "qwen3-tts-tiny-tr": {
+   "model": "erkamk/qwen3-tts-tiny-tr",
+   "params": "199M talker + 171M speech tokenizer",
+   "license": "Apache-2.0 (weights, inherited from Qwen3-TTS); qwen-tts code Apache-2.0",
+   "native_mode": "none",
+   "native_note": "no normalizer; model card: write numbers as words and I/İ as ı/i",
+   "sample_rate": 24000
+  }
+ },
+ "frontends": {
+  "raw": "text as written, system's bundled normalizer bypassed",
+  "native": "text as written, system's bundled normalizer on",
+  "normalizer_tr": "normalizer-tr, default policy (preserve)",
+  "normalizer_tr_fallback": "normalizer-tr, ambiguity_policy='fallback'",
+  "trnorm": "trnorm.normalize"
+ }
+}

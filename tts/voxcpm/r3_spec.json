@@ -1,0 +1,12 @@
+{
+ "entries": [
+  {"name": "galaktik-s2", "kind": "lora", "lora": "/data/exp/voxcpm2-alania-s2/ckpt/step_0000600",
+   "notes": "control: the then-released model (Antalia voice), no reference"},
+  {"name": "f022-1000", "kind": "lora", "lora": "/data/exp/voxcpm2-f022-s2/ckpt/step_0001000",
+   "sim_ref": "/data/contest/r1/screen/cand/wav/f022-s0.wav", "notes": "new f022 model, step 1000, no reference"},
+  {"name": "f022-1500", "kind": "lora", "lora": "/data/exp/voxcpm2-f022-s2/ckpt/step_0001500",
+   "sim_ref": "/data/contest/r1/screen/cand/wav/f022-s0.wav", "notes": "new f022 model, step 1500, no reference"}
+ ],
+ "refs": false,
+ "screen": []
+}

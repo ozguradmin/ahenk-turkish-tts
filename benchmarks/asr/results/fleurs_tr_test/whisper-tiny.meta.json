@@ -1,0 +1,30 @@
+{
+  "system": "whisper-tiny",
+  "set": "fleurs_tr_test",
+  "model": {
+    "repo": "Systran/faster-whisper-tiny",
+    "revision": "d90ca5fe260221311c53c58e660288d3deb8d356",
+    "kind": "faster-whisper"
+  },
+  "decode_config": {
+    "compute_type": "int8",
+    "language": "tr",
+    "beam_size": 5,
+    "condition_on_previous_text": false,
+    "vad_filter": false
+  },
+  "threads": 2,
+  "omp_num_threads": "2",
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz",
+  "n_cpus": 4,
+  "versions": {
+    "python": "3.12.3",
+    "faster_whisper": "1.2.1",
+    "ctranslate2": "4.8.2"
+  },
+  "started": "2026-10-07T00:02:49",
+  "finished": "2026-10-07T00:11:49",
+  "n_decoded_this_run": 738,
+  "rtf_this_run": 0.0576,
+  "model_load_seconds": 1.5
+}

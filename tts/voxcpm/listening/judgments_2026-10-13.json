@@ -1,0 +1,46 @@
+{
+ "note": "The user's blind listening verdicts (one listener, native Turkish). Raw = what the page printed; keys decode codes. Audio is local (gitignored).",
+ "rounds": {
+  "r4": {
+   "page": "voxcpm-contest/r4/dinleme/index.html",
+   "key": "voxcpm-contest/r4/dinleme_anahtar.json",
+   "builder": "local/build_r4.py (seed 41)",
+   "raw": "TUR 4 SEÇİLENLER: S336=8 S440=6 S270=4 S490=2\nS336  [S490,S440,S336,S270]  yorum: 3 ve 4 aynı gibi ikisi de en iyisi gibi.\nS270  [S270,S490,S440,S336]\nS270  [S270,S490,S336,S440]\nS440  [S440,S336,S490,S270]\nS440  [S270,S440,S490,S336]\nS336  [S440,S336,S270,S490]  yorum: 1,2,3 kızıyo gibi evet ama sesleri bi değişik gibi anlamadım bi tiz mi fazla mı cızırtılı gibi mi robotik mi anlamadım ama fena değil duygu var.\nS440  [S336,S490,S440,S270]  yorum: 1 en neşeli olan ama sesi yine bi önceki gibi bahsettiğim olay var 3 ve 4de aynı şekilde ama 3 daha doğal fakat çok neşeli değil 1 kadar\nS336  [S270,S440,S336,S490]\nS490  [S440,S336,S490,S270]  yorum: 1,2,4 yani sanırım bizim modeller yine \"vey kenına\" falan diyor. hala çözülememiş bu sorun. o yüzden direkt onu doğru söyleyen 3ü seçiyorum duygu olmamasına rağmen.\nS440  [S440,S336,S270,S490]\nS490  [S336,S270,S490,S440]  yorum: yine aynı şekilde 1,2,4de acele yerine asele diyor. ve nedense yavaş konuşuyolar gibi bilerek mi yaptin? yine aynı sebepten dolayı aceleyi doğru söyleyen ruhsuz 3ü seçiorum\nS336  [S440,S270,S490,S336]  yorum: 1 sayıları bastırarak söylüyo 2, 3 ve 4 akıcı söylüyo kararsız kaldı mhangisi daha iyi olur diye ama galiba 4\nS440  [S336,S490,S270,S440]\nS270  [S270,S490,S440,S336]  yorum: hala thy nası okunması gerekiyo bilmiyom o yüzden kararsız kaldım\nS336  [S440,S336,S490]\nS440  [S336,S490,S440]\nS336  [S490,S440,S336]\nS336  [S336,S490,S440]  yorum: 1,de duyguları aktarabilmiş beğendim. ama nefense virgül ve noktalama işaretlerinden sonra hep bi nefes sesi geliyo gibi.\nS336  [S336,S270,S440]  yorum: 3 sevinçli gibi saçma. 1 ve 2 endişeli o yüzden iyi. 3 sesde de cam yerine çam diyo gibi. üç sesde de doğallık gibi durmayan o garip hissiyat var yine nedense.\nS270  [S336,S270,S440]  yorum: yine \"vay kanına\" diyor hepsinde. 1.de bağırıyo sevinçli olcam diye. üç sesde de sanki kalitesiz bir telefondan konuşuluyormuş gibi ses kötü çıkıyo ama duygular var yani."
+  },
+  "talimat1": {
+   "page": "voxcpm-contest/probe-trinstr/dinleme/index.html",
+   "key": "voxcpm-contest/probe-trinstr/dinleme_anahtar.json",
+   "builder": "local/build_trpage.py (seed 53, clips seed 0)",
+   "raw": "TALIMAT SEÇİLENLER: S321=4 S731=4 S973=2\nS321  [S731,S321,S973]  yorum: 1 vey kenina diyo ve cok kotu sesi. 2 çok iyi doğru söylüyo sesi vs de iyi çözülmüş. 3 doğru söylüyo ama ruhu çok iyi değil 2 en iyisi.\nS731  [S731,S973,S321]  yorum: hepsi kötü, 1de asele diyor. 2 ve 3de aacele diyo ayı uzatıyor gereksiz yere\nS973  [S731,S973,S321]  yorum: 1de kam kırılmış diyor. 2de kızgın/şaşkın gibi diğerlerinden iyi. 3de neşelimsi gibi.\nS973  [S973,S731,S321]\nS321  [S973,S321,S731]  yorum: 3 çok kötü sesaretine diyor ayrıca.\nS321  [S321,S731,S973]  yorum: 2 çok kötü jidden mi diyo\nS731  [S321,S731,S973]  yorum: 3de kızgın/üzgün gibi ve başta yeter artık derken sesi balgamlı gibi. 2de yeter artık derken y/u arası söylüyo degisik biraz ama kızgın söylüyo. 1de yeter artık derken y'yi biraz uzatıyo gbi ve farklı gairp tonla söylüyo ve üzgün gibi kızgın yerine.\nS731  [S973,S321,S731]  yorum: 2 çok yapmacık duruyo.\nS731  [S321,S731,S973]  yorum: 1 ve 3de üzgünlük yok. 2 fena degil\nS321  [S321,S731,S973]  yorum: 1 ve 2 iyiler 3 düz konusuyo gibi"
+  },
+  "talimat2": {
+   "page": "voxcpm-contest/probe-trinstr/dinleme2/index.html",
+   "key": "voxcpm-contest/probe-trinstr/dinleme2_anahtar.json",
+   "builder": "local/build_trpage2.py (seed 67, clips seed 1; per-sentence codes)",
+   "raw": "TALIMAT-2 SEÇİLENLER: T884=1 T308=1 T415=1 T765=1 T338=1 T466=1 T993=1 T917=1 T762=1 T815=1\nT884  [T884,T578,T710]  yorum: 3 bozuk vey genına diyo. 2 heyecanlı ama çok doğal gelmiyo sesi. 1 ise 2 kadar şaşkın/heyecanlı değil gibi ama sesi daha doğal. doğallık açısından dolayı 1i seçiyorum\nT308  [T308,T781,T135]  yorum: 1'de asele diyo? ama sakin konuşuyo. 2 ve 3 sakin gibi değil. 2 kendini kasıyo gibi 3 ise heyecanlı anlatıyo sakin olmak yerine.\nT415  [T799,T415,T865]  yorum: 1de cam yerine cem diyo. 2de çok şaşkın evet ama sesi tiz, kötü geliyo doğal değil kötü telefon kalitesi gibi. 3de de kam kırılmış diyor. 1 ve 3 de de şaşkın gibi değiller pek.\nT765  [T765,T851,T256]  yorum: cuma yerine çuma diyo gibi ve yine o ses kötü gibi kalitesiz ama duygu var evet şaşkın 1. 2 ve 3 sesleri daha iyi ama duygu açısından 1i seçyiorum\nT338  [T818,T882,T338]  yorum: 2de sesaretine şaşırdım diyo. diğer 2si düzgün söylüyo ama hiçbiri şaşkın değil gibi anlamadım.\nT466  [T932,T466,T674]  yorum: 1de zidden mi söylüyorsun diyo. 2 ve 3 iyi ama 2 daha iyi.\nT993  [T457,T239,T993]\nT917  [T179,T125,T917]\nT762  [T643,T809,T762]\nT815  [T815,T398,T490]  yorum: 3ü de aynı gibi"
+  },
+  "nefes": {
+   "page": "voxcpm-contest/r4/nefes/index.html",
+   "key": "voxcpm-contest/r4/nefes_anahtar.json",
+   "raw": "NEFES TESTİ: nefes daha az: N742=1 N733=1 N406=1 N183=1 | daha doğal: fark yok=3 N742=1\n1. nefes az=N742 doğal=N742  [N742,N679]\n2. nefes az=N733 doğal=fark yok  [N908,N733]\n3. nefes az=N406 doğal=fark yok  [N406,N809]\n4. nefes az=N183 doğal=fark yok  [N180,N183]"
+  },
+  "ornek": {
+   "page": "voxcpm-contest/samples-s3tr-dinleme/index.html",
+   "key": "voxcpm-contest/samples-s3tr-anahtar.json",
+   "raw": "ORNEK SEÇİLENLER: O620=1 O941=1 O624=1 O233=1 O131=1 O252=1 O779=1 O927=1\nO620  [O620,O108]\nO941  [O941,O304]\nO624  [O624,O298]\nO233  [O935,O233]\nO131  [O137,O131]\nO252  [O252,O951]\nO779  [O779,O718]\nO927  [O927,O624]"
+  },
+  "kucuk_model_p1": {
+   "date": "2026-10-14",
+   "page": "voxcpm-contest/small-bench/dinleme/index.html",
+   "key": "voxcpm-contest/small-bench/dinleme-anahtar.json",
+   "raw": "U3 A7 Z5 C3 D6 C8 U2 Y4 J9 P6 (sentences 1-10)",
+   "decoded": {
+    "teacher": 8,
+    "st-final": 2,
+    "ema": 0,
+    "antalia": 0
+   },
+   "note": "student won both questions (7: garantisi var mı?, 8: Saat kaçta buluşalım?)"
+  }
+ }
+}

@@ -1,0 +1,3773 @@
+{
+ "set": "tr_zor",
+ "n_rows": 155,
+ "has_alts": true,
+ "categories": [
+  "sayi",
+  "sira",
+  "tarih",
+  "saat",
+  "para",
+  "yuzde",
+  "birim",
+  "numara",
+  "kisaltma",
+  "akronim",
+  "kisa",
+  "soru",
+  "ozel"
+ ],
+ "generated": "2026-10-07T19:02:26+00:00",
+ "eval_normalizer": {
+  "trnorm": {
+   "version": "0.1.0",
+   "src_sha256": "0dfc83a182f9"
+  },
+  "function": "trnorm.normalize_for_eval"
+ },
+ "judge": {
+  "judge": "faster-whisper:large-v3-turbo:int8:beam5:tr",
+  "model": "large-v3-turbo",
+  "model_repo": "mobiuslabsgmbh/faster-whisper-large-v3-turbo",
+  "revision": "0a363e9161cbc7ed1431c9597a8ceaf0c4f78fcf",
+  "compute_type": "int8",
+  "device": "cpu",
+  "cpu_threads": 2,
+  "options": {
+   "language": "tr",
+   "beam_size": 5
+  },
+  "resample": "soundfile + soxr VHQ to 16 kHz",
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.80GHz",
+  "versions": {
+   "faster-whisper": "1.2.1",
+   "ctranslate2": "4.8.2"
+  },
+  "written": "2026-10-07T17:02:17+00:00"
+ },
+ "cpu": "Intel(R) Xeon(R) Processor @ 2.80GHz",
+ "versions": {
+  "torch": "2.11.0+cpu",
+  "numpy": "2.5.3",
+  "transformers": "4.57.3",
+  "ema-lightning": "1.0.1",
+  "pocket-tts": "3.3.0",
+  "pocket-tts-turkish": "0.1.0",
+  "piper-tts": "1.8.0",
+  "onnxruntime": "1.30.0",
+  "qwen-tts": "0.1.1",
+  "normalizer-tr": "0.4.0",
+  "trnorm": "0.1.0",
+  "faster-whisper": "1.2.1",
+  "ctranslate2": "4.8.2"
+ },
+ "results": {
+  "ema-lightning": {
+   "raw": {
+    "n": 155,
+    "wer": 49.72,
+    "cer": 35.19,
+    "wer_strict": 50.33,
+    "row_ok": 22.58,
+    "word_edits": 445,
+    "ref_words": 895,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "sayi": {
+      "n": 15,
+      "wer": 45.35,
+      "cer": 31.35,
+      "wer_strict": 47.19,
+      "row_ok": 0.0,
+      "word_edits": 39,
+      "ref_words": 86
+     },
+     "sira": {
+      "n": 12,
+      "wer": 36.07,
+      "cer": 28.47,
+      "wer_strict": 36.07,
+      "row_ok": 0.0,
+      "word_edits": 22,
+      "ref_words": 61
+     },
+     "tarih": {
+      "n": 12,
+      "wer": 62.62,
+      "cer": 49.05,
+      "wer_strict": 63.3,
+      "row_ok": 0.0,
+      "word_edits": 67,
+      "ref_words": 107
+     },
+     "saat": {
+      "n": 12,
+      "wer": 54.1,
+      "cer": 36.07,
+      "wer_strict": 55.56,
+      "row_ok": 0.0,
+      "word_edits": 33,
+      "ref_words": 61
+     },
+     "para": {
+      "n": 12,
+      "wer": 66.25,
+      "cer": 52.44,
+      "wer_strict": 66.25,
+      "row_ok": 0.0,
+      "word_edits": 53,
+      "ref_words": 80
+     },
+     "yuzde": {
+      "n": 8,
+      "wer": 46.15,
+      "cer": 37.1,
+      "wer_strict": 46.15,
+      "row_ok": 0.0,
+      "word_edits": 24,
+      "ref_words": 52
+     },
+     "birim": {
+      "n": 12,
+      "wer": 59.72,
+      "cer": 41.8,
+      "wer_strict": 60.27,
+      "row_ok": 0.0,
+      "word_edits": 43,
+      "ref_words": 72
+     },
+     "numara": {
+      "n": 12,
+      "wer": 76.92,
+      "cer": 66.83,
+      "wer_strict": 77.31,
+      "row_ok": 0.0,
+      "word_edits": 90,
+      "ref_words": 117
+     },
+     "kisaltma": {
+      "n": 12,
+      "wer": 45.71,
+      "cer": 27.25,
+      "wer_strict": 45.71,
+      "row_ok": 0.0,
+      "word_edits": 32,
+      "ref_words": 70
+     },
+     "akronim": {
+      "n": 15,
+      "wer": 47.13,
+      "cer": 17.96,
+      "wer_strict": 47.73,
+      "row_ok": 20.0,
+      "word_edits": 41,
+      "ref_words": 87
+     },
+     "kisa": {
+      "n": 15,
+      "wer": 4.0,
+      "cer": 2.16,
+      "wer_strict": 4.0,
+      "row_ok": 93.33,
+      "word_edits": 1,
+      "ref_words": 25
+     },
+     "soru": {
+      "n": 8,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 33
+     },
+     "ozel": {
+      "n": 10,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 44
+     }
+    }
+   },
+   "native": {
+    "n": 155,
+    "wer": 14.03,
+    "cer": 8.62,
+    "wer_strict": 14.79,
+    "row_ok": 69.03,
+    "word_edits": 127,
+    "ref_words": 905,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "sayi": {
+      "n": 15,
+      "wer": 11.24,
+      "cer": 5.06,
+      "wer_strict": 11.24,
+      "row_ok": 80.0,
+      "word_edits": 10,
+      "ref_words": 89
+     },
+     "sira": {
+      "n": 12,
+      "wer": 19.67,
+      "cer": 9.65,
+      "wer_strict": 19.67,
+      "row_ok": 33.33,
+      "word_edits": 12,
+      "ref_words": 61
+     },
+     "tarih": {
+      "n": 12,
+      "wer": 9.17,
+      "cer": 7.05,
+      "wer_strict": 9.17,
+      "row_ok": 83.33,
+      "word_edits": 10,
+      "ref_words": 109
+     },
+     "saat": {
+      "n": 12,
+      "wer": 30.65,
+      "cer": 20.33,
+      "wer_strict": 31.75,
+      "row_ok": 41.67,
+      "word_edits": 19,
+      "ref_words": 62
+     },
+     "para": {
+      "n": 12,
+      "wer": 9.88,
+      "cer": 5.88,
+      "wer_strict": 16.25,
+      "row_ok": 66.67,
+      "word_edits": 8,
+      "ref_words": 81
+     },
+     "yuzde": {
+      "n": 8,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 52
+     },
+     "birim": {
+      "n": 12,
+      "wer": 10.96,
+      "cer": 5.87,
+      "wer_strict": 10.96,
+      "row_ok": 83.33,
+      "word_edits": 8,
+      "ref_words": 73
+     },
+     "numara": {
+      "n": 12,
+      "wer": 14.29,
+      "cer": 11.7,
+      "wer_strict": 14.29,
+      "row_ok": 75.0,
+      "word_edits": 17,
+      "ref_words": 119
+     },
+     "kisaltma": {
+      "n": 12,
+      "wer": 25.71,
+      "cer": 17.58,
+      "wer_strict": 25.71,
+      "row_ok": 16.67,
+      "word_edits": 18,
+      "ref_words": 70
+     },
+     "akronim": {
+      "n": 15,
+      "wer": 27.59,
+      "cer": 14.08,
+      "wer_strict": 28.41,
+      "row_ok": 46.67,
+      "word_edits": 24,
+      "ref_words": 87
+     },
+     "kisa": {
+      "n": 15,
+      "wer": 4.0,
+      "cer": 2.16,
+      "wer_strict": 4.0,
+      "row_ok": 93.33,
+      "word_edits": 1,
+      "ref_words": 25
+     },
+     "soru": {
+      "n": 8,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 33
+     },
+     "ozel": {
+      "n": 10,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 44
+     }
+    }
+   },
+   "normalizer_tr": {
+    "n": 155,
+    "wer": 28.29,
+    "cer": 20.08,
+    "wer_strict": 29.58,
+    "row_ok": 55.48,
+    "word_edits": 254,
+    "ref_words": 898,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "sayi": {
+      "n": 15,
+      "wer": 17.44,
+      "cer": 12.12,
+      "wer_strict": 20.22,
+      "row_ok": 66.67,
+      "word_edits": 15,
+      "ref_words": 86
+     },
+     "sira": {
+      "n": 12,
+      "wer": 18.03,
+      "cer": 17.88,
+      "wer_strict": 18.03,
+      "row_ok": 33.33,
+      "word_edits": 11,
+      "ref_words": 61
+     },
+     "tarih": {
+      "n": 12,
+      "wer": 48.6,
+      "cer": 38.25,
+      "wer_strict": 49.54,
+      "row_ok": 33.33,
+      "word_edits": 52,
+      "ref_words": 107
+     },
+     "saat": {
+      "n": 12,
+      "wer": 46.77,
+      "cer": 31.71,
+      "wer_strict": 47.62,
+      "row_ok": 16.67,
+      "word_edits": 29,
+      "ref_words": 62
+     },
+     "para": {
+      "n": 12,
+      "wer": 16.05,
+      "cer": 10.89,
+      "wer_strict": 22.5,
+      "row_ok": 58.33,
+      "word_edits": 13,
+      "ref_words": 81
+     },
+     "yuzde": {
+      "n": 8,
+      "wer": 3.85,
+      "cer": 3.55,
+      "wer_strict": 3.85,
+      "row_ok": 87.5,
+      "word_edits": 2,
+      "ref_words": 52
+     },
+     "birim": {
+      "n": 12,
+      "wer": 9.59,
+      "cer": 8.26,
+      "wer_strict": 9.59,
+      "row_ok": 83.33,
+      "word_edits": 7,
+      "ref_words": 73
+     },
+     "numara": {
+      "n": 12,
+      "wer": 61.54,
+      "cer": 54.0,
+      "wer_strict": 62.18,
+      "row_ok": 16.67,
+      "word_edits": 72,
+      "ref_words": 117
+     },
+     "kisaltma": {
+      "n": 12,
+      "wer": 37.14,
+      "cer": 21.76,
+      "wer_strict": 37.14,
+      "row_ok": 16.67,
+      "word_edits": 26,
+      "ref_words": 70
+     },
+     "akronim": {
+      "n": 15,
+      "wer": 29.89,
+      "cer": 11.22,
+      "wer_strict": 30.68,
+      "row_ok": 40.0,
+      "word_edits": 26,
+      "ref_words": 87
+     },
+     "kisa": {
+      "n": 15,
+      "wer": 4.0,
+      "cer": 2.16,
+      "wer_strict": 4.0,
+      "row_ok": 93.33,
+      "word_edits": 1,
+      "ref_words": 25
+     },
+     "soru": {
+      "n": 8,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 33
+     },
+     "ozel": {
+      "n": 10,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 44
+     }
+    }
+   },
+   "normalizer_tr_fallback": {
+    "n": 155,
+    "wer": 14.03,
+    "cer": 8.62,
+    "wer_strict": 14.79,
+    "row_ok": 69.03,
+    "word_edits": 127,
+    "ref_words": 905,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "sayi": {
+      "n": 15,
+      "wer": 11.24,
+      "cer": 5.06,
+      "wer_strict": 11.24,
+      "row_ok": 80.0,
+      "word_edits": 10,
+      "ref_words": 89
+     },
+     "sira": {
+      "n": 12,
+      "wer": 19.67,
+      "cer": 9.65,
+      "wer_strict": 19.67,
+      "row_ok": 33.33,
+      "word_edits": 12,
+      "ref_words": 61
+     },
+     "tarih": {
+      "n": 12,
+      "wer": 9.17,
+      "cer": 7.05,
+      "wer_strict": 9.17,
+      "row_ok": 83.33,
+      "word_edits": 10,
+      "ref_words": 109
+     },
+     "saat": {
+      "n": 12,
+      "wer": 30.65,
+      "cer": 20.33,
+      "wer_strict": 31.75,
+      "row_ok": 41.67,
+      "word_edits": 19,
+      "ref_words": 62
+     },
+     "para": {
+      "n": 12,
+      "wer": 9.88,
+      "cer": 5.88,
+      "wer_strict": 16.25,
+      "row_ok": 66.67,
+      "word_edits": 8,
+      "ref_words": 81
+     },
+     "yuzde": {
+      "n": 8,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 52
+     },
+     "birim": {
+      "n": 12,
+      "wer": 10.96,
+      "cer": 5.87,
+      "wer_strict": 10.96,
+      "row_ok": 83.33,
+      "word_edits": 8,
+      "ref_words": 73
+     },
+     "numara": {
+      "n": 12,
+      "wer": 14.29,
+      "cer": 11.7,
+      "wer_strict": 14.29,
+      "row_ok": 75.0,
+      "word_edits": 17,
+      "ref_words": 119
+     },
+     "kisaltma": {
+      "n": 12,
+      "wer": 25.71,
+      "cer": 17.58,
+      "wer_strict": 25.71,
+      "row_ok": 16.67,
+      "word_edits": 18,
+      "ref_words": 70
+     },
+     "akronim": {
+      "n": 15,
+      "wer": 27.59,
+      "cer": 14.08,
+      "wer_strict": 28.41,
+      "row_ok": 46.67,
+      "word_edits": 24,
+      "ref_words": 87
+     },
+     "kisa": {
+      "n": 15,
+      "wer": 4.0,
+      "cer": 2.16,
+      "wer_strict": 4.0,
+      "row_ok": 93.33,
+      "word_edits": 1,
+      "ref_words": 25
+     },
+     "soru": {
+      "n": 8,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 33
+     },
+     "ozel": {
+      "n": 10,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 44
+     }
+    }
+   },
+   "trnorm": {
+    "n": 155,
+    "wer": 1.88,
+    "cer": 0.72,
+    "wer_strict": 2.43,
+    "row_ok": 94.84,
+    "word_edits": 17,
+    "ref_words": 905,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "sayi": {
+      "n": 15,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 89
+     },
+     "sira": {
+      "n": 12,
+      "wer": 3.28,
+      "cer": 0.24,
+      "wer_strict": 3.28,
+      "row_ok": 91.67,
+      "word_edits": 2,
+      "ref_words": 61
+     },
+     "tarih": {
+      "n": 12,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.92,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 109
+     },
+     "saat": {
+      "n": 12,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 63
+     },
+     "para": {
+      "n": 12,
+      "wer": 1.25,
+      "cer": 0.22,
+      "wer_strict": 5.0,
+      "row_ok": 91.67,
+      "word_edits": 1,
+      "ref_words": 80
+     },
+     "yuzde": {
+      "n": 8,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 52
+     },
+     "birim": {
+      "n": 12,
+      "wer": 2.74,
+      "cer": 0.65,
+      "wer_strict": 2.74,
+      "row_ok": 91.67,
+      "word_edits": 2,
+      "ref_words": 73
+     },
+     "numara": {
+      "n": 12,
+      "wer": 4.2,
+      "cer": 4.12,
+      "wer_strict": 4.2,
+      "row_ok": 91.67,
+      "word_edits": 5,
+      "ref_words": 119
+     },
+     "kisaltma": {
+      "n": 12,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 70
+     },
+     "akronim": {
+      "n": 15,
+      "wer": 6.9,
+      "cer": 1.22,
+      "wer_strict": 7.95,
+      "row_ok": 80.0,
+      "word_edits": 6,
+      "ref_words": 87
+     },
+     "kisa": {
+      "n": 15,
+      "wer": 4.0,
+      "cer": 2.16,
+      "wer_strict": 4.0,
+      "row_ok": 93.33,
+      "word_edits": 1,
+      "ref_words": 25
+     },
+     "soru": {
+      "n": 8,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 33
+     },
+     "ozel": {
+      "n": 10,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 44
+     }
+    }
+   }
+  },
+  "pocket-tts-turkish": {
+   "raw": {
+    "n": 155,
+    "wer": 46.49,
+    "cer": 34.25,
+    "wer_strict": 47.24,
+    "row_ok": 23.87,
+    "word_edits": 417,
+    "ref_words": 897,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "sayi": {
+      "n": 15,
+      "wer": 46.51,
+      "cer": 30.58,
+      "wer_strict": 48.31,
+      "row_ok": 0.0,
+      "word_edits": 40,
+      "ref_words": 86
+     },
+     "sira": {
+      "n": 12,
+      "wer": 34.43,
+      "cer": 28.94,
+      "wer_strict": 34.43,
+      "row_ok": 0.0,
+      "word_edits": 21,
+      "ref_words": 61
+     },
+     "tarih": {
+      "n": 12,
+      "wer": 62.62,
+      "cer": 48.41,
+      "wer_strict": 63.3,
+      "row_ok": 0.0,
+      "word_edits": 67,
+      "ref_words": 107
+     },
+     "saat": {
+      "n": 12,
+      "wer": 62.3,
+      "cer": 42.19,
+      "wer_strict": 63.49,
+      "row_ok": 0.0,
+      "word_edits": 38,
+      "ref_words": 61
+     },
+     "para": {
+      "n": 12,
+      "wer": 65.0,
+      "cer": 52.22,
+      "wer_strict": 65.0,
+      "row_ok": 0.0,
+      "word_edits": 52,
+      "ref_words": 80
+     },
+     "yuzde": {
+      "n": 8,
+      "wer": 48.08,
+      "cer": 39.03,
+      "wer_strict": 48.08,
+      "row_ok": 0.0,
+      "word_edits": 25,
+      "ref_words": 52
+     },
+     "birim": {
+      "n": 12,
+      "wer": 56.16,
+      "cer": 40.27,
+      "wer_strict": 58.9,
+      "row_ok": 0.0,
+      "word_edits": 41,
+      "ref_words": 73
+     },
+     "numara": {
+      "n": 12,
+      "wer": 74.36,
+      "cer": 65.33,
+      "wer_strict": 74.79,
+      "row_ok": 0.0,
+      "word_edits": 87,
+      "ref_words": 117
+     },
+     "kisaltma": {
+      "n": 12,
+      "wer": 41.43,
+      "cer": 27.03,
+      "wer_strict": 41.43,
+      "row_ok": 0.0,
+      "word_edits": 29,
+      "ref_words": 70
+     },
+     "akronim": {
+      "n": 15,
+      "wer": 11.36,
+      "cer": 5.3,
+      "wer_strict": 11.36,
+      "row_ok": 66.67,
+      "word_edits": 10,
+      "ref_words": 88
+     },
+     "kisa": {
+      "n": 15,
+      "wer": 12.0,
+      "cer": 2.88,
+      "wer_strict": 12.0,
+      "row_ok": 86.67,
+      "word_edits": 3,
+      "ref_words": 25
+     },
+     "soru": {
+      "n": 8,
+      "wer": 3.03,
+      "cer": 0.5,
+      "wer_strict": 3.03,
+      "row_ok": 87.5,
+      "word_edits": 1,
+      "ref_words": 33
+     },
+     "ozel": {
+      "n": 10,
+      "wer": 6.82,
+      "cer": 1.95,
+      "wer_strict": 6.82,
+      "row_ok": 70.0,
+      "word_edits": 3,
+      "ref_words": 44
+     }
+    }
+   },
+   "native": {
+    "n": 155,
+    "wer": 10.25,
+    "cer": 6.3,
+    "wer_strict": 11.04,
+    "row_ok": 72.9,
+    "word_edits": 93,
+    "ref_words": 907,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "sayi": {
+      "n": 15,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 89
+     },
+     "sira": {
+      "n": 12,
+      "wer": 9.84,
+      "cer": 5.41,
+      "wer_strict": 9.84,
+      "row_ok": 50.0,
+      "word_edits": 6,
+      "ref_words": 61
+     },
+     "tarih": {
+      "n": 12,
+      "wer": 8.26,
+      "cer": 5.8,
+      "wer_strict": 10.09,
+      "row_ok": 83.33,
+      "word_edits": 9,
+      "ref_words": 109
+     },
+     "saat": {
+      "n": 12,
+      "wer": 11.11,
+      "cer": 10.19,
+      "wer_strict": 11.11,
+      "row_ok": 66.67,
+      "word_edits": 7,
+      "ref_words": 63
+     },
+     "para": {
+      "n": 12,
+      "wer": 12.35,
+      "cer": 7.41,
+      "wer_strict": 18.75,
+      "row_ok": 58.33,
+      "word_edits": 10,
+      "ref_words": 81
+     },
+     "yuzde": {
+      "n": 8,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 52
+     },
+     "birim": {
+      "n": 12,
+      "wer": 4.11,
+      "cer": 4.78,
+      "wer_strict": 4.11,
+      "row_ok": 83.33,
+      "word_edits": 3,
+      "ref_words": 73
+     },
+     "numara": {
+      "n": 12,
+      "wer": 5.88,
+      "cer": 5.6,
+      "wer_strict": 5.88,
+      "row_ok": 83.33,
+      "word_edits": 7,
+      "ref_words": 119
+     },
+     "kisaltma": {
+      "n": 12,
+      "wer": 15.71,
+      "cer": 7.69,
+      "wer_strict": 15.71,
+      "row_ok": 58.33,
+      "word_edits": 11,
+      "ref_words": 70
+     },
+     "akronim": {
+      "n": 15,
+      "wer": 36.36,
+      "cer": 21.38,
+      "wer_strict": 36.36,
+      "row_ok": 33.33,
+      "word_edits": 32,
+      "ref_words": 88
+     },
+     "kisa": {
+      "n": 15,
+      "wer": 12.0,
+      "cer": 2.88,
+      "wer_strict": 12.0,
+      "row_ok": 86.67,
+      "word_edits": 3,
+      "ref_words": 25
+     },
+     "soru": {
+      "n": 8,
+      "wer": 3.03,
+      "cer": 0.5,
+      "wer_strict": 3.03,
+      "row_ok": 87.5,
+      "word_edits": 1,
+      "ref_words": 33
+     },
+     "ozel": {
+      "n": 10,
+      "wer": 9.09,
+      "cer": 2.27,
+      "wer_strict": 9.09,
+      "row_ok": 70.0,
+      "word_edits": 4,
+      "ref_words": 44
+     }
+    }
+   },
+   "normalizer_tr": {
+    "n": 155,
+    "wer": 27.67,
+    "cer": 20.18,
+    "wer_strict": 29.03,
+    "row_ok": 52.26,
+    "word_edits": 249,
+    "ref_words": 900,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "sayi": {
+      "n": 15,
+      "wer": 16.28,
+      "cer": 11.35,
+      "wer_strict": 19.1,
+      "row_ok": 66.67,
+      "word_edits": 14,
+      "ref_words": 86
+     },
+     "sira": {
+      "n": 12,
+      "wer": 18.03,
+      "cer": 19.76,
+      "wer_strict": 18.03,
+      "row_ok": 33.33,
+      "word_edits": 11,
+      "ref_words": 61
+     },
+     "tarih": {
+      "n": 12,
+      "wer": 48.6,
+      "cer": 37.62,
+      "wer_strict": 49.54,
+      "row_ok": 33.33,
+      "word_edits": 52,
+      "ref_words": 107
+     },
+     "saat": {
+      "n": 12,
+      "wer": 53.23,
+      "cer": 37.23,
+      "wer_strict": 53.97,
+      "row_ok": 16.67,
+      "word_edits": 33,
+      "ref_words": 62
+     },
+     "para": {
+      "n": 12,
+      "wer": 24.69,
+      "cer": 16.12,
+      "wer_strict": 31.25,
+      "row_ok": 33.33,
+      "word_edits": 20,
+      "ref_words": 81
+     },
+     "yuzde": {
+      "n": 8,
+      "wer": 3.85,
+      "cer": 3.55,
+      "wer_strict": 3.85,
+      "row_ok": 87.5,
+      "word_edits": 2,
+      "ref_words": 52
+     },
+     "birim": {
+      "n": 12,
+      "wer": 10.81,
+      "cer": 9.63,
+      "wer_strict": 12.33,
+      "row_ok": 75.0,
+      "word_edits": 8,
+      "ref_words": 74
+     },
+     "numara": {
+      "n": 12,
+      "wer": 58.12,
+      "cer": 51.67,
+      "wer_strict": 58.82,
+      "row_ok": 16.67,
+      "word_edits": 68,
+      "ref_words": 117
+     },
+     "kisaltma": {
+      "n": 12,
+      "wer": 34.29,
+      "cer": 20.22,
+      "wer_strict": 34.29,
+      "row_ok": 16.67,
+      "word_edits": 24,
+      "ref_words": 70
+     },
+     "akronim": {
+      "n": 15,
+      "wer": 11.36,
+      "cer": 4.68,
+      "wer_strict": 11.36,
+      "row_ok": 66.67,
+      "word_edits": 10,
+      "ref_words": 88
+     },
+     "kisa": {
+      "n": 15,
+      "wer": 12.0,
+      "cer": 2.88,
+      "wer_strict": 12.0,
+      "row_ok": 86.67,
+      "word_edits": 3,
+      "ref_words": 25
+     },
+     "soru": {
+      "n": 8,
+      "wer": 3.03,
+      "cer": 0.5,
+      "wer_strict": 3.03,
+      "row_ok": 87.5,
+      "word_edits": 1,
+      "ref_words": 33
+     },
+     "ozel": {
+      "n": 10,
+      "wer": 6.82,
+      "cer": 1.95,
+      "wer_strict": 6.82,
+      "row_ok": 70.0,
+      "word_edits": 3,
+      "ref_words": 44
+     }
+    }
+   },
+   "normalizer_tr_fallback": {
+    "n": 155,
+    "wer": 16.13,
+    "cer": 9.94,
+    "wer_strict": 16.89,
+    "row_ok": 62.58,
+    "word_edits": 146,
+    "ref_words": 905,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "sayi": {
+      "n": 15,
+      "wer": 11.24,
+      "cer": 5.06,
+      "wer_strict": 11.24,
+      "row_ok": 80.0,
+      "word_edits": 10,
+      "ref_words": 89
+     },
+     "sira": {
+      "n": 12,
+      "wer": 14.75,
+      "cer": 10.12,
+      "wer_strict": 14.75,
+      "row_ok": 33.33,
+      "word_edits": 9,
+      "ref_words": 61
+     },
+     "tarih": {
+      "n": 12,
+      "wer": 8.26,
+      "cer": 6.9,
+      "wer_strict": 8.26,
+      "row_ok": 83.33,
+      "word_edits": 9,
+      "ref_words": 109
+     },
+     "saat": {
+      "n": 12,
+      "wer": 38.71,
+      "cer": 26.56,
+      "wer_strict": 39.68,
+      "row_ok": 41.67,
+      "word_edits": 24,
+      "ref_words": 62
+     },
+     "para": {
+      "n": 12,
+      "wer": 18.52,
+      "cer": 12.42,
+      "wer_strict": 25.0,
+      "row_ok": 41.67,
+      "word_edits": 15,
+      "ref_words": 81
+     },
+     "yuzde": {
+      "n": 8,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 52
+     },
+     "birim": {
+      "n": 12,
+      "wer": 10.96,
+      "cer": 7.61,
+      "wer_strict": 10.96,
+      "row_ok": 83.33,
+      "word_edits": 8,
+      "ref_words": 73
+     },
+     "numara": {
+      "n": 12,
+      "wer": 13.45,
+      "cer": 11.2,
+      "wer_strict": 13.45,
+      "row_ok": 66.67,
+      "word_edits": 16,
+      "ref_words": 119
+     },
+     "kisaltma": {
+      "n": 12,
+      "wer": 25.71,
+      "cer": 16.7,
+      "wer_strict": 25.71,
+      "row_ok": 25.0,
+      "word_edits": 18,
+      "ref_words": 70
+     },
+     "akronim": {
+      "n": 15,
+      "wer": 34.48,
+      "cer": 15.71,
+      "wer_strict": 35.23,
+      "row_ok": 33.33,
+      "word_edits": 30,
+      "ref_words": 87
+     },
+     "kisa": {
+      "n": 15,
+      "wer": 12.0,
+      "cer": 2.88,
+      "wer_strict": 12.0,
+      "row_ok": 86.67,
+      "word_edits": 3,
+      "ref_words": 25
+     },
+     "soru": {
+      "n": 8,
+      "wer": 3.03,
+      "cer": 0.5,
+      "wer_strict": 3.03,
+      "row_ok": 87.5,
+      "word_edits": 1,
+      "ref_words": 33
+     },
+     "ozel": {
+      "n": 10,
+      "wer": 6.82,
+      "cer": 1.95,
+      "wer_strict": 6.82,
+      "row_ok": 70.0,
+      "word_edits": 3,
+      "ref_words": 44
+     }
+    }
+   },
+   "trnorm": {
+    "n": 155,
+    "wer": 3.2,
+    "cer": 1.13,
+    "wer_strict": 3.64,
+    "row_ok": 88.39,
+    "word_edits": 29,
+    "ref_words": 905,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "sayi": {
+      "n": 15,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 89
+     },
+     "sira": {
+      "n": 12,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 61
+     },
+     "tarih": {
+      "n": 12,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 109
+     },
+     "saat": {
+      "n": 12,
+      "wer": 1.59,
+      "cer": 0.27,
+      "wer_strict": 1.59,
+      "row_ok": 91.67,
+      "word_edits": 1,
+      "ref_words": 63
+     },
+     "para": {
+      "n": 12,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 3.75,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 80
+     },
+     "yuzde": {
+      "n": 8,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 52
+     },
+     "birim": {
+      "n": 12,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 73
+     },
+     "numara": {
+      "n": 12,
+      "wer": 8.4,
+      "cer": 5.6,
+      "wer_strict": 8.4,
+      "row_ok": 66.67,
+      "word_edits": 10,
+      "ref_words": 119
+     },
+     "kisaltma": {
+      "n": 12,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 70
+     },
+     "akronim": {
+      "n": 15,
+      "wer": 12.64,
+      "cer": 3.06,
+      "wer_strict": 13.64,
+      "row_ok": 53.33,
+      "word_edits": 11,
+      "ref_words": 87
+     },
+     "kisa": {
+      "n": 15,
+      "wer": 12.0,
+      "cer": 2.88,
+      "wer_strict": 12.0,
+      "row_ok": 86.67,
+      "word_edits": 3,
+      "ref_words": 25
+     },
+     "soru": {
+      "n": 8,
+      "wer": 3.03,
+      "cer": 0.5,
+      "wer_strict": 3.03,
+      "row_ok": 87.5,
+      "word_edits": 1,
+      "ref_words": 33
+     },
+     "ozel": {
+      "n": 10,
+      "wer": 6.82,
+      "cer": 1.95,
+      "wer_strict": 6.82,
+      "row_ok": 70.0,
+      "word_edits": 3,
+      "ref_words": 44
+     }
+    }
+   }
+  },
+  "piper-tr-dfki": {
+   "raw": {
+    "n": 155,
+    "wer": 13.34,
+    "cer": 6.84,
+    "wer_strict": 14.57,
+    "row_ok": 61.29,
+    "word_edits": 121,
+    "ref_words": 907,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "sayi": {
+      "n": 15,
+      "wer": 2.25,
+      "cer": 0.19,
+      "wer_strict": 2.25,
+      "row_ok": 93.33,
+      "word_edits": 2,
+      "ref_words": 89
+     },
+     "sira": {
+      "n": 12,
+      "wer": 18.03,
+      "cer": 12.47,
+      "wer_strict": 18.03,
+      "row_ok": 25.0,
+      "word_edits": 11,
+      "ref_words": 61
+     },
+     "tarih": {
+      "n": 12,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 109
+     },
+     "saat": {
+      "n": 12,
+      "wer": 8.06,
+      "cer": 3.79,
+      "wer_strict": 9.52,
+      "row_ok": 83.33,
+      "word_edits": 5,
+      "ref_words": 62
+     },
+     "para": {
+      "n": 12,
+      "wer": 3.75,
+      "cer": 3.32,
+      "wer_strict": 6.25,
+      "row_ok": 83.33,
+      "word_edits": 3,
+      "ref_words": 80
+     },
+     "yuzde": {
+      "n": 8,
+      "wer": 11.54,
+      "cer": 2.26,
+      "wer_strict": 11.54,
+      "row_ok": 50.0,
+      "word_edits": 6,
+      "ref_words": 52
+     },
+     "birim": {
+      "n": 12,
+      "wer": 25.0,
+      "cer": 13.48,
+      "wer_strict": 26.03,
+      "row_ok": 8.33,
+      "word_edits": 18,
+      "ref_words": 72
+     },
+     "numara": {
+      "n": 12,
+      "wer": 16.53,
+      "cer": 11.87,
+      "wer_strict": 20.17,
+      "row_ok": 58.33,
+      "word_edits": 20,
+      "ref_words": 121
+     },
+     "kisaltma": {
+      "n": 12,
+      "wer": 44.29,
+      "cer": 22.64,
+      "wer_strict": 44.29,
+      "row_ok": 0.0,
+      "word_edits": 31,
+      "ref_words": 70
+     },
+     "akronim": {
+      "n": 15,
+      "wer": 23.6,
+      "cer": 7.69,
+      "wer_strict": 27.27,
+      "row_ok": 33.33,
+      "word_edits": 21,
+      "ref_words": 89
+     },
+     "kisa": {
+      "n": 15,
+      "wer": 4.0,
+      "cer": 0.72,
+      "wer_strict": 4.0,
+      "row_ok": 93.33,
+      "word_edits": 1,
+      "ref_words": 25
+     },
+     "soru": {
+      "n": 8,
+      "wer": 3.03,
+      "cer": 0.5,
+      "wer_strict": 3.03,
+      "row_ok": 87.5,
+      "word_edits": 1,
+      "ref_words": 33
+     },
+     "ozel": {
+      "n": 10,
+      "wer": 4.55,
+      "cer": 0.65,
+      "wer_strict": 4.55,
+      "row_ok": 80.0,
+      "word_edits": 2,
+      "ref_words": 44
+     }
+    }
+   },
+   "normalizer_tr": {
+    "n": 155,
+    "wer": 12.1,
+    "cer": 6.03,
+    "wer_strict": 13.58,
+    "row_ok": 67.1,
+    "word_edits": 110,
+    "ref_words": 909,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "sayi": {
+      "n": 15,
+      "wer": 1.12,
+      "cer": 0.19,
+      "wer_strict": 1.12,
+      "row_ok": 93.33,
+      "word_edits": 1,
+      "ref_words": 89
+     },
+     "sira": {
+      "n": 12,
+      "wer": 16.39,
+      "cer": 10.82,
+      "wer_strict": 16.39,
+      "row_ok": 33.33,
+      "word_edits": 10,
+      "ref_words": 61
+     },
+     "tarih": {
+      "n": 12,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 109
+     },
+     "saat": {
+      "n": 12,
+      "wer": 8.06,
+      "cer": 3.79,
+      "wer_strict": 9.52,
+      "row_ok": 83.33,
+      "word_edits": 5,
+      "ref_words": 62
+     },
+     "para": {
+      "n": 12,
+      "wer": 14.81,
+      "cer": 8.93,
+      "wer_strict": 21.25,
+      "row_ok": 50.0,
+      "word_edits": 12,
+      "ref_words": 81
+     },
+     "yuzde": {
+      "n": 8,
+      "wer": 3.85,
+      "cer": 0.97,
+      "wer_strict": 3.85,
+      "row_ok": 75.0,
+      "word_edits": 2,
+      "ref_words": 52
+     },
+     "birim": {
+      "n": 12,
+      "wer": 4.11,
+      "cer": 1.3,
+      "wer_strict": 4.11,
+      "row_ok": 83.33,
+      "word_edits": 3,
+      "ref_words": 73
+     },
+     "numara": {
+      "n": 12,
+      "wer": 16.53,
+      "cer": 12.03,
+      "wer_strict": 20.17,
+      "row_ok": 58.33,
+      "word_edits": 20,
+      "ref_words": 121
+     },
+     "kisaltma": {
+      "n": 12,
+      "wer": 42.86,
+      "cer": 19.78,
+      "wer_strict": 42.86,
+      "row_ok": 8.33,
+      "word_edits": 30,
+      "ref_words": 70
+     },
+     "akronim": {
+      "n": 15,
+      "wer": 25.84,
+      "cer": 9.51,
+      "wer_strict": 29.55,
+      "row_ok": 33.33,
+      "word_edits": 23,
+      "ref_words": 89
+     },
+     "kisa": {
+      "n": 15,
+      "wer": 4.0,
+      "cer": 0.72,
+      "wer_strict": 4.0,
+      "row_ok": 93.33,
+      "word_edits": 1,
+      "ref_words": 25
+     },
+     "soru": {
+      "n": 8,
+      "wer": 3.03,
+      "cer": 0.5,
+      "wer_strict": 3.03,
+      "row_ok": 87.5,
+      "word_edits": 1,
+      "ref_words": 33
+     },
+     "ozel": {
+      "n": 10,
+      "wer": 4.55,
+      "cer": 0.65,
+      "wer_strict": 4.55,
+      "row_ok": 80.0,
+      "word_edits": 2,
+      "ref_words": 44
+     }
+    }
+   },
+   "normalizer_tr_fallback": {
+    "n": 155,
+    "wer": 15.6,
+    "cer": 8.56,
+    "wer_strict": 16.45,
+    "row_ok": 60.65,
+    "word_edits": 141,
+    "ref_words": 904,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "sayi": {
+      "n": 15,
+      "wer": 12.36,
+      "cer": 5.43,
+      "wer_strict": 12.36,
+      "row_ok": 73.33,
+      "word_edits": 11,
+      "ref_words": 89
+     },
+     "sira": {
+      "n": 12,
+      "wer": 18.03,
+      "cer": 10.12,
+      "wer_strict": 18.03,
+      "row_ok": 33.33,
+      "word_edits": 11,
+      "ref_words": 61
+     },
+     "tarih": {
+      "n": 12,
+      "wer": 5.5,
+      "cer": 4.23,
+      "wer_strict": 5.5,
+      "row_ok": 83.33,
+      "word_edits": 6,
+      "ref_words": 109
+     },
+     "saat": {
+      "n": 12,
+      "wer": 33.87,
+      "cer": 20.05,
+      "wer_strict": 34.92,
+      "row_ok": 41.67,
+      "word_edits": 21,
+      "ref_words": 62
+     },
+     "para": {
+      "n": 12,
+      "wer": 17.28,
+      "cer": 10.46,
+      "wer_strict": 23.75,
+      "row_ok": 41.67,
+      "word_edits": 14,
+      "ref_words": 81
+     },
+     "yuzde": {
+      "n": 8,
+      "wer": 3.85,
+      "cer": 0.97,
+      "wer_strict": 3.85,
+      "row_ok": 75.0,
+      "word_edits": 2,
+      "ref_words": 52
+     },
+     "birim": {
+      "n": 12,
+      "wer": 8.22,
+      "cer": 5.22,
+      "wer_strict": 8.22,
+      "row_ok": 83.33,
+      "word_edits": 6,
+      "ref_words": 73
+     },
+     "numara": {
+      "n": 12,
+      "wer": 11.02,
+      "cer": 8.8,
+      "wer_strict": 11.76,
+      "row_ok": 75.0,
+      "word_edits": 13,
+      "ref_words": 118
+     },
+     "kisaltma": {
+      "n": 12,
+      "wer": 31.43,
+      "cer": 16.7,
+      "wer_strict": 31.43,
+      "row_ok": 8.33,
+      "word_edits": 22,
+      "ref_words": 70
+     },
+     "akronim": {
+      "n": 15,
+      "wer": 35.63,
+      "cer": 16.33,
+      "wer_strict": 36.36,
+      "row_ok": 26.67,
+      "word_edits": 31,
+      "ref_words": 87
+     },
+     "kisa": {
+      "n": 15,
+      "wer": 4.0,
+      "cer": 0.72,
+      "wer_strict": 4.0,
+      "row_ok": 93.33,
+      "word_edits": 1,
+      "ref_words": 25
+     },
+     "soru": {
+      "n": 8,
+      "wer": 3.03,
+      "cer": 0.5,
+      "wer_strict": 3.03,
+      "row_ok": 87.5,
+      "word_edits": 1,
+      "ref_words": 33
+     },
+     "ozel": {
+      "n": 10,
+      "wer": 4.55,
+      "cer": 0.65,
+      "wer_strict": 4.55,
+      "row_ok": 80.0,
+      "word_edits": 2,
+      "ref_words": 44
+     }
+    }
+   },
+   "trnorm": {
+    "n": 155,
+    "wer": 3.54,
+    "cer": 0.72,
+    "wer_strict": 4.08,
+    "row_ok": 87.1,
+    "word_edits": 32,
+    "ref_words": 905,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "sayi": {
+      "n": 15,
+      "wer": 1.12,
+      "cer": 0.19,
+      "wer_strict": 1.12,
+      "row_ok": 93.33,
+      "word_edits": 1,
+      "ref_words": 89
+     },
+     "sira": {
+      "n": 12,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 61
+     },
+     "tarih": {
+      "n": 12,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.92,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 109
+     },
+     "saat": {
+      "n": 12,
+      "wer": 9.52,
+      "cer": 2.14,
+      "wer_strict": 9.52,
+      "row_ok": 75.0,
+      "word_edits": 6,
+      "ref_words": 63
+     },
+     "para": {
+      "n": 12,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 3.75,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 80
+     },
+     "yuzde": {
+      "n": 8,
+      "wer": 3.85,
+      "cer": 0.97,
+      "wer_strict": 3.85,
+      "row_ok": 75.0,
+      "word_edits": 2,
+      "ref_words": 52
+     },
+     "birim": {
+      "n": 12,
+      "wer": 1.37,
+      "cer": 0.43,
+      "wer_strict": 1.37,
+      "row_ok": 91.67,
+      "word_edits": 1,
+      "ref_words": 73
+     },
+     "numara": {
+      "n": 12,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 119
+     },
+     "kisaltma": {
+      "n": 12,
+      "wer": 5.71,
+      "cer": 1.1,
+      "wer_strict": 5.71,
+      "row_ok": 75.0,
+      "word_edits": 4,
+      "ref_words": 70
+     },
+     "akronim": {
+      "n": 15,
+      "wer": 16.09,
+      "cer": 3.27,
+      "wer_strict": 17.05,
+      "row_ok": 60.0,
+      "word_edits": 14,
+      "ref_words": 87
+     },
+     "kisa": {
+      "n": 15,
+      "wer": 4.0,
+      "cer": 0.72,
+      "wer_strict": 4.0,
+      "row_ok": 93.33,
+      "word_edits": 1,
+      "ref_words": 25
+     },
+     "soru": {
+      "n": 8,
+      "wer": 3.03,
+      "cer": 0.5,
+      "wer_strict": 3.03,
+      "row_ok": 87.5,
+      "word_edits": 1,
+      "ref_words": 33
+     },
+     "ozel": {
+      "n": 10,
+      "wer": 4.55,
+      "cer": 0.65,
+      "wer_strict": 4.55,
+      "row_ok": 80.0,
+      "word_edits": 2,
+      "ref_words": 44
+     }
+    }
+   }
+  },
+  "mms-tts-tur": {
+   "raw": {
+    "n": 155,
+    "wer": 55.08,
+    "cer": 34.29,
+    "wer_strict": 55.63,
+    "row_ok": 14.19,
+    "word_edits": 493,
+    "ref_words": 895,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "sayi": {
+      "n": 15,
+      "wer": 48.84,
+      "cer": 29.04,
+      "wer_strict": 50.56,
+      "row_ok": 0.0,
+      "word_edits": 42,
+      "ref_words": 86
+     },
+     "sira": {
+      "n": 12,
+      "wer": 34.43,
+      "cer": 25.65,
+      "wer_strict": 34.43,
+      "row_ok": 8.33,
+      "word_edits": 21,
+      "ref_words": 61
+     },
+     "tarih": {
+      "n": 12,
+      "wer": 66.36,
+      "cer": 44.29,
+      "wer_strict": 66.97,
+      "row_ok": 0.0,
+      "word_edits": 71,
+      "ref_words": 107
+     },
+     "saat": {
+      "n": 12,
+      "wer": 60.66,
+      "cer": 37.43,
+      "wer_strict": 61.9,
+      "row_ok": 0.0,
+      "word_edits": 37,
+      "ref_words": 61
+     },
+     "para": {
+      "n": 12,
+      "wer": 65.0,
+      "cer": 48.89,
+      "wer_strict": 65.0,
+      "row_ok": 0.0,
+      "word_edits": 52,
+      "ref_words": 80
+     },
+     "yuzde": {
+      "n": 8,
+      "wer": 51.92,
+      "cer": 36.13,
+      "wer_strict": 51.92,
+      "row_ok": 0.0,
+      "word_edits": 27,
+      "ref_words": 52
+     },
+     "birim": {
+      "n": 12,
+      "wer": 62.5,
+      "cer": 41.12,
+      "wer_strict": 63.01,
+      "row_ok": 0.0,
+      "word_edits": 45,
+      "ref_words": 72
+     },
+     "numara": {
+      "n": 12,
+      "wer": 82.91,
+      "cer": 60.57,
+      "wer_strict": 83.19,
+      "row_ok": 0.0,
+      "word_edits": 97,
+      "ref_words": 117
+     },
+     "kisaltma": {
+      "n": 12,
+      "wer": 52.86,
+      "cer": 31.87,
+      "wer_strict": 52.86,
+      "row_ok": 0.0,
+      "word_edits": 37,
+      "ref_words": 70
+     },
+     "akronim": {
+      "n": 15,
+      "wer": 54.02,
+      "cer": 21.43,
+      "wer_strict": 54.55,
+      "row_ok": 0.0,
+      "word_edits": 47,
+      "ref_words": 87
+     },
+     "kisa": {
+      "n": 15,
+      "wer": 16.0,
+      "cer": 4.32,
+      "wer_strict": 16.0,
+      "row_ok": 80.0,
+      "word_edits": 4,
+      "ref_words": 25
+     },
+     "soru": {
+      "n": 8,
+      "wer": 9.09,
+      "cer": 2.51,
+      "wer_strict": 9.09,
+      "row_ok": 75.0,
+      "word_edits": 3,
+      "ref_words": 33
+     },
+     "ozel": {
+      "n": 10,
+      "wer": 22.73,
+      "cer": 4.55,
+      "wer_strict": 22.73,
+      "row_ok": 30.0,
+      "word_edits": 10,
+      "ref_words": 44
+     }
+    }
+   },
+   "normalizer_tr": {
+    "n": 155,
+    "wer": 36.19,
+    "cer": 21.01,
+    "wer_strict": 37.31,
+    "row_ok": 33.55,
+    "word_edits": 325,
+    "ref_words": 898,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "sayi": {
+      "n": 15,
+      "wer": 25.58,
+      "cer": 14.04,
+      "wer_strict": 28.09,
+      "row_ok": 33.33,
+      "word_edits": 22,
+      "ref_words": 86
+     },
+     "sira": {
+      "n": 12,
+      "wer": 19.67,
+      "cer": 15.76,
+      "wer_strict": 19.67,
+      "row_ok": 33.33,
+      "word_edits": 12,
+      "ref_words": 61
+     },
+     "tarih": {
+      "n": 12,
+      "wer": 50.47,
+      "cer": 34.13,
+      "wer_strict": 51.38,
+      "row_ok": 25.0,
+      "word_edits": 54,
+      "ref_words": 107
+     },
+     "saat": {
+      "n": 12,
+      "wer": 56.45,
+      "cer": 33.33,
+      "wer_strict": 57.14,
+      "row_ok": 8.33,
+      "word_edits": 35,
+      "ref_words": 62
+     },
+     "para": {
+      "n": 12,
+      "wer": 25.93,
+      "cer": 17.65,
+      "wer_strict": 31.25,
+      "row_ok": 25.0,
+      "word_edits": 21,
+      "ref_words": 81
+     },
+     "yuzde": {
+      "n": 8,
+      "wer": 11.54,
+      "cer": 5.48,
+      "wer_strict": 11.54,
+      "row_ok": 37.5,
+      "word_edits": 6,
+      "ref_words": 52
+     },
+     "birim": {
+      "n": 12,
+      "wer": 12.33,
+      "cer": 8.48,
+      "wer_strict": 12.33,
+      "row_ok": 75.0,
+      "word_edits": 9,
+      "ref_words": 73
+     },
+     "numara": {
+      "n": 12,
+      "wer": 68.38,
+      "cer": 49.92,
+      "wer_strict": 68.91,
+      "row_ok": 8.33,
+      "word_edits": 80,
+      "ref_words": 117
+     },
+     "kisaltma": {
+      "n": 12,
+      "wer": 44.29,
+      "cer": 25.71,
+      "wer_strict": 44.29,
+      "row_ok": 8.33,
+      "word_edits": 31,
+      "ref_words": 70
+     },
+     "akronim": {
+      "n": 15,
+      "wer": 43.68,
+      "cer": 14.29,
+      "wer_strict": 44.32,
+      "row_ok": 6.67,
+      "word_edits": 38,
+      "ref_words": 87
+     },
+     "kisa": {
+      "n": 15,
+      "wer": 16.0,
+      "cer": 4.32,
+      "wer_strict": 16.0,
+      "row_ok": 80.0,
+      "word_edits": 4,
+      "ref_words": 25
+     },
+     "soru": {
+      "n": 8,
+      "wer": 9.09,
+      "cer": 2.51,
+      "wer_strict": 9.09,
+      "row_ok": 75.0,
+      "word_edits": 3,
+      "ref_words": 33
+     },
+     "ozel": {
+      "n": 10,
+      "wer": 22.73,
+      "cer": 4.55,
+      "wer_strict": 22.73,
+      "row_ok": 30.0,
+      "word_edits": 10,
+      "ref_words": 44
+     }
+    }
+   },
+   "normalizer_tr_fallback": {
+    "n": 155,
+    "wer": 24.61,
+    "cer": 12.85,
+    "wer_strict": 26.27,
+    "row_ok": 43.23,
+    "word_edits": 223,
+    "ref_words": 906,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "sayi": {
+      "n": 15,
+      "wer": 22.47,
+      "cer": 8.24,
+      "wer_strict": 22.47,
+      "row_ok": 40.0,
+      "word_edits": 20,
+      "ref_words": 89
+     },
+     "sira": {
+      "n": 12,
+      "wer": 27.87,
+      "cer": 12.24,
+      "wer_strict": 27.87,
+      "row_ok": 33.33,
+      "word_edits": 17,
+      "ref_words": 61
+     },
+     "tarih": {
+      "n": 12,
+      "wer": 14.81,
+      "cer": 10.88,
+      "wer_strict": 15.6,
+      "row_ok": 58.33,
+      "word_edits": 16,
+      "ref_words": 108
+     },
+     "saat": {
+      "n": 12,
+      "wer": 35.48,
+      "cer": 21.41,
+      "wer_strict": 36.51,
+      "row_ok": 33.33,
+      "word_edits": 22,
+      "ref_words": 62
+     },
+     "para": {
+      "n": 12,
+      "wer": 23.46,
+      "cer": 15.69,
+      "wer_strict": 28.75,
+      "row_ok": 33.33,
+      "word_edits": 19,
+      "ref_words": 81
+     },
+     "yuzde": {
+      "n": 8,
+      "wer": 7.69,
+      "cer": 1.94,
+      "wer_strict": 7.69,
+      "row_ok": 50.0,
+      "word_edits": 4,
+      "ref_words": 52
+     },
+     "birim": {
+      "n": 12,
+      "wer": 6.85,
+      "cer": 4.78,
+      "wer_strict": 6.85,
+      "row_ok": 91.67,
+      "word_edits": 5,
+      "ref_words": 73
+     },
+     "numara": {
+      "n": 12,
+      "wer": 28.93,
+      "cer": 20.55,
+      "wer_strict": 36.13,
+      "row_ok": 25.0,
+      "word_edits": 35,
+      "ref_words": 121
+     },
+     "kisaltma": {
+      "n": 12,
+      "wer": 41.43,
+      "cer": 22.42,
+      "wer_strict": 41.43,
+      "row_ok": 8.33,
+      "word_edits": 29,
+      "ref_words": 70
+     },
+     "akronim": {
+      "n": 15,
+      "wer": 44.83,
+      "cer": 19.59,
+      "wer_strict": 45.45,
+      "row_ok": 13.33,
+      "word_edits": 39,
+      "ref_words": 87
+     },
+     "kisa": {
+      "n": 15,
+      "wer": 16.0,
+      "cer": 4.32,
+      "wer_strict": 16.0,
+      "row_ok": 80.0,
+      "word_edits": 4,
+      "ref_words": 25
+     },
+     "soru": {
+      "n": 8,
+      "wer": 9.09,
+      "cer": 2.51,
+      "wer_strict": 9.09,
+      "row_ok": 75.0,
+      "word_edits": 3,
+      "ref_words": 33
+     },
+     "ozel": {
+      "n": 10,
+      "wer": 22.73,
+      "cer": 4.55,
+      "wer_strict": 22.73,
+      "row_ok": 30.0,
+      "word_edits": 10,
+      "ref_words": 44
+     }
+    }
+   },
+   "trnorm": {
+    "n": 155,
+    "wer": 9.94,
+    "cer": 2.76,
+    "wer_strict": 10.26,
+    "row_ok": 62.58,
+    "word_edits": 90,
+    "ref_words": 905,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "sayi": {
+      "n": 15,
+      "wer": 8.99,
+      "cer": 2.43,
+      "wer_strict": 8.99,
+      "row_ok": 60.0,
+      "word_edits": 8,
+      "ref_words": 89
+     },
+     "sira": {
+      "n": 12,
+      "wer": 6.56,
+      "cer": 1.18,
+      "wer_strict": 6.56,
+      "row_ok": 75.0,
+      "word_edits": 4,
+      "ref_words": 61
+     },
+     "tarih": {
+      "n": 12,
+      "wer": 4.59,
+      "cer": 1.57,
+      "wer_strict": 4.59,
+      "row_ok": 58.33,
+      "word_edits": 5,
+      "ref_words": 109
+     },
+     "saat": {
+      "n": 12,
+      "wer": 6.35,
+      "cer": 2.14,
+      "wer_strict": 6.35,
+      "row_ok": 75.0,
+      "word_edits": 4,
+      "ref_words": 63
+     },
+     "para": {
+      "n": 12,
+      "wer": 6.25,
+      "cer": 1.33,
+      "wer_strict": 8.75,
+      "row_ok": 75.0,
+      "word_edits": 5,
+      "ref_words": 80
+     },
+     "yuzde": {
+      "n": 8,
+      "wer": 7.69,
+      "cer": 1.94,
+      "wer_strict": 7.69,
+      "row_ok": 50.0,
+      "word_edits": 4,
+      "ref_words": 52
+     },
+     "birim": {
+      "n": 12,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 73
+     },
+     "numara": {
+      "n": 12,
+      "wer": 11.76,
+      "cer": 6.43,
+      "wer_strict": 11.76,
+      "row_ok": 41.67,
+      "word_edits": 14,
+      "ref_words": 119
+     },
+     "kisaltma": {
+      "n": 12,
+      "wer": 11.43,
+      "cer": 2.2,
+      "wer_strict": 11.43,
+      "row_ok": 58.33,
+      "word_edits": 8,
+      "ref_words": 70
+     },
+     "akronim": {
+      "n": 15,
+      "wer": 24.14,
+      "cer": 5.51,
+      "wer_strict": 25.0,
+      "row_ok": 33.33,
+      "word_edits": 21,
+      "ref_words": 87
+     },
+     "kisa": {
+      "n": 15,
+      "wer": 16.0,
+      "cer": 4.32,
+      "wer_strict": 16.0,
+      "row_ok": 80.0,
+      "word_edits": 4,
+      "ref_words": 25
+     },
+     "soru": {
+      "n": 8,
+      "wer": 9.09,
+      "cer": 2.51,
+      "wer_strict": 9.09,
+      "row_ok": 75.0,
+      "word_edits": 3,
+      "ref_words": 33
+     },
+     "ozel": {
+      "n": 10,
+      "wer": 22.73,
+      "cer": 4.55,
+      "wer_strict": 22.73,
+      "row_ok": 30.0,
+      "word_edits": 10,
+      "ref_words": 44
+     }
+    }
+   }
+  },
+  "qwen3-tts-tiny-tr": {
+   "raw": {
+    "n": 63,
+    "wer": 57.82,
+    "cer": 32.55,
+    "wer_strict": 58.31,
+    "row_ok": 23.81,
+    "word_edits": 218,
+    "ref_words": 377,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": false,
+    "per_category": {
+     "sayi": {
+      "n": 6,
+      "wer": 57.89,
+      "cer": 27.03,
+      "wer_strict": 57.89,
+      "row_ok": 0.0,
+      "word_edits": 22,
+      "ref_words": 38
+     },
+     "sira": {
+      "n": 5,
+      "wer": 51.61,
+      "cer": 31.98,
+      "wer_strict": 51.61,
+      "row_ok": 0.0,
+      "word_edits": 16,
+      "ref_words": 31
+     },
+     "tarih": {
+      "n": 5,
+      "wer": 79.17,
+      "cer": 49.3,
+      "wer_strict": 79.17,
+      "row_ok": 0.0,
+      "word_edits": 38,
+      "ref_words": 48
+     },
+     "saat": {
+      "n": 5,
+      "wer": 96.0,
+      "cer": 57.93,
+      "wer_strict": 96.15,
+      "row_ok": 0.0,
+      "word_edits": 24,
+      "ref_words": 25
+     },
+     "para": {
+      "n": 5,
+      "wer": 76.47,
+      "cer": 44.5,
+      "wer_strict": 76.47,
+      "row_ok": 0.0,
+      "word_edits": 26,
+      "ref_words": 34
+     },
+     "yuzde": {
+      "n": 3,
+      "wer": 68.42,
+      "cer": 31.71,
+      "wer_strict": 68.42,
+      "row_ok": 0.0,
+      "word_edits": 13,
+      "ref_words": 19
+     },
+     "birim": {
+      "n": 5,
+      "wer": 53.12,
+      "cer": 37.06,
+      "wer_strict": 54.84,
+      "row_ok": 0.0,
+      "word_edits": 17,
+      "ref_words": 32
+     },
+     "numara": {
+      "n": 5,
+      "wer": 78.85,
+      "cer": 53.23,
+      "wer_strict": 79.63,
+      "row_ok": 0.0,
+      "word_edits": 41,
+      "ref_words": 52
+     },
+     "kisaltma": {
+      "n": 5,
+      "wer": 40.0,
+      "cer": 17.32,
+      "wer_strict": 40.0,
+      "row_ok": 0.0,
+      "word_edits": 10,
+      "ref_words": 25
+     },
+     "akronim": {
+      "n": 6,
+      "wer": 33.33,
+      "cer": 8.08,
+      "wer_strict": 33.33,
+      "row_ok": 33.33,
+      "word_edits": 11,
+      "ref_words": 33
+     },
+     "kisa": {
+      "n": 6,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 9
+     },
+     "soru": {
+      "n": 3,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 12
+     },
+     "ozel": {
+      "n": 4,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 19
+     }
+    }
+   },
+   "normalizer_tr": {
+    "n": 63,
+    "wer": 36.34,
+    "cer": 19.96,
+    "wer_strict": 36.94,
+    "row_ok": 52.38,
+    "word_edits": 137,
+    "ref_words": 377,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": false,
+    "per_category": {
+     "sayi": {
+      "n": 6,
+      "wer": 23.68,
+      "cer": 10.36,
+      "wer_strict": 23.68,
+      "row_ok": 83.33,
+      "word_edits": 9,
+      "ref_words": 38
+     },
+     "sira": {
+      "n": 5,
+      "wer": 16.13,
+      "cer": 10.66,
+      "wer_strict": 16.13,
+      "row_ok": 60.0,
+      "word_edits": 5,
+      "ref_words": 31
+     },
+     "tarih": {
+      "n": 5,
+      "wer": 54.17,
+      "cer": 33.45,
+      "wer_strict": 54.17,
+      "row_ok": 20.0,
+      "word_edits": 26,
+      "ref_words": 48
+     },
+     "saat": {
+      "n": 5,
+      "wer": 96.0,
+      "cer": 57.93,
+      "wer_strict": 96.15,
+      "row_ok": 0.0,
+      "word_edits": 24,
+      "ref_words": 25
+     },
+     "para": {
+      "n": 5,
+      "wer": 44.12,
+      "cer": 24.08,
+      "wer_strict": 44.12,
+      "row_ok": 20.0,
+      "word_edits": 15,
+      "ref_words": 34
+     },
+     "yuzde": {
+      "n": 3,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 19
+     },
+     "birim": {
+      "n": 5,
+      "wer": 21.88,
+      "cer": 13.93,
+      "wer_strict": 22.58,
+      "row_ok": 60.0,
+      "word_edits": 7,
+      "ref_words": 32
+     },
+     "numara": {
+      "n": 5,
+      "wer": 65.38,
+      "cer": 42.59,
+      "wer_strict": 66.67,
+      "row_ok": 0.0,
+      "word_edits": 34,
+      "ref_words": 52
+     },
+     "kisaltma": {
+      "n": 5,
+      "wer": 28.0,
+      "cer": 13.97,
+      "wer_strict": 28.0,
+      "row_ok": 20.0,
+      "word_edits": 7,
+      "ref_words": 25
+     },
+     "akronim": {
+      "n": 6,
+      "wer": 30.3,
+      "cer": 7.58,
+      "wer_strict": 30.3,
+      "row_ok": 50.0,
+      "word_edits": 10,
+      "ref_words": 33
+     },
+     "kisa": {
+      "n": 6,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 9
+     },
+     "soru": {
+      "n": 3,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 12
+     },
+     "ozel": {
+      "n": 4,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 19
+     }
+    }
+   },
+   "normalizer_tr_fallback": {
+    "n": 63,
+    "wer": 15.61,
+    "cer": 8.67,
+    "wer_strict": 15.83,
+    "row_ok": 68.25,
+    "word_edits": 59,
+    "ref_words": 378,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": false,
+    "per_category": {
+     "sayi": {
+      "n": 6,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 38
+     },
+     "sira": {
+      "n": 5,
+      "wer": 6.45,
+      "cer": 4.06,
+      "wer_strict": 6.45,
+      "row_ok": 60.0,
+      "word_edits": 2,
+      "ref_words": 31
+     },
+     "tarih": {
+      "n": 5,
+      "wer": 6.25,
+      "cer": 2.46,
+      "wer_strict": 6.25,
+      "row_ok": 60.0,
+      "word_edits": 3,
+      "ref_words": 48
+     },
+     "saat": {
+      "n": 5,
+      "wer": 44.0,
+      "cer": 30.34,
+      "wer_strict": 46.15,
+      "row_ok": 40.0,
+      "word_edits": 11,
+      "ref_words": 25
+     },
+     "para": {
+      "n": 5,
+      "wer": 20.59,
+      "cer": 15.18,
+      "wer_strict": 20.59,
+      "row_ok": 40.0,
+      "word_edits": 7,
+      "ref_words": 34
+     },
+     "yuzde": {
+      "n": 3,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 19
+     },
+     "birim": {
+      "n": 5,
+      "wer": 22.58,
+      "cer": 11.76,
+      "wer_strict": 22.58,
+      "row_ok": 80.0,
+      "word_edits": 7,
+      "ref_words": 31
+     },
+     "numara": {
+      "n": 5,
+      "wer": 22.22,
+      "cer": 17.41,
+      "wer_strict": 22.22,
+      "row_ok": 40.0,
+      "word_edits": 12,
+      "ref_words": 54
+     },
+     "kisaltma": {
+      "n": 5,
+      "wer": 28.0,
+      "cer": 10.61,
+      "wer_strict": 28.0,
+      "row_ok": 20.0,
+      "word_edits": 7,
+      "ref_words": 25
+     },
+     "akronim": {
+      "n": 6,
+      "wer": 30.3,
+      "cer": 9.09,
+      "wer_strict": 30.3,
+      "row_ok": 66.67,
+      "word_edits": 10,
+      "ref_words": 33
+     },
+     "kisa": {
+      "n": 6,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 9
+     },
+     "soru": {
+      "n": 3,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 12
+     },
+     "ozel": {
+      "n": 4,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 19
+     }
+    }
+   },
+   "trnorm": {
+    "n": 63,
+    "wer": 1.85,
+    "cer": 0.49,
+    "wer_strict": 1.85,
+    "row_ok": 93.65,
+    "word_edits": 7,
+    "ref_words": 379,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": false,
+    "per_category": {
+     "sayi": {
+      "n": 6,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 38
+     },
+     "sira": {
+      "n": 5,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 31
+     },
+     "tarih": {
+      "n": 5,
+      "wer": 2.08,
+      "cer": 0.35,
+      "wer_strict": 2.08,
+      "row_ok": 80.0,
+      "word_edits": 1,
+      "ref_words": 48
+     },
+     "saat": {
+      "n": 5,
+      "wer": 3.85,
+      "cer": 0.67,
+      "wer_strict": 3.85,
+      "row_ok": 80.0,
+      "word_edits": 1,
+      "ref_words": 26
+     },
+     "para": {
+      "n": 5,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 34
+     },
+     "yuzde": {
+      "n": 3,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 19
+     },
+     "birim": {
+      "n": 5,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 31
+     },
+     "numara": {
+      "n": 5,
+      "wer": 3.7,
+      "cer": 1.85,
+      "wer_strict": 3.7,
+      "row_ok": 80.0,
+      "word_edits": 2,
+      "ref_words": 54
+     },
+     "kisaltma": {
+      "n": 5,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 25
+     },
+     "akronim": {
+      "n": 6,
+      "wer": 9.09,
+      "cer": 2.02,
+      "wer_strict": 9.09,
+      "row_ok": 83.33,
+      "word_edits": 3,
+      "ref_words": 33
+     },
+     "kisa": {
+      "n": 6,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 9
+     },
+     "soru": {
+      "n": 3,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 12
+     },
+     "ozel": {
+      "n": 4,
+      "wer": 0.0,
+      "cer": 0.0,
+      "wer_strict": 0.0,
+      "row_ok": 100.0,
+      "word_edits": 0,
+      "ref_words": 19
+     }
+    }
+   }
+  },
+  "piper-antalia": {
+   "raw": {
+    "n": 155,
+    "wer": 41.23,
+    "cer": 21.61,
+    "wer_strict": 42.72,
+    "row_ok": 18.06,
+    "word_edits": 374,
+    "ref_words": 907,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "sayi": {
+      "n": 15,
+      "wer": 21.35,
+      "cer": 9.55,
+      "wer_strict": 21.35,
+      "row_ok": 33.33,
+      "word_edits": 19,
+      "ref_words": 89
+     },
+     "sira": {
+      "n": 12,
+      "wer": 49.18,
+      "cer": 20.94,
+      "wer_strict": 49.18,
+      "row_ok": 8.33,
+      "word_edits": 30,
+      "ref_words": 61
+     },
+     "tarih": {
+      "n": 12,
+      "wer": 25.93,
+      "cer": 18.14,
+      "wer_strict": 26.61,
+      "row_ok": 33.33,
+      "word_edits": 28,
+      "ref_words": 108
+     },
+     "saat": {
+      "n": 12,
+      "wer": 46.03,
+      "cer": 20.38,
+      "wer_strict": 46.03,
+      "row_ok": 8.33,
+      "word_edits": 29,
+      "ref_words": 63
+     },
+     "para": {
+      "n": 12,
+      "wer": 22.5,
+      "cer": 14.6,
+      "wer_strict": 25.0,
+      "row_ok": 25.0,
+      "word_edits": 18,
+      "ref_words": 80
+     },
+     "yuzde": {
+      "n": 8,
+      "wer": 32.69,
+      "cer": 9.35,
+      "wer_strict": 32.69,
+      "row_ok": 12.5,
+      "word_edits": 17,
+      "ref_words": 52
+     },
+     "birim": {
+      "n": 12,
+      "wer": 43.84,
+      "cer": 22.17,
+      "wer_strict": 46.58,
+      "row_ok": 0.0,
+      "word_edits": 32,
+      "ref_words": 73
+     },
+     "numara": {
+      "n": 12,
+      "wer": 45.45,
+      "cer": 25.97,
+      "wer_strict": 52.94,
+      "row_ok": 8.33,
+      "word_edits": 55,
+      "ref_words": 121
+     },
+     "kisaltma": {
+      "n": 12,
+      "wer": 74.29,
+      "cer": 45.27,
+      "wer_strict": 74.29,
+      "row_ok": 0.0,
+      "word_edits": 52,
+      "ref_words": 70
+     },
+     "akronim": {
+      "n": 15,
+      "wer": 48.86,
+      "cer": 24.03,
+      "wer_strict": 48.86,
+      "row_ok": 6.67,
+      "word_edits": 43,
+      "ref_words": 88
+     },
+     "kisa": {
+      "n": 15,
+      "wer": 40.0,
+      "cer": 35.97,
+      "wer_strict": 40.0,
+      "row_ok": 53.33,
+      "word_edits": 10,
+      "ref_words": 25
+     },
+     "soru": {
+      "n": 8,
+      "wer": 33.33,
+      "cer": 17.59,
+      "wer_strict": 33.33,
+      "row_ok": 37.5,
+      "word_edits": 11,
+      "ref_words": 33
+     },
+     "ozel": {
+      "n": 10,
+      "wer": 68.18,
+      "cer": 22.4,
+      "wer_strict": 68.18,
+      "row_ok": 0.0,
+      "word_edits": 30,
+      "ref_words": 44
+     }
+    }
+   },
+   "normalizer_tr_fallback": {
+    "n": 155,
+    "wer": 38.82,
+    "cer": 21.04,
+    "wer_strict": 39.96,
+    "row_ok": 25.81,
+    "word_edits": 354,
+    "ref_words": 912,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "sayi": {
+      "n": 15,
+      "wer": 23.6,
+      "cer": 10.3,
+      "wer_strict": 23.6,
+      "row_ok": 46.67,
+      "word_edits": 21,
+      "ref_words": 89
+     },
+     "sira": {
+      "n": 12,
+      "wer": 26.23,
+      "cer": 14.59,
+      "wer_strict": 26.23,
+      "row_ok": 25.0,
+      "word_edits": 16,
+      "ref_words": 61
+     },
+     "tarih": {
+      "n": 12,
+      "wer": 17.59,
+      "cer": 11.36,
+      "wer_strict": 18.35,
+      "row_ok": 33.33,
+      "word_edits": 19,
+      "ref_words": 108
+     },
+     "saat": {
+      "n": 12,
+      "wer": 55.56,
+      "cer": 35.12,
+      "wer_strict": 55.56,
+      "row_ok": 25.0,
+      "word_edits": 35,
+      "ref_words": 63
+     },
+     "para": {
+      "n": 12,
+      "wer": 40.74,
+      "cer": 24.67,
+      "wer_strict": 45.0,
+      "row_ok": 8.33,
+      "word_edits": 33,
+      "ref_words": 81
+     },
+     "yuzde": {
+      "n": 8,
+      "wer": 26.92,
+      "cer": 9.68,
+      "wer_strict": 26.92,
+      "row_ok": 50.0,
+      "word_edits": 14,
+      "ref_words": 52
+     },
+     "birim": {
+      "n": 12,
+      "wer": 29.73,
+      "cer": 14.88,
+      "wer_strict": 31.51,
+      "row_ok": 33.33,
+      "word_edits": 22,
+      "ref_words": 74
+     },
+     "numara": {
+      "n": 12,
+      "wer": 33.61,
+      "cer": 23.62,
+      "wer_strict": 36.97,
+      "row_ok": 16.67,
+      "word_edits": 41,
+      "ref_words": 122
+     },
+     "kisaltma": {
+      "n": 12,
+      "wer": 57.14,
+      "cer": 31.43,
+      "wer_strict": 57.14,
+      "row_ok": 8.33,
+      "word_edits": 40,
+      "ref_words": 70
+     },
+     "akronim": {
+      "n": 15,
+      "wer": 70.0,
+      "cer": 33.13,
+      "wer_strict": 71.59,
+      "row_ok": 0.0,
+      "word_edits": 63,
+      "ref_words": 90
+     },
+     "kisa": {
+      "n": 15,
+      "wer": 40.0,
+      "cer": 35.97,
+      "wer_strict": 40.0,
+      "row_ok": 53.33,
+      "word_edits": 10,
+      "ref_words": 25
+     },
+     "soru": {
+      "n": 8,
+      "wer": 33.33,
+      "cer": 18.09,
+      "wer_strict": 33.33,
+      "row_ok": 37.5,
+      "word_edits": 11,
+      "ref_words": 33
+     },
+     "ozel": {
+      "n": 10,
+      "wer": 65.91,
+      "cer": 21.75,
+      "wer_strict": 65.91,
+      "row_ok": 0.0,
+      "word_edits": 29,
+      "ref_words": 44
+     }
+    }
+   },
+   "trnorm": {
+    "n": 155,
+    "wer": 24.64,
+    "cer": 10.17,
+    "wer_strict": 24.83,
+    "row_ok": 34.19,
+    "word_edits": 223,
+    "ref_words": 905,
+    "n_missing": 0,
+    "n_synth_errors": 0,
+    "n_empty_audio": 0,
+    "n_frontend_errors": 0,
+    "complete": true,
+    "per_category": {
+     "sayi": {
+      "n": 15,
+      "wer": 17.98,
+      "cer": 5.62,
+      "wer_strict": 17.98,
+      "row_ok": 46.67,
+      "word_edits": 16,
+      "ref_words": 89
+     },
+     "sira": {
+      "n": 12,
+      "wer": 21.31,
+      "cer": 7.76,
+      "wer_strict": 21.31,
+      "row_ok": 50.0,
+      "word_edits": 13,
+      "ref_words": 61
+     },
+     "tarih": {
+      "n": 12,
+      "wer": 12.04,
+      "cer": 4.42,
+      "wer_strict": 12.84,
+      "row_ok": 33.33,
+      "word_edits": 13,
+      "ref_words": 108
+     },
+     "saat": {
+      "n": 12,
+      "wer": 19.05,
+      "cer": 9.12,
+      "wer_strict": 19.05,
+      "row_ok": 41.67,
+      "word_edits": 12,
+      "ref_words": 63
+     },
+     "para": {
+      "n": 12,
+      "wer": 22.5,
+      "cer": 11.73,
+      "wer_strict": 23.75,
+      "row_ok": 16.67,
+      "word_edits": 18,
+      "ref_words": 80
+     },
+     "yuzde": {
+      "n": 8,
+      "wer": 15.38,
+      "cer": 5.48,
+      "wer_strict": 15.38,
+      "row_ok": 62.5,
+      "word_edits": 8,
+      "ref_words": 52
+     },
+     "birim": {
+      "n": 12,
+      "wer": 13.7,
+      "cer": 5.43,
+      "wer_strict": 13.7,
+      "row_ok": 58.33,
+      "word_edits": 10,
+      "ref_words": 73
+     },
+     "numara": {
+      "n": 12,
+      "wer": 20.17,
+      "cer": 8.24,
+      "wer_strict": 20.17,
+      "row_ok": 16.67,
+      "word_edits": 24,
+      "ref_words": 119
+     },
+     "kisaltma": {
+      "n": 12,
+      "wer": 27.14,
+      "cer": 10.33,
+      "wer_strict": 27.14,
+      "row_ok": 33.33,
+      "word_edits": 19,
+      "ref_words": 70
+     },
+     "akronim": {
+      "n": 15,
+      "wer": 44.32,
+      "cer": 15.68,
+      "wer_strict": 44.32,
+      "row_ok": 0.0,
+      "word_edits": 39,
+      "ref_words": 88
+     },
+     "kisa": {
+      "n": 15,
+      "wer": 40.0,
+      "cer": 35.97,
+      "wer_strict": 40.0,
+      "row_ok": 53.33,
+      "word_edits": 10,
+      "ref_words": 25
+     },
+     "soru": {
+      "n": 8,
+      "wer": 33.33,
+      "cer": 17.59,
+      "wer_strict": 33.33,
+      "row_ok": 37.5,
+      "word_edits": 11,
+      "ref_words": 33
+     },
+     "ozel": {
+      "n": 10,
+      "wer": 68.18,
+      "cer": 22.4,
+      "wer_strict": 68.18,
+      "row_ok": 0.0,
+      "word_edits": 30,
+      "ref_words": 44
+     }
+    }
+   }
+  }
+ },
+ "subsets": {
+  "qwen3-tts-tiny-tr": {
+   "n_ids": 63,
+   "results": {
+    "ema-lightning": {
+     "raw": {
+      "n": 63,
+      "wer": 50.0,
+      "cer": 35.93,
+      "wer_strict": 50.4,
+      "row_ok": 22.22,
+      "word_edits": 188,
+      "ref_words": 376,
+      "complete": true
+     },
+     "native": {
+      "n": 63,
+      "wer": 11.38,
+      "cer": 7.08,
+      "wer_strict": 11.61,
+      "row_ok": 71.43,
+      "word_edits": 43,
+      "ref_words": 378,
+      "complete": true
+     },
+     "normalizer_tr": {
+      "n": 63,
+      "wer": 31.38,
+      "cer": 21.93,
+      "wer_strict": 31.93,
+      "row_ok": 50.79,
+      "word_edits": 118,
+      "ref_words": 376,
+      "complete": true
+     },
+     "normalizer_tr_fallback": {
+      "n": 63,
+      "wer": 11.38,
+      "cer": 7.08,
+      "wer_strict": 11.61,
+      "row_ok": 71.43,
+      "word_edits": 43,
+      "ref_words": 378,
+      "complete": true
+     },
+     "trnorm": {
+      "n": 63,
+      "wer": 0.79,
+      "cer": 0.09,
+      "wer_strict": 0.79,
+      "row_ok": 98.41,
+      "word_edits": 3,
+      "ref_words": 379,
+      "complete": true
+     }
+    },
+    "pocket-tts-turkish": {
+     "raw": {
+      "n": 63,
+      "wer": 46.68,
+      "cer": 35.4,
+      "wer_strict": 47.49,
+      "row_ok": 25.4,
+      "word_edits": 176,
+      "ref_words": 377,
+      "complete": true
+     },
+     "native": {
+      "n": 63,
+      "wer": 8.97,
+      "cer": 5.65,
+      "wer_strict": 8.97,
+      "row_ok": 74.6,
+      "word_edits": 34,
+      "ref_words": 379,
+      "complete": true
+     },
+     "normalizer_tr": {
+      "n": 63,
+      "wer": 28.38,
+      "cer": 21.2,
+      "wer_strict": 29.29,
+      "row_ok": 53.97,
+      "word_edits": 107,
+      "ref_words": 377,
+      "complete": true
+     },
+     "normalizer_tr_fallback": {
+      "n": 63,
+      "wer": 15.08,
+      "cer": 9.07,
+      "wer_strict": 15.3,
+      "row_ok": 66.67,
+      "word_edits": 57,
+      "ref_words": 378,
+      "complete": true
+     },
+     "trnorm": {
+      "n": 63,
+      "wer": 2.64,
+      "cer": 0.53,
+      "wer_strict": 2.64,
+      "row_ok": 90.48,
+      "word_edits": 10,
+      "ref_words": 379,
+      "complete": true
+     }
+    },
+    "piper-tr-dfki": {
+     "raw": {
+      "n": 63,
+      "wer": 9.79,
+      "cer": 4.7,
+      "wer_strict": 10.03,
+      "row_ok": 65.08,
+      "word_edits": 37,
+      "ref_words": 378,
+      "complete": true
+     },
+     "normalizer_tr": {
+      "n": 63,
+      "wer": 9.26,
+      "cer": 4.25,
+      "wer_strict": 9.5,
+      "row_ok": 68.25,
+      "word_edits": 35,
+      "ref_words": 378,
+      "complete": true
+     },
+     "normalizer_tr_fallback": {
+      "n": 63,
+      "wer": 13.79,
+      "cer": 7.58,
+      "wer_strict": 14.25,
+      "row_ok": 63.49,
+      "word_edits": 52,
+      "ref_words": 377,
+      "complete": true
+     },
+     "trnorm": {
+      "n": 63,
+      "wer": 4.49,
+      "cer": 0.93,
+      "wer_strict": 4.49,
+      "row_ok": 84.13,
+      "word_edits": 17,
+      "ref_words": 379,
+      "complete": true
+     }
+    },
+    "mms-tts-tur": {
+     "raw": {
+      "n": 63,
+      "wer": 55.05,
+      "cer": 35.27,
+      "wer_strict": 55.41,
+      "row_ok": 14.29,
+      "word_edits": 207,
+      "ref_words": 376,
+      "complete": true
+     },
+     "normalizer_tr": {
+      "n": 63,
+      "wer": 36.7,
+      "cer": 22.09,
+      "wer_strict": 37.2,
+      "row_ok": 34.92,
+      "word_edits": 138,
+      "ref_words": 376,
+      "complete": true
+     },
+     "normalizer_tr_fallback": {
+      "n": 63,
+      "wer": 21.22,
+      "cer": 11.57,
+      "wer_strict": 21.64,
+      "row_ok": 47.62,
+      "word_edits": 80,
+      "ref_words": 377,
+      "complete": true
+     },
+     "trnorm": {
+      "n": 63,
+      "wer": 7.12,
+      "cer": 2.25,
+      "wer_strict": 7.12,
+      "row_ok": 69.84,
+      "word_edits": 27,
+      "ref_words": 379,
+      "complete": true
+     }
+    },
+    "qwen3-tts-tiny-tr": {
+     "raw": {
+      "n": 63,
+      "wer": 57.82,
+      "cer": 32.55,
+      "wer_strict": 58.31,
+      "row_ok": 23.81,
+      "word_edits": 218,
+      "ref_words": 377,
+      "complete": true
+     },
+     "normalizer_tr": {
+      "n": 63,
+      "wer": 36.34,
+      "cer": 19.96,
+      "wer_strict": 36.94,
+      "row_ok": 52.38,
+      "word_edits": 137,
+      "ref_words": 377,
+      "complete": true
+     },
+     "normalizer_tr_fallback": {
+      "n": 63,
+      "wer": 15.61,
+      "cer": 8.67,
+      "wer_strict": 15.83,
+      "row_ok": 68.25,
+      "word_edits": 59,
+      "ref_words": 378,
+      "complete": true
+     },
+     "trnorm": {
+      "n": 63,
+      "wer": 1.85,
+      "cer": 0.49,
+      "wer_strict": 1.85,
+      "row_ok": 93.65,
+      "word_edits": 7,
+      "ref_words": 379,
+      "complete": true
+     }
+    },
+    "piper-antalia": {
+     "raw": {
+      "n": 63,
+      "wer": 33.25,
+      "cer": 17.29,
+      "wer_strict": 34.04,
+      "row_ok": 20.63,
+      "word_edits": 126,
+      "ref_words": 379,
+      "complete": true
+     },
+     "normalizer_tr_fallback": {
+      "n": 63,
+      "wer": 34.47,
+      "cer": 17.6,
+      "wer_strict": 34.83,
+      "row_ok": 33.33,
+      "word_edits": 131,
+      "ref_words": 380,
+      "complete": true
+     },
+     "trnorm": {
+      "n": 63,
+      "wer": 18.73,
+      "cer": 7.2,
+      "wer_strict": 18.73,
+      "row_ok": 39.68,
+      "word_edits": 71,
+      "ref_words": 379,
+      "complete": true
+     }
+    }
+   }
+  }
+ },
+ "speed": {
+  "ema-lightning": {
+   "threads": "2",
+   "rtf": 0.204,
+   "cpu_rtf": 0.1851,
+   "n_timed": 337,
+   "mean_audio_seconds": 2.02
+  },
+  "pocket-tts-turkish": {
+   "threads": "1",
+   "rtf": 0.5271,
+   "cpu_rtf": 0.7203,
+   "n_timed": 389,
+   "mean_audio_seconds": 2.6
+  },
+  "piper-tr-dfki": {
+   "threads": "2",
+   "rtf": 0.0653,
+   "cpu_rtf": 0.1033,
+   "n_timed": 340,
+   "mean_audio_seconds": 2.51
+  },
+  "mms-tts-tur": {
+   "threads": "2",
+   "rtf": 0.3351,
+   "cpu_rtf": 0.5024,
+   "n_timed": 336,
+   "mean_audio_seconds": 3.03
+  },
+  "qwen3-tts-tiny-tr": {
+   "threads": "2",
+   "rtf": 2.4264,
+   "cpu_rtf": 3.2983,
+   "n_timed": 135,
+   "mean_audio_seconds": 3.01
+  },
+  "piper-antalia": {
+   "threads": "1/2",
+   "rtf": 0.0967,
+   "cpu_rtf": 0.1254,
+   "n_timed": 432,
+   "mean_audio_seconds": 2.39
+  }
+ },
+ "systems": {
+  "ema-lightning": {
+   "model": "canberkkkkkk/ema-lightning",
+   "params": "8.6M (5.6M DiT + 3M decoder)",
+   "license": "Apache-2.0 (code and weights)",
+   "native_mode": "separable",
+   "native_note": "EMA always runs normalizer-tr (policy 'fallback') in EMA.say(); raw replaces Frontend.spoken with the identity",
+   "sample_rate": 48000
+  },
+  "pocket-tts-turkish": {
+   "model": "wite-tech/pocket-tts-turkish",
+   "params": "~110M (incl. codec)",
+   "license": "CC-BY-4.0 (weights); pocket-tts-turkish package Apache-2.0",
+   "native_mode": "separable",
+   "native_note": "package TextFrontend = normalizer.py + alphabet fit (+ stray digits spelled one by one)",
+   "sample_rate": 24000
+  },
+  "piper-tr-dfki": {
+   "model": "rhasspy/piper-voices tr/tr_TR/dfki/medium",
+   "params": "~15M (VITS medium)",
+   "license": "voice data CC-BY-NC-SA-4.0 (dfki-ot-data); piper-tts code GPL-3.0-or-later (bundles espeak-ng, GPL-3.0)",
+   "native_mode": "always_on",
+   "native_note": "espeak-ng's Turkish rules read digits, '%', thousands/decimal separators internally; cannot be bypassed",
+   "sample_rate": 22050
+  },
+  "mms-tts-tur": {
+   "model": "facebook/mms-tts-tur",
+   "params": "36M (VITS)",
+   "license": "CC-BY-NC-4.0",
+   "native_mode": "none",
+   "native_note": "no normalizer; VitsTokenizer lowercases and drops out-of-vocabulary characters",
+   "sample_rate": 16000
+  },
+  "qwen3-tts-tiny-tr": {
+   "model": "erkamk/qwen3-tts-tiny-tr",
+   "params": "199M talker + 171M speech tokenizer",
+   "license": "Apache-2.0 (weights, inherited from Qwen3-TTS); qwen-tts code Apache-2.0",
+   "native_mode": "none",
+   "native_note": "no normalizer; model card: write numbers as words and I/İ as ı/i",
+   "sample_rate": 24000
+  },
+  "piper-antalia": {
+   "model": "local export of tts/ (tr_TR-antalia-medium)",
+   "params": "15.7M (VITS medium, fine-tuned from LJSpeech medium)",
+   "license": "weights CC-BY-4.0 (Antalia voice corpus CC-BY-4.0, base LJSpeech public domain); piper-tts GPL-3.0-or-later (bundles espeak-ng, GPL-3.0)",
+   "native_mode": "always_on",
+   "native_note": "espeak-ng's Turkish rules read digits, '%', thousands/decimal separators internally; cannot be bypassed",
+   "sample_rate": 22050
+  }
+ },
+ "frontends": {
+  "raw": "text as written, system's bundled normalizer bypassed",
+  "native": "text as written, system's bundled normalizer on",
+  "normalizer_tr": "normalizer-tr, default policy (preserve)",
+  "normalizer_tr_fallback": "normalizer-tr, ambiguity_policy='fallback'",
+  "trnorm": "trnorm.normalize"
+ }
+}
