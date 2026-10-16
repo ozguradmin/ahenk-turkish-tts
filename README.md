@@ -16,17 +16,18 @@ var. Tarayıcıda deneyebileceğiniz bir demo sayfası hazırlanıyor.
 
 | Ne gösteriyor | Metin (yazıldığı gibi) | Model | Ses |
 |---|---|---|---|
+| Gülerek | Hahaha, bu fıkrayı daha önce hiç duymamıştım! | Ahenk | [WAV](https://huggingface.co/ozgurguler/ahenk-tts-tr/resolve/main/samples/big_11_laughing.wav) |
+| Neşeli | Harika haber! Sınavı geçtim, akşam hep birlikte kutlayalım! | Ahenk | [WAV](https://huggingface.co/ozgurguler/ahenk-tts-tr/resolve/main/samples/big_07_cheerful.wav) |
+| Sakin | Derin bir nefes alın, her şeyi adım adım birlikte halledeceğiz. | Ahenk | [WAV](https://huggingface.co/ozgurguler/ahenk-tts-tr/resolve/main/samples/big_09_calm.wav) |
 | Düz okuma | Eskişehir'den İzmir'e otobüsle gittik. | Ahenk | [WAV](https://huggingface.co/ozgurguler/ahenk-tts-tr/resolve/main/samples/big_01_plain_ozel04.wav) |
 | Para (trnorm: "doksan dokuz lira doksan dokuz kuruşa") | İndirimle 99,99 TL'ye düştü. | Ahenk | [WAV](https://huggingface.co/ozgurguler/ahenk-tts-tr/resolve/main/samples/big_02_numbers_para09.wav) |
 | Soru çifti, önce düz cümle | Cihazın garanti süresi 2 yıl. | Ahenk | [WAV](https://huggingface.co/ozgurguler/ahenk-tts-tr/resolve/main/samples/big_03a_statement_garanti.wav) |
 | Soru çifti, aynı cümle "mı?" ile | Cihazın garanti süresi 2 yıl mı? | Ahenk | [WAV](https://huggingface.co/ozgurguler/ahenk-tts-tr/resolve/main/samples/big_03b_question_garanti.wav) |
 | Uzun cümle, eğitimde yok (12 sn) | Karşılaştırma isteyenlere eski ve yeni paketi yan yana anlatırız; farkı müşteri kendisi görür. Akşam olduğunda … | Ahenk | [WAV](https://huggingface.co/ozgurguler/ahenk-tts-tr/resolve/main/samples/big_04_long_heldout583922.wav) |
 | Kızgın | Yeter artık! Üç gündür aynı sorun için arıyorum ve hâlâ kimse ilgilenmedi! | Ahenk | [WAV](https://huggingface.co/ozgurguler/ahenk-tts-tr/resolve/main/samples/big_06_angry.wav) |
-| Üzgün | Ne kadar uğraştıysam da yetişemedim, onunla son kez vedalaşamadım. | Ahenk | [WAV](https://huggingface.co/ozgurguler/ahenk-tts-tr/resolve/main/samples/big_08_sad.wav) |
-| Soru | Saat kaçta buluşalım? | Ahenk Cep | [WAV](https://huggingface.co/ozgurguler/ahenk-cep-tr/resolve/main/samples/small_02_question_saat.wav) |
 | Aynı uzun cümle | Karşılaştırma isteyenlere eski ve yeni paketi yan yana anlatırız; … | Ahenk Cep | [WAV](https://huggingface.co/ozgurguler/ahenk-cep-tr/resolve/main/samples/small_03_long_heldout583922.wav) |
 
-Seçim: düz okuma, para, duygular ve küçük modelin sorusu kör dinlemede dinleyicinin seçtiği klipler. Soru çifti ve
+Seçim: düz okuma, para, gülme ve duygular kör dinlemede dinleyicinin seçtiği klipler. Soru çifti ve
 uzun cümle otomatik ölçüyle seçildi (hatasız ve en yüksek UTMOS). Hepsi var olan değerlendirme klipleri, yeniden
 üretilmedi.
 
