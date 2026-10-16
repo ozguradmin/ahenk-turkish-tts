@@ -12,7 +12,7 @@ dinleyiciyle (anadili Türkçe) kör yapıldı; sistematik bir MOS testi henüz 
    gülme, sayı/tarih/para/telefon okuma. Hugging Face'te (şimdilik gizli) yayın paketi hazır.
 2. **trnorm** — açık kaynak Türkçe metin normalleştirici (sayılar, tarihler, saat, para, kısaltmalar, ekler). EMA
    Lightning'in TR-Zor hata oranını %14,0'dan %1,9'a indirdi.
-3. **Ahenk Cep: küçük cihaz modeli (deneme)** — ~9 milyon parametre, ~17 MB, CPU'da gerçek zamandan ~5 kat hızlı; büyük modelin
+3. **Ahenk Cep: küçük cihaz modeli (deneme)** — 8,6 milyon parametre, 34 MB (fp32), CPU'da gerçek zamandan ~5 kat hızlı; büyük modelin
    sesinden öğrenen öğrenci. Henüz yayınlanmadı.
 4. Yardımcı araçlar: telaffuz denetimi (IPA tabanlı "c" kontrolü), nefes temizleyici (pause_clean), değerlendirme
    düzeneği ve kör dinleme sayfaları; hepsi açık kaynak.
@@ -23,7 +23,7 @@ dinleyiciyle (anadili Türkçe) kör yapıldı; sistematik bir MOS testi henüz 
 |---|---|---|---|---|---|
 | **Ahenk** | 2B + LoRA | **2,54** (141/155) | 0,82 | 3,70 / 3,14 | açık ağırlık, açık sentetik veri |
 | Trendyol-TTS | 2B + LoRA | 3,98 (134/155) | 0,68 | 3,82 / 3,73 | ~20 sa kapalı veri |
-| **Ahenk Cep (deneme)** | ~9M | **2,32** | — | 3,41 / 3,18 | aynı ses, cihaz üstü |
+| **Ahenk Cep (deneme)** | 8.6M | **2,32** | — | 3,41 / 3,18 | aynı ses, cihaz üstü |
 | EMA Lightning | 8,6M | 2,43 | — | 3,35 / 2,95 | Apache-2.0 |
 | Antalia-2 Mini | 7,6M | 3,30 | — | 3,22 / 2,94 | Apache-2.0 |
 
@@ -58,7 +58,7 @@ Ahenk is an open Turkish TTS project: a LoRA on VoxCPM2 (2B, Apache-2.0) with on
 trained only on CC BY synthetic data, with question intonation, six emotions, laughter and a Turkish text normaliser
 (trnorm, which cut EMA Lightning's hard-text WER from 14.0 % to 1.9 %). On our TR-Zor benchmark it has the lowest
 word error rate of the open Turkish models we measured (2.54 % vs Trendyol-TTS 3.98 %), while its predicted
-naturalness on long sentences is lower (UTMOS 3.14 vs 3.73). A ~9M-parameter on-device student in the same voice (Ahenk Cep)
+naturalness on long sentences is lower (UTMOS 3.14 vs 3.73). An 8.6M-parameter (34 MB) on-device student in the same voice (Ahenk Cep)
 already matches or beats EMA Lightning and Antalia-2 Mini on our automatic metrics and won every blind comparison
 against them (single listener). GPU time (~75-160 A100 hours) would let us scale the student's data to 20-50 hours,
 distil it for phones, and improve the large model; so far everything ran on small monthly cloud GPU credits and a

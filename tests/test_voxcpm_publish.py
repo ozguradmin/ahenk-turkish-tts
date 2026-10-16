@@ -553,3 +553,49 @@ def test_check_staging_ties_the_card_to_the_staged_files(staged, tmp_path):
     problems = pub.check_staging(staged)
     assert any("not staged: heldout_bb.wav" in p for p in problems)
     assert any("does not link (delete them or stage again): trzor_old_01.wav" in p for p in problems)
+
+
+AHENK_TEMPLATE = VOXCPM_DIR / "MODEL_CARD.ahenk.template.md"
+
+
+def test_template_short_names_resolve_to_the_card_files(tmp_path):
+    assert pub.resolve_template("ahenk") == AHENK_TEMPLATE and pub.resolve_template("f022s3") == S3_TEMPLATE
+    assert pub.resolve_template(str(S3_TEMPLATE)) == S3_TEMPLATE  # a path stays a path
+    assert pub.template_key(AHENK_TEMPLATE) == "ahenk" and pub.TEMPLATE_EXTRAS["ahenk"] == pub.TEMPLATE_EXTRAS["f022s3"]
+    with pytest.raises(SystemExit, match="no such file"):
+        pub.resolve_template("nope")
+    with pytest.raises(SystemExit, match="no such file"):
+        pub.resolve_template(str(tmp_path / "ahenk"))  # a missing path is not a short name
+
+
+def test_ahenk_card_renders_a_sample_table_and_passes_check_staging(tmp_path, no_network):
+    lora = fake_lora(tmp_path / "voxcpm-lora" / "voxcpm2-f022-s3tr" / "step_0000500", r=64)
+    ours = fake_eval(tmp_path / "eval" / "voxcpm2-f022-s3tr" / "step_0000500@ts16-cfg2", S3, ROWS)
+    ref = fake_eval(tmp_path / "eval" / "trendyol", REF, [])
+    d = tmp_path / "picked"
+    write_wav(d / "a.wav", 1.0)
+    write_wav(d / "b.wav", 1.0)
+    (d / "s.jsonl").write_text(
+        json.dumps({"title": "Para / money", "text": "99,99 TL | ok", "spoken": "doksan dokuz lira", "wav": "a.wav",
+                    "pick": "dinleyici / listener"}, ensure_ascii=False) + "\n"
+        + json.dumps({"title": "Kızgın / angry", "text": "Yeter!", "instruction": "Angry tone, voice getting louder.",
+                      "wav": "b.wav"}, ensure_ascii=False) + "\n", encoding="utf-8")
+    out = tmp_path / "hf-publish" / "ahenk-tts-tr"
+    assert pub.main(["--name", "Ahenk", "--repo", "ozgurguler/ahenk-tts-tr", "--exp-name", "voxcpm2-f022-s3tr",
+                     "--lora", str(lora), "--evals", str(ours), f"{ref}=Trendyol-TTS (2B + LoRA)", "--samples", "0",
+                     "--template", "ahenk", "--extra-samples", str(d / "s.jsonl"), "--out", str(out)]) == 0
+    card = (out / "README.md").read_text(encoding="utf-8")
+    assert "{{" not in card and "}}" not in card and pub.check_staging(out) == []
+    assert sorted(p.name for p in (out / "samples").glob("*.wav")) == ["a.wav", "b.wav"]  # no eval samples
+    assert [p.name for p in pub.staged_extras(out)] == PACKAGE
+    assert 'snapshot_download("ozgurguler/ahenk-tts-tr"' in card and "LoRA r=64, alpha=64" in card
+    assert ("| Para / money | 99,99 TL \\| ok<br>→ *doksan dokuz lira* | - | <audio controls "
+            'src="https://huggingface.co/ozgurguler/ahenk-tts-tr/resolve/main/samples/a.wav"></audio> | '
+            "dinleyici / listener |") in card
+    assert "| Kızgın / angry | Yeter! | `(Angry tone, voice getting louder.)` |" in card
+    assert "| **Ahenk** (VoxCPM2 2B + LoRA, `step_0000500`) | 16 / 2.0 | 4.20 |" in card
+    assert "| Trendyol-TTS (2B + LoRA) | 16 / 2.0 | 3.98 | 134/155 |" in card
+    assert card.index("## Örnekler") < card.index("## Hızlı başlangıç") < card.index("## Ölçümler") < \
+        card.index("## English")
+    assert "galaktik" not in card.lower()
+    assert "—" not in card and "| Kızgın / angry | Yeter! | `(Angry tone, voice getting louder.)` |" in card

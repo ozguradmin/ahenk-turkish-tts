@@ -1,0 +1,12 @@
+# ZeroGPU hardware: keep torch at a version ZeroGPU supports (2.8 to 2.13 per the docs on 2026-10-16); "spaces" is
+# preinstalled there. VoxCPM pulls its own dependencies; check the build log for the torch version it resolves.
+torch==2.11.0
+# VoxCPM: the commit Ahenk was trained and evaluated with
+voxcpm @ git+https://github.com/OpenBMB/VoxCPM@f0c787f0937dc1c9a8f4f64d9a332d9c5da2e629
+# trnorm (Apache-2.0), pinned to a commit of ahenk-turkish-tts; the repo must be public for the build
+trnorm @ git+https://github.com/ozguradmin/ahenk-turkish-tts@ff25d79efcc05d76908c617d06cbbc7988d28d42
+# pause_clean.py (downloaded from the model repo at startup)
+numpy
+scipy
+huggingface_hub>=0.20
+# gradio comes from sdk_version in README.md

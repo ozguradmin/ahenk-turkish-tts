@@ -20,7 +20,7 @@ experiments would collide). The usage snippet takes cfg/timesteps from the first
 2.0/10 when it has none). Re-staging deletes README.md first and writes it last (via README.md.tmp), so a stage that
 stops halfway leaves no card and --upload refuses.
 
-Package files (--template f022s3, TEMPLATE_EXTRAS): the card's usage code needs files beside the LoRA, copied from
+Package files (--template f022s3 or ahenk, TEMPLATE_EXTRAS): the card's usage code needs files beside the LoRA, copied from
 tts/voxcpm as they are with the tts/voxcpm modules they import (bundle: pause_clean.py -> onset.py) to the staging dir's
 root: instruction_pick.py (instruction language per line: Turkish when one of the first two words starts with "c",
 else English; stdlib), pause_clean.py + onset.py (breath noise in pauses, after synthesis; numpy + scipy) and
@@ -66,9 +66,11 @@ DEFAULT_LABEL = "VoxCPM2 + Antalia LoRA"
 LORA_LABEL = DEFAULT_LABEL  # results-table label of our row; main() sets it from --template (TEMPLATE_LABELS)
 TEMPLATE_LABELS = {"f022": "VoxCPM2 + f022 LoRA (designed voice)",  # template file name part -> LORA_LABEL
                    "f022s3": "VoxCPM2 + f022-s3tr LoRA (designed voice)",  # the longest part in the name wins
-                   "two-stage": "VoxCPM2 + Alania/Antalia LoRA"}
+                   "two-stage": "VoxCPM2 + Alania/Antalia LoRA",
+                   "ahenk": "VoxCPM2 2B + LoRA"}  # the public "Ahenk" card (same release as f022s3)
 # package files of a template's release beside the LoRA (from tts/voxcpm, + the modules they import: bundle)
-TEMPLATE_EXTRAS = {"f022s3": ("instruction_pick.py", "pause_clean.py", "instructions_tr.json")}
+TEMPLATE_EXTRAS = {"f022s3": ("instruction_pick.py", "pause_clean.py", "instructions_tr.json"),
+                   "ahenk": ("instruction_pick.py", "pause_clean.py", "instructions_tr.json")}
 EXTRA_INFO = {  # {{extra_files}} contents column
     "instruction_pick.py": "talimatın dilini seçer: ilk iki kelimeden biri c ile başlıyorsa Türkçe, yoksa "
                            "İngilizce; Vay -> Vaay (yalnız standart kütüphane) / picks the instruction language: "
@@ -82,6 +84,7 @@ EXTRA_INFO = {  # {{extra_files}} contents column
                             "wording, {n} wordings",
 }
 EXTRA_SUFFIXES = (".py", ".json")  # root files of a staging dir that are package files (lora_config.json aside)
+NO_EM_DASH = {"ahenk"}  # templates whose rendered card uses no em dash: missing values "-", " — " joins ", "
 TODO_MARK = "TODO(final"  # a template's "fill in for the released checkpoint" marker: no upload while one is left
 VOXCPM_COMMIT = "f0c787f0937dc1c9a8f4f64d9a332d9c5da2e629"  # same pin as modal_app.py (training + eval)
 LORA_FILES = ("lora_weights.safetensors", "lora_config.json")
@@ -216,6 +219,17 @@ def pause_note(summary: dict) -> str:
             f"the clips of this evaluation went through `pause_clean.py` after synthesis ({pc.get('clips')} clips, "
             f"{pc.get('breaths')} breaths turned down, {gated} s in all; settings "
             f"`{pc.get('settings')}`).")
+
+
+def resolve_template(spec: str | Path) -> Path:
+    """--template: a file path, or a short name ("ahenk", "f022s3") for tts/voxcpm/MODEL_CARD.<name>.template.md."""
+    p = Path(spec)
+    if p.is_file():
+        return p
+    short = HERE / f"MODEL_CARD.{spec}.template.md"
+    if "/" not in str(spec) and "\\" not in str(spec) and short.is_file():
+        return short
+    raise SystemExit(f"[publish] --template {spec}: no such file, and no {short.name} in {HERE}")
 
 
 def template_key(template: str | Path) -> str | None:
@@ -435,6 +449,29 @@ def extra_samples_md(rows: list[dict], repo: str) -> str:
     return "\n".join(lines)
 
 
+def _cell(text: str) -> str:
+    return html.escape(text, quote=False).replace("|", "\\|").replace("\n", " ")
+
+
+def extra_samples_table_md(rows: list[dict], repo: str) -> str:
+    """--extra-samples rows as a table (the {{extra_samples_table}} placeholder): what it shows, the text as typed
+    (+ the spoken form the model read, when "spoken" differs), the instruction, a player and how it was picked
+    ("pick")."""
+    if not rows:
+        return f"Örnek yok / no samples ({DASH})."
+    lines = ["| Ne gösteriyor / What it shows | Metin / Text | Talimat / Instruction | Ses / Audio | Seçim / Picked by |",
+             "|---|---|---|---|---|"]
+    for r in rows:
+        text = _cell(r["text"])
+        if r.get("spoken") and r["spoken"].strip() != r["text"].strip():
+            text += f"<br>→ *{_cell(r['spoken'])}*"
+        ins = f"`({_cell(r['instruction'])})`" if r.get("instruction") else DASH
+        url = f"https://huggingface.co/{repo}/resolve/main/samples/{Path(r['wav']).name}"
+        lines.append(f"| {_cell(r['title'])} | {text} | {ins} | <audio controls src=\"{url}\"></audio> | "
+                     f"{_cell(r.get('pick') or DASH)} |")
+    return "\n".join(lines)
+
+
 def load_extra_samples(path: str | None) -> list[dict]:
     """--extra-samples JSONL: one {title, text, wav, instruction?} per line, wav relative to the file; ValueError on a
     missing field or WAV, or a name clash with another row."""
@@ -630,7 +667,7 @@ def stage(args) -> Path:
             p.unlink()
     for n in extras:
         shutil.copyfile(HERE / n, out / n)
-    template = Path(args.template).read_text(encoding="utf-8-sig")
+    template = resolve_template(args.template).read_text(encoding="utf-8-sig")
 
     notes = []
     if any(ev["summary"].get("limit") for ev in evals):
@@ -653,12 +690,17 @@ def stage(args) -> Path:
               "extra_files": extras_md(out, extras), "pause_clean_note": pause_note(ours)}
     if "{{extra_samples}}" in template:
         values["extra_samples"] = extra_samples_md(extra_rows, args.repo)
-    elif extra_rows:
+    if "{{extra_samples_table}}" in template:
+        values["extra_samples_table"] = extra_samples_table_md(extra_rows, args.repo)
+    if extra_rows and not {"extra_samples", "extra_samples_table"} & set(values):
         raise SystemExit(f"[publish] --extra-samples given but {args.template} has no "
-                         "{{extra_samples}} placeholder")
+                         "{{extra_samples}} or {{extra_samples_table}} placeholder")
     if "{{instructions_tr_table}}" in template:
         values["instructions_tr_table"] = instructions_tr_md()
     card = render(template, values)
+    if template_key(args.template) in NO_EM_DASH:
+        card = re.sub(r"(?<=\| )—(?= \|)", "-", card)  # a missing table value first, then joins
+        card = card.replace(" — ", ", ").replace(DASH, "-")
     (tmp := out / "README.md.tmp").write_text(card, encoding="utf-8", newline="\n")
     os.replace(tmp, out / "README.md")  # only now that the weights and samples it describes are in place
 
@@ -723,14 +765,19 @@ def main(argv=None) -> int:
     ap.add_argument("--template", default=str(TEMPLATE),
                     help="model card template [MODEL_CARD.template.md; two-stage LoRA: MODEL_CARD.two-stage.template.md; "
                          "f022 designed voice: MODEL_CARD.f022.template.md; its s3 release with English + Turkish "
-                         "instructions, instruction_pick and pause_clean: MODEL_CARD.f022s3.template.md]")
-    ap.add_argument("--extra-samples", help="JSONL of hand-picked samples {title, text, wav, instruction?} (wav "
-                    "relative to the file), staged as samples/<wav name> and listed at the template's {{extra_samples}}")
+                         "instructions, instruction_pick and pause_clean: MODEL_CARD.f022s3.template.md; the public "
+                         "Ahenk card of that release: MODEL_CARD.ahenk.template.md; a short name such as 'ahenk' "
+                         "picks tts/voxcpm/MODEL_CARD.<name>.template.md]")
+    ap.add_argument("--extra-samples", help="JSONL of hand-picked samples {title, text, wav, instruction?, spoken?, "
+                    "pick?} (wav relative to the file), staged as samples/<wav name> and listed at the template's "
+                    "{{extra_samples}} (a list) or {{extra_samples_table}} (a table)")
     ap.add_argument("--out", help="staging dir [hf-publish/<repo name>]")
     ap.add_argument("--upload", action="store_true", help="upload the staging dir as it is (no re-staging)")
     ap.add_argument("--public", action="store_true", help="with --upload: public repo (default private)")
     args = ap.parse_args(argv)
     global LORA_LABEL  # reset on every call: a previous run's template must not leak into this card
+    if not args.upload:
+        args.template = str(resolve_template(args.template))
     key = template_key(args.template)
     LORA_LABEL = TEMPLATE_LABELS.get(key, DEFAULT_LABEL)
     args.extras = TEMPLATE_EXTRAS.get(key, ())

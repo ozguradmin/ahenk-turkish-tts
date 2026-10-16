@@ -1,0 +1,11 @@
+# CPU Basic hardware: the CPU-only PyTorch wheel (about 200 MB instead of about 2.5 GB with CUDA).
+# On ZeroGPU hardware instead: delete the --extra-index-url line and keep a torch version ZeroGPU supports.
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.11.0
+# EMA Lightning engine (Apache-2.0); also the "EMA Lightning + trnorm" voice
+ema-lightning==1.1.2
+# trnorm + trtts (Apache-2.0), pinned to a commit of ahenk-turkish-tts; the repo must be public for the build
+trnorm @ git+https://github.com/ozguradmin/ahenk-turkish-tts@ff25d79efcc05d76908c617d06cbbc7988d28d42
+huggingface_hub>=0.20
+numpy
+# gradio comes from sdk_version in README.md
