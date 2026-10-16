@@ -75,16 +75,58 @@ def test_cdn_urls_are_pinned_and_allowed():
 
 
 def test_page_text_has_no_em_dash_and_keeps_the_notices():
-    for p in [SITE / "index.html", SITE / "js" / "app.js", SITE / "README.md"]:
+    for p in [SITE / "index.html", SITE / "js" / "app.js", SITE / "js" / "player.js", SITE / "css" / "style.css",
+              SITE / "README.md"]:
         assert "—" not in p.read_text(encoding="utf-8"), p
     app = (SITE / "js" / "app.js").read_text(encoding="utf-8")
     html = (SITE / "index.html").read_text(encoding="utf-8")
     assert "Bu ses yapaydır." in html and "Bu ses yapaydır." in app and "This voice is synthetic." in app
     assert "destek@ozgurguler.tech" in html and "ozguradmin/ahenk-turkish-tts" in html
     assert "ozgurguler/ahenk-cep-tr" in html
-    for style in ("neutral", "cheerful", "sad", "angry", "surprised", "calm", "empathetic"):
-        assert f"id: '{style}'" in app
-    assert "laughter" not in app
+
+
+def test_no_emotion_selector_and_the_neutral_note():
+    """The small model's styles are too weak to offer: the page always asks for neutral and says where emotions are."""
+    app = (SITE / "js" / "app.js").read_text(encoding="utf-8")
+    html = (SITE / "index.html").read_text(encoding="utf-8")
+    for text in (app, html):
+        assert 'name="style"' not in text and "STYLES" not in text and "styleLabel" not in text
+    assert "const STYLE = 'neutral';" in app and "style: STYLE" in app
+    note = "Ahenk Cep şimdilik nötr konuşur; duygulu konuşma (kızgın, neşeli, şaşkın, gülme...) büyük model Ahenk'te var"
+    assert note in html and note in app
+    assert "https://huggingface.co/ozgurguler/ahenk-tts-tr" in html
+    assert "https://huggingface.co/ozgurguler/ahenk-tts-tr/tree/main/samples" in html
+
+
+SAMPLES = SITE / "samples"
+
+
+def test_pre_rendered_examples_are_small_committed_and_match_trnorm():
+    from trnorm import normalize
+
+    meta = json.loads((SAMPLES / "samples.json").read_text(encoding="utf-8"))
+    assert 5 <= len(meta["examples"]) <= 8 and meta["seed"] == 0
+    total = (SAMPLES / "samples.json").stat().st_size
+    for ex in meta["examples"]:
+        for key in ("ogg", "mp3"):
+            f = SAMPLES / ex[key]
+            assert f.is_file(), f
+            total += f.stat().st_size
+            r = subprocess.run(["git", "check-ignore", "-q", f"site/samples/{ex[key]}"], cwd=REPO)
+            assert r.returncode == 1, f"{ex[key]} is gitignored"
+        assert ex["spoken"] == normalize(ex["text"]), ex["id"]
+        assert len(ex["peaks"]) == 160 and max(ex["peaks"]) == 1.0 and ex["seconds"] > 0.5
+        assert ex["tr"] and ex["en"]
+    assert total < 1_500_000, total
+    kinds = " ".join(ex["id"] for ex in meta["examples"])
+    for kind in ("tarih", "soru", "telefon", "para", "uzun"):
+        assert kind in kinds
+    big = {b["file"] for b in meta["big"]}
+    assert big == {"big_11_laughing.wav", "big_07_cheerful.wav", "big_09_calm.wav"}
+    r = subprocess.run(["git", "check-ignore", "-q", "site/samples/big/big_09_calm.wav"], cwd=REPO)
+    assert r.returncode == 0, "the local copy of the big model's samples must stay out of git"
+    cfg = (SITE / "js" / "config.js").read_text(encoding="utf-8")
+    assert "https://huggingface.co/ozgurguler/ahenk-tts-tr/resolve/main/samples/" in cfg
 
 
 def test_models_stay_out_of_git():

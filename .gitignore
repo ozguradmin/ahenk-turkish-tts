@@ -64,3 +64,7 @@ kaggle.json
 scratchpad/
 # in-browser demo: ONNX exports (tts/small/web_export.py) go to the Hugging Face model repo, not to git
 site/models/
+# demo page: Ahenk Cep's pre-rendered examples are small and committed; the local copy of the big model's samples is not
+!site/samples/cep_*.ogg
+!site/samples/cep_*.mp3
+site/samples/big/

@@ -16,6 +16,15 @@ export const MODELS = {
   local: 'models/',
 };
 
+// Pre-rendered clips. Ahenk Cep's examples live in site/samples/ (tools/web/render_samples.py). The big model's
+// emotional samples come from its model card; on localhost a local copy in site/samples/big/ (gitignored, written by
+// render_samples.py) is tried first, because the model repo is private until release.
+export const SAMPLES = {
+  examples: 'samples/',
+  bigHf: 'https://huggingface.co/ozgurguler/ahenk-tts-tr/resolve/main/samples/',
+  bigLocal: 'samples/big/',
+};
+
 export const DEFAULT_VARIANT = 'f16';
 export const MAX_CHARS = 600;
 
@@ -23,6 +32,7 @@ export const LINKS = {
   github: 'https://github.com/ozguradmin/ahenk-turkish-tts',
   hfCep: 'https://huggingface.co/ozgurguler/ahenk-cep-tr',
   hfBig: 'https://huggingface.co/ozgurguler/ahenk-tts-tr',
+  hfBigSamples: 'https://huggingface.co/ozgurguler/ahenk-tts-tr/tree/main/samples',
   ema: 'https://huggingface.co/canberkkkkkk/ema-lightning',
   mail: 'destek@ozgurguler.tech',
 };
@@ -36,6 +46,14 @@ export function modelBase(loc) {
   if (q === 'local') return local;
   if (q === 'hf') return MODELS.hf;
   return LOCAL_HOSTS.has(loc.hostname) ? local : MODELS.hf;
+}
+
+// Where to look for the big model's samples, in order. ?models=hf skips the local copy.
+export function bigSampleBases(loc) {
+  const local = new URL(SAMPLES.bigLocal, loc.href).href;
+  const q = new URLSearchParams(loc.search).get('models');
+  if (q === 'hf') return [SAMPLES.bigHf];
+  return LOCAL_HOSTS.has(loc.hostname) || q === 'local' ? [local, SAMPLES.bigHf] : [SAMPLES.bigHf];
 }
 
 export function pageOptions(loc) {
