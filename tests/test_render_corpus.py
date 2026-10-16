@@ -412,7 +412,9 @@ def test_ref_audio_never_itself_and_manifest_rows(tmp_path):
     rows = rc.manifest_rows(kept, refs, tmp_path / "wav", 0)
     assert sorted(r["text"] for r in rows) == sorted(c["train_text"] for c in kept)
     with_ref = [r for r in rows if "ref_audio" in r]
-    assert len(with_ref) == 6 and all(Path(r["ref_audio"]).is_absolute() and r["ref_duration"] for r in with_ref)
+    # the prepared reference is a POSIX path ("/data/..."), absolute on the Linux workers but not to Windows' Path
+    assert len(with_ref) == 6 and all((Path(r["ref_audio"]).is_absolute() or r["ref_audio"].startswith("/"))
+                                      and r["ref_duration"] for r in with_ref)
     assert all(r["audio"] == str(tmp_path / "wav" / Path(r["audio"]).name) for r in rows)
 
 

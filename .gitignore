@@ -62,3 +62,5 @@ kaggle.json
 *.m4a
 *.zip
 scratchpad/
+# in-browser demo: ONNX exports (tts/small/web_export.py) go to the Hugging Face model repo, not to git
+site/models/

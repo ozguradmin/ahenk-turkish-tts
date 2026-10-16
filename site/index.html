@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ahenk Cep</title>
+  <meta name="description" content="Ahenk Cep: tarayıcınızda çalışan 8,6 milyon parametreli küçük Türkçe metinden sese modeli. Metniniz cihazınızdan çıkmaz.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f6e5f'/%3E%3Cpath d='M7 18v-4M11 21v-10M15 24V8M19 20v-8M23 17v-2M27 18v-4' stroke='%23fff' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
+  <script>window.coi = { quiet: true };</script>
+  <script src="coi-serviceworker.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip" href="#text" data-i18n="skip">Metin alanına geç</a>
+  <header class="top">
+    <div class="wrap top-row">
+      <div class="brand">
+        <span class="mark" aria-hidden="true"></span>
+        <span class="brand-name">Ahenk Cep</span>
+      </div>
+      <button id="lang" class="lang" type="button" aria-label="Switch to English">EN</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="intro">
+      <h1 data-i18n="title">Türkçe metni tarayıcınızda seslendirin</h1>
+      <p class="lede" data-i18n-html="lede">Ahenk Cep, 8,6 milyon parametreli küçük bir Türkçe ses modeli. Bu sayfada tamamen sizin cihazınızda çalışır: yazdığınız metin hiçbir sunucuya gitmez.</p>
+    </section>
+
+    <aside class="notice" role="note">
+      <strong data-i18n="noticeTitle">Bu ses yapaydır.</strong>
+      <span data-i18n="noticeBody">Duyacağınız ses (f022) bir metin tarifinden tasarlandı; gerçek bir kişinin sesi ya da kaydı değildir. Ürettiğiniz sesi paylaşırken yapay olduğunu belirtin ve kimseyi taklit etmek ya da kandırmak için kullanmayın.</span>
+    </aside>
+
+    <section class="card" aria-labelledby="tts-h">
+      <h2 id="tts-h" class="visually-hidden" data-i18n="ttsHeading">Seslendirme</h2>
+
+      <div id="load" class="load" aria-live="polite">
+        <div class="load-row">
+          <span id="load-text" data-i18n="loadStart">Model hazırlanıyor…</span>
+          <span id="load-num" class="num"></span>
+        </div>
+        <div class="bar" role="progressbar" aria-labelledby="load-text" aria-valuemin="0" aria-valuemax="100"><span id="load-bar"></span></div>
+      </div>
+
+      <label for="text" class="label" data-i18n="textLabel">Metin</label>
+      <textarea id="text" rows="4" spellcheck="false" maxlength="600">Randevunuz 14.10.2026 saat 09:30'da, 3. katta.</textarea>
+      <div class="hint-row">
+        <span class="hint" data-i18n="textHint">Sayılar, tarihler, saat, para ve kısaltmalar okunuşa çevrilir.</span>
+        <span id="count" class="hint num">0 / 600</span>
+      </div>
+
+      <fieldset class="styles">
+        <legend class="label" data-i18n="styleLabel">Duygu</legend>
+        <div class="chips" id="chips"></div>
+        <p class="hint" data-i18n="styleHint">Bu küçük modelde duygular hafiftir: örneğin "Üzgün" sesi biraz daha pes ve yavaş yapar, "Sakin" biraz yavaşlatır. Büyük bir fark beklemeyin.</p>
+      </fieldset>
+
+      <details class="settings">
+        <summary data-i18n="settings">Ayarlar</summary>
+        <div class="settings-grid">
+          <label for="steps" data-i18n="steps">Kalite</label>
+          <select id="steps">
+            <option value="16" data-i18n="stepsBest">En iyi (16 adım)</option>
+            <option value="8" data-i18n="stepsFast">Hızlı (8 adım)</option>
+            <option value="4" data-i18n="stepsFaster">Çok hızlı (4 adım, daha az doğal)</option>
+          </select>
+          <label for="speed"><span data-i18n="speed">Hız</span> <span id="speed-val" class="num">1,00</span></label>
+          <input id="speed" type="range" min="0.7" max="1.4" step="0.05" value="1">
+          <label for="seed" data-i18n="seed">Tohum</label>
+          <input id="seed" type="number" min="0" max="2147483647" step="1" value="0" inputmode="numeric">
+        </div>
+        <p class="hint" data-i18n="seedHint">Aynı metin, duygu ve tohum her zaman aynı sesi verir.</p>
+      </details>
+
+      <div class="actions">
+        <button id="go" class="primary" type="button" disabled data-i18n="go">Seslendir</button>
+        <span id="status" class="status" aria-live="polite"></span>
+      </div>
+
+      <div id="result" class="result" hidden>
+        <audio id="player" controls preload="auto"></audio>
+        <div class="result-row">
+          <a id="download" class="secondary" download="ahenk-cep.wav" href="#" data-i18n="download">WAV olarak indir</a>
+          <span id="stats" class="hint"></span>
+        </div>
+        <details class="spoken">
+          <summary data-i18n="spokenLabel">Modelin okuduğu metin</summary>
+          <p id="spoken"></p>
+        </details>
+      </div>
+    </section>
+
+    <section class="examples" aria-labelledby="ex-h">
+      <h2 id="ex-h" data-i18n="examples">Örnek cümleler</h2>
+      <ul id="example-list"></ul>
+    </section>
+
+    <section class="about" aria-labelledby="about-h">
+      <h2 id="about-h" data-i18n="aboutTitle">Nasıl çalışıyor?</h2>
+      <p data-i18n-html="about1">İlk açılışta tarayıcınız modeli (yaklaşık <span id="model-size">17 MB</span>) ve metni okunuşa çeviren Python kodunu (Pyodide ile, yaklaşık 6 MB) indirir; sonraki ziyaretlerde önbellekten açılır. Metin önce <a href="https://github.com/ozguradmin/ahenk-turkish-tts/blob/main/docs/TRNORM.md">trnorm</a> ile okunuş formuna çevrilir ("14.10.2026" olur "on dört ekim iki bin yirmi altı"), sonra model sesi 48 kHz olarak üretir.</p>
+      <p data-i18n-html="about2">Model, büyük Ahenk modelinin sesinden öğrenen bir öğrencidir ve <a href="https://huggingface.co/canberkkkkkk/ema-lightning">EMA Lightning</a> mimarisini kullanır. Sınırları: tek tasarlanmış kadın sesi; duygular hafif; sonu yükselen sorular ("Yarın geliyorsun?") yükselmez; uzun metinde doğallık büyük modelin gerisinde kalır.</p>
+      <ul class="links">
+        <li><a id="link-github" href="https://github.com/ozguradmin/ahenk-turkish-tts" data-i18n="linkCode">Kod (GitHub)</a></li>
+        <li><a id="link-cep" href="https://huggingface.co/ozgurguler/ahenk-cep-tr" data-i18n="linkCep">Ahenk Cep modeli (Hugging Face)</a></li>
+        <li><a id="link-big" href="https://huggingface.co/ozgurguler/ahenk-tts-tr" data-i18n="linkBig">Büyük model Ahenk (Hugging Face)</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <p><span data-i18n="contact">İletişim:</span> <a href="mailto:destek@ozgurguler.tech">destek@ozgurguler.tech</a></p>
+      <p class="hint" data-i18n="license">Kod Apache-2.0, model ağırlıkları CC-BY-4.0. Temel model EMA Lightning (Apache-2.0).</p>
+      <p id="tech" class="hint num"></p>
+    </div>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
