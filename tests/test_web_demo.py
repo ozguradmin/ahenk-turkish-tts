@@ -1,11 +1,14 @@
 """site/ (the in-browser Ahenk Cep demo) and its Python side: tts/small/web_export.py, web_pipeline.py, web_parity.py.
 
 Stdlib-only checks always run: the vendored trnorm copy equals src/trnorm, the Pyodide file list matches site/py,
-every CDN URL is pinned to an exact version, the page has no em dashes, the models stay out of git, and
-site/py/ahenk_front.py gives exactly what tts/small/ahenk_cep.py feeds the model. The JavaScript checks (noise,
-frame timeline, decoder windows) run where `node` is installed; the torch / onnxruntime checks where those are
-installed and site/models has been exported (python tts/small/web_export.py)."""
+every CDN URL is pinned to an exact version, the page has no em dashes, the models stay out of git and every file the
+page imports is in it, the service worker is the reviewed upstream file set to require-corp, the page survives a
+worker that fails or hangs, fonts do not block the first paint, and site/py/ahenk_front.py gives exactly what
+tts/small/ahenk_cep.py feeds the model. The JavaScript checks (noise, frame timeline, decoder windows, backend choice,
+WebGPU and thread fallbacks) run where `node` is installed; the torch / onnxruntime checks where those are installed
+and site/models has been exported (python tts/small/web_export.py)."""
 
+import hashlib
 import importlib.util
 import json
 import re
@@ -147,6 +150,78 @@ def test_service_worker_sits_at_the_site_root():
     html = (SITE / "index.html").read_text(encoding="utf-8")
     assert '<script src="coi-serviceworker.js"></script>' in html  # scope "/" needs the file at the root
     assert (SITE / "coi-serviceworker.js").is_file() and (SITE / "coi-serviceworker.LICENSE").is_file()
+
+
+def test_every_local_file_the_page_loads_is_in_git():
+    """A new module left out of a commit would ship a page whose app.js cannot load."""
+    html = (SITE / "index.html").read_text(encoding="utf-8")
+    wanted = set(re.findall(r'<(?:script|link)[^>]* (?:src|href)="([^":#]+)"', html))
+    for js in (SITE / "js").glob("*.js"):
+        text = js.read_text(encoding="utf-8")
+        for m in re.findall(r"from '\./([\w.-]+\.js)'|new URL\('\./([\w.-]+\.js)', import\.meta\.url\)", text):
+            wanted.add(f"js/{m[0] or m[1]}")
+    assert {"js/app.js", "js/backend.js", "js/worker.js", "coi-serviceworker.js", "css/style.css"} <= wanted, wanted
+    for rel in sorted(wanted):
+        assert (SITE / rel).is_file(), rel
+    if shutil.which("git") and (REPO / ".git").exists():
+        r = subprocess.run(["git", "ls-files", "--error-unmatch", *(f"site/{rel}" for rel in sorted(wanted))], cwd=REPO,
+                           capture_output=True, text=True)
+        assert r.returncode == 0, f"not in git (git add it): {r.stderr.strip()}"
+
+
+# gzuidhof/coi-serviceworker at 509a799 (master, 2023-12-06; its header still says v0.1.7), read before vendoring
+COI_SHA256 = "e97bbac6017322d48aa54a5bc7ce473c725a4b7376ff245002e0ba71c3dcdd7e"
+
+
+def test_service_worker_forces_require_corp_and_reloads_at_most_once():
+    """npm's 0.1.7 picked COEP credentialless in every browser without window.chrome (all of iOS), which Safari does
+    not support, and could reload in a loop. The page now uses upstream's newer file with require-corp everywhere."""
+    sw = (SITE / "coi-serviceworker.js").read_bytes().replace(b"\r\n", b"\n")
+    assert hashlib.sha256(sw).hexdigest() == COI_SHA256, "coi-serviceworker.js changed: review it, then update the hash"
+    text = sw.decode()
+    assert 'sessionStorage.setItem("coiReloadedBySelf"' in text and "shouldRegister: () => !reloadedBySelf" in text
+    html = (SITE / "index.html").read_text(encoding="utf-8")
+    cfg = html[html.index("window.coi = {"):html.index('<script src="coi-serviceworker.js">')]
+    assert "coepCredentialless: () => false" in cfg and "coepDegrade: () => false" in cfg
+    assert "shouldRegister" not in cfg, "keep upstream's default: it is the reload guard"
+    assert "coiReloadedBySelf" in cfg  # read before the service worker script removes it (js/app.js uses it)
+    # its reload comes while the service worker installs: wait until it is active, or the reloaded page is not isolated
+    assert "navigator.serviceWorker.ready" in cfg[cfg.index("doReload"):]
+
+
+def test_page_survives_a_worker_that_fails_or_hangs():
+    app = (SITE / "js" / "app.js").read_text(encoding="utf-8")
+    assert "w.onerror = " in app and "loadFailed('worker'" in app  # a worker script or import that cannot load
+    assert "STALL_MS" in app and "loadFailed('timeout'" in app  # a load that stops making progress
+    assert "OPEN_MS" in app and "post({ type: 'alive' })" in (SITE / "js" / "worker.js").read_text(encoding="utf-8")
+    # threads that fail get one more try on one thread, once; WebGPU that failed is not tried again in this tab
+    assert "threads > 1 && !avoid.threads" in app and "maxThreads: avoid.threads ? 1 : 0" in app
+    assert "avoid.webgpu ? 'wasm'" in app
+    # js/app.js itself failing to load is not silent either
+    html = (SITE / "index.html").read_text(encoding="utf-8")
+    assert "window.ahenkStarted = true;" in app and "if (window.ahenkStarted) return;" in html
+    retry = app[app.index("$('retry').addEventListener"):]
+    retry = retry[:retry.index("});")]
+    assert "startWorker()" in retry
+    assert "location.reload" not in app, "restart the worker, not the page (phones lose memory on every reload)"
+    # short human messages, the technical line folded away in a <details>; never the raw onnxruntime dump
+    assert "el('details'" in app and "loadErrorHint" not in app
+    for key in ("errNetwork", "errEngine", "errEngineIos", "errMemory", "errTimeout", "errWorker", "tapPlay"):
+        assert app.count(f"    {key}: ") == 2, key  # Turkish and English
+    assert "mainPlayer.unlock();" in app[app.index("function speak()"):app.index("function finish(")]
+    worker = (SITE / "js" / "worker.js").read_text(encoding="utf-8")
+    assert "openWithFallback(gpu, open" in worker and "pickBackend(" in worker and "toWasm" in worker
+
+
+def test_fonts_do_not_block_the_first_paint():
+    html = (SITE / "index.html").read_text(encoding="utf-8")
+    head = re.sub(r"<noscript>.*?</noscript>", "", html[:html.index("</head>")], flags=re.S)
+    assert not re.search(r'<link rel="stylesheet" href="https://', head)
+    assert head.count('rel="preload" as="style"') == 3 and head.count("this.rel='stylesheet'") == 3
+    css = (SITE / "css" / "style.css").read_text(encoding="utf-8")
+    # iOS zooms into a focused field under 16px
+    assert re.search(r'@media \(max-width: 560px\), \(pointer: coarse\) \{\s*\.field select, '
+                     r'\.field input\[type="number"\] \{ font-size: 16px; \}', css)
 
 
 # ---- the text front-end (site/py/ahenk_front.py) ------------------------------------------------------------------
@@ -297,6 +372,130 @@ def test_js_plan_and_windows_match_python():
         assert res["fw"] == fw.tolist() and np.array_equal(np.array(res["fp"], np.float32), fp)
     assert out["w"] == [[list(s) for s in W.windows(n)] for n in (1, 100, 101, 250)]
     assert out["rh"] == [0, 2, 2, 2, 4]
+
+
+PYTHON_ERROR = ('Traceback (most recent call last):\n  File "/lib/python312.zip/_pyodide/_base.py", line 523, in '
+                'eval_code\n    .run(globals, locals)\nValueError: could not read this text')
+
+IPHONE_ERROR = (  # what the page showed on an iPhone (X's in-app browser, 2026-10-17), cut short
+    "failed to call OrtRun(). ERROR_CODE: 1, ERROR_MESSAGE: /mnt/azure_nvme_temp/_work/1/s/onnxruntime/core/providers/"
+    "webgpu/buffer_manager.cc:562 WGPUBuffer onnxruntime::webgpu::BufferManager::Create(size_t, wgpu::BufferUsage, "
+    "bool) const [ONNXRuntimeError] : 1 : FAIL : Failed to create a WebGPU compute pipeline: Failed to compile the "
+    "shader source, generated metal: #include <metal_stdlib>" + "\nusing namespace metal;" * 300)
+
+
+@pytest.mark.skipif(NODE is None, reason="node is not installed")
+def test_backend_choice_and_webgpu_fallback():
+    navs = {
+        "iphone": {"userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, "
+                                "like Gecko) Mobile/15E148 Twitter for iPhone", "vendor": "Apple Computer, Inc.",
+                   "maxTouchPoints": 5},
+        "ipad": {"userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko)"
+                              " Version/18.6 Safari/605.1.15", "vendor": "Apple Computer, Inc.", "maxTouchPoints": 5},
+        "mac_safari": {"userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like "
+                                    "Gecko) Version/18.6 Safari/605.1.15", "vendor": "Apple Computer, Inc.",
+                       "maxTouchPoints": 0},
+        "android": {"userAgent": "Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) "
+                                 "Chrome/141.0.0.0 Mobile Safari/537.36", "vendor": "Google Inc.", "maxTouchPoints": 5,
+                    "userAgentData": {"mobile": True}},
+        "desktop": {"userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
+                                 "Chrome/141.0.0.0 Safari/537.36", "vendor": "Google Inc.", "maxTouchPoints": 0,
+                    "userAgentData": {"mobile": False}},
+        # Chrome's "desktop site" on an Android tablet, and a touch-screen laptop with a mouse (pointer: fine)
+        "android_desktop": {"userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) "
+                                         "Chrome/141.0.0.0 Safari/537.36", "vendor": "Google Inc.", "maxTouchPoints": 5,
+                            "userAgentData": {"mobile": False}, "coarse": True},
+        "touch_laptop": {"userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
+                                      "Chrome/141.0.0.0 Safari/537.36", "vendor": "Google Inc.", "maxTouchPoints": 10,
+                         "userAgentData": {"mobile": False}, "coarse": False},
+    }
+    out = run_node(
+        "const b = await import(pathToFileURL('js/backend.js').href);\n"
+        f"const navs = {json.dumps(navs)};\n"
+        "const cores = { iphone: 2, ipad: 2, mac_safari: 8, android: 8, desktop: 16, android_desktop: 8, touch_laptop: 12 };\n"
+        "const dev = {}; const pick = {};\n"
+        "for (const [k, n] of Object.entries(navs)) {\n"
+        "  dev[k] = b.deviceInfo(n, !!n.coarse);\n"
+        "  for (const isolated of [false, true]) for (const ep of ['auto', 'wasm', 'webgpu'])\n"
+        "    pick[`${k} ${isolated ? 'isolated' : 'plain'} ${ep}`] = b.pickBackend({ ep, isolated, cores: cores[k], device: dev[k] });\n"
+        "}\n"
+        "const run = async (gpu, failAt) => { const calls = []; const errs = [];\n"
+        "  const open = async (onGpu) => { calls.push(onGpu); if (onGpu && failAt) { const e = new Error(failAt);\n"
+        "    if (failAt === 'front') e.where = 'front'; throw e; } return onGpu ? 'gpu-engine' : 'wasm-engine'; };\n"
+        "  try { const r = await b.openWithFallback(gpu, open, (e) => errs.push(e.message)); return { ...r, calls, errs }; }\n"
+        "  catch (e) { return { thrown: e.message, calls, errs }; } };\n"
+        "const fb = { ok: await run(true), create: await run(true, 'create'), warm: await run(true, 'warm-up'),\n"
+        "  front: await run(true, 'front'), wasm: await run(false) };\n"
+        "const hang = await b.timed(new Promise(() => {}), 30, 'requestAdapter').catch((e) => e.message);\n"
+        "const quick = await b.timed(Promise.resolve(7), 1000, 'x');\n"
+        # the clock starts once `after` resolves (the .wasm has downloaded); an uncaught error in `scope` fails it
+        "const t0 = Date.now();\n"
+        "const late = await b.timed(new Promise(() => {}), 30, 'threads', { after: new Promise((r) => setTimeout(r, 150)) })\n"
+        "  .catch((e) => ({ m: e.message, ms: Date.now() - t0 }));\n"
+        "const scope = new EventTarget(); const pending = new Promise(() => {});\n"
+        "const guarded = b.timed(pending, 60000, '2 WebAssembly threads', { after: pending, scope }).catch((e) => e);\n"
+        "const ev = new Event('error', { cancelable: true }); ev.error = { message: 'worker sent an error!' };\n"
+        "scope.dispatchEvent(ev);\n"
+        "const g = await guarded; const thread = { m: g.message, kind: b.errorKind(g), prevented: ev.defaultPrevented };\n"
+        "const again = new Event('error', { cancelable: true }); scope.dispatchEvent(again); thread.later = again.defaultPrevented;\n"
+        f"const msg = {json.dumps(IPHONE_ERROR)};\n"
+        f"const pyMsg = {json.dumps(PYTHON_ERROR)};\n"
+        "const net = b.tag(new TypeError('Failed to fetch'), { kind: 'network' });\n"
+        "const py = b.tag(new Error(pyMsg), { where: 'front' });\n"
+        "const abort = new Error('RuntimeError: Aborted(). Build with -sASSERTIONS for more info.');\n"
+        "const oom = new RangeError('WebAssembly.Memory(): could not allocate memory');\n"
+        "const plans = { cap: b.pickBackend({ isolated: true, cores: 16, maxThreads: 1 }),\n"
+        "  capIos: b.pickBackend({ isolated: true, cores: 2, device: dev.iphone, maxThreads: 1 }) };\n"
+        "const pyodide404 = \"Failed to load 'https://cdn.jsdelivr.net/npm/pyodide@0.27.7/pyodide.asm.wasm': request failed.\";\n"
+        "console.log(JSON.stringify({ dev, pick, fb, hang, quick, late, thread, plans, short: b.shortError(new Error(msg)),\n"
+        "  shortPy: b.shortError(py), shortPage: b.shortError('x'.repeat(500)),\n"
+        "  broken: [b.engineBroken(abort), b.engineBroken(oom), b.engineBroken(py), b.engineBroken(new Error(msg)),\n"
+        "    b.engineBroken(new Error('RuntimeError: unreachable'))],\n"
+        "  kinds: [b.errorKind(new Error(msg)), b.errorKind(net), b.errorKind(new TypeError('Load failed')),\n"
+        "    b.errorKind(new Error('step.f16.onnx: HTTP 404')), b.errorKind(oom),\n"
+        "    b.errorKind(b.tag('plain string', { kind: 'network' })), b.errorKind(new Error(pyodide404)),\n"
+        "    b.errorKind(new Error('std::bad_alloc')), b.errorKind(new Error('Cannot enlarge memory arrays to size 2147483648 bytes')),\n"
+        "    b.errorKind(b.tag(new Error('2 WebAssembly threads: Failed to fetch dynamically imported module'), { kind: 'engine' }))] }));")
+    dev = out["dev"]
+    assert dev["iphone"] == {"ios": True, "mobile": True, "webkit": True}
+    assert dev["ipad"] == {"ios": True, "mobile": True, "webkit": True}  # iPadOS says "Macintosh"
+    assert dev["mac_safari"] == {"ios": False, "mobile": False, "webkit": True}
+    assert dev["android"] == {"ios": False, "mobile": True, "webkit": False}
+    assert dev["desktop"] == {"ios": False, "mobile": False, "webkit": False}
+    assert dev["android_desktop"]["mobile"] and not dev["touch_laptop"]["mobile"]
+    pick = out["pick"]
+    for k in ("iphone", "ipad", "mac_safari", "android"):  # WebGPU is never picked by itself there
+        assert not pick[f"{k} plain auto"]["gpu"] and not pick[f"{k} isolated auto"]["gpu"], k
+        assert pick[f"{k} plain webgpu"]["gpu"], k  # ?ep=webgpu stays an explicit override
+    assert pick["iphone plain auto"] == {"threads": 1, "gpu": False}
+    assert pick["iphone isolated auto"] == {"threads": 2, "gpu": False}
+    assert pick["android isolated auto"]["threads"] == 4 and pick["mac_safari isolated auto"]["threads"] == 6
+    assert pick["desktop plain auto"] == {"threads": 1, "gpu": True}  # no threads: WebGPU first, as before
+    assert pick["desktop isolated auto"] == {"threads": 8, "gpu": False}
+    assert not pick["desktop plain wasm"]["gpu"]
+    assert not pick["android_desktop plain auto"]["gpu"] and pick["android_desktop isolated auto"]["threads"] == 4
+    assert pick["touch_laptop plain auto"]["gpu"] and pick["touch_laptop isolated auto"]["threads"] == 8
+    assert out["plans"] == {"cap": {"threads": 1, "gpu": True}, "capIos": {"threads": 1, "gpu": False}}
+    fb = out["fb"]
+    assert fb["ok"] == {"engine": "gpu-engine", "backend": "webgpu", "calls": [True], "errs": []}
+    for case in ("create", "warm"):  # session creation or the warm-up run fails on WebGPU: the model reopens on wasm
+        assert fb[case]["backend"] == "wasm" and fb[case]["calls"] == [True, False] and len(fb[case]["errs"]) == 1
+    assert fb["front"] == {"thrown": "front", "calls": [True], "errs": []}  # not a WebGPU problem
+    assert fb["wasm"]["calls"] == [False] and fb["wasm"]["backend"] == "wasm"
+    assert out["hang"] == "requestAdapter: no answer in 0.03 s" and out["quick"] == 7
+    assert out["late"]["m"] == "threads: no answer in 0.03 s" and out["late"]["ms"] >= 150
+    assert out["thread"] == {"m": "2 WebAssembly threads: worker sent an error!", "kind": "engine", "prevented": True,
+                             "later": False}  # the listener is gone once it settled
+    short = out["short"]
+    assert "\n" not in short and len(short) <= 240 and "/mnt/" not in short and short.startswith("failed to call OrtRun()")
+    # the C++ location and signature go, what failed stays
+    assert short == ("failed to call OrtRun(). ERROR_CODE: 1, ERROR_MESSAGE: buffer_manager.cc:562: Failed to create a "
+                     "WebGPU compute pipeline: Failed to compile the shader source, generated metal: #include <metal_stdlib>")
+    assert out["shortPy"] == "ValueError: could not read this text"  # the end of a traceback says what went wrong
+    assert len(out["shortPage"]) == 240 and out["shortPage"].endswith("...")
+    assert out["broken"] == [True, True, False, False, True]
+    assert out["kinds"] == ["engine", "network", "network", "network", "memory", "network", "network", "memory",
+                            "memory", "engine"]
 
 
 # ---- ONNX export and the end-to-end pipeline -----------------------------------------------------------------------

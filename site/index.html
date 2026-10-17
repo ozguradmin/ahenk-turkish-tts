@@ -22,14 +22,38 @@
   <meta name="theme-color" content="#121211" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%231b1a17'/%3E%3Cpath d='M3 16L4 16L5 16.5L6 17.4L7 18.3L8 19.1L9 19.5L10 19.3L11 18.4L12 16.9L13 15.1L14 13.3L15 11.7L16 10.8L17 10.5L18 11.1L19 12.3L20 13.9L21 15.7L22 17.2L23 18.2L24 18.7L25 18.5L26 17.9L27 17.1L28 16.4L29 16' fill='none' stroke='%23e98a6a' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M3 16L4 15.6L5 14.6L6 13.2L7 11.8L8 11L9 11.1L10 12.2L11 14.2L12 17L13 19.9L14 22.5L15 24.4L16 25L17 24.4L18 22.5L19 19.9L20 17L21 14.2L22 12.2L23 11.1L24 11L25 11.8L26 13.2L27 14.6L28 15.6L29 16' fill='none' stroke='%23f3efe7' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
   <script>
-    window.coi = { quiet: true };
+    // coi-serviceworker.js makes the page cross-origin isolated (threads in WebAssembly need it): on a first visit it
+    // registers itself and reloads the page once; js/app.js waits for that reload before it starts the model.
+    // COEP require-corp in every browser: Safari has no "credentialless", and there is nothing to degrade to. It asks
+    // for its reload while the service worker is still installing; the reload waits until it is active (5 s at most),
+    // or the reloaded page would not be isolated and, the reload being spent, stay so.
+    window.coiState = { reloading: 0, reloaded: false };
+    window.coi = {
+      quiet: true,
+      coepCredentialless: () => false,
+      coepDegrade: () => false,
+      doReload: () => {
+        window.coiState.reloading = performance.now();
+        const reload = () => window.location.reload();
+        Promise.race([navigator.serviceWorker.ready, new Promise((r) => { setTimeout(r, 5000); })]).then(reload, reload);
+      },
+    };
+    // It marks the load that its own reload caused and removes the mark when it runs, so read it first. Without
+    // storage it cannot run at all: nothing to wait for either way.
+    try { window.coiState.reloaded = !!sessionStorage.getItem('coiReloadedBySelf'); } catch { window.coiState.reloaded = true; }
     try { const th = localStorage.getItem('ahenk-theme'); if (th === 'light' || th === 'dark') document.documentElement.dataset.theme = th; } catch { /* storage blocked */ }
   </script>
   <script src="coi-serviceworker.js"></script>
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource-variable/newsreader@5.3.0/opsz.css" crossorigin>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource-variable/newsreader@5.3.0/opsz-italic.css" crossorigin>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource-variable/hanken-grotesk@5.3.0/index.css" crossorigin>
+  <!-- Fonts do not hold up the first paint: the page shows in system fonts and switches when these arrive. -->
+  <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/@fontsource-variable/newsreader@5.3.0/opsz.css" crossorigin onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/@fontsource-variable/newsreader@5.3.0/opsz-italic.css" crossorigin onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/@fontsource-variable/hanken-grotesk@5.3.0/index.css" crossorigin onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource-variable/newsreader@5.3.0/opsz.css" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource-variable/newsreader@5.3.0/opsz-italic.css" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource-variable/hanken-grotesk@5.3.0/index.css" crossorigin>
+  </noscript>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -118,7 +142,7 @@
           <p id="seed-hint" class="hint" data-i18n="seedHint">Aynı metin ve tohum her zaman aynı sesi verir.</p>
         </div>
 
-        <p id="status" class="status" role="status" aria-live="polite"></p>
+        <div id="status" class="status" role="status" aria-live="polite"></div>
 
         <div id="result" class="result is-empty">
           <div class="player" id="main-player">
@@ -226,5 +250,16 @@
   </footer>
 
   <script type="module" src="js/app.js"></script>
+  <script>
+    // If js/app.js or one of its imports could not load or run, nothing on the page would answer: say so.
+    window.addEventListener('load', () => {
+      if (window.ahenkStarted) return;
+      let en = false;
+      try { en = (new URLSearchParams(location.search).get('lang') || localStorage.getItem('ahenk-lang')) === 'en'; } catch { /* storage blocked */ }
+      document.getElementById('load').classList.add('error');
+      document.getElementById('load-text').textContent = en ? 'The page did not load completely. Reload it to try again.' : 'Sayfa tam yüklenemedi. Yenileyip tekrar deneyin.';
+      document.getElementById('go').disabled = true;
+    });
+  </script>
 </body>
 </html>

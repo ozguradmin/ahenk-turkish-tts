@@ -4,8 +4,13 @@
 //   const p = new WavePlayer(rootEl, { labels });   // rootEl holds [data-role=play|wave|time] and a <canvas>
 //   p.setPeaks(peaks, seconds); p.setSources([url, ...]);    // pre-rendered clip
 //   p.setAudio(float32, sampleRate, blobUrl);               // generated audio
+//   p.unlock();                                             // in a tap, before audio that will play after an await
+
+import { encodeWav } from './wav.js';
 
 const players = new Set();
+let silence = null;
+const silenceUrl = () => (silence ||= URL.createObjectURL(encodeWav(new Float32Array(800), 8000))); // 0.1 s
 
 export function fmtTime(s) {
   if (!Number.isFinite(s) || s < 0) s = 0;
@@ -139,6 +144,7 @@ export class WavePlayer {
 
   setSources(urls) {
     this.pause();
+    this.silent = false;
     this.sources = urls;
     this.srcIndex = 0;
     if (urls.length) this.audio.src = urls[0];
@@ -166,12 +172,52 @@ export class WavePlayer {
     }
   }
 
+  // -> a promise of 'playing', 'blocked' (the browser wants a tap first; the button gets a ring), 'aborted' (paused
+  // or replaced before it started) or 'failed'.
   play() {
     for (const p of players) if (p !== this) p.pause();
     this.wantPlay = true;
     this.btn.classList.add('loading');
     const r = this.audio.play();
-    if (r && r.catch) r.catch(() => { this.btn.classList.remove('loading'); this.wantPlay = false; this.sync(); });
+    if (!r || !r.then) return Promise.resolve('playing');
+    return r.then(() => {
+      this.unlocked = true;
+      return 'playing';
+    }, (e) => {
+      this.btn.classList.remove('loading');
+      this.wantPlay = false;
+      this.sync();
+      const name = e && e.name;
+      if (name === 'NotAllowedError') this.btn.classList.add('nudge');
+      return name === 'NotAllowedError' ? 'blocked' : name === 'AbortError' ? 'aborted' : 'failed';
+    });
+  }
+
+  // iOS lets a media element start by itself later (after an await, as when generated audio arrives) only if it
+  // already played inside a tap. Called from the tap: a tenth of a second of silence plays and the element stays
+  // allowed. A clip that is already loaded (one that was blocked) plays muted for a moment instead, and stays.
+  unlock() {
+    if (this.unlocked) return;
+    this.unlocked = true;
+    this.silent = true;
+    const clip = !!this.audio.getAttribute('src');
+    if (clip) this.audio.muted = true;
+    else this.audio.src = silenceUrl();
+    const r = this.audio.play();
+    const end = (ok) => {
+      if (!ok) this.unlocked = false;
+      if (clip) {
+        if (this.silent) {
+          this.audio.pause();
+          this.audio.currentTime = 0;
+          this.silent = false;
+        }
+        this.audio.muted = false;
+        this.sync();
+      }
+    };
+    if (r && r.then) r.then(() => end(true), () => end(false));
+    else end(true);
   }
 
   pause() {
@@ -193,9 +239,9 @@ export class WavePlayer {
   }
 
   sync() {
-    const playing = !this.audio.paused;
+    const playing = !this.audio.paused && !this.silent;
     this.btn.classList.toggle('playing', playing);
-    if (playing) this.btn.classList.remove('loading');
+    if (playing) this.btn.classList.remove('loading', 'nudge');
     const L = this.labels();
     this.btn.setAttribute('aria-label', playing ? L.pause : L.play);
     this.wave.setAttribute('aria-label', L.seek);

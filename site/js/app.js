@@ -1,6 +1,7 @@
 // The page: Turkish first, English on request. All synthesis happens in js/worker.js; js/player.js draws and plays.
 // Ahenk Cep is used in its neutral style only: the small model's other styles are too weak to offer yet.
 
+import { deviceInfo, shortError } from './backend.js';
 import { LINKS, MAX_CHARS, SAMPLES, bigSampleBases, pageOptions } from './config.js';
 import { WavePlayer, redrawAll } from './player.js';
 import { encodeWav } from './wav.js';
@@ -33,7 +34,13 @@ const T = {
     loadWarm: 'Son hazırlık',
     loadReady: 'Model hazır',
     loadError: 'Model yüklenemedi',
-    loadErrorHint: (m) => `Bağlantınızı kontrol edip tekrar deneyin. Hazır örnekleri yine de dinleyebilirsiniz. Ayrıntı: ${m}`,
+    errNetwork: 'Model indirilemedi. Bağlantınızı kontrol edip tekrar deneyin; hazır örnekleri yine de dinleyebilirsiniz.',
+    errEngine: 'Model bu tarayıcıda çalıştırılamadı. Sayfayı başka bir tarayıcıda açmayı deneyin; hazır örnekleri yine de dinleyebilirsiniz.',
+    errEngineIos: "Model bu tarayıcıda çalıştırılamadı. Sayfayı bir uygulamanın içinden açtıysanız Safari'de açmayı deneyin; hazır örnekleri yine de dinleyebilirsiniz.",
+    errMemory: 'Cihazın belleği modeli açmaya yetmedi. Diğer sekmeleri kapatıp tekrar deneyin.',
+    errTimeout: 'Model hazırlığı çok uzun sürdüğü için durduruldu. Tekrar deneyin; olmazsa bağlantınızı kontrol edin.',
+    errWorker: 'Sayfanın bir parçası yüklenemedi. Tekrar deneyin, olmazsa sayfayı yenileyin.',
+    detail: 'Ayrıntı',
     retry: 'Tekrar dene',
     textLabel: 'Seslendirilecek metin',
     placeholder: 'Bir şeyler yazın ya da aşağıdaki örneklerden birini seçin.',
@@ -52,7 +59,11 @@ const T = {
     empty: 'Önce bir metin yazın.',
     tooLong: `En çok ${MAX_CHARS} karakter yazabilirsiniz.`,
     nothing: 'Bu metinde okunacak bir şey bulunamadı.',
-    failed: 'Seslendirme başarısız oldu',
+    failed: 'Seslendirme başarısız oldu.',
+    failedMemory: 'Seslendirme başarısız oldu: cihazın belleği yetmedi. Daha kısa bir metin deneyin.',
+    failedStuck: 'Seslendirme yanıt vermedi. Model yeniden hazırlanıyor, birazdan tekrar deneyin.',
+    tapPlay: 'Ses hazır. Dinlemek için oynat düğmesine basın.',
+    playFailed: 'Ses burada çalınamadı. WAV dosyasını indirip dinleyebilirsiniz.',
     progress: (p) => p.decoding ? `Ses oluşturuluyor${p.pieces > 1 ? ` (parça ${p.piece + 1}/${p.pieces})` : ''}` : `Seslendiriliyor${p.pieces > 1 ? `: parça ${p.piece + 1}/${p.pieces},` : ':'} adım ${p.step}/${p.steps}`,
     emptyPlayer: 'Seslendirdiğiniz metin burada dinlenebilir.',
     play: 'Oynat',
@@ -121,7 +132,13 @@ const T = {
     loadWarm: 'Almost ready',
     loadReady: 'Model ready',
     loadError: 'The model could not be loaded',
-    loadErrorHint: (m) => `Check your connection and try again. The ready-made examples still play. Details: ${m}`,
+    errNetwork: 'The model could not be downloaded. Check your connection and try again; the ready-made examples still play.',
+    errEngine: 'The model could not run in this browser. Try opening the page in another browser; the ready-made examples still play.',
+    errEngineIos: 'The model could not run in this browser. If you opened the page inside an app, try opening it in Safari; the ready-made examples still play.',
+    errMemory: 'This device ran out of memory while opening the model. Close other tabs and try again.',
+    errTimeout: 'Preparing the model took too long and was stopped. Try again; if that fails, check your connection.',
+    errWorker: 'Part of the page could not be loaded. Try again, or reload the page.',
+    detail: 'Details',
     retry: 'Try again',
     textLabel: 'Text to speak (Turkish)',
     placeholder: 'Type something, or pick one of the examples below.',
@@ -140,7 +157,11 @@ const T = {
     empty: 'Type some text first.',
     tooLong: `At most ${MAX_CHARS} characters.`,
     nothing: 'Nothing in this text can be read aloud.',
-    failed: 'Speaking failed',
+    failed: 'Speaking failed.',
+    failedMemory: 'Speaking failed: the device ran out of memory. Try a shorter text.',
+    failedStuck: 'Speaking got stuck. The model is being prepared again; try again in a moment.',
+    tapPlay: 'The audio is ready. Press play to listen.',
+    playFailed: 'The audio could not be played here. You can download the WAV and listen to it.',
     progress: (p) => p.decoding ? `Making the audio${p.pieces > 1 ? ` (part ${p.piece + 1}/${p.pieces})` : ''}` : `Speaking${p.pieces > 1 ? `: part ${p.piece + 1}/${p.pieces},` : ':'} step ${p.step}/${p.steps}`,
     emptyPlayer: 'What you speak will play here.',
     play: 'Play',
@@ -193,7 +214,7 @@ function fmt(x, d) {
 }
 const t = (k, ...a) => (typeof T[lang][k] === 'function' ? T[lang][k](...a) : T[lang][k]);
 
-const state = { ready: false, info: null, busy: false, pending: null, nextId: 1, url: null, loadStage: 'start', loaded: 0, total: 0 };
+const state = { ready: false, info: null, busy: false, pending: null, nextId: 1, url: null, loadStage: 'start', loaded: 0, total: 0, heard: 0 };
 
 function store(key, value) {
   try {
@@ -227,6 +248,12 @@ function playerMarkup(withTime = true) {
 // ---- players -----------------------------------------------------------------------------------------------------
 const mainPlayer = new WavePlayer($('main-player'), {
   labels: () => ({ play: t('play'), pause: t('pause'), seek: t('seek') }),
+  onState: (s) => {
+    if (s === 'playing' && state.tapHint) {
+      state.tapHint = false;
+      setStatus('');
+    }
+  },
 });
 
 const cardPlayers = [];
@@ -259,7 +286,7 @@ const canOpus = (() => {
 function useText(text) {
   $('text').value = text;
   updateCount();
-  setStatus('');
+  if (!state.busy) clearStatus();
   $('composer').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center' });
   $('text').focus({ preventScroll: true });
 }
@@ -424,13 +451,27 @@ function applyLang() {
   for (const p of cardPlayers) p.sync();
   renderLoad();
   renderTheme();
-  if (state.loadStage === 'error') setStatus(t('loadErrorHint', state.loadError), true);
-  else if (!state.busy) setStatus('');
+  if (state.tapHint) setStatus(t('tapPlay'));
+  else if (!state.busy) clearStatus();
 }
 
-function setStatus(msg, error = false) {
-  $('status').textContent = msg;
-  $('status').classList.toggle('error', error);
+// A short message under Seslendir. `detail` (a technical error, cut to one line) goes into a closed <details>.
+function setStatus(msg, error = false, detail = '') {
+  const box = $('status');
+  box.textContent = msg;
+  box.classList.toggle('error', error);
+  if (detail) {
+    const d = el('details', 'detail');
+    d.append(el('summary', '', t('detail')), el('code', '', shortError(detail)));
+    box.append(' ', d);
+  }
+}
+
+// Empty the status line, except that a failed load keeps saying so.
+function clearStatus() {
+  state.tapHint = false;
+  if (state.loadStage === 'error') showLoadError();
+  else setStatus('');
 }
 
 function updateCount() {
@@ -449,26 +490,54 @@ function setBusy(busy, frac = 0) {
 }
 
 // ---- worker ------------------------------------------------------------------------------------------------------
+// "Tekrar dene" starts a new worker instead of reloading the page: on phones a reload costs more memory than it frees.
+// A watchdog turns silence into an error: no word from the worker for STALL_MS while the model loads or while it
+// speaks means something is stuck (a hung download, a worker that died). While the model opens, after its download,
+// the worker sends a beat every 10 s; that stage gets OPEN_MS in all (onnxruntime's and Pyodide's files come then).
 const opts = pageOptions(window.location);
-const worker = new Worker(new URL('./worker.js', import.meta.url), { type: 'module' });
+const device = deviceInfo(navigator, matchMedia('(pointer: coarse)').matches);
+const STALL_MS = 120000;
+const OPEN_MS = 600000;
+const ERRORS = { network: 'errNetwork', engine: 'errEngine', memory: 'errMemory', timeout: 'errTimeout', worker: 'errWorker' };
+let worker = null;
 
-worker.onmessage = ({ data }) => {
+// What this tab has learned to avoid, in sessionStorage so that "Tekrar dene" and a reload remember it: threads that
+// failed to start (then one thread), WebGPU after it failed.
+const avoid = (() => {
+  try {
+    return JSON.parse(sessionStorage.getItem('ahenk-avoid')) || {};
+  } catch {
+    return {};
+  }
+})();
+function remember(what) {
+  avoid[what] = true;
+  try {
+    sessionStorage.setItem('ahenk-avoid', JSON.stringify(avoid));
+  } catch { /* storage blocked: this page still remembers */ }
+}
+
+function onWorkerMessage(data) {
+  state.heard = performance.now();
   if (data.type === 'status') {
     if (data.stage === 'download') {
       state.loadStage = 'download';
       state.loaded = data.loaded;
       state.total = data.total;
       if (data.loaded >= data.total && data.total) state.loadStage = 'sessions';
-    } else if (data.stage === 'sessions') state.loadStage = 'sessions';
+    } else if (data.stage === 'sessions') Object.assign(state, { loadStage: 'sessions', opening: true, threads: data.threads || 1 });
     else if (data.stage === 'front-ready') state.loadStage = 'warm';
     renderLoad();
-  } else if (data.type === 'ready') {
-    state.ready = true;
+  } else if (data.type === 'ready' || data.type === 'backend') {
+    // 'backend': WebGPU failed on a request and the worker moved to WebAssembly
+    if (data.info.gpuError) remember('webgpu');
     state.info = data.info;
-    $('go').disabled = false;
     $('tech').textContent = t('tech', data.info);
     setModelSize();
-    window.__ahenk = { info: data.info, runs: [] };
+    window.__ahenk = { runs: [], ...window.__ahenk, info: data.info };
+    if (data.type === 'backend') return renderLoad();
+    state.ready = true;
+    $('go').disabled = false;
     renderLoad();
     if (state.pending) {
       const p = state.pending;
@@ -476,7 +545,7 @@ worker.onmessage = ({ data }) => {
       send(p);
     }
   } else if (data.type === 'progress') {
-    if (data.id !== state.current) return;
+    if (data.id !== state.current || !state.busy) return;
     setStatus(t('progress', data));
     const per = data.decoding ? 1 : data.step / data.steps;
     setBusy(true, (data.piece + per * 0.92) / data.pieces);
@@ -484,28 +553,137 @@ worker.onmessage = ({ data }) => {
     if (data.id !== state.current) return;
     finish(data);
   } else if (data.type === 'error') {
-    if (data.stage === 'init') {
-      state.loadStage = 'error';
-      state.loadError = data.message;
-      renderLoad();
-      if (state.busy) {
-        state.pending = null;
-        setBusy(false);
-      }
-      setStatus(t('loadErrorHint', data.message), true);
-      $('go').disabled = true;
-    } else {
-      setBusy(false);
-      $('go').disabled = false;
-      setStatus(`${t('failed')}: ${data.message}`, true);
-    }
+    if (data.stage === 'init') loadFailed(data.kind, data.message, data.threads);
+    else if (data.id === state.current && state.busy) sayFailed(data.kind, data.message, data.broken);
   }
-};
+}
 
-worker.postMessage({ type: 'init', modelBase: opts.modelBase, pyBase: new URL('py/', document.baseURI).href, variant: opts.variant, ep: opts.ep });
+function startWorker() {
+  if (worker) worker.terminate();
+  worker = null;
+  Object.assign(state, {
+    ready: false, info: null, loadStage: 'start', loaded: 0, total: 0, fromCache: false, loadError: null,
+    opening: false, openMs: 0, threads: 0,
+  });
+  state.heard = performance.now();
+  renderLoad();
+  let w;
+  try {
+    w = new Worker(new URL('./worker.js', import.meta.url), { type: 'module' });
+  } catch (e) {
+    loadFailed('worker', String((e && e.message) || e));
+    return;
+  }
+  worker = w;
+  let started = false;
+  w.onmessage = ({ data }) => {
+    started = true;
+    if (w === worker) onWorkerMessage(data);
+  };
+  // A worker whose script or imports cannot load (missing, blocked, broken) fires this before it says anything.
+  // Once it has started, an uncaught error in it is not fatal by itself: its own messages or the watchdog tell.
+  w.onerror = (e) => {
+    if (w !== worker) return;
+    const message = (e && e.message) || 'js/worker.js did not start';
+    if (!started) loadFailed('worker', message);
+    else console.warn('Ahenk Cep: uncaught error in the worker:', message);
+  };
+  w.postMessage({
+    type: 'init', modelBase: opts.modelBase, pyBase: new URL('py/', document.baseURI).href, variant: opts.variant,
+    ep: avoid.webgpu ? 'wasm' : opts.ep, device, maxThreads: avoid.threads ? 1 : 0,
+  });
+}
+
+// A request that hung or broke the engine: a new worker (the model comes from the cache). A click meanwhile waits.
+function restartWorker() {
+  if (state.info && state.info.backend === 'webgpu') remember('webgpu');
+  startWorker();
+}
+
+function showLoadError() {
+  const { kind, message } = state.loadError;
+  setStatus(t(kind === 'engine' && device.ios ? 'errEngineIos' : ERRORS[kind] || 'errEngine'), true, message);
+}
+
+// threads: how many WebAssembly threads the model failed to open on. Threads are new on iOS and untested there, so
+// a failure or a hang with more than one gets one more try, at once, on a single thread.
+function loadFailed(kind, message, threads = 0) {
+  if (worker) worker.terminate(); // frees its memory; "Tekrar dene" starts a new one
+  worker = null;
+  if (threads > 1 && !avoid.threads) {
+    console.warn(`Ahenk Cep: the model did not open on ${threads} threads (${message || kind}); trying one.`);
+    remember('threads');
+    startWorker();
+    return;
+  }
+  state.ready = false;
+  state.loadStage = 'error';
+  state.loadError = { kind, message: message || '' };
+  renderLoad();
+  if (state.busy) {
+    state.pending = null;
+    setBusy(false);
+  }
+  $('go').disabled = true;
+  showLoadError();
+}
+
+// broken: an abort or running out of memory left the WebAssembly module unusable; the next try gets a new one.
+function sayFailed(kind, message, broken = false) {
+  setBusy(false);
+  $('go').disabled = false;
+  setStatus(t(kind === 'memory' ? 'failedMemory' : 'failed'), true, message);
+  if (broken) restartWorker();
+}
+
+setInterval(() => {
+  if (!worker || document.hidden) return;
+  const silent = performance.now() - state.heard >= STALL_MS;
+  if (!state.ready) {
+    if (state.opening) state.openMs += 5000;
+    if (!silent && state.openMs < OPEN_MS) return;
+    const why = silent ? `no word from the worker in ${STALL_MS / 1000} s` : `not ready ${OPEN_MS / 60000} min after the download`;
+    loadFailed('timeout', why, state.opening ? state.threads : 0);
+  } else if (state.busy && silent) {
+    setBusy(false);
+    restartWorker();
+    $('go').disabled = false;
+    setStatus(t('failedStuck'), true);
+  }
+}, 5000);
+// Background tabs are throttled or frozen: that time does not count.
+document.addEventListener('visibilitychange', () => { state.heard = performance.now(); });
+
+// On a first visit coi-serviceworker.js registers itself and then reloads the page once to make it cross-origin
+// isolated (see index.html). Starting the model before that reload would only download and allocate it twice (and
+// iOS may not give the memory back), so wait: the reload is asked for as soon as the registration settles. Pages it
+// already controls, or cannot help, start at once; a reload that never comes, after 10 s; anything else after 15 s.
+function afterCoiReload() {
+  const sw = navigator.serviceWorker;
+  const coi = window.coiState || {};
+  // the same conditions under which coi-serviceworker.js registers itself
+  if (window.crossOriginIsolated !== false || !window.isSecureContext || !sw || sw.controller || coi.reloaded) return Promise.resolve();
+  return new Promise((resolve) => {
+    const t0 = performance.now();
+    let settled = 0;
+    const iv = setInterval(() => {
+      const now = performance.now();
+      const go = coi.reloading ? now - coi.reloading > 10000 : sw.controller || (settled && now - settled > 250) || now - t0 > 15000;
+      if (go) {
+        clearInterval(iv);
+        resolve();
+      }
+    }, 50);
+    // The same registration as coi-serviceworker.js's (an equal request joins it), which asks for the reload as soon
+    // as it settles. If it fails, no reload is coming.
+    const done = () => { settled = performance.now(); };
+    sw.register(new URL('coi-serviceworker.js', document.baseURI).href).then(done, done);
+  });
+}
 
 function send(req) {
   state.current = req.id;
+  state.heard = performance.now();
   setBusy(true);
   $('go').disabled = true;
   setStatus(state.ready ? '' : t('waiting'));
@@ -521,7 +699,10 @@ function speak() {
     return;
   }
   if (text.length > MAX_CHARS) return setStatus(t('tooLong'), true);
-  if (state.loadStage === 'error') return setStatus(t('loadErrorHint', state.loadError), true);
+  if (state.loadStage === 'error') return showLoadError();
+  state.tapHint = false;
+  mainPlayer.btn.classList.remove('nudge');
+  mainPlayer.unlock(); // inside the tap: iOS would block the result, which starts playing after an await
   const seed = Math.max(0, Math.min(2147483647, Math.floor(Number($('seed').value) || 0)));
   const req = { id: state.nextId++, text, style: STYLE, steps: Number($('steps').value), speed: Number($('speed').value), seed };
   state.req = req;
@@ -558,7 +739,13 @@ function finish(data) {
   $('result-row').hidden = false;
   $('spoken-box').hidden = false;
   if (window.__ahenk) window.__ahenk.runs.push({ ...state.req, seconds, ms: data.ms, rtf: state.lastStats.rtf, samples: data.audio.length });
-  mainPlayer.play();
+  // Never fail silently: if the browser wants a tap first, say so (the play button gets a ring).
+  mainPlayer.play().then((r) => {
+    if (r === 'blocked') {
+      state.tapHint = true;
+      setStatus(t('tapPlay'));
+    } else if (r === 'failed') setStatus(t('playFailed'), true);
+  });
 }
 
 // ---- wiring ------------------------------------------------------------------------------------------------------
@@ -584,11 +771,16 @@ $('settings-btn').addEventListener('click', () => {
   $('settings').hidden = !open;
   $('settings-btn').setAttribute('aria-expanded', String(open));
 });
-$('retry').addEventListener('click', () => window.location.reload());
+$('retry').addEventListener('click', () => {
+  $('go').disabled = false;
+  setStatus('');
+  startWorker(); // last: if it fails at once, its error stays on screen
+});
 $('go').addEventListener('click', speak);
 $('text').addEventListener('input', () => {
   updateCount();
-  if ($('status').classList.contains('error') && !state.busy) setStatus('');
+  // a speaking error goes once the text changes; a failed load stays as it is (no redraw on every key)
+  if ($('status').classList.contains('error') && !state.busy && state.loadStage !== 'error') clearStatus();
 });
 $('text').addEventListener('keydown', (e) => {
   if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
@@ -608,3 +800,5 @@ $('link-big-samples').href = LINKS.hfBigSamples;
 updateCount();
 applyLang();
 loadSamples();
+afterCoiReload().then(startWorker);
+window.ahenkStarted = true; // index.html says the page did not load if this never runs

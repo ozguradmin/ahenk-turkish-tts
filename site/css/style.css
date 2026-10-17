@@ -235,6 +235,12 @@ textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 4
 
 .status { min-height: 1.6em; margin: 12px 2px 4px; font-size: 14px; color: var(--muted); }
 .status.error { color: var(--error); }
+.status details { margin-top: 4px; color: var(--muted); }
+.status summary { cursor: pointer; width: fit-content; font-size: 13px; }
+.status code {
+  display: block; margin-top: 6px; padding: 8px 10px; background: var(--field); border-radius: 8px;
+  font: 12px/1.45 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; white-space: pre-wrap; overflow-wrap: anywhere;
+}
 
 /* ---- players --------------------------------------------------------------------------------------------------- */
 .result { margin-top: 6px; padding-top: 18px; border-top: 1px solid var(--line); }
@@ -250,6 +256,7 @@ textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 4
 .play .ic-pause, .play.playing .ic-play { display: none; }
 .play.playing .ic-pause { display: inline-block; }
 .play.loading { animation: pulse 1.1s ease-in-out infinite; }
+.play.nudge { outline: 3px solid var(--accent); outline-offset: 3px; }
 .wave { position: relative; height: 56px; cursor: pointer; border-radius: 8px; touch-action: none; }
 .wave canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
 .wave-empty {
@@ -367,6 +374,10 @@ textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 4
   .steps li, .steps li + li { padding: 20px 0 12px; border-left: 0; }
   .steps li + li { border-top: 1px solid var(--line); }
   .section { padding-top: 72px; }
+}
+/* iOS zooms into any field under 16px when it gets focus */
+@media (max-width: 560px), (pointer: coarse) {
+  .field select, .field input[type="number"] { font-size: 16px; }
 }
 @media (max-width: 560px) {
   .wrap { padding-inline: 16px; }

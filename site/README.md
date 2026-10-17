@@ -38,12 +38,13 @@ are relative, so it works at `/` and under `/ahenk-turkish-tts/`.
 | UI, WAV download (16-bit, 48 kHz, RIFF INFO comment saying the speech is synthetic) | `index.html`, `css/style.css`, `js/app.js`, `js/wav.js` |
 | Audio player: canvas waveform, seek by pointer or keyboard (a slider), one clip plays at a time | `js/player.js` |
 | Pre-rendered examples and the big model's samples (see below) | `samples/`, `tools/web/render_samples.py` |
-| Fonts: Newsreader and Hanken Grotesk (Fontsource 5.3.0 on jsdelivr, OFL, with the latin-ext subset for Turkish) | `index.html` |
-| Worker: Pyodide, onnxruntime-web, download with sha256 check, Cache Storage | `js/worker.js` |
+| Fonts: Newsreader and Hanken Grotesk (Fontsource 5.3.0 on jsdelivr, OFL, with the latin-ext subset for Turkish), preloaded so they do not hold up the first paint | `index.html` |
+| Worker: Pyodide, onnxruntime-web, download with sha256 check, Cache Storage, WebGPU to WebAssembly fallback | `js/worker.js` |
+| Backend choice, error kinds and short error lines (no DOM, tested in Node) | `js/backend.js` |
 | Sampling loop: frame timeline, 16 Euler steps with CFG 2, 100-frame decoder windows, pauses | `js/engine.js` |
 | torch.randn's CPU noise from a seed (mt19937 + ATen's Box-Muller), so a seed gives the PyTorch voice | `js/randn.js` |
 | Text front-end in Pyodide: trnorm (copy of `src/trnorm`) and EMA's alphabet, chunker and word bounds | `js/front.js`, `py/` |
-| Cross-origin isolation on GitHub Pages (MIT, gzuidhof/coi-serviceworker 0.1.7) | `coi-serviceworker.js` |
+| Cross-origin isolation on GitHub Pages (MIT, gzuidhof/coi-serviceworker at commit 509a799, configured in `index.html`) | `coi-serviceworker.js` |
 | URLs and versions (onnxruntime-web 1.30.0, Pyodide 0.27.7, jsdelivr) | `js/config.js` |
 
 The model is cut into four ONNX graphs by `tts/small/web_export.py`: `text` (letters and style to features and
@@ -51,8 +52,33 @@ durations), `cond` (aligner), `step` (one Euler step, CFG batched inside) and `d
 transposed convolutions are exported as kernel-2 convolutions plus an interleave (same arithmetic), because
 onnxruntime-web 1.30's WebGPU ConvTranspose gives wrong output for some of these shapes.
 
-Backend: multi-threaded WebAssembly when the page is cross-origin isolated (up to 8 threads), otherwise WebGPU when
-the browser has it, otherwise one WebAssembly thread.
+Backend (`js/backend.js`): multi-threaded WebAssembly when the page is cross-origin isolated (up to 8 threads; 4 on
+phones and tablets and 2 on iOS, because each thread costs memory and a web page gets little of it there), otherwise
+one WebAssembly thread. WebGPU is tried only on a desktop without threads, and never in Safari or any iOS browser: on
+an iPhone onnxruntime-web's WebGPU shaders failed to compile (Metal) on the first run, after the sessions had opened.
+If WebGPU fails to open a session, on the warm-up run or on a later request, the worker imports the WebAssembly
+build, opens the same model buffers again and carries on. `?ep=webgpu` still forces a first try on WebGPU. Threads
+are new on iOS (isolation used to fail there) and untested: if they cannot start (a nested worker throws, or no
+answer 30 s after onnxruntime's `.wasm` arrived) or the model fails to open on them, the page tries again at once on
+one thread. The tab remembers both (sessionStorage), so "Tekrar dene" and a reload skip what failed.
+
+Cross-origin isolation: `coi-serviceworker.js` is upstream's current file (newer than npm's 0.1.7, which picked COEP
+`credentialless` in every browser without `window.chrome`, so all of iOS, although Safari does not support it, and had
+no guard against reload loops). `index.html` sets it to `require-corp` everywhere, which every cross-origin file the
+page loads allows (jsdelivr sends `Cross-Origin-Resource-Policy: cross-origin`, Hugging Face answers CORS), and turns
+off its "degrade" reload. On a first visit it registers and reloads the page once; `js/app.js` waits for that reload
+(it is asked for as soon as the registration settles; 15 s at most) before it starts the worker, so nothing is
+downloaded or allocated twice. The reload itself waits until the service worker is active (5 s at most): it is
+asked for while the worker is still installing, and a page loaded before that would not be isolated.
+
+When things go wrong: the page shows one short sentence for the kind of failure (download, engine, memory, timeout,
+worker) and one line of the technical error folded away under "Ayrıntı". A watchdog fails the load (or restarts a
+stuck request) after 2 minutes without a word from the worker. Once the model has downloaded, the worker sends a beat
+every 10 s while it opens it, and that stage gets 10 minutes in all: onnxruntime's `.wasm` and the rest of Pyodide
+download then, without progress. "Tekrar dene" starts a new worker instead of reloading the page; so does an abort or
+running out of memory during a request. If `js/app.js` itself cannot load, a small script in `index.html` says so.
+Seslendir plays a tenth of a second of silence inside the tap (or the loaded clip, muted), so iOS lets the result
+start by itself after the await; if a browser still blocks it, the page says to press play and rings the button.
 
 ## Examples and samples
 
