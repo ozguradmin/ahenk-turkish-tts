@@ -71,7 +71,8 @@ def test_cdn_urls_are_pinned_and_allowed():
     versions = dict(re.findall(r"(\w+): '(\d+\.\d+\.\d+)'", cfg[cfg.index("VERSIONS"):cfg.index("};")]))
     assert versions == {"ort": "1.30.0", "pyodide": "0.27.7"}
     hosts = set(re.findall(r"https://([\w.-]+)/", text))
-    assert hosts <= {"cdn.jsdelivr.net", "huggingface.co", "github.com"}, hosts
+    # ahenk-tts.pages.dev is the site itself (og:url and og:image for link previews)
+    assert hosts <= {"cdn.jsdelivr.net", "huggingface.co", "github.com", "ahenk-tts.pages.dev"}, hosts
 
 
 def test_page_text_has_no_em_dash_and_keeps_the_notices():
