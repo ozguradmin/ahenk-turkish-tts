@@ -1,0 +1,51 @@
+# GitHub Pages copy of the in-browser demo: https://ozguradmin.github.io/ahenk-turkish-tts/
+#
+# Publishes site/ exactly as it is in git. site/models/ and site/samples/big/ are gitignored, so they are not in the
+# checkout; on any host other than localhost the page loads the model from the Hugging Face model repo anyway.
+# No Jekyll runs on an Actions-built Pages site, so files such as py/trnorm/__init__.py are served as they are.
+# GitHub Pages cannot send COOP/COEP headers: coi-serviceworker.js gives the page cross-origin isolation, with its
+# scope at /ahenk-turkish-tts/ (the folder it sits in), which covers the page and js/worker.js.
+#
+# One-time setup: repository Settings > Pages > Source: GitHub Actions
+#   (or: gh api -X POST repos/ozguradmin/ahenk-turkish-tts/pages -f build_type=workflow)
+name: pages
+
+on:
+  push:
+    branches: [main]
+    paths: ["site/**", ".github/workflows/pages.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Sanity checks (no model files, no root-absolute paths, worker next to the page)
+        run: |
+          test ! -e site/models
+          test -f site/coi-serviceworker.js
+          ! grep -nE '(href|src)="/[^/]' site/index.html
+          du -sh site
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - id: deployment
+        uses: actions/deploy-pages@v4
