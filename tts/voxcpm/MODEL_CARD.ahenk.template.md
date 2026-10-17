@@ -34,6 +34,9 @@ CC-BY-4.0. GPU gerektirir.
 [Küçük model: Ahenk Cep](https://huggingface.co/ozgurguler/ahenk-cep-tr) ·
 [Kod ve ölçüm düzeneği](https://github.com/ozguradmin/ahenk-turkish-tts) · [English](#english)
 
+
+Küçük model Ahenk Cep'i tarayıcıda deneyin / try the small model Ahenk Cep in your browser: [ahenk-tts.pages.dev](https://ahenk-tts.pages.dev).
+
 ## Örnekler
 
 Hepsi yayınlanan kontrol noktasından (`{{exp}}/{{checkpoint}}`), {{timesteps}} adım, cfg {{cfg}}, tohum 0 ya da 1,

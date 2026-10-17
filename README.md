@@ -6,13 +6,13 @@ Açık Türkçe konuşma araçları: Ahenk (büyük model, GPU), Ahenk Cep (8.6M
 > **Sentetik ses.** Ahenk ve Ahenk Cep tek bir tasarlanmış sesle konuşur (f022); bu ses gerçek bir kişinin sesi ya da
 > kaydı değildir. Ürettiğiniz sesi paylaşırken yapay olduğunu belirtin (AB Yapay Zekâ Yasası md. 50).
 
-[Ahenk model kartı](https://huggingface.co/ozgurguler/ahenk-tts-tr) ·
+[Tarayıcıda deneyin](https://ahenk-tts.pages.dev) · [Ahenk model kartı](https://huggingface.co/ozgurguler/ahenk-tts-tr) ·
 [Ahenk Cep model kartı](https://huggingface.co/ozgurguler/ahenk-cep-tr) · [English](#english)
 
 ## Dinleyin
 
 GitHub sayfada ses çalmaz: bağlantılar WAV dosyasını Hugging Face'te açar. Model kartlarında aynı örnekler oynatıcıyla
-var. Tarayıcıda deneyebileceğiniz bir demo sayfası hazırlanıyor.
+var. Ahenk Cep'i kurulum gerektirmeden tarayıcıda deneyebilirsiniz: [ahenk-tts.pages.dev](https://ahenk-tts.pages.dev).
 
 | Ne gösteriyor | Metin (yazıldığı gibi) | Model | Ses |
 |---|---|---|---|
@@ -174,7 +174,7 @@ text normalisation) and the TR-Zor / TR-Soru test sets.
 ### Listen
 
 GitHub does not play audio in the page; the links in the table above open the WAV files on Hugging Face, and the
-model cards have the same samples with players. A browser demo page is on the way. The plain, price, emotion and
+model cards have the same samples with players. You can try Ahenk Cep in your browser, no install: [ahenk-tts.pages.dev](https://ahenk-tts.pages.dev). The plain, price, emotion and
 small-model question samples were picked by a listener in blind tests; the question pair and the long sentence were
 picked by automatic scores.
 

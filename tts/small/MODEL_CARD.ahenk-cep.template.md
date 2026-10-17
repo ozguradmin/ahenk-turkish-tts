@@ -23,6 +23,9 @@ Ahenk Cep, büyük [Ahenk](https://huggingface.co/ozgurguler/ahenk-tts-tr) model
 modeldir: 8.6M parametre, 34 MB (fp32), EMA Lightning mimarisi, tek tasarlanmış kadın sesi (f022), 48 kHz. İşlemcide
 2 iş parçacığıyla gerçek zamanın yaklaşık 0,2'si sürede konuşur. Ağırlıklar CC-BY-4.0.
 
+**Tarayıcıda deneyin / try it in your browser:** [ahenk-tts.pages.dev](https://ahenk-tts.pages.dev) (model sizin
+cihazınızda çalışır, metin sunucuya gitmez / runs on your device).
+
 > **Bu ses yapaydır.** f022, VoxCPM2 ile bir metin tarifinden tasarlanmış bir sestir; gerçek bir kişinin sesi ya da
 > kaydı değildir. Ürettiğiniz sesi paylaşırken yapay olduğunu belirtin (AB Yapay Zekâ Yasası md. 50).
 >
