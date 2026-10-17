@@ -19,6 +19,18 @@ localhost the page reads the model from `site/models/`; anywhere else from the H
 URL switches: `?models=local|hf` (also picks the big model's samples), `?variant=fp32|f16|int8`, `?ep=wasm|webgpu`,
 `?lang=en`.
 
+## Where it is published
+
+| Address | Host | Deploy |
+|---|---|---|
+| https://ozguradmin.github.io/ahenk-turkish-tts/ (main link) | GitHub Pages | `.github/workflows/pages.yml`, on every push to `main` that touches `site/` |
+| https://ahenk-tts.pages.dev/ | Cloudflare Pages | `wrangler pages deploy <copy of site/ without models/ and samples/big/> --project-name ahenk-tts` |
+
+Both hosts serve the same files and get cross-origin isolation from `coi-serviceworker.js`; the model always comes
+from the Hugging Face model repo. Some Turkish ISPs block every `*.pages.dev` address (on 2026-10-17 TurkNet's
+resolver answered NXDOMAIN for all of them), so links for Turkish readers go to GitHub Pages. All paths in the page
+are relative, so it works at `/` and under `/ahenk-turkish-tts/`.
+
 ## How it works
 
 | Piece | File |
