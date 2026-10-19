@@ -1,0 +1,48 @@
+{
+  "name": "trnorm",
+  "version": "0.1.0",
+  "description": "Turkish text normalization for speech, in JavaScript: written -> spoken form for TTS, evaluation normalization for ASR (WER/CER), and spoken -> digits. The same output as the Python trnorm.",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./src/index.js"
+    }
+  },
+  "main": "./src/index.js",
+  "types": "./index.d.ts",
+  "files": [
+    "src/",
+    "index.d.ts",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test test/golden.test.mjs",
+    "golden": "python3.12 tools/golden.py"
+  },
+  "keywords": [
+    "turkish",
+    "türkçe",
+    "text-normalization",
+    "tts",
+    "asr",
+    "speech",
+    "number-to-words",
+    "sayı",
+    "okunuş"
+  ],
+  "author": "Özgür Güler",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ozguradmin/ahenk-turkish-tts.git",
+    "directory": "js"
+  },
+  "homepage": "https://github.com/ozguradmin/ahenk-turkish-tts/tree/main/js#readme",
+  "bugs": "https://github.com/ozguradmin/ahenk-turkish-tts/issues"
+}
