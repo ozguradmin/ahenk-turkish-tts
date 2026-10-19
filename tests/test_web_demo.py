@@ -505,16 +505,16 @@ def test_backend_choice_and_webgpu_fallback():
 
 
 # ---- the JavaScript text front-end (site/js/front-native.js, site/js/trnorm/) against the Python --------------------
-# site/js/trnorm/ is ozguradmin/trnorm-js 0.1.2 (npm @ozgurguler/trnorm, src/) as published, byte for byte. A change
+# site/js/trnorm/ is ozguradmin/trnorm-js 0.1.3 (npm @ozgurguler/trnorm, src/) as published, byte for byte. A change
 # to src/trnorm must reach both copies together: site/py/trnorm (test_vendored_trnorm_is_src_trnorm) and site/js/trnorm
 # (a trnorm-js release with the same change; then update these hashes). The parity tests below fail until it has.
-TRNORM_JS = {"version": "0.1.2", "sha256": {
+TRNORM_JS = {"version": "0.1.3", "sha256": {
     "case_tables.js": "b724cde58df5feeeacefc8bad8bfff1b9b8162099738d2632570ac9513337a5f",
     "casing.js": "0eeafeb7fb2765515705dc735b78d7523e1ab1719495d74425ba5c23ee81e10e",
     "index.js": "aa57320210515256bd64fd5bcbbede6ff3896434354c2c31a6aec8809fab3768",
     "itn.js": "363f68969b153aff95055bcfec78a9e660698f124b41afdda7cdc8c812b98019",
-    "lexicon.js": "be125d3cdb52a29a7056b2044651ca1da962da3441096437f44dfb03d9258cb0",
-    "normalizer.js": "4ebe2fddf985512c4e281f6dabe8761fee5d6db572dbb03030cc47e1e6d615c2",
+    "lexicon.js": "3ba9629409e74b4cfe9522685d69bf0ed40e7ca8bacc2b486b69cb20f58bf094",
+    "normalizer.js": "6ca9457b2f552f61bc44755763e0f8656deff2dbac00c214c4464f220729c087",
     "numbers.js": "731b8df40a89e9122024e19682c27176f42e8eabc74fe7ff51563b34a81603a0",
     "py.js": "fa3a226933c278dda115e487f23a41533f26753bd8f12965707044023f21f72f",
     "unassigned.js": "6878e6e0c40a3768aad4d537f10708022c4faf7e051967d72f44db3e8684e5e1",

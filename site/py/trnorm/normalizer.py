@@ -384,8 +384,21 @@ def _pass_web(text: str) -> str:
     return _sub(_URL_RE, url, text)
 
 
+def _abbreviation_forms() -> dict:
+    """ABBREVIATIONS, and each title also in capitals and without the spaces after its dots."""
+    forms = dict(L.ABBREVIATIONS)
+    for key in L.TITLE_ABBREVIATIONS:
+        spoken = L.ABBREVIATIONS[key]
+        for form in (key.replace(". ", "."), tr_upper(key), tr_upper(key).replace(". ", ".")):
+            forms.setdefault(form, spoken)
+    return forms
+
+
+_ABBR_FORMS = _abbreviation_forms()
+
+
 def _build_abbr_re() -> re.Pattern:
-    keys = sorted(L.ABBREVIATIONS, key=len, reverse=True)
+    keys = sorted(_ABBR_FORMS, key=len, reverse=True)
     alt = "|".join(re.escape(k) for k in keys)
     return re.compile(rf"(?<![\w.])({alt})(?=[\s,;:!?)\"']|$)")
 
@@ -397,7 +410,7 @@ _PAGE_RE = re.compile(r"(?<![\w.])([sc])\.\s?(?=\d)")
 def _pass_abbreviations(text: str) -> str:
     def repl(m: re.Match) -> str:
         key = m.group(1)
-        out = L.ABBREVIATIONS[key]
+        out = _ABBR_FORMS[key]
         if key in L.SENTENCE_FINAL_ABBR:
             rest = text[m.end() :]
             if not rest.strip() or re.match(rf"\s+[{UP}]", rest):

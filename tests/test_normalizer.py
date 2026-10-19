@@ -681,3 +681,18 @@ def test_identifier_or_count(written, spoken):
 
 def test_superscript_digits_do_not_crash_the_web_pass():
     assert normalize("abc@1.2.3") and normalize(":¹3.5abc@1.2.3")
+
+
+@pytest.mark.parametrize(
+    "text, spoken",
+    [
+        ("DR.ÖĞR.ÜYESİ Ayşe Kaya", "doktor öğretim üyesi Ayşe Kaya"),
+        ("Dr.Öğr.Üyesi Ayşe Kaya", "doktor öğretim üyesi Ayşe Kaya"),
+        ("PROF.DR. Ali Can", "profesör doktor Ali Can"),
+        ("Doç.Dr. Ali Can", "doçent doktor Ali Can"),
+        ("ARŞ. GÖR. Ali Can", "araştırma görevlisi Ali Can"),
+        ("UZM.DR. Ali Can", "uzman doktor Ali Can"),
+    ],
+)
+def test_titles_in_capitals_and_unspaced(text, spoken):
+    assert normalize(text) == spoken

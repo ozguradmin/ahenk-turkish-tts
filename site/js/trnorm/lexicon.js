@@ -271,6 +271,13 @@ export const CAPS_WORDS = new Set([
   'YIL', 'GÜN', 'İŞ', 'EV', 'EL', 'AN', 'ÖZ',
 ]);
 
+// Titles that are also written in capitals or without the spaces ("DR. ÖĞR. ÜYESİ", "DR.ÖĞR.ÜYESİ", "Prof.Dr."):
+// those forms are read the same (normalizer.js _ABBR_FORMS). Only titles: "AV." or "SOK." in capitals could be other words.
+export const TITLE_ABBREVIATIONS = [
+  'Prof. Dr.', 'Doç. Dr.', 'Yrd. Doç. Dr.', 'Dr. Öğr. Üyesi', 'Öğr. Gör.', 'Arş. Gör.', 'Uzm. Dr.', 'Op. Dr.',
+  'Yrd. Doç.', 'Prof.', 'Doç.', 'Dr.', 'Uzm.', 'Müh.',
+];
+
 // Dotted / colon abbreviations (case-sensitive). Longest match wins.
 export const ABBREVIATIONS = dict({
   'Prof. Dr.': 'profesör doktor',

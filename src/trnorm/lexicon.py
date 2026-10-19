@@ -332,6 +332,12 @@ ABBREVIATIONS = {
     "Fax:": "faks:",
     "GSM:": "ge se me:",
 }
+# Titles that are also written in capitals or without the spaces ("DR. ÖĞR. ÜYESİ", "DR.ÖĞR.ÜYESİ", "Prof.Dr."):
+# those forms are read the same (normalizer._ABBR_FORMS). Only titles: "AV." or "SOK." in capitals could be other words.
+TITLE_ABBREVIATIONS = [
+    "Prof. Dr.", "Doç. Dr.", "Yrd. Doç. Dr.", "Dr. Öğr. Üyesi", "Öğr. Gör.", "Arş. Gör.", "Uzm. Dr.", "Op. Dr.",
+    "Yrd. Doç.", "Prof.", "Doç.", "Dr.", "Uzm.", "Müh.",
+]
 # abbreviations that can also end a sentence (their period doubles as a full stop)
 SENTENCE_FINAL_ABBR = {"vb.", "vs.", "vd.", "yy.", "A.Ş.", "Şti.", "Ltd.", "M.Ö.", "M.S."}
 
