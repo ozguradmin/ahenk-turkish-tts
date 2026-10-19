@@ -145,6 +145,7 @@ işarettir, istatistiksel sonuç değildir.
   *Alania Turkish Synthetic Speech by PatientDesk AI* ve *Alania Turkish Domain Text by PatientDesk AI* (CC BY 4.0).
 - Taban modeller: VoxCPM2 (OpenBMB) ve EMA Lightning, ikisi de Apache-2.0.
 - Akademik atıf: [CITATION.cff](CITATION.cff).
+- Zorunlu değil ama projenizde kullanırsanız bir bağlantı verirseniz ya da bize haber verirseniz (destek@ozgurguler.tech) seviniriz.
 
 ## Yol haritası
 
