@@ -38,7 +38,7 @@ uzun cümle otomatik ölçüyle seçildi (hatasız ve en yüksek UTMOS). Hepsi v
 | [Ahenk](https://huggingface.co/ozgurguler/ahenk-tts-tr) | VoxCPM2 için Türkçe LoRA: soru tonlaması, 6 duygu ve gülme, Türkçe ya da İngilizce talimat. Tarif: [`tts/voxcpm`](tts/voxcpm) | 2B + 36M LoRA, GPU | ağırlıklar CC BY 4.0 |
 | [Ahenk Cep](https://huggingface.co/ozgurguler/ahenk-cep-tr) | Ahenk'in sesinden öğrenen küçük öğrenci model (EMA Lightning mimarisi). Kod: [`tts/small`](tts/small) | 8.6M, 34 MB, CPU'da RTF ~0,2 | ağırlıklar CC BY 4.0 |
 | [`trnorm`](src/trnorm) | Yazılı Türkçeyi okunuş formuna çevirir: sayı, tarih, saat, para, yüzde, kısaltma, telefon; ekleri okunuşa uyar. Bağımlılığı yok. | saf Python | Apache-2.0 |
-| [`trnorm` (JavaScript)](js) | trnorm'un tarayıcıda ve Node'da çalışan sürümü; Python'la aynı çıktı (`npm install @ozgurguler/trnorm`) | saf JavaScript | Apache-2.0 |
+| [`trnorm-js`](https://github.com/ozguradmin/trnorm-js) | trnorm'un tarayıcıda ve Node'da çalışan sürümü; Python'la aynı çıktı (`npm install @ozgurguler/trnorm`) | saf JavaScript | Apache-2.0 |
 | [`trtts`](src/trtts) | EMA Lightning + trnorm: hazır, CPU'da çalışan Türkçe TTS | 8.6M, CPU | Apache-2.0 |
 | [`benchmarks/tts`](benchmarks/tts) | TR-Zor (155 zor cümle, 13 kategori), TR-Soru (35 satır soru tonlaması) ve ASR ile geri okuyan ölçüm düzeneği | | Apache-2.0 |
 | [`benchmarks/asr`](benchmarks/asr) | FLEURS-TR ve MediaSpeech-TR üzerinde Türkçe ASR karşılaştırması ([tablo](benchmarks/asr/results/LEADERBOARD.md)) | CPU | Apache-2.0 |
@@ -151,7 +151,6 @@ işarettir, istatistiksel sonuç değildir.
 | Klasör | İçerik |
 |---|---|
 | `src/trnorm`, `src/trtts` | metin normalizasyonu, EMA Lightning + trnorm |
-| `js` | trnorm'un JavaScript sürümü (npm paketi `@ozgurguler/trnorm`) |
 | `tts/voxcpm` | Ahenk eğitim ve ölçüm tarifi, `instruction_pick`, `pause_clean`, model kartı |
 | `tts/small` | Ahenk Cep eğitimi, çıkarım kodu (`ahenk_cep.py`), model kartı |
 | `benchmarks` | TR-Zor, TR-Soru, ASR karşılaştırması ve sonuçlar |
@@ -187,7 +186,7 @@ picked by automatic scores.
 - **[Ahenk Cep](https://huggingface.co/ozgurguler/ahenk-cep-tr):** a small student of Ahenk's voice (EMA Lightning
   architecture, 8.6M parameters, 34 MB, RTF ~0.2 on 2 CPU threads). Weights CC BY 4.0.
 - **trnorm:** dependency-free Turkish written → spoken form (numbers, dates, times, money, abbreviations, phone
-  numbers, suffix agreement); also in JavaScript, with the same output ([`js`](js), `npm install @ozgurguler/trnorm`).
+  numbers, suffix agreement); also in JavaScript, with the same output ([trnorm-js](https://github.com/ozguradmin/trnorm-js), `npm install @ozgurguler/trnorm`).
   **trtts:** EMA Lightning with trnorm as its front-end.
 - **Benchmarks:** TR-Zor (155 hard sentences), TR-Soru (35 question-intonation rows), a Turkish ASR comparison.
 
