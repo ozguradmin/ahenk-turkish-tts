@@ -2,7 +2,8 @@
 //
 // Model files: on a deployed site they come from the Hugging Face model repo (MODELS.hf). On localhost the page
 // uses site/models/ (written by tts/small/web_export.py), because the model repo stays private until release.
-// Override with ?models=local or ?models=hf. Variant: ?variant=fp32|f16|int8. Backend: ?ep=wasm|webgpu.
+// Override with ?models=local or ?models=hf. Variant: ?variant=fp32|f16|int8. Backend: ?ep=wasm|webgpu. Text
+// front-end: ?front=js|py.
 
 export const VERSIONS = { ort: '1.30.0', pyodide: '0.27.7' };
 
@@ -26,6 +27,12 @@ export const SAMPLES = {
 };
 
 export const DEFAULT_VARIANT = 'f16';
+
+// The text front-end: 'js' is the JavaScript port (js/front-native.js and js/trnorm/), with the Python as its
+// fallback in this browser or for one text; 'py' runs the Python (site/py: trnorm and ahenk_front.py) in Pyodide from
+// the start. ?front=js|py overrides it for one visit.
+export const FRONT = 'js';
+
 export const MAX_CHARS = 600;
 
 export const LINKS = {
@@ -61,5 +68,6 @@ export function pageOptions(loc) {
   const q = new URLSearchParams(loc.search);
   const variant = ['fp32', 'f16', 'int8'].includes(q.get('variant')) ? q.get('variant') : DEFAULT_VARIANT;
   const ep = ['wasm', 'webgpu'].includes(q.get('ep')) ? q.get('ep') : 'auto';
-  return { variant, ep, modelBase: modelBase(loc) };
+  const front = ['js', 'py'].includes(q.get('front')) ? q.get('front') : FRONT;
+  return { variant, ep, front, modelBase: modelBase(loc) };
 }
