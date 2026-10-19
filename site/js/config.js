@@ -34,6 +34,7 @@ export const LINKS = {
   hfBig: 'https://huggingface.co/ozgurguler/ahenk-tts-tr',
   hfBigSamples: 'https://huggingface.co/ozgurguler/ahenk-tts-tr/tree/main/samples',
   ema: 'https://huggingface.co/canberkkkkkk/ema-lightning',
+  okur: 'https://ozguradmin.github.io/ahenk-cep-pdfreader/', // Ahenk Okur: whole documents, same model and model cache
   mail: 'destek@ozgurguler.tech',
 };
 

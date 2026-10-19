@@ -54,4 +54,7 @@ Bunlar otomatik ölçümlerdir. Kör dinleme tek dinleyiciyle yapıldı (10 cüm
 **Sınırlamalar:** tek tasarlanmış kadın ses, yalnız Türkçe. Üslup etkisi hafif, gülme yok. Sonu yükselen sorular
 ("Yarın geliyorsun?") yükselmez. Uzun metinde doğallık büyük modelin gerisinde.
 
+Daha uzun bir metin ya da PDF, Word, EPUB belge mi? [Ahenk Okur](https://ozguradmin.github.io/ahenk-cep-pdfreader/) aynı modelle tarayıcıda tamamını
+seslendirir, sonucu MP3 ya da WAV olarak indirebilirsiniz.
+
 Kod ve ölçüm ayrıntıları: [github.com/ozguradmin/ahenk-turkish-tts](https://github.com/ozguradmin/ahenk-turkish-tts).
