@@ -5,7 +5,7 @@ Python'la **aynı çıktıyı** verir. Sayı, tarih, saat, para, yüzde, birim, 
 okunuşa uyar (`15.00'de` → "on beşte", `SGK'ye` → "se ge kaya").
 
 ```js
-import { normalize, normalize_for_eval, inverse_normalize, number_to_words } from 'trnorm';
+import { normalize, normalize_for_eval, inverse_normalize, number_to_words } from '@ozgurguler/trnorm';
 
 normalize("Saat 09:30'da 3. kata gelin, ücret 1.250,50 TL.");
 // "Saat dokuz otuzda üçüncü kata gelin, ücret bin iki yüz elli lira elli kuruş."
@@ -15,7 +15,7 @@ number_to_words(1923);                                 // "bin dokuz yüz yirmi 
 ```
 
 ```sh
-npm install trnorm
+npm install @ozgurguler/trnorm
 ```
 
 Kurallar ve örnekler Python sürümüyle ortaktır: [docs/TRNORM.md](../docs/TRNORM.md).
