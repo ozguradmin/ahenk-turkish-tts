@@ -1,10 +1,11 @@
-// Everything heavy runs here, off the page's main thread: Pyodide with trnorm (text to spoken form), the four ONNX
-// graphs on onnxruntime-web (WebAssembly; WebGPU only on desktops without threads, see js/backend.js), the model
-// download with a sha256 check and a Cache Storage copy for the next visit. If WebGPU fails, at session creation, on
-// the warm-up or on a later request, the same model buffers are opened again on WebAssembly. If threaded WebAssembly
-// fails to start, the error says how many threads it had and the page tries again on one.
+// Everything heavy runs here, off the page's main thread: the text front-end (trnorm, text to spoken form; in
+// JavaScript, with the Python in Pyodide as its fallback), the four ONNX graphs on onnxruntime-web (WebAssembly;
+// WebGPU only on desktops without threads, see js/backend.js), the model download with a sha256 check and a Cache
+// Storage copy for the next visit. If WebGPU fails, at session creation, on the warm-up or on a later request, the
+// same model buffers are opened again on WebAssembly. If threaded WebAssembly fails to start, the error says how many
+// threads it had and the page tries again on one.
 //
-// Messages in:  {type: 'init', modelBase, pyBase, variant, ep, device, maxThreads}
+// Messages in:  {type: 'init', modelBase, pyBase, variant, ep, device, maxThreads, front: 'js' | 'py'}
 //               {type: 'say', id, text, style, steps, speed, seed}
 // Messages out: {type: 'status', stage, ...} {type: 'alive'} {type: 'ready', info} {type: 'backend', info}
 //               {type: 'progress', id, ...} {type: 'audio', id, audio, sampleRate, spoken, ms}
@@ -105,17 +106,75 @@ async function importOrt(gpu, threads) {
   return ort;
 }
 
-async function loadFront(pyBase, vocab) {
-  const t0 = performance.now();
+// The text front-end. By default the JavaScript port (js/front-native.js with js/trnorm/; tests/test_web_demo.py and
+// ozguradmin/ahenk-cep-pdfreader's tools/parity check that it gives the Python's spoken form and pieces). The Python
+// itself, in Pyodide (js/front.js and py/: 5.6 MB more to download, over 100 MB more memory), is loaded only if the
+// port cannot run in this browser, for a text the port cannot read here, or when ?front=py asks for it.
+async function loadPyFront(pyBase, vocab) {
   const { loadPyodide } = await import(`${CDN.pyodide}pyodide.mjs`).catch((e) => { throw tag(e, { kind: 'network' }); });
   const pyodide = await loadPyodide({ indexURL: CDN.pyodide });
-  const front = await setupFront(pyodide, async (p) => {
+  return setupFront(pyodide, async (p) => {
     const r = await fetch(new URL(p, pyBase));
     if (!r.ok) throw new Error(`${p}: HTTP ${r.status}`);
     return r.text();
   }, vocab);
-  post({ type: 'status', stage: 'front-ready', ms: performance.now() - t0 });
+}
+
+let pyFrontP = null; // loaded once; a failed load (offline) may be tried again later
+function pyFront(pyBase, vocab) {
+  if (!pyFrontP) {
+    pyFrontP = loadPyFront(pyBase, vocab);
+    pyFrontP.catch(() => { pyFrontP = null; });
+  }
+  return pyFrontP;
+}
+
+async function loadFront(pyBase, vocab, want = 'js') {
+  const t0 = performance.now();
+  let front;
+  try {
+    if (want !== 'js') throw new Error('the Python front-end was asked for');
+    const m = await import('./front-native.js');
+    m.prepare('Merhaba, 14.10.2026 saat 09:30.', 1, vocab); // builds the regexes now: throws here if this browser cannot
+    front = { kind: 'js', prepare: (text, speed) => m.prepare(text, speed, vocab) };
+  } catch (e) {
+    if (want === 'js') console.warn('Ahenk Cep: the JavaScript text front-end cannot run here; using the Python one (Pyodide).', e);
+    const py = await pyFront(pyBase, vocab);
+    front = { kind: 'py', prepare: py.prepare };
+  }
+  post({ type: 'status', stage: 'front-ready', ms: performance.now() - t0, front: front.kind });
   return front;
+}
+
+// prepare(text, speed) for the engine. A Python exception (or the port throwing where the Python raises: e.python)
+// is the text's fault, not the backend's: where 'front'. Any other error of the port (an EngineError: this browser's
+// RegExp misreads the text, as Safari 26.0 to 26.5 do for a few rare character pairs) sends that text to the Python,
+// which reads it right; Pyodide is loaded then, once. While it downloads, in the middle of a request with nothing
+// else to report, a beat keeps the page's watchdog from taking a slow connection for a dead worker.
+function frontPrepare(front, pyBase, vocab) {
+  return async (text, speed) => {
+    try {
+      return front.prepare(text, speed);
+    } catch (e) {
+      if (front.kind !== 'js' || (e && e.python)) throw tag(e, { where: 'front' });
+      console.warn('Ahenk Cep: the JavaScript front-end cannot read this text here; asking the Python one.', e);
+      const beat = setInterval(() => post({ type: 'alive' }), BEAT_MS);
+      let py;
+      try {
+        py = await pyFront(pyBase, vocab);
+      } catch (e2) {
+        // could not load (offline): this request fails, the engine is fine and the next one may load it
+        throw tag(e2, errorKind(e2) === 'network' ? { where: 'front', kind: 'network' } : { where: 'front' });
+      } finally {
+        clearInterval(beat);
+      }
+      try {
+        return py.prepare(text, speed);
+      } catch (e2) {
+        throw tag(e2, { where: 'front' });
+      }
+    }
+  };
 }
 
 // When onnxruntime's .wasm, fetched from now on, has downloaded (resource timing), so that the time limits below do
@@ -146,7 +205,7 @@ function releaseAll(sessions) {
 // On WebGPU each step has a time limit. The first session also starts onnxruntime's WebAssembly: the .wasm and, with
 // threads, the nested workers that run them; its limit starts once the .wasm has arrived, and with threads an
 // uncaught error (a thread that could not start) fails it too. On failure whatever was created is released.
-async function openEngine(ort, gpu, threads, buffers, files, manifest, frontP) {
+async function openEngine(ort, gpu, threads, buffers, files, manifest, frontP, pyBase) {
   // logSeverityLevel 3: errors only (WebGPU sessions otherwise print node-placement warnings as console errors)
   const opts = { executionProviders: gpu ? ['webgpu', 'wasm'] : ['wasm'], graphOptimizationLevel: 'all', logSeverityLevel: 3 };
   const sessions = {};
@@ -159,14 +218,7 @@ async function openEngine(ort, gpu, threads, buffers, files, manifest, frontP) {
       sessions[files[i].graph] = await create;
     }
     const front = await frontP;
-    const prepare = async (text, speed) => {
-      try {
-        return front.prepare(text, speed);
-      } catch (e) {
-        throw tag(e, { where: 'front' }); // a Python exception: not the backend's fault
-      }
-    };
-    const eng = new CepEngine(ort, sessions, manifest, prepare);
+    const eng = new CepEngine(ort, sessions, manifest, frontPrepare(front, pyBase, manifest.vocab));
     const warm = eng.say('Merhaba.', { steps: 2 });
     await (gpu ? timed(warm, GPU_MS, 'WebGPU warm-up') : warm);
     return eng;
@@ -176,7 +228,7 @@ async function openEngine(ort, gpu, threads, buffers, files, manifest, frontP) {
   }
 }
 
-async function init({ modelBase, pyBase, variant, ep, device = {}, maxThreads = 0 }) {
+async function init({ modelBase, pyBase, variant, ep, device = {}, maxThreads = 0, front = 'js' }) {
   const t0 = performance.now();
   post({ type: 'status', stage: 'start' }); // this worker and its imports have loaded
   const cores = self.navigator.hardwareConcurrency || 2;
@@ -190,7 +242,7 @@ async function init({ modelBase, pyBase, variant, ep, device = {}, maxThreads = 
   const files = variantFiles(manifest, variant);
   const total = files.reduce((n, f) => n + f.bytes, 0);
   post({ type: 'status', stage: 'download', loaded: 0, total });
-  const frontP = loadFront(pyBase, manifest.vocab).catch((e) => { throw tag(e, { where: 'front' }); });
+  const frontP = loadFront(pyBase, manifest.vocab, front).catch((e) => { throw tag(e, { where: 'front' }); });
   frontP.catch(() => {}); // awaited in openEngine; if the download fails first, that is the error reported
   const cache = await openCache();
   let loaded = 0;
@@ -208,7 +260,7 @@ async function init({ modelBase, pyBase, variant, ep, device = {}, maxThreads = 
   const open = async (onGpu) => {
     try {
       if (gpu && !onGpu) ort = await importOrt(false, threads);
-      return await openEngine(ort, onGpu, threads, buffers, files, manifest, frontP);
+      return await openEngine(ort, onGpu, threads, buffers, files, manifest, frontP, pyBase);
     } catch (e) {
       // threads that failed to start or to run (not a download, not the text front-end): one thread may still work
       if (!onGpu && threads > 1 && e.where !== 'front' && errorKind(e) !== 'network') throw tag(e, { threads });
@@ -228,7 +280,7 @@ async function init({ modelBase, pyBase, variant, ep, device = {}, maxThreads = 
   engine = opened.engine;
   toWasm = opened.backend === 'webgpu' ? () => open(false) : null;
   info = {
-    backend: opened.backend, threads, variant, bytes: total, fromCache, gpuError,
+    backend: opened.backend, threads, variant, bytes: total, fromCache, gpuError, front: (await frontP).kind,
     isolated: !!self.crossOriginIsolated, ms: performance.now() - t0, downloadMs: tDownload,
     ort: ort.env.versions?.web || null, sampleRate: manifest.sample_rate,
   };

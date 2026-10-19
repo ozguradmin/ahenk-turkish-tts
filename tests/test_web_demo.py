@@ -5,7 +5,7 @@ every CDN URL is pinned to an exact version, the page has no em dashes, the mode
 page imports is in it, the service worker is the reviewed upstream file set to require-corp, the page survives a
 worker that fails or hangs, fonts do not block the first paint, and site/py/ahenk_front.py gives exactly what
 tts/small/ahenk_cep.py feeds the model. The JavaScript checks (noise, frame timeline, decoder windows, backend choice,
-WebGPU and thread fallbacks) run where `node` is installed; the torch / onnxruntime checks where those are installed
+WebGPU and thread fallbacks, the JavaScript trnorm and text front-end against the Python) run where `node` is installed; the torch / onnxruntime checks where those are installed
 and site/models has been exported (python tts/small/web_export.py)."""
 
 import hashlib
@@ -65,7 +65,11 @@ def test_pyodide_file_list_matches_site_py():
 
 
 def test_cdn_urls_are_pinned_and_allowed():
-    text = "\n".join(p.read_text(encoding="utf-8") for p in [SITE / "index.html", *(SITE / "js").glob("*.js")])
+    # the text front-end (js/front-native.js, js/trnorm/) fetches nothing: its URLs are sample text and comments
+    page = [p for p in (SITE / "js").glob("*.js") if p.name != "front-native.js"]
+    for p in [SITE / "js" / "front-native.js", *(SITE / "js" / "trnorm").glob("*.js")]:
+        assert not re.search(r"\bfetch\(|\bimport\(|importScripts", p.read_text(encoding="utf-8")), p
+    text = "\n".join(p.read_text(encoding="utf-8") for p in [SITE / "index.html", *page])
     urls = re.findall(r"https://cdn\.jsdelivr\.net/npm/[^'\"`\s)]+", text)
     assert urls, "the page loads onnxruntime-web and pyodide from jsdelivr"
     for u in urls:
@@ -156,11 +160,13 @@ def test_every_local_file_the_page_loads_is_in_git():
     """A new module left out of a commit would ship a page whose app.js cannot load."""
     html = (SITE / "index.html").read_text(encoding="utf-8")
     wanted = set(re.findall(r'<(?:script|link)[^>]* (?:src|href)="([^":#]+)"', html))
-    for js in (SITE / "js").glob("*.js"):
+    for js in (SITE / "js").rglob("*.js"):  # static imports, import('./x.js') and new URL('./x.js', import.meta.url)
         text = js.read_text(encoding="utf-8")
-        for m in re.findall(r"from '\./([\w.-]+\.js)'|new URL\('\./([\w.-]+\.js)', import\.meta\.url\)", text):
-            wanted.add(f"js/{m[0] or m[1]}")
-    assert {"js/app.js", "js/backend.js", "js/worker.js", "coi-serviceworker.js", "css/style.css"} <= wanted, wanted
+        here = js.parent.relative_to(SITE).as_posix()
+        for m in re.findall(r"(?:from |import\()'\./([\w./-]+\.js)'|new URL\('\./([\w.-]+\.js)', import\.meta\.url\)", text):
+            wanted.add(f"{here}/{m[0] or m[1]}")
+    assert {"js/app.js", "js/backend.js", "js/worker.js", "coi-serviceworker.js", "css/style.css", "js/front-native.js",
+            "js/trnorm/index.js", "js/trnorm/normalizer.js"} <= wanted, wanted
     for rel in sorted(wanted):
         assert (SITE / rel).is_file(), rel
     if shutil.which("git") and (REPO / ".git").exists():
@@ -496,6 +502,168 @@ def test_backend_choice_and_webgpu_fallback():
     assert out["broken"] == [True, True, False, False, True]
     assert out["kinds"] == ["engine", "network", "network", "network", "memory", "network", "network", "memory",
                             "memory", "engine"]
+
+
+# ---- the JavaScript text front-end (site/js/front-native.js, site/js/trnorm/) against the Python --------------------
+# site/js/trnorm/ is ozguradmin/trnorm-js 0.1.2 (npm @ozgurguler/trnorm, src/) as published, byte for byte. A change
+# to src/trnorm must reach both copies together: site/py/trnorm (test_vendored_trnorm_is_src_trnorm) and site/js/trnorm
+# (a trnorm-js release with the same change; then update these hashes). The parity tests below fail until it has.
+TRNORM_JS = {"version": "0.1.2", "sha256": {
+    "case_tables.js": "b724cde58df5feeeacefc8bad8bfff1b9b8162099738d2632570ac9513337a5f",
+    "casing.js": "0eeafeb7fb2765515705dc735b78d7523e1ab1719495d74425ba5c23ee81e10e",
+    "index.js": "aa57320210515256bd64fd5bcbbede6ff3896434354c2c31a6aec8809fab3768",
+    "itn.js": "363f68969b153aff95055bcfec78a9e660698f124b41afdda7cdc8c812b98019",
+    "lexicon.js": "be125d3cdb52a29a7056b2044651ca1da962da3441096437f44dfb03d9258cb0",
+    "normalizer.js": "4ebe2fddf985512c4e281f6dabe8761fee5d6db572dbb03030cc47e1e6d615c2",
+    "numbers.js": "731b8df40a89e9122024e19682c27176f42e8eabc74fe7ff51563b34a81603a0",
+    "py.js": "fa3a226933c278dda115e487f23a41533f26753bd8f12965707044023f21f72f",
+    "unassigned.js": "6878e6e0c40a3768aad4d537f10708022c4faf7e051967d72f44db3e8684e5e1",
+}}
+
+FRONT_EDGES = [
+    "", " ", "...", "123", "Çok güzel 😀 bir gün!", "naïve café", "Iğdır İSTANBUL", "Bu cümle uzun, " * 30 + "bitti.",
+    "Randevunuz 14.10.2026 saat 09:30'da, 3. katta.", "Merhaba, 14.10.2026 saat 09:30.", "ﬁ５ ve １２３ ile ٣٤",
+    "áb̧c", "Tel: +90 (212) 555-12-34", "IBAN TR12 0006 1005 1978 6457 8413 26", "%15 indirim, 1.250,50 TL",
+    "ali.veli@ornek.com.tr ve https://www.ornek.gov.tr/a?b=1", "XX. yüzyılda IV. Murat", "25°C, 1,5 kg, 10-12 km/s",
+    "İSTİKLAL CADDESİ 50000 KİŞİYLE DOLDU.", "Dr. Smith, GPT-3.5 ile COVID-19", "x² + 10³", "1990'lardaki 3/4",
+    "satır\nsonu\tve boşluk　", "​görünmez‍", "9" * 60, "1" * 5000, "Ah! Oh? Hmm; peki: tamam -",
+    "“Tırnak” ‘tek’ — uzun – kısa … üç nokta", "«Kitap» „alıntı” ´vurgu`", "ŞİŞLİ'DE 5 TL Mİ?",
+]
+
+
+def _front_corpus():
+    """Every string in tests/test_normalizer.py (its inputs and expected outputs), the TTS benchmark sets, the page's
+    example sentences and FRONT_EDGES: the normalizer's own cases make a change to trnorm show up here at once."""
+    import ast
+
+    tree = ast.parse((REPO / "tests" / "test_normalizer.py").read_text(encoding="utf-8"))
+    texts = [n.value for n in ast.walk(tree) if isinstance(n, ast.Constant) and isinstance(n.value, str)]
+    meta = json.loads((SAMPLES / "samples.json").read_text(encoding="utf-8"))
+    rows = set_texts()
+    paragraphs = [" ".join(rows[i:i + 4]) for i in range(0, len(rows), 4)]  # long enough for the chunker to cut
+    texts += rows + paragraphs + [ex["text"] for ex in meta["examples"]] + [b["text"] for b in meta["big"]] + FRONT_EDGES
+    return list(dict.fromkeys(texts))
+
+
+# Run in a fresh interpreter with one root first on sys.path, so which trnorm is read (src/ or site/py/) is certain.
+PY_REF = r"""
+import json, sys
+root, mode, path = sys.argv[1:4]
+sys.path.insert(0, root)
+data = json.load(open(path, encoding="utf-8"))
+def call(f, *a):
+    try:
+        return {"ok": f(*a)}
+    except Exception as e:
+        return {"error": type(e).__name__}
+out = {}
+if mode == "trnorm":
+    import trnorm as T
+    out["texts"] = [[call(T.normalize, t), call(T.normalize_for_eval, t), call(T.inverse_normalize, t)]
+                    for t in data["texts"]]
+    out["spoken"] = [call(T.inverse_normalize, r["ok"]) if "ok" in r else None for r, _, _ in out["texts"]]
+    out["numbers"] = [[call(T.number_to_words, int(n)), call(T.ordinal_to_words, int(n))] for n in data["numbers"]]
+    out["case"] = [[T.tr_lower(t), T.tr_upper(t)] for t in data["texts"]]
+else:
+    import ahenk_front as F
+    out["prepare"] = [[call(lambda: json.loads(F.prepare(t, s, data["vocab"]))) for s in data["speeds"]]
+                      for t in data["texts"]]
+json.dump(out, sys.stdout, ensure_ascii=False)
+"""
+
+JS_RUN = r"""
+import fs from 'node:fs';
+import { pathToFileURL } from 'node:url';
+const [mode, path] = process.argv.slice(1);
+const data = JSON.parse(fs.readFileSync(path, 'utf8'));
+const call = (f, ...a) => { try { return { ok: f(...a) }; } catch (e) { return { error: e.name }; } };
+const out = {};
+if (mode === 'trnorm') {
+  const T = await import(pathToFileURL('js/trnorm/index.js').href);
+  out.texts = data.texts.map((t) => [call(T.normalize, t), call(T.normalize_for_eval, t), call(T.inverse_normalize, t)]);
+  out.spoken = out.texts.map(([r]) => ('ok' in r ? call(T.inverse_normalize, r.ok) : null));
+  out.numbers = data.numbers.map((n) => [call(T.number_to_words, BigInt(n)), call(T.ordinal_to_words, BigInt(n))]);
+  out.case = data.texts.map((t) => [T.tr_lower(t), T.tr_upper(t)]);
+} else {
+  const F = await import(pathToFileURL('js/front-native.js').href);
+  out.prepare = data.texts.map((t) => data.speeds.map((s) => call(() => F.prepare(t, s, data.vocab))));
+}
+process.stdout.write(JSON.stringify(out));
+"""
+
+
+def _both(tmp_path, mode, root, data):
+    path = tmp_path / f"{mode}.json"
+    path.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
+    py = subprocess.run([sys.executable, "-X", "utf8", "-c", PY_REF, str(root), mode, str(path)], capture_output=True,
+                        timeout=600)
+    assert py.returncode == 0, py.stderr.decode("utf-8", "replace")
+    js = subprocess.run([NODE, "--input-type=module", "-e", JS_RUN, mode, str(path)], cwd=SITE, capture_output=True,
+                        timeout=600)
+    assert js.returncode == 0, js.stderr.decode("utf-8", "replace")
+    return json.loads(py.stdout.decode("utf-8")), json.loads(js.stdout.decode("utf-8"))
+
+
+def _diffs(texts, a, b, limit=5):
+    bad = [(t, x, y) for t, x, y in zip(texts, a, b, strict=True) if x != y]
+    return f"{len(bad)} of {len(texts)} differ, e.g. " + "; ".join(f"{t!r}: py {x!r} js {y!r}" for t, x, y in bad[:limit])
+
+
+def test_js_trnorm_is_the_published_trnorm_js():
+    files = sorted(p.name for p in (SITE / "js" / "trnorm").glob("*"))
+    assert files == sorted(TRNORM_JS["sha256"]), files
+    for name, digest in TRNORM_JS["sha256"].items():
+        data = (SITE / "js" / "trnorm" / name).read_bytes().replace(b"\r\n", b"\n")
+        assert hashlib.sha256(data).hexdigest() == digest, (
+            f"site/js/trnorm/{name} is not trnorm-js {TRNORM_JS['version']}: copy a released src/ and update the hashes")
+    index = (SITE / "js" / "trnorm" / "index.js").read_text(encoding="utf-8")
+    init = (REPO / "src" / "trnorm" / "__init__.py").read_text(encoding="utf-8")
+    assert re.search(r"__version__ = '([\d.]+)'", index)[1] == re.search(r'__version__ = "([\d.]+)"', init)[1]
+
+
+@pytest.mark.skipif(NODE is None, reason="node is not installed")
+def test_js_trnorm_matches_src_trnorm(tmp_path):
+    """normalize, normalize_for_eval, inverse_normalize (of the text and of Python's spoken form), the number readings
+    and the casing of src/trnorm and site/js/trnorm agree on every case, exceptions included (same type)."""
+    texts = _front_corpus()
+    numbers = [*range(-30, 2100), *(10 ** k + d for k in range(4, 37, 3) for d in (-1, 0, 7)), 2 ** 63, -(2 ** 70)]
+    py, js = _both(tmp_path, "trnorm", REPO / "src", {"texts": texts, "numbers": [str(n) for n in numbers]})
+    assert len(texts) > 1000
+    for key in ("texts", "spoken", "case"):
+        assert py[key] == js[key], f"{key}: " + _diffs(texts, py[key], js[key])
+    assert py["numbers"] == js["numbers"], _diffs(numbers, py["numbers"], js["numbers"])
+
+
+@pytest.mark.skipif(NODE is None, reason="node is not installed")
+def test_js_front_matches_site_py(tmp_path):
+    """front-native.js's prepare() is the same object as site/py/ahenk_front.py's: spoken form and every piece's text,
+    pause, ids, cw and wstart, at three speeds; it throws where the Python raises."""
+    texts = _front_corpus()
+    data = {"texts": texts, "speeds": [1.0, 0.7, 1.35], "vocab": VOCAB}
+    py, js = _both(tmp_path, "front", SITE / "py", data)
+    assert py["prepare"] == js["prepare"], _diffs(texts, py["prepare"], js["prepare"])
+    assert sum("ok" in r and len(r["ok"]["pieces"]) > 1 for row in py["prepare"] for r in row) > 50  # long texts too
+
+
+@pytest.mark.skipif(NODE is None, reason="node is not installed")
+def test_worker_prefers_js_and_falls_back_to_python():
+    worker = (SITE / "js" / "worker.js").read_text(encoding="utf-8")
+    load = worker[worker.index("async function loadFront("):worker.index("function frontPrepare(")]
+    assert "import('./front-native.js')" in load and "m.prepare('Merhaba, 14.10.2026 saat 09:30.'" in load
+    assert "pyFront(pyBase, vocab)" in load  # the port cannot run here (or ?front=py): Pyodide
+    fallback = worker[worker.index("function frontPrepare("):worker.index("// When onnxruntime's .wasm")]
+    assert "e.python" in fallback and "pyFront(pyBase, vocab)" in fallback  # one text: Pyodide, lazily
+    assert "setInterval(() => post({ type: 'alive' }), BEAT_MS)" in fallback and "clearInterval(beat)" in fallback
+    assert "front = 'js'" in worker and "loadFront(pyBase, manifest.vocab, front)" in worker
+    app = (SITE / "js" / "app.js").read_text(encoding="utf-8")
+    assert "front: opts.front" in app
+    loc = {"js": "?front=js", "py": "?front=py&lang=en", "none": "", "bad": "?front=python"}
+    out = run_node(
+        "const c = await import(pathToFileURL('js/config.js').href);\n"
+        f"const locs = {json.dumps(loc)};\n"
+        "const r = {}; for (const [k, s] of Object.entries(locs)) r[k] = c.pageOptions({ search: s, href: `https://ozguradmin.github.io/ahenk-turkish-tts/${s}`, hostname: 'ozguradmin.github.io' }).front;\n"
+        "console.log(JSON.stringify(r));")
+    assert out == {"js": "js", "py": "py", "none": "js", "bad": "js"}
 
 
 # ---- ONNX export and the end-to-end pipeline -----------------------------------------------------------------------
