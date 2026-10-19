@@ -26,6 +26,10 @@ modeldir: 8.6M parametre, 34 MB (fp32), EMA Lightning mimarisi, tek tasarlanmı�
 **Tarayıcıda deneyin / try it in your browser:** [ozguradmin.github.io/ahenk-turkish-tts](https://ozguradmin.github.io/ahenk-turkish-tts/) (model sizin
 cihazınızda çalışır, metin sunucuya gitmez / runs on your device).
 
+**Belgeleri dinleyin / listen to whole documents:** [Ahenk Okur](https://ozguradmin.github.io/ahenk-cep-pdfreader/) PDF, Word, EPUB, metin ve fotoğrafı
+(OCR ile) aynı modelle tarayıcıda seslendirir; uzun belgeleri parça parça üretir, MP3 ya da WAV indirilir / reads PDF,
+Word, EPUB, text and photos (OCR) aloud in the browser with this model and downloads the result as MP3 or WAV.
+
 > **Bu ses yapaydır.** f022, VoxCPM2 ile bir metin tarifinden tasarlanmış bir sestir; gerçek bir kişinin sesi ya da
 > kaydı değildir. Ürettiğiniz sesi paylaşırken yapay olduğunu belirtin (AB Yapay Zekâ Yasası md. 50).
 >
@@ -68,7 +72,8 @@ audio, sr = tts.say("Ne kadar uğraştıysam da yetişemedim.", style="sad")
 ```
 
 `say(text, style="neutral", steps=16, cfg=2.0, speed=1.0, seed=0)`. Üsluplar: `neutral`, `angry`, `calm`,
-`cheerful`, `empathetic`, `sad`, `surprised`. Metin önce trnorm ile okunuş formuna çevrilir; siz çevirmeyin.
+`cheerful`, `empathetic`, `sad`, `surprised`. Metin önce trnorm ile okunuş formuna çevrilir; siz çevirmeyin. Tarayıcıda ya da Node'da aynı çıktıyı veren
+JavaScript sürümü: [trnorm-js](https://github.com/ozguradmin/trnorm-js) (`npm install @ozgurguler/trnorm`).
 Aynı tohum CPU ve GPU'da farklı ses verir (gürültü üreteci cihaza bağlı); yukarıdaki örnekler GPU'dan.
 
 ## Ölçümler
@@ -198,7 +203,8 @@ Ahenk Cep is a small student of the [Ahenk](https://huggingface.co/ozgurguler/ah
 it runs at about 0.2 of real time. Weights CC BY 4.0.
 
 **Quick start.** The code above: `AhenkCep(student, decoder).say(text, style="neutral")` returns float32 audio and the
-sample rate. trnorm turns the written text into its spoken form inside `say()`. The same seed gives different audio
+sample rate. trnorm turns the written text into its spoken form inside `say()`; [trnorm-js](https://github.com/ozguradmin/trnorm-js) gives the same output in
+JavaScript (`npm install @ozgurguler/trnorm`). The same seed gives different audio
 on CPU and GPU; the samples above were made on a GPU.
 
 **Results** (same harness as the big model, measured on one RTX 5060 laptop). TR-Zor WER 2.32 % vs EMA Lightning 2.43

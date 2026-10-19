@@ -45,6 +45,7 @@ const T = {
     textLabel: 'Seslendirilecek metin',
     placeholder: 'Bir şeyler yazın ya da aşağıdaki örneklerden birini seçin.',
     textHint: '<kbd>Ctrl</kbd> + <kbd>Enter</kbd> ile de seslendirebilirsiniz.',
+    okurHint: `Daha uzun bir metin ya da PDF, Word, EPUB belge mi? <a href="${LINKS.okur}">Ahenk Okur</a> ile tamamını dinleyin ve indirin.`,
     settings: 'Ayarlar',
     steps: 'Kalite',
     stepsBest: 'En iyi (16 adım)',
@@ -93,7 +94,7 @@ const T = {
     how2h: 'Ses',
     how2: 'Model, okunuş metninden 48 kHz ses üretir. Aynı metin ve tohum her zaman aynı sesi verir.',
     how3h: 'Cihazda',
-    how3: 'Hepsi tarayıcınızda, WebAssembly ya da WebGPU ile çalışır. İlk açılışta model (<span class="model-size num">17 MB</span>) ve metin işleyici (yaklaşık 6 MB) iner; sonraki ziyaretlerde önbellekten açılır.',
+    how3: 'Hepsi tarayıcınızda, WebAssembly ya da WebGPU ile çalışır. İlk açılışta model (<span class="model-size num">17 MB</span>) ve onu çalıştıran kod (birkaç MB) iner; sonraki ziyaretlerde önbellekten açılır.',
     limits: 'Model, büyük Ahenk modelinin sesinden öğrenen bir öğrencidir ve <a href="https://huggingface.co/canberkkkkkk/ema-lightning">EMA Lightning</a> mimarisini kullanır. Sınırları: tek bir tasarlanmış kadın sesi var; şimdilik yalnızca nötr konuşur; sonu yükselen sorular (“Yarın geliyorsun?”) yükselmez; uzun metinlerde doğallık büyük modelin gerisinde kalır.',
     linkCode: 'Kod',
     linkCep: 'Ahenk Cep modeli',
@@ -143,6 +144,7 @@ const T = {
     textLabel: 'Text to speak (Turkish)',
     placeholder: 'Type something, or pick one of the examples below.',
     textHint: '<kbd>Ctrl</kbd> + <kbd>Enter</kbd> also speaks.',
+    okurHint: `A longer text, or a PDF, Word or EPUB document? <a href="${LINKS.okur}">Ahenk Okur</a> reads all of it and lets you download it.`,
     settings: 'Settings',
     steps: 'Quality',
     stepsBest: 'Best (16 steps)',
@@ -191,7 +193,7 @@ const T = {
     how2h: 'Voice',
     how2: 'The model turns the spoken form into 48 kHz audio. The same text and seed always give the same audio.',
     how3h: 'On device',
-    how3: 'Everything runs in your browser with WebAssembly or WebGPU. The first visit downloads the model (<span class="model-size num">17 MB</span>) and the text processor (about 6 MB); later visits open them from the cache.',
+    how3: 'Everything runs in your browser with WebAssembly or WebGPU. The first visit downloads the model (<span class="model-size num">17 MB</span>) and the code that runs it (a few MB); later visits open them from the cache.',
     limits: 'The model is a student that learned from the voice of the big Ahenk model and uses the <a href="https://huggingface.co/canberkkkkkk/ema-lightning">EMA Lightning</a> architecture. Limits: one designed female voice; neutral tone only for now; questions that rise only at the end (“Yarın geliyorsun?”) do not rise; long texts sound less natural than the big model.',
     linkCode: 'Code',
     linkCep: 'Ahenk Cep model',
@@ -478,6 +480,7 @@ function updateCount() {
   const n = $('text').value.length;
   $('count').textContent = `${n} / ${MAX_CHARS}`;
   $('count').classList.toggle('over', n >= MAX_CHARS);
+  $('okur-hint').classList.toggle('over', n >= MAX_CHARS); // at the limit, point to Ahenk Okur more clearly
 }
 
 function setBusy(busy, frac = 0) {
@@ -493,7 +496,8 @@ function setBusy(busy, frac = 0) {
 // "Tekrar dene" starts a new worker instead of reloading the page: on phones a reload costs more memory than it frees.
 // A watchdog turns silence into an error: no word from the worker for STALL_MS while the model loads or while it
 // speaks means something is stuck (a hung download, a worker that died). While the model opens, after its download,
-// the worker sends a beat every 10 s; that stage gets OPEN_MS in all (onnxruntime's and Pyodide's files come then).
+// the worker sends a beat every 10 s; that stage gets OPEN_MS in all (onnxruntime's files come then, and Pyodide's if
+// the Python front-end is needed). The beat also covers a request whose text sends the worker to Pyodide.
 const opts = pageOptions(window.location);
 const device = deviceInfo(navigator, matchMedia('(pointer: coarse)').matches);
 const STALL_MS = 120000;
@@ -526,7 +530,8 @@ function onWorkerMessage(data) {
       state.total = data.total;
       if (data.loaded >= data.total && data.total) state.loadStage = 'sessions';
     } else if (data.stage === 'sessions') Object.assign(state, { loadStage: 'sessions', opening: true, threads: data.threads || 1 });
-    else if (data.stage === 'front-ready') state.loadStage = 'warm';
+    // the JavaScript front-end is ready long before the model has downloaded: no 'Son hazırlık' in the middle of it
+    else if (data.stage === 'front-ready' && state.loadStage === 'sessions') state.loadStage = 'warm';
     renderLoad();
   } else if (data.type === 'ready' || data.type === 'backend') {
     // 'backend': WebGPU failed on a request and the worker moved to WebAssembly
@@ -590,7 +595,7 @@ function startWorker() {
   };
   w.postMessage({
     type: 'init', modelBase: opts.modelBase, pyBase: new URL('py/', document.baseURI).href, variant: opts.variant,
-    ep: avoid.webgpu ? 'wasm' : opts.ep, device, maxThreads: avoid.threads ? 1 : 0,
+    ep: avoid.webgpu ? 'wasm' : opts.ep, device, maxThreads: avoid.threads ? 1 : 0, front: opts.front,
   });
 }
 

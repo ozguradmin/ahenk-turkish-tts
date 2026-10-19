@@ -31,6 +31,7 @@ soru tonlaması, 6 duygu ve gülme. Metin önce trnorm ile okunuş formuna çevr
 indirilir.
 
 Her istek en çok 200 karakterdir ve ziyaretçinin günlük ZeroGPU kotasından en çok 60 saniye harcar. İşlemcide çalışan
-küçük model için: [Ahenk Cep](https://huggingface.co/spaces/ozgurguler/ahenk-cep).
+küçük model için: [Ahenk Cep](https://huggingface.co/spaces/ozgurguler/ahenk-cep). PDF, Word ya da EPUB belgelerin
+tamamını küçük modelle tarayıcıda dinlemek için: [Ahenk Okur](https://ozguradmin.github.io/ahenk-cep-pdfreader/).
 
 Ölçümler, sınırlamalar ve lisans (ağırlıklar CC-BY-4.0): [model kartı](https://huggingface.co/ozgurguler/ahenk-tts-tr).

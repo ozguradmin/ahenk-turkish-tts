@@ -1,51 +1,54 @@
-# Ahenk: Türkçe metinden sese
+# Ahenk: Turkish text-to-speech
 
-Açık Türkçe konuşma araçları: Ahenk (büyük model, GPU), Ahenk Cep (8.6M parametrelik küçük model, CPU), trnorm
-(Türkçe metin normalizasyonu) ve TR-Zor / TR-Soru ölçüm setleri.
+**English** · [Türkçe](README.tr.md)
 
-> **Sentetik ses.** Ahenk ve Ahenk Cep tek bir tasarlanmış sesle konuşur (f022); bu ses gerçek bir kişinin sesi ya da
-> kaydı değildir. Ürettiğiniz sesi paylaşırken yapay olduğunu belirtin (AB Yapay Zekâ Yasası md. 50).
+Open Turkish speech tools: Ahenk (large model, GPU), Ahenk Cep (8.6M-parameter small model, CPU), trnorm (Turkish
+text normalisation) and the TR-Zor / TR-Soru test sets.
 
-[Tarayıcıda deneyin](https://ozguradmin.github.io/ahenk-turkish-tts/) · [Ahenk model kartı](https://huggingface.co/ozgurguler/ahenk-tts-tr) ·
-[Ahenk Cep model kartı](https://huggingface.co/ozgurguler/ahenk-cep-tr) · [English](#english)
+> **Synthetic voice.** Ahenk and Ahenk Cep speak in one designed voice (f022); it is not a real person's voice or
+> recording. Say that it is AI-generated when you share what you make (EU AI Act Art. 50).
 
-## Dinleyin
+[Try it in your browser](https://ozguradmin.github.io/ahenk-turkish-tts/) · [Ahenk Okur: listen to documents](https://ozguradmin.github.io/ahenk-cep-pdfreader/) · [Ahenk model card](https://huggingface.co/ozgurguler/ahenk-tts-tr) ·
+[Ahenk Cep model card](https://huggingface.co/ozgurguler/ahenk-cep-tr)
 
-GitHub sayfada ses çalmaz: bağlantılar WAV dosyasını Hugging Face'te açar. Model kartlarında aynı örnekler oynatıcıyla
-var. Ahenk Cep'i kurulum gerektirmeden tarayıcıda deneyebilirsiniz: [ozguradmin.github.io/ahenk-turkish-tts](https://ozguradmin.github.io/ahenk-turkish-tts/).
+## Listen
 
-| Ne gösteriyor | Metin (yazıldığı gibi) | Model | Ses |
+GitHub does not play audio in the page: the links open the WAV files on Hugging Face. The model cards have the same
+samples with players. You can try Ahenk Cep in your browser, no install: [ozguradmin.github.io/ahenk-turkish-tts](https://ozguradmin.github.io/ahenk-turkish-tts/).
+
+| What it shows | Text (as written) | Model | Audio |
 |---|---|---|---|
-| Gülerek | Hahaha, bu fıkrayı daha önce hiç duymamıştım! | Ahenk | [WAV](https://huggingface.co/ozgurguler/ahenk-tts-tr/resolve/main/samples/big_11_laughing.wav) |
-| Neşeli | Harika haber! Sınavı geçtim, akşam hep birlikte kutlayalım! | Ahenk | [WAV](https://huggingface.co/ozgurguler/ahenk-tts-tr/resolve/main/samples/big_07_cheerful.wav) |
-| Sakin | Derin bir nefes alın, her şeyi adım adım birlikte halledeceğiz. | Ahenk | [WAV](https://huggingface.co/ozgurguler/ahenk-tts-tr/resolve/main/samples/big_09_calm.wav) |
-| Düz okuma | Eskişehir'den İzmir'e otobüsle gittik. | Ahenk | [WAV](https://huggingface.co/ozgurguler/ahenk-tts-tr/resolve/main/samples/big_01_plain_ozel04.wav) |
-| Para (trnorm: "doksan dokuz lira doksan dokuz kuruşa") | İndirimle 99,99 TL'ye düştü. | Ahenk | [WAV](https://huggingface.co/ozgurguler/ahenk-tts-tr/resolve/main/samples/big_02_numbers_para09.wav) |
-| Soru çifti, önce düz cümle | Cihazın garanti süresi 2 yıl. | Ahenk | [WAV](https://huggingface.co/ozgurguler/ahenk-tts-tr/resolve/main/samples/big_03a_statement_garanti.wav) |
-| Soru çifti, aynı cümle "mı?" ile | Cihazın garanti süresi 2 yıl mı? | Ahenk | [WAV](https://huggingface.co/ozgurguler/ahenk-tts-tr/resolve/main/samples/big_03b_question_garanti.wav) |
-| Uzun cümle, eğitimde yok (12 sn) | Karşılaştırma isteyenlere eski ve yeni paketi yan yana anlatırız; farkı müşteri kendisi görür. Akşam olduğunda … | Ahenk | [WAV](https://huggingface.co/ozgurguler/ahenk-tts-tr/resolve/main/samples/big_04_long_heldout583922.wav) |
-| Kızgın | Yeter artık! Üç gündür aynı sorun için arıyorum ve hâlâ kimse ilgilenmedi! | Ahenk | [WAV](https://huggingface.co/ozgurguler/ahenk-tts-tr/resolve/main/samples/big_06_angry.wav) |
-| Aynı uzun cümle | Karşılaştırma isteyenlere eski ve yeni paketi yan yana anlatırız; … | Ahenk Cep | [WAV](https://huggingface.co/ozgurguler/ahenk-cep-tr/resolve/main/samples/small_03_long_heldout583922.wav) |
+| Laughing | Hahaha, bu fıkrayı daha önce hiç duymamıştım! | Ahenk | [WAV](https://huggingface.co/ozgurguler/ahenk-tts-tr/resolve/main/samples/big_11_laughing.wav) |
+| Cheerful | Harika haber! Sınavı geçtim, akşam hep birlikte kutlayalım! | Ahenk | [WAV](https://huggingface.co/ozgurguler/ahenk-tts-tr/resolve/main/samples/big_07_cheerful.wav) |
+| Calm | Derin bir nefes alın, her şeyi adım adım birlikte halledeceğiz. | Ahenk | [WAV](https://huggingface.co/ozgurguler/ahenk-tts-tr/resolve/main/samples/big_09_calm.wav) |
+| Plain reading | Eskişehir'den İzmir'e otobüsle gittik. | Ahenk | [WAV](https://huggingface.co/ozgurguler/ahenk-tts-tr/resolve/main/samples/big_01_plain_ozel04.wav) |
+| Money (trnorm: "doksan dokuz lira doksan dokuz kuruşa") | İndirimle 99,99 TL'ye düştü. | Ahenk | [WAV](https://huggingface.co/ozgurguler/ahenk-tts-tr/resolve/main/samples/big_02_numbers_para09.wav) |
+| Question pair, the statement first | Cihazın garanti süresi 2 yıl. | Ahenk | [WAV](https://huggingface.co/ozgurguler/ahenk-tts-tr/resolve/main/samples/big_03a_statement_garanti.wav) |
+| Question pair, the same sentence with "mı?" | Cihazın garanti süresi 2 yıl mı? | Ahenk | [WAV](https://huggingface.co/ozgurguler/ahenk-tts-tr/resolve/main/samples/big_03b_question_garanti.wav) |
+| Long sentence, not in training (12 s) | Karşılaştırma isteyenlere eski ve yeni paketi yan yana anlatırız; farkı müşteri kendisi görür. Akşam olduğunda … | Ahenk | [WAV](https://huggingface.co/ozgurguler/ahenk-tts-tr/resolve/main/samples/big_04_long_heldout583922.wav) |
+| Angry | Yeter artık! Üç gündür aynı sorun için arıyorum ve hâlâ kimse ilgilenmedi! | Ahenk | [WAV](https://huggingface.co/ozgurguler/ahenk-tts-tr/resolve/main/samples/big_06_angry.wav) |
+| The same long sentence | Karşılaştırma isteyenlere eski ve yeni paketi yan yana anlatırız; … | Ahenk Cep | [WAV](https://huggingface.co/ozgurguler/ahenk-cep-tr/resolve/main/samples/small_03_long_heldout583922.wav) |
 
-Seçim: düz okuma, para, gülme ve duygular kör dinlemede dinleyicinin seçtiği klipler. Soru çifti ve
-uzun cümle otomatik ölçüyle seçildi (hatasız ve en yüksek UTMOS). Hepsi var olan değerlendirme klipleri, yeniden
-üretilmedi.
+How they were picked: the plain, money, laughing and emotion clips were chosen by the listener in blind listening.
+The question pair and the long sentence were chosen by automatic scores (word-perfect, highest UTMOS). All are
+existing evaluation clips, not rendered again.
 
-## Neler var
+## What is here
 
-| Bileşen | Ne yapar | Boyut, donanım | Lisans |
+| Component | What it does | Size, hardware | Licence |
 |---|---|---|---|
-| [Ahenk](https://huggingface.co/ozgurguler/ahenk-tts-tr) | VoxCPM2 için Türkçe LoRA: soru tonlaması, 6 duygu ve gülme, Türkçe ya da İngilizce talimat. Tarif: [`tts/voxcpm`](tts/voxcpm) | 2B + 36M LoRA, GPU | ağırlıklar CC BY 4.0 |
-| [Ahenk Cep](https://huggingface.co/ozgurguler/ahenk-cep-tr) | Ahenk'in sesinden öğrenen küçük öğrenci model (EMA Lightning mimarisi). Kod: [`tts/small`](tts/small) | 8.6M, 34 MB, CPU'da RTF ~0,2 | ağırlıklar CC BY 4.0 |
-| [`trnorm`](src/trnorm) | Yazılı Türkçeyi okunuş formuna çevirir: sayı, tarih, saat, para, yüzde, kısaltma, telefon; ekleri okunuşa uyar. Bağımlılığı yok. | saf Python | Apache-2.0 |
-| [`trnorm-js`](https://github.com/ozguradmin/trnorm-js) | trnorm'un tarayıcıda ve Node'da çalışan sürümü; Python'la aynı çıktı (`npm install @ozgurguler/trnorm`) | saf JavaScript | Apache-2.0 |
-| [`trtts`](src/trtts) | EMA Lightning + trnorm: hazır, CPU'da çalışan Türkçe TTS | 8.6M, CPU | Apache-2.0 |
-| [`benchmarks/tts`](benchmarks/tts) | TR-Zor (155 zor cümle, 13 kategori), TR-Soru (35 satır soru tonlaması) ve ASR ile geri okuyan ölçüm düzeneği | | Apache-2.0 |
-| [`benchmarks/asr`](benchmarks/asr) | FLEURS-TR ve MediaSpeech-TR üzerinde Türkçe ASR karşılaştırması ([tablo](benchmarks/asr/results/LEADERBOARD.md)) | CPU | Apache-2.0 |
+| [Ahenk](https://huggingface.co/ozgurguler/ahenk-tts-tr) | Turkish LoRA for VoxCPM2: question intonation, 6 emotions and laughter, Turkish or English instructions. Recipe: [`tts/voxcpm`](tts/voxcpm) | 2B + 36M LoRA, GPU | weights CC BY 4.0 |
+| [Ahenk Cep](https://huggingface.co/ozgurguler/ahenk-cep-tr) | Small student model that learned from Ahenk's voice (EMA Lightning architecture). Code: [`tts/small`](tts/small) | 8.6M, 34 MB, RTF ~0.2 on CPU | weights CC BY 4.0 |
+| [Ahenk Okur](https://ozguradmin.github.io/ahenk-cep-pdfreader/) | Reads PDF, Word, EPUB, plain text and photos (with OCR) aloud in the browser with Ahenk Cep. Book-length documents are made piece by piece and can be heard while they are being made; the work resumes after the tab is closed; the result downloads as MP3 or WAV. Code: [ahenk-cep-pdfreader](https://github.com/ozguradmin/ahenk-cep-pdfreader) | browser, on the device | Apache-2.0 |
+| [`trnorm`](src/trnorm) | Turns written Turkish into its spoken form: numbers, dates, times, money, percentages, abbreviations, phone numbers; suffixes follow the spoken form. No dependencies. | pure Python | Apache-2.0 |
+| [`trnorm-js`](https://github.com/ozguradmin/trnorm-js) | trnorm for the browser and Node; the same output as Python (`npm install @ozgurguler/trnorm`) | pure JavaScript | Apache-2.0 |
+| [`trtts`](src/trtts) | EMA Lightning + trnorm: a ready Turkish TTS that runs on CPU | 8.6M, CPU | Apache-2.0 |
+| [`benchmarks/tts`](benchmarks/tts) | TR-Zor (155 hard sentences, 13 categories), TR-Soru (35 rows of question intonation) and a harness that reads the audio back with ASR | | Apache-2.0 |
+| [`benchmarks/asr`](benchmarks/asr) | Turkish ASR comparison on FLEURS-TR and MediaSpeech-TR ([table](benchmarks/asr/results/LEADERBOARD.md)) | CPU | Apache-2.0 |
 
-## Hızlı başlangıç
+## Quick start
 
-Ahenk Cep, işlemcide:
+Ahenk Cep, on a CPU:
 
 ```bash
 pip install torch ema-lightning==1.1.2 "git+https://github.com/ozguradmin/ahenk-turkish-tts"
@@ -65,23 +68,24 @@ audio, sr = tts.say("Randevunuz 14.10.2026 saat 09:30'da; ücret 1.250 TL.")
 sf.write("randevu.wav", audio, sr)
 ```
 
-Ahenk (GPU, VoxCPM2) için kurulum ve duygu kullanımı [model kartında](https://huggingface.co/ozgurguler/ahenk-tts-tr).
-Yalnız metin normalizasyonu:
+Setup and emotions for Ahenk (GPU, VoxCPM2) are in its [model card](https://huggingface.co/ozgurguler/ahenk-tts-tr).
+Text normalisation only:
 
 ```bash
 trnorm "Saat 09:30'da 3. kata gelin, ücret 1.250,50 TL."
 # Saat dokuz otuzda üçüncü kata gelin, ücret bin iki yüz elli lira elli kuruş.
 ```
 
-trnorm'un kuralları ve örnekleri: [docs/TRNORM.md](docs/TRNORM.md).
+trnorm's rules and examples: [docs/TRNORM.md](docs/TRNORM.md).
 
-## Ölçümler
+## Results
 
-TR-Zor: 155 zor cümle. Ayrılmış: Antalia veri setinin 20 uzun cümlesi (12-19 sn), hiçbir modelimizin eğitiminde yok.
-Yargıç faster-whisper large-v3-turbo; referans ve çıktı `trnorm.normalize_for_eval` ile normalize edildi. WER %,
-düşük iyi; parantezde tek kelime hatası olmayan cümle sayısı. UTMOS22 doğallığı tahmin eder (1-5, yüksek iyi).
+TR-Zor: 155 hard sentences. Held-out: 20 long sentences (12-19 s) of the Antalia dataset, not in the training data of
+any of our models. Judge: faster-whisper large-v3-turbo; reference and output normalised with
+`trnorm.normalize_for_eval`. WER %, lower is better; in brackets, the number of sentences without a single word
+error. UTMOS22 predicts naturalness (1-5, higher is better).
 
-| Model | Boyut | TR-Zor WER | Ayrılmış WER | UTMOS TR-Zor / ayrılmış |
+| Model | Size | TR-Zor WER | Held-out WER | UTMOS TR-Zor / held-out |
 |---|---|---:|---:|---:|
 | **Ahenk** | 2B + LoRA | 2.54 (141/155) | 0.82 (16/20) | 3.70 / 3.14 |
 | [Trendyol-TTS](https://huggingface.co/Trendyol/Trendyol-TTS) | 2B + LoRA | 3.98 (134/155) | **0.68** (16/20) | **3.82 / 3.73** |
@@ -89,144 +93,78 @@ düşük iyi; parantezde tek kelime hatası olmayan cümle sayısı. UTMOS22 do�
 | [EMA Lightning](https://huggingface.co/canberkkkkkk/ema-lightning) + trnorm | 8.6M | 2.43 (145/155) | 1.49 (16/20) | 3.36 / 2.95 |
 | [Antalia-2 Mini](https://huggingface.co/cloud0day3/antalia-mini) | 7.6M | 3.30 (140/155) | 1.22 (16/20) | 3.23 / 2.94 |
 
-- Ahenk ve Trendyol-TTS bir A100'de, küçük modeller bir dizüstü GPU'da aynı yargıçla ölçüldü. Ahenk'in klipleri
-  ikinci düzenekte yeniden puanlanınca sonuç 0,01 içinde aynı çıktı.
-- **Kaybettiğimiz yerler:** Trendyol-TTS doğallık tahmininde önde, en çok uzun cümlede (3,73'e karşı 3,14); ayrılmış
-  cümlelerde WER'i daha düşük (0,68'e karşı 0,82) ve daha hızlı (A100'de RTF 1,37'ye karşı 2,28). Trendyol kendi
-  sesiyle konuşur; farkın bir kısmı sesten gelebilir. İşlemcide Ahenk Cep, EMA ve Antalia'dan yavaş (2 iş
-  parçacığında RTF 0,20'ye karşı 0,13 ve 0,08).
-- trnorm'un etkisi: EMA Lightning'in TR-Zor hatası kendi ön ucuyla %14,0, trnorm ile %1,9 (bu satır CPU'da int8
-  yargıçla ölçüldü, yukarıdaki tabloyla doğrudan karşılaştırmayın; [ayrıntı](benchmarks/tts/results/tr_zor/RESULTS.md)).
-- Bunlar otomatik ölçümlerdir. MOS çalışması yapılmadı.
+- Ahenk and Trendyol-TTS were measured on an A100, the small models on a laptop GPU, with the same judge. Scored again
+  on the second setup, Ahenk's clips came out the same within 0.01.
+- **Where we lose:** Trendyol-TTS is ahead on predicted naturalness, most on long sentences (3.73 vs 3.14); it has a
+  lower WER on the held-out sentences (0.68 vs 0.82) and is faster (RTF 1.37 vs 2.28 on an A100). Trendyol speaks in
+  its own voice; part of the difference may come from the voice. On CPU, Ahenk Cep is slower than EMA and Antalia
+  (RTF 0.20 vs 0.13 and 0.08 on 2 threads).
+- trnorm's effect: EMA Lightning's TR-Zor error is 14.0 % with its own front-end and 1.9 % with trnorm (this row was
+  measured on CPU with an int8 judge, do not compare it directly with the table above;
+  [details](benchmarks/tts/results/tr_zor/RESULTS.md)).
+- These are automatic metrics. No MOS study was done.
 
-**Kör dinleme.** Hepsi tek bir anadil dinleyiciyle (proje sahibi), her cümlede en iyi klip seçilerek yapıldı; bir
-işarettir, istatistiksel sonuç değildir.
-- 10 cümle, dört sistem rastgele sırada, ses düzeyi eşit: Ahenk 8, Ahenk Cep 2 (ikisi de soru), EMA Lightning 0,
+**Blind listening.** All done with one native listener (the project owner), choosing the best clip for each sentence;
+it is a signal, not a statistical result.
+- 10 sentences, four systems in random order, equal loudness: Ahenk 8, Ahenk Cep 2 (both questions), EMA Lightning 0,
   Antalia-2 Mini 0.
-- Duygu talimatının dili, 20 karar: saf duyguda İngilizce talimat 6/6, ilk iki kelimesinde "c" ile başlayan bir kelime
-  olan cümlelerde Türkçe talimat 10/10. Ahenk'teki `instruction_pick` bu sonuçla çalışır.
+- Language of the emotion instruction, 20 decisions: for pure emotion the English instruction 6/6; for sentences with
+  a word starting with "c" in their first two words, the Turkish instruction 10/10. `instruction_pick` in Ahenk works
+  from this result.
 
-## Sınırlamalar
+## Limitations
 
-- **Sonu yükselen sorular yükselmez:** "Yarın geliyorsun?" gibi mı'sız sorular düz cümle gibi biter, iki modelde de.
-  "mı" ile kurulan sorular doğru.
-- **İngilizce talimattan sonra "c":** Ahenk'te baştaki "c" /k/, /s/ ya da /z/ gibi okunabilir ("Cam" → "Kam").
-  `instruction_pick` Türkçe talimata geçer; gerekirse `prefer="tr"`.
-- **"Telefon gibi" tını:** Ahenk'in bazı duygulu kliplerinde ses parlak ve cızırtılı (probda İngilizce talimatla
-  20 klipte 7). Başka tohum deneyin.
-- **Duraklarda nefes:** Ahenk'te kalır; paketteki `pause_clean` kısar.
-- **Ahenk Cep'te üslup hafif:** "üzgün" yalnız 1,9 yarım ton pes ve %8 yavaş; gülme yok. Telefon hızı için henüz
-  damıtılmadı.
-- **Ahenk GPU ister:** A100'de 16 adımda RTF 2,28, gerçek zamandan yavaş.
-- **Tek ses, yalnız Türkçe.** trnorm sözlüğünde olmayan yabancı adları yazıldığı gibi bırakır.
+- **Questions that should rise at the end do not:** questions without "mı", such as "Yarın geliyorsun?", end like a
+  statement, in both models. Questions built with "mı" are right.
+- **"c" after an English instruction:** in Ahenk a leading "c" may be read like /k/, /s/ or /z/ ("Cam" → "Kam").
+  `instruction_pick` switches to a Turkish instruction; if needed, use `prefer="tr"`.
+- **"Phone-like" timbre:** in some of Ahenk's emotional clips the voice is bright and crackly (7 of 20 clips in a probe
+  with English instructions). Try another seed.
+- **Breath in pauses:** stays in Ahenk; `pause_clean` in the package turns it down.
+- **Ahenk Cep's styles are weak:** "sad" is only 1.9 semitones lower and 8 % slower; no laughter. Not yet distilled
+  for phone speed.
+- **Ahenk needs a GPU:** RTF 2.28 at 16 steps on an A100, slower than real time.
+- **One voice, Turkish only.** trnorm leaves foreign names that are not in its lexicon as written.
 
-## Sorumlu kullanım
+## Responsible use
 
-- Üretilen sesi gerçek bir insan kaydı gibi sunmayın; yapay olduğunu söyleyin ve mümkünse makinece okunur bir işaret
-  ekleyin (AB Yapay Zekâ Yasası md. 50). Modellerde filigran yok; [AudioSeal](https://github.com/facebookresearch/audioseal)
-  eklenebilir.
-- Kimseyi taklit etmeyin. VoxCPM2 ses klonlayabilir; kimsenin sesini izni olmadan klonlamayın.
-- Üretilen öfke, üzüntü ya da şefkati gerçek bir insanın tepkisi gibi sunup dinleyiciyi baskı altına almayın.
-- Dolandırıcılık, sosyal mühendislik ve otomatik arama için kullanmayın.
+- Do not present generated speech as a real human recording; say that it is synthetic and, if you can, add a
+  machine-readable mark (EU AI Act Art. 50). The models have no watermark; [AudioSeal](https://github.com/facebookresearch/audioseal)
+  can be added.
+- Do not impersonate anyone. VoxCPM2 can clone voices; do not clone anyone's voice without their consent.
+- Do not present generated anger, sadness or warmth as a real person's reaction to put pressure on a listener.
+- Do not use it for fraud, social engineering or robocalls.
 
-## Lisans ve atıf
+## Licence and credit
 
-- Kod, belgeler, TR-Zor ve TR-Soru setleri: [Apache-2.0](LICENSE). Depodaki üçüncü taraf referans metinleri kendi
-  lisanslarıyla gelir: [NOTICE](NOTICE).
-- Ahenk ve Ahenk Cep ağırlıkları **CC BY 4.0**. Kullanırken ya da dağıtırken atıf zorunludur. Şöyle yazın:
-  "Ahenk (https://github.com/ozguradmin/ahenk-turkish-tts), CC BY 4.0". Model kartlarındaki veri atıflarını da koruyun:
-  *Alania Turkish Synthetic Speech by PatientDesk AI* ve *Alania Turkish Domain Text by PatientDesk AI* (CC BY 4.0).
-- Taban modeller: VoxCPM2 (OpenBMB) ve EMA Lightning, ikisi de Apache-2.0.
-- Akademik atıf: [CITATION.cff](CITATION.cff).
+- Code, docs, the TR-Zor and TR-Soru sets: [Apache-2.0](LICENSE). Third-party reference texts in the repo come with
+  their own licences: [NOTICE](NOTICE).
+- Ahenk and Ahenk Cep weights are **CC BY 4.0**. Credit is required when you use or redistribute them. Write:
+  "Ahenk (https://github.com/ozguradmin/ahenk-turkish-tts), CC BY 4.0". Also keep the data attributions from the model
+  cards: *Alania Turkish Synthetic Speech by PatientDesk AI* and *Alania Turkish Domain Text by PatientDesk AI*
+  (CC BY 4.0).
+- Base models: VoxCPM2 (OpenBMB) and EMA Lightning, both Apache-2.0.
+- Academic citation: [CITATION.cff](CITATION.cff).
 
-## Yol haritası
+## Roadmap
 
-- Ahenk Cep'i telefonda gerçek zamanlı çalışacak hale getirmek (az adımlı damıtma)
-- Küçük model için daha büyük öğretmen verisi, daha güçlü duygular ve soru tonlaması
-- Tarayıcıda çalışan demo sayfası
-- Ticari kullanıma açık, küçük bir Türkçe konuşma tanıma (STT) modeli
+- Make Ahenk Cep run in real time on phones (few-step distillation)
+- More teacher data for the small model, stronger emotions and question intonation
+- A demo page that runs in the browser
+- A small, commercially usable Turkish speech-recognition (STT) model
 
-## Depo yapısı
+## Repository layout
 
-| Klasör | İçerik |
+| Folder | Contents |
 |---|---|
-| `src/trnorm`, `src/trtts` | metin normalizasyonu, EMA Lightning + trnorm |
-| `tts/voxcpm` | Ahenk eğitim ve ölçüm tarifi, `instruction_pick`, `pause_clean`, model kartı |
-| `tts/small` | Ahenk Cep eğitimi, çıkarım kodu (`ahenk_cep.py`), model kartı |
-| `benchmarks` | TR-Zor, TR-Soru, ASR karşılaştırması ve sonuçlar |
-| `spaces` | Hugging Face demo uygulamaları |
-| `docs` | çalışma notları |
+| `src/trnorm`, `src/trtts` | text normalisation, EMA Lightning + trnorm |
+| `tts/voxcpm` | Ahenk training and evaluation recipe, `instruction_pick`, `pause_clean`, model card |
+| `tts/small` | Ahenk Cep training, inference code (`ahenk_cep.py`), model card |
+| `benchmarks` | TR-Zor, TR-Soru, the ASR comparison and results |
+| `spaces` | Hugging Face demo apps |
+| `docs` | working notes |
 
-Katkı: issue açın; en çok trnorm'un yanlış okuduğu cümleler işe yarar (girdi, beklenen okunuş, aldığınız çıktı).
-`python -m pytest -q` geçmeli.
-
-İletişim: destek@ozgurguler.tech
-
----
-
-## English
-
-Open Turkish speech tools: Ahenk (large model, GPU), Ahenk Cep (8.6M-parameter small model, CPU), trnorm (Turkish
-text normalisation) and the TR-Zor / TR-Soru test sets.
-
-> **Synthetic voice.** Ahenk and Ahenk Cep speak in one designed voice (f022) that is not a real person's voice or
-> recording. Label what you generate as AI-generated (EU AI Act Art. 50).
-
-### Listen
-
-GitHub does not play audio in the page; the links in the table above open the WAV files on Hugging Face, and the
-model cards have the same samples with players. You can try Ahenk Cep in your browser, no install: [ozguradmin.github.io/ahenk-turkish-tts](https://ozguradmin.github.io/ahenk-turkish-tts/). The plain, price, emotion and
-small-model question samples were picked by a listener in blind tests; the question pair and the long sentence were
-picked by automatic scores.
-
-### What is here
-
-- **[Ahenk](https://huggingface.co/ozgurguler/ahenk-tts-tr):** a Turkish LoRA for VoxCPM2 (2B + 36M LoRA, GPU) with
-  question intonation, six emotions and laughter. Weights CC BY 4.0.
-- **[Ahenk Cep](https://huggingface.co/ozgurguler/ahenk-cep-tr):** a small student of Ahenk's voice (EMA Lightning
-  architecture, 8.6M parameters, 34 MB, RTF ~0.2 on 2 CPU threads). Weights CC BY 4.0.
-- **trnorm:** dependency-free Turkish written → spoken form (numbers, dates, times, money, abbreviations, phone
-  numbers, suffix agreement); also in JavaScript, with the same output ([trnorm-js](https://github.com/ozguradmin/trnorm-js), `npm install @ozgurguler/trnorm`).
-  **trtts:** EMA Lightning with trnorm as its front-end.
-- **Benchmarks:** TR-Zor (155 hard sentences), TR-Soru (35 question-intonation rows), a Turkish ASR comparison.
-
-### Quick start
-
-See the Ahenk Cep code above (`pip install torch ema-lightning==1.1.2 "git+https://github.com/ozguradmin/ahenk-turkish-tts"`).
-For Ahenk on a GPU, see its [model card](https://huggingface.co/ozgurguler/ahenk-tts-tr). `trnorm "text"` prints the
-spoken form.
-
-### Results
-
-Table above; same judge (faster-whisper large-v3-turbo, trnorm evaluation normaliser, UTMOS22) for every row. Ahenk
-reads hard text better than Trendyol-TTS (TR-Zor WER 2.54 vs 3.98) and Ahenk Cep is the best of the small models
-(2.32 vs EMA Lightning 2.43, Antalia-2 Mini 3.30). Where we lose: Trendyol-TTS has higher predicted naturalness,
-most on long sentences (UTMOS 3.73 vs 3.14), lower held-out WER (0.68 vs 0.82) and is faster (RTF 1.37 vs 2.28 on
-an A100); on CPU Ahenk Cep is slower than EMA and Antalia (0.20 vs 0.13 and 0.08). Automatic metrics only, no MOS
-study. Blind listening, one listener (the author), 10 sentences: Ahenk 8, Ahenk Cep 2, EMA Lightning 0, Antalia-2
-Mini 0.
-
-### Limitations
-
-Questions that should rise at the end ("Yarın geliyorsun?") do not. After an English instruction Ahenk may read a
-leading "c" the English way (use `prefer="tr"`). Some emotional clips sound bright and "phone-like". Breath in
-pauses (use `pause_clean`). Ahenk Cep's styles are weak and it has no laughter. Ahenk needs a GPU (RTF 2.28 on an
-A100). One voice, Turkish only.
-
-### Responsible use
-
-Label synthetic speech as such (EU AI Act Art. 50); there is no built-in watermark. No impersonation, no voice
-cloning without consent, no deceptive emotion, no scams or robocalls.
-
-### Licence and credit
-
-Code, docs and test sets Apache-2.0 ([LICENSE](LICENSE), third-party texts in [NOTICE](NOTICE)). Ahenk and Ahenk Cep
-weights are CC BY 4.0: credit them as "Ahenk (https://github.com/ozguradmin/ahenk-turkish-tts), CC BY 4.0" and keep
-the Alania dataset attributions from the model cards. Base models VoxCPM2 and EMA Lightning are Apache-2.0.
-
-### Roadmap
-
-Real-time Ahenk Cep on phones (few-step distillation); more teacher data for stronger emotions and questions; a
-browser demo; a small, commercially usable Turkish speech-recognition model.
+Contributing: open an issue; sentences that trnorm reads wrong help most (input, expected reading, the output you
+got). `python -m pytest -q` must pass.
 
 Contact: destek@ozgurguler.tech
