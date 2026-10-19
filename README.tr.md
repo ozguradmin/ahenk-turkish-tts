@@ -46,6 +46,10 @@ uzun cümle otomatik ölçüyle seçildi (hatasız ve en yüksek UTMOS). Hepsi v
 | [`benchmarks/tts`](benchmarks/tts) | TR-Zor (155 zor cümle, 13 kategori), TR-Soru (35 satır soru tonlaması) ve ASR ile geri okuyan ölçüm düzeneği | | Apache-2.0 |
 | [`benchmarks/asr`](benchmarks/asr) | FLEURS-TR ve MediaSpeech-TR üzerinde Türkçe ASR karşılaştırması ([tablo](benchmarks/asr/results/LEADERBOARD.md)) | CPU | Apache-2.0 |
 
+Tarayıcı demosu ve Ahenk Okur metni trnorm-js ile işliyor. Python sürümüyle 742.716 kontrolde birebir aynı sonucu
+verdi; bu sayede tarayıcının Python indirmesi gerekmiyor: ilk ziyaret 27 MB'tan 21,4 MB'a düştü, sayfa yaklaşık iki
+kat hızlı hazır oluyor. Python sürümü yedek olarak duruyor.
+
 ## Hızlı başlangıç
 
 Ahenk Cep, işlemcide:

@@ -46,6 +46,10 @@ existing evaluation clips, not rendered again.
 | [`benchmarks/tts`](benchmarks/tts) | TR-Zor (155 hard sentences, 13 categories), TR-Soru (35 rows of question intonation) and a harness that reads the audio back with ASR | | Apache-2.0 |
 | [`benchmarks/asr`](benchmarks/asr) | Turkish ASR comparison on FLEURS-TR and MediaSpeech-TR ([table](benchmarks/asr/results/LEADERBOARD.md)) | CPU | Apache-2.0 |
 
+The browser demo and Ahenk Okur process text with trnorm-js. It gave the same result as the Python version on 742,716
+checks, so the browser no longer has to download Python: the first visit fell from 27 MB to 21.4 MB and the page is
+ready about twice as fast. The Python version stays as a fallback.
+
 ## Quick start
 
 Ahenk Cep, on a CPU:
