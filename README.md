@@ -6,7 +6,7 @@ Açık Türkçe konuşma araçları: Ahenk (büyük model, GPU), Ahenk Cep (8.6M
 > **Sentetik ses.** Ahenk ve Ahenk Cep tek bir tasarlanmış sesle konuşur (f022); bu ses gerçek bir kişinin sesi ya da
 > kaydı değildir. Ürettiğiniz sesi paylaşırken yapay olduğunu belirtin (AB Yapay Zekâ Yasası md. 50).
 
-[Tarayıcıda deneyin](https://ozguradmin.github.io/ahenk-turkish-tts/) · [Ahenk model kartı](https://huggingface.co/ozgurguler/ahenk-tts-tr) ·
+[Tarayıcıda deneyin](https://ozguradmin.github.io/ahenk-turkish-tts/) · [Ahenk Okur: belgeleri dinleyin](https://ozguradmin.github.io/ahenk-cep-pdfreader/) · [Ahenk model kartı](https://huggingface.co/ozgurguler/ahenk-tts-tr) ·
 [Ahenk Cep model kartı](https://huggingface.co/ozgurguler/ahenk-cep-tr) · [English](#english)
 
 ## Dinleyin
@@ -37,6 +37,7 @@ uzun cümle otomatik ölçüyle seçildi (hatasız ve en yüksek UTMOS). Hepsi v
 |---|---|---|---|
 | [Ahenk](https://huggingface.co/ozgurguler/ahenk-tts-tr) | VoxCPM2 için Türkçe LoRA: soru tonlaması, 6 duygu ve gülme, Türkçe ya da İngilizce talimat. Tarif: [`tts/voxcpm`](tts/voxcpm) | 2B + 36M LoRA, GPU | ağırlıklar CC BY 4.0 |
 | [Ahenk Cep](https://huggingface.co/ozgurguler/ahenk-cep-tr) | Ahenk'in sesinden öğrenen küçük öğrenci model (EMA Lightning mimarisi). Kod: [`tts/small`](tts/small) | 8.6M, 34 MB, CPU'da RTF ~0,2 | ağırlıklar CC BY 4.0 |
+| [Ahenk Okur](https://ozguradmin.github.io/ahenk-cep-pdfreader/) | PDF, Word, EPUB, metin ve fotoğrafı (OCR ile) tarayıcıda Ahenk Cep'le seslendirir. Kitap uzunluğundaki belgeleri parça parça üretir, üretilirken dinlenebilir, sekme kapansa da kaldığı yerden devam eder; MP3 ya da WAV indirilir. Kod: [ahenk-cep-pdfreader](https://github.com/ozguradmin/ahenk-cep-pdfreader) | tarayıcı, cihazda | Apache-2.0 |
 | [`trnorm`](src/trnorm) | Yazılı Türkçeyi okunuş formuna çevirir: sayı, tarih, saat, para, yüzde, kısaltma, telefon; ekleri okunuşa uyar. Bağımlılığı yok. | saf Python | Apache-2.0 |
 | [`trnorm-js`](https://github.com/ozguradmin/trnorm-js) | trnorm'un tarayıcıda ve Node'da çalışan sürümü; Python'la aynı çıktı (`npm install @ozgurguler/trnorm`) | saf JavaScript | Apache-2.0 |
 | [`trtts`](src/trtts) | EMA Lightning + trnorm: hazır, CPU'da çalışan Türkçe TTS | 8.6M, CPU | Apache-2.0 |
@@ -188,6 +189,10 @@ picked by automatic scores.
 - **trnorm:** dependency-free Turkish written → spoken form (numbers, dates, times, money, abbreviations, phone
   numbers, suffix agreement); also in JavaScript, with the same output ([trnorm-js](https://github.com/ozguradmin/trnorm-js), `npm install @ozgurguler/trnorm`).
   **trtts:** EMA Lightning with trnorm as its front-end.
+- **[Ahenk Okur](https://ozguradmin.github.io/ahenk-cep-pdfreader/):** reads PDF, Word, EPUB, plain text and photos (with OCR) aloud in the browser with Ahenk Cep.
+  Book-length documents are made piece by piece and can be heard while they are being made; the work is kept on the
+  device, so it resumes after the tab is closed; the result downloads as MP3 or WAV. Code:
+  [ahenk-cep-pdfreader](https://github.com/ozguradmin/ahenk-cep-pdfreader).
 - **Benchmarks:** TR-Zor (155 hard sentences), TR-Soru (35 question-intonation rows), a Turkish ASR comparison.
 
 ### Quick start

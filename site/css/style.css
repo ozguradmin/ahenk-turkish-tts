@@ -198,6 +198,8 @@ textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 4
 .text-meta #count { margin-left: auto; }
 @media (pointer: coarse) { #text-hint { display: none; } }
 .text-meta .num.over { color: var(--error); font-weight: 600; }
+.okur-hint { margin: -8px 2px 18px; }
+.okur-hint.over { color: var(--ink); font-weight: 600; }
 
 .actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 .primary {

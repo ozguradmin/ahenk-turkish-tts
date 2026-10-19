@@ -45,6 +45,7 @@ const T = {
     textLabel: 'Seslendirilecek metin',
     placeholder: 'Bir şeyler yazın ya da aşağıdaki örneklerden birini seçin.',
     textHint: '<kbd>Ctrl</kbd> + <kbd>Enter</kbd> ile de seslendirebilirsiniz.',
+    okurHint: `Daha uzun bir metin ya da PDF, Word, EPUB belge mi? <a href="${LINKS.okur}">Ahenk Okur</a> ile tamamını dinleyin ve indirin.`,
     settings: 'Ayarlar',
     steps: 'Kalite',
     stepsBest: 'En iyi (16 adım)',
@@ -143,6 +144,7 @@ const T = {
     textLabel: 'Text to speak (Turkish)',
     placeholder: 'Type something, or pick one of the examples below.',
     textHint: '<kbd>Ctrl</kbd> + <kbd>Enter</kbd> also speaks.',
+    okurHint: `A longer text, or a PDF, Word or EPUB document? <a href="${LINKS.okur}">Ahenk Okur</a> reads all of it and lets you download it.`,
     settings: 'Settings',
     steps: 'Quality',
     stepsBest: 'Best (16 steps)',
@@ -478,6 +480,7 @@ function updateCount() {
   const n = $('text').value.length;
   $('count').textContent = `${n} / ${MAX_CHARS}`;
   $('count').classList.toggle('over', n >= MAX_CHARS);
+  $('okur-hint').classList.toggle('over', n >= MAX_CHARS); // at the limit, point to Ahenk Okur more clearly
 }
 
 function setBusy(busy, frac = 0) {
