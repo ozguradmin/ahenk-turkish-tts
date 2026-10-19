@@ -491,8 +491,20 @@ function _pass_web(text) {
   return _sub(_URL_RE, url, text);
 }
 
+// ABBREVIATIONS, and each title also in capitals and without the spaces after its dots
+const _ABBR_FORMS = (() => {
+  const forms = new Map(L.ABBREVIATIONS);
+  for (const key of L.TITLE_ABBREVIATIONS) {
+    const spoken = L.ABBREVIATIONS.get(key);
+    for (const form of [key.replaceAll('. ', '.'), tr_upper(key), tr_upper(key).replaceAll('. ', '.')]) {
+      if (!forms.has(form)) forms.set(form, spoken);
+    }
+  }
+  return forms;
+})();
+
 function _build_abbr_re() {
-  const keys = [...L.ABBREVIATIONS.keys()].sort((a, b) => plen(b) - plen(a));
+  const keys = [..._ABBR_FORMS.keys()].sort((a, b) => plen(b) - plen(a));
   const alt = keys.map(re.escape).join('|');
   const first = [...new Set(keys.map(first_cp))].join('');
   // every key has a "." or a ":" ("Dr.", "No:")
@@ -509,7 +521,7 @@ const _SPACE_CAPITAL_RE = re.compile(`${S}+[${UP}]`);
 function _pass_abbreviations(text) {
   const repl = (m) => {
     const key = m[1];
-    let out = L.ABBREVIATIONS.get(key);
+    let out = _ABBR_FORMS.get(key);
     if (L.SENTENCE_FINAL_ABBR.has(key)) {
       const rest = text.slice(end(m));
       if (!strip(rest) || _SPACE_CAPITAL_RE.match(rest)) out += '.';
