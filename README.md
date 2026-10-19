@@ -149,6 +149,7 @@ it is a signal, not a statistical result.
   (CC BY 4.0).
 - Base models: VoxCPM2 (OpenBMB) and EMA Lightning, both Apache-2.0.
 - Academic citation: [CITATION.cff](CITATION.cff).
+- Not required, but if you use this in a project, we would be glad of a link back or a quick note (destek@ozgurguler.tech).
 
 ## Roadmap
 
