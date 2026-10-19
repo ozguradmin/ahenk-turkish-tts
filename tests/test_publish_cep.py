@@ -76,7 +76,7 @@ def test_space_copies_the_inference_module_and_apps_parse():
     assert "ozgurguler/ahenk-cep-tr" in (REPO / "spaces" / "ahenk-cep" / "app.py").read_text(encoding="utf-8")
 
 
-@pytest.mark.parametrize("page", ["README.md", "tts/voxcpm/MODEL_CARD.ahenk.template.md",
+@pytest.mark.parametrize("page", ["README.md", "README.tr.md", "tts/voxcpm/MODEL_CARD.ahenk.template.md",
                                   "tts/small/MODEL_CARD.ahenk-cep.template.md", "spaces/ahenk-cep/README.md",
                                   "spaces/ahenk/README.md"])
 def test_public_pages_have_no_em_dash(page):
