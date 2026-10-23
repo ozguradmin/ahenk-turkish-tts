@@ -8,7 +8,7 @@ text normalisation) and the TR-Zor / TR-Soru test sets.
 > **Synthetic voice.** Ahenk and Ahenk Cep speak in one designed voice (f022); it is not a real person's voice or
 > recording. Say that it is AI-generated when you share what you make (EU AI Act Art. 50).
 
-[Try it in your browser](https://ozguradmin.github.io/ahenk-turkish-tts/) · [Ahenk Okur: listen to documents](https://ozguradmin.github.io/ahenk-cep-pdfreader/) · [Ahenk model card](https://huggingface.co/ozgurguler/ahenk-tts-tr) ·
+[Try it in your browser](https://ozguradmin.github.io/ahenk-turkish-tts/) · [Try Ahenk (2B) on Hugging Face](https://huggingface.co/spaces/ozgurguler/ahenk-turkish-tts) · [Ahenk Okur: listen to documents](https://ozguradmin.github.io/ahenk-cep-pdfreader/) · [Ahenk model card](https://huggingface.co/ozgurguler/ahenk-tts-tr) ·
 [Ahenk Cep model card](https://huggingface.co/ozgurguler/ahenk-cep-tr)
 
 ## Listen
@@ -72,7 +72,7 @@ audio, sr = tts.say("Randevunuz 14.10.2026 saat 09:30'da; ücret 1.250 TL.")
 sf.write("randevu.wav", audio, sr)
 ```
 
-Setup and emotions for Ahenk (GPU, VoxCPM2) are in its [model card](https://huggingface.co/ozgurguler/ahenk-tts-tr).
+Setup and emotions for Ahenk (GPU, VoxCPM2) are in its [model card](https://huggingface.co/ozgurguler/ahenk-tts-tr). To try it without a GPU, use the [Hugging Face demo](https://huggingface.co/spaces/ozgurguler/ahenk-turkish-tts).
 Text normalisation only:
 
 ```bash
