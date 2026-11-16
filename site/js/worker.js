@@ -239,6 +239,9 @@ async function init({ modelBase, pyBase, variant, ep, device = {}, maxThreads = 
   const mres = await fetch(new URL('ahenk-cep.json', modelBase)).catch((e) => { throw tag(e, { kind: 'network' }); });
   if (!mres.ok) throw new Error(`ahenk-cep.json: HTTP ${mres.status}`);
   const manifest = await mres.json();
+  // Hugging Face counts a model download from requests to the repo's config.json, so the model card shows how often
+  // the model is loaded. Sends nothing but the request itself; a failure is ignored.
+  if (String(modelBase).startsWith('https://huggingface.co/')) fetch(new URL('../config.json', modelBase), { method: 'HEAD' }).catch(() => {});
   const files = variantFiles(manifest, variant);
   const total = files.reduce((n, f) => n + f.bytes, 0);
   post({ type: 'status', stage: 'download', loaded: 0, total });

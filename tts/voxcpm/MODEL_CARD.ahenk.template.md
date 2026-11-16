@@ -64,7 +64,7 @@ from trnorm import normalize
 from voxcpm import VoxCPM
 from voxcpm.model.voxcpm import LoRAConfig
 
-repo_dir = snapshot_download("{{repo}}", allow_patterns=["lora_*", "*.py", "instructions_tr.json"])
+repo_dir = snapshot_download("{{repo}}", allow_patterns=["lora_*", "*.py", "instructions_tr.json", "config.json"])
 sys.path.insert(0, repo_dir)
 from instruction_pick import compose, pick  # noqa: E402  (stdlib)
 from pause_clean import clean  # noqa: E402  (numpy + scipy)

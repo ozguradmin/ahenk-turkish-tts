@@ -61,7 +61,7 @@ import sys
 import soundfile as sf
 from huggingface_hub import snapshot_download
 
-d = snapshot_download("{{repo}}", allow_patterns=["*.pt", "ahenk_cep.py"])
+d = snapshot_download("{{repo}}", allow_patterns=["*.pt", "ahenk_cep.py", "config.json"])
 sys.path.insert(0, d)
 from ahenk_cep import AhenkCep  # noqa: E402
 
